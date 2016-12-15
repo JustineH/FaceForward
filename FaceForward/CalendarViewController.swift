@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  CalendarViewController.swift
 //  FaceForward
 //
 //  Created by carmen cheng on 2016-12-14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class CalendarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
