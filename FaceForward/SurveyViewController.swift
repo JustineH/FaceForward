@@ -1,5 +1,5 @@
 //
-//  MoodInputViewController.swift
+//  SurveyViewController.swift
 //  FaceForward
 //
 //  Created by carmen cheng on 2016-12-14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MoodInputViewController: UIViewController {
+class SurveyViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

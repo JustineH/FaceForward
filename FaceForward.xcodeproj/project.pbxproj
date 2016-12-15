@@ -8,33 +8,43 @@
 
 /* Begin PBXBuildFile section */
 		1F26A1FD1E02003F00CA7464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26A1FC1E02003F00CA7464 /* AppDelegate.swift */; };
-		1F26A1FF1E02003F00CA7464 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26A1FE1E02003F00CA7464 /* HomeViewController.swift */; };
 		1F26A2011E02003F00CA7464 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26A2001E02003F00CA7464 /* CalendarViewController.swift */; };
 		1F26A2041E02003F00CA7464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F26A2021E02003F00CA7464 /* Main.storyboard */; };
 		1F26A2061E02003F00CA7464 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F26A2051E02003F00CA7464 /* Assets.xcassets */; };
 		1F26A2091E02003F00CA7464 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F26A2071E02003F00CA7464 /* LaunchScreen.storyboard */; };
 		1FA89EBF1E022167004EBF08 /* DetailLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA89EBE1E022167004EBF08 /* DetailLogViewController.swift */; };
-		1FA89EC11E02217C004EBF08 /* MoodInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA89EC01E02217C004EBF08 /* MoodInputViewController.swift */; };
+		1FA89EC11E02217C004EBF08 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA89EC01E02217C004EBF08 /* SurveyViewController.swift */; };
 		1FA89EC31E022199004EBF08 /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA89EC21E022199004EBF08 /* SuggestionsViewController.swift */; };
 		1FA89EC51E0221C2004EBF08 /* ConfirmPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA89EC41E0221C2004EBF08 /* ConfirmPictureViewController.swift */; };
 		1FA89EC71E022208004EBF08 /* AnalysisChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA89EC61E022208004EBF08 /* AnalysisChartViewController.swift */; };
+		1FBD71511E0340F8001E36EE /* Survey.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBD71501E0340F8001E36EE /* Survey.storyboard */; };
+		1FBD71531E034161001E36EE /* Photo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBD71521E034161001E36EE /* Photo.storyboard */; };
+		1FBD71551E034172001E36EE /* Suggestions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBD71541E034172001E36EE /* Suggestions.storyboard */; };
+		1FBD71571E034181001E36EE /* Chart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBD71561E034181001E36EE /* Chart.storyboard */; };
+		1FBD71591E03419C001E36EE /* MusicPlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBD71581E03419C001E36EE /* MusicPlayer.storyboard */; };
+		1FBD715B1E0342EA001E36EE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD715A1E0342EA001E36EE /* Router.swift */; };
 		C4E7074E1629F9016C8B5985 /* Pods_FaceForward.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17958DEA5C86271ABFD5DCB /* Pods_FaceForward.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F26A1F91E02003F00CA7464 /* FaceForward.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceForward.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F26A1FC1E02003F00CA7464 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1F26A1FE1E02003F00CA7464 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1F26A2001E02003F00CA7464 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		1F26A2031E02003F00CA7464 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F26A2051E02003F00CA7464 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F26A2081E02003F00CA7464 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F26A20A1E02003F00CA7464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1FA89EBE1E022167004EBF08 /* DetailLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailLogViewController.swift; sourceTree = "<group>"; };
-		1FA89EC01E02217C004EBF08 /* MoodInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodInputViewController.swift; sourceTree = "<group>"; };
+		1FA89EC01E02217C004EBF08 /* SurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		1FA89EC21E022199004EBF08 /* SuggestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
 		1FA89EC41E0221C2004EBF08 /* ConfirmPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmPictureViewController.swift; sourceTree = "<group>"; };
 		1FA89EC61E022208004EBF08 /* AnalysisChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisChartViewController.swift; sourceTree = "<group>"; };
+		1FBD71501E0340F8001E36EE /* Survey.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Survey.storyboard; sourceTree = "<group>"; };
+		1FBD71521E034161001E36EE /* Photo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Photo.storyboard; sourceTree = "<group>"; };
+		1FBD71541E034172001E36EE /* Suggestions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Suggestions.storyboard; sourceTree = "<group>"; };
+		1FBD71561E034181001E36EE /* Chart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chart.storyboard; sourceTree = "<group>"; };
+		1FBD71581E03419C001E36EE /* MusicPlayer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MusicPlayer.storyboard; sourceTree = "<group>"; };
+		1FBD715A1E0342EA001E36EE /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		3C2A011C095BE3AAA8A0D4B8 /* Pods-FaceForward.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceForward.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaceForward/Pods-FaceForward.release.xcconfig"; sourceTree = "<group>"; };
 		B17958DEA5C86271ABFD5DCB /* Pods_FaceForward.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaceForward.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D89B48985DF69A546BC44AB9 /* Pods-FaceForward.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceForward.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FaceForward/Pods-FaceForward.debug.xcconfig"; sourceTree = "<group>"; };
@@ -82,10 +92,10 @@
 		1F26A1FB1E02003F00CA7464 /* FaceForward */ = {
 			isa = PBXGroup;
 			children = (
+				1FA89EC91E02222C004EBF08 /* Model */,
 				1FA89ECA1E02223A004EBF08 /* UI */,
 				1FA89ECB1E02224F004EBF08 /* View */,
 				1FA89EC81E02221A004EBF08 /* Controller */,
-				1FA89EC91E02222C004EBF08 /* Model */,
 				1FA89ECC1E022263004EBF08 /* Support */,
 			);
 			path = FaceForward;
@@ -94,13 +104,12 @@
 		1FA89EC81E02221A004EBF08 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				1F26A1FE1E02003F00CA7464 /* HomeViewController.swift */,
-				1F26A2001E02003F00CA7464 /* CalendarViewController.swift */,
-				1FA89EBE1E022167004EBF08 /* DetailLogViewController.swift */,
-				1FA89EC01E02217C004EBF08 /* MoodInputViewController.swift */,
-				1FA89EC21E022199004EBF08 /* SuggestionsViewController.swift */,
-				1FA89EC41E0221C2004EBF08 /* ConfirmPictureViewController.swift */,
-				1FA89EC61E022208004EBF08 /* AnalysisChartViewController.swift */,
+				1FBD71611E034477001E36EE /* Chart */,
+				1FBD71601E034462001E36EE /* Picture */,
+				1FBD715F1E034450001E36EE /* Suggestions */,
+				1FBD715E1E034434001E36EE /* MusicPlayer */,
+				1FBD715D1E03440E001E36EE /* Survey */,
+				1FBD715C1E0343F0001E36EE /* Calendar */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -118,6 +127,11 @@
 			children = (
 				1F26A2071E02003F00CA7464 /* LaunchScreen.storyboard */,
 				1F26A2021E02003F00CA7464 /* Main.storyboard */,
+				1FBD71501E0340F8001E36EE /* Survey.storyboard */,
+				1FBD71521E034161001E36EE /* Photo.storyboard */,
+				1FBD71541E034172001E36EE /* Suggestions.storyboard */,
+				1FBD71561E034181001E36EE /* Chart.storyboard */,
+				1FBD71581E03419C001E36EE /* MusicPlayer.storyboard */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -125,6 +139,7 @@
 		1FA89ECB1E02224F004EBF08 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1FBD715A1E0342EA001E36EE /* Router.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -136,6 +151,54 @@
 				1F26A20A1E02003F00CA7464 /* Info.plist */,
 			);
 			name = Support;
+			sourceTree = "<group>";
+		};
+		1FBD715C1E0343F0001E36EE /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				1F26A2001E02003F00CA7464 /* CalendarViewController.swift */,
+				1FA89EBE1E022167004EBF08 /* DetailLogViewController.swift */,
+			);
+			name = Calendar;
+			sourceTree = "<group>";
+		};
+		1FBD715D1E03440E001E36EE /* Survey */ = {
+			isa = PBXGroup;
+			children = (
+				1FA89EC01E02217C004EBF08 /* SurveyViewController.swift */,
+			);
+			name = Survey;
+			sourceTree = "<group>";
+		};
+		1FBD715E1E034434001E36EE /* MusicPlayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MusicPlayer;
+			sourceTree = "<group>";
+		};
+		1FBD715F1E034450001E36EE /* Suggestions */ = {
+			isa = PBXGroup;
+			children = (
+				1FA89EC21E022199004EBF08 /* SuggestionsViewController.swift */,
+			);
+			name = Suggestions;
+			sourceTree = "<group>";
+		};
+		1FBD71601E034462001E36EE /* Picture */ = {
+			isa = PBXGroup;
+			children = (
+				1FA89EC41E0221C2004EBF08 /* ConfirmPictureViewController.swift */,
+			);
+			name = Picture;
+			sourceTree = "<group>";
+		};
+		1FBD71611E034477001E36EE /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				1FA89EC61E022208004EBF08 /* AnalysisChartViewController.swift */,
+			);
+			name = Chart;
 			sourceTree = "<group>";
 		};
 		CD5C27C669BDB1CFEECCDFB8 /* Frameworks */ = {
@@ -209,7 +272,12 @@
 			files = (
 				1F26A2091E02003F00CA7464 /* LaunchScreen.storyboard in Resources */,
 				1F26A2061E02003F00CA7464 /* Assets.xcassets in Resources */,
+				1FBD71551E034172001E36EE /* Suggestions.storyboard in Resources */,
+				1FBD71531E034161001E36EE /* Photo.storyboard in Resources */,
+				1FBD71571E034181001E36EE /* Chart.storyboard in Resources */,
+				1FBD71511E0340F8001E36EE /* Survey.storyboard in Resources */,
 				1F26A2041E02003F00CA7464 /* Main.storyboard in Resources */,
+				1FBD71591E03419C001E36EE /* MusicPlayer.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,14 +336,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FBD715B1E0342EA001E36EE /* Router.swift in Sources */,
 				1FA89EBF1E022167004EBF08 /* DetailLogViewController.swift in Sources */,
 				1F26A2011E02003F00CA7464 /* CalendarViewController.swift in Sources */,
 				1FA89EC51E0221C2004EBF08 /* ConfirmPictureViewController.swift in Sources */,
 				1FA89EC71E022208004EBF08 /* AnalysisChartViewController.swift in Sources */,
 				1FA89EC31E022199004EBF08 /* SuggestionsViewController.swift in Sources */,
 				1F26A1FD1E02003F00CA7464 /* AppDelegate.swift in Sources */,
-				1F26A1FF1E02003F00CA7464 /* HomeViewController.swift in Sources */,
-				1FA89EC11E02217C004EBF08 /* MoodInputViewController.swift in Sources */,
+				1FA89EC11E02217C004EBF08 /* SurveyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
