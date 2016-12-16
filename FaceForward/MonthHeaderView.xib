@@ -25,7 +25,7 @@
             <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="t07-Zr-d8o" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="D1v-kH-JuZ"/>
-                <constraint firstItem="t07-Zr-d8o" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Py5-7M-dem"/>
+                <constraint firstItem="t07-Zr-d8o" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="uYR-sQ-V7l"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

@@ -18,7 +18,7 @@ class CalendarViewController: UIViewController {
     // scrolling calendar.
     let notSelectedTextColor = UIColor.black
     let selectedTextColor = UIColor.purple
- 
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +40,7 @@ class CalendarViewController: UIViewController {
         if cellState.isSelected {
             myCustomCell.selectedView.layer.cornerRadius =  25
             myCustomCell.selectedView.isHidden = false
+            print(cellState.date)
         } else {
             myCustomCell.selectedView.isHidden = true
         }
@@ -114,10 +115,48 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
     func calendar(_ calendar: JTAppleCalendarView, sectionHeaderSizeFor range: (start: Date, end: Date), belongingTo month: Int) -> CGSize {
         return CGSize(width: 200, height: 50)
     }
+    
     // This setups the display of your header
     func calendar(_ calendar: JTAppleCalendarView, willDisplaySectionHeader header: JTAppleHeaderView, range: (start: Date, end: Date), identifier: String) {
         let headerCell = (header as? MonthHeaderView)
-        headerCell?.monthLabel.text = "month here"
+        let calendar = Calendar.current
+        let month = formatMonth(month: calendar.component(.month, from: range.start))
+        headerCell?.monthLabel.text = "\(month)"
+       
     }
+    
+    func formatMonth(month: Int) -> String{
+        switch month {
+        case 1:
+            return "January"
+        case 2:
+            return "Febuary"
+        case 3:
+            return "March"
+        case 4:
+            return "April"
+        case 5:
+            return "May"
+        case 6:
+            return "June"
+        case 7:
+            return "July"
+        case 8:
+            return "August"
+        case 9:
+            return "September"
+        case 10:
+            return "October"
+        case 11:
+            return "November"
+        case 12:
+            return "December"
+            
+        default:
+            break
+        }
+        return ""
+    }
+    
 }
 
