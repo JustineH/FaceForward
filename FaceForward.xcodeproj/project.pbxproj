@@ -16,6 +16,7 @@
 		1F26A2061E02003F00CA7464 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F26A2051E02003F00CA7464 /* Assets.xcassets */; };
 		1F26A2091E02003F00CA7464 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F26A2071E02003F00CA7464 /* LaunchScreen.storyboard */; };
 		1F7277D51E0491FB00085D69 /* ConfigureCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7277D41E0491FB00085D69 /* ConfigureCalendar.swift */; };
+		1F7277D71E04962200085D69 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7277D61E04962200085D69 /* Emotion.swift */; };
 		1FA89EBF1E022167004EBF08 /* DetailLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA89EBE1E022167004EBF08 /* DetailLogViewController.swift */; };
 		1FA89EC11E02217C004EBF08 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA89EC01E02217C004EBF08 /* SurveyViewController.swift */; };
 		1FA89EC31E022199004EBF08 /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA89EC21E022199004EBF08 /* SuggestionsViewController.swift */; };
@@ -44,6 +45,7 @@
 		1F26A2081E02003F00CA7464 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F26A20A1E02003F00CA7464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F7277D41E0491FB00085D69 /* ConfigureCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureCalendar.swift; sourceTree = "<group>"; };
+		1F7277D61E04962200085D69 /* Emotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
 		1FA89EBE1E022167004EBF08 /* DetailLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailLogViewController.swift; sourceTree = "<group>"; };
 		1FA89EC01E02217C004EBF08 /* SurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		1FA89EC21E022199004EBF08 /* SuggestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				1F26A1FC1E02003F00CA7464 /* AppDelegate.swift */,
+				1F7277D61E04962200085D69 /* Emotion.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				1F26A1FD1E02003F00CA7464 /* AppDelegate.swift in Sources */,
 				1FA89EC11E02217C004EBF08 /* SurveyViewController.swift in Sources */,
 				1F7277D51E0491FB00085D69 /* ConfigureCalendar.swift in Sources */,
+				1F7277D71E04962200085D69 /* Emotion.swift in Sources */,
 				1FBD71651E035F44001E36EE /* CellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
