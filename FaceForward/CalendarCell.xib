@@ -15,16 +15,16 @@
             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ka0-Zc-qkC">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4PC-J5-SIM">
                     <rect key="frame" x="75" y="75" width="50" height="50"/>
-                    <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="BoV-TQ-ZoN"/>
-                        <constraint firstAttribute="width" constant="50" id="ZOA-Ug-KDs"/>
+                        <constraint firstAttribute="height" constant="50" id="QWv-M9-WLZ"/>
+                        <constraint firstAttribute="width" constant="50" id="h9o-nh-1ee"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r2n-O8-SLL">
-                    <rect key="frame" x="79" y="89.5" width="42" height="21"/>
+                    <rect key="frame" x="79" y="89" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -32,15 +32,15 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="ka0-Zc-qkC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="6ha-QV-hFn"/>
                 <constraint firstItem="r2n-O8-SLL" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="9Hm-Uy-rkO"/>
                 <constraint firstItem="r2n-O8-SLL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Pjw-ju-OXw"/>
-                <constraint firstItem="ka0-Zc-qkC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="vai-7u-bb2"/>
+                <constraint firstItem="4PC-J5-SIM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="QYI-Tb-v1T"/>
+                <constraint firstItem="4PC-J5-SIM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="S8I-gB-mT8"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="dayLabel" destination="r2n-O8-SLL" id="YxC-v4-k2B"/>
-                <outlet property="selectedView" destination="ka0-Zc-qkC" id="tsd-sO-S67"/>
+                <outlet property="moodColor" destination="4PC-J5-SIM" id="4w5-B1-vzU"/>
             </connections>
             <point key="canvasLocation" x="53.5" y="-130.5"/>
         </view>

@@ -11,9 +11,9 @@ import JTAppleCalendar
 
 
 class CellView: JTAppleDayCellView {
-
+ 
     @IBOutlet weak var dayLabel: UILabel!
-    @IBOutlet weak var selectedView: UIView!
+    @IBOutlet weak var moodColor: UIView!
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

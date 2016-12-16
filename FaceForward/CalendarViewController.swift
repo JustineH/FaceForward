@@ -19,72 +19,101 @@ class CalendarViewController: UIViewController {
     let notSelectedTextColor = UIColor.black
     let selectedTextColor = UIColor.purple
     
+    let formatter = DateFormatter()
+    let currentDate = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         calendarView.registerCellViewXib(file: "CalendarCell") // Registering your cell is manditory
+        calendarView.registerHeaderView(xibFileNames: ["MonthHeaderView"])
+        
         calendarView.delegate = self
         calendarView.dataSource = self
         calendarView.cellInset = CGPoint(x: 0, y: 0)
+        
         calendarView.scrollEnabled = true
         calendarView.scrollingMode = .stopAtEachCalendarFrameWidth
-        calendarView.registerHeaderView(xibFileNames: ["MonthHeaderView"])
+        calendarView.scrollToDate(currentDate)
+//        displayPreviousMoods()
+        
     }
+    
+    //MARK: Mood Display
+//    func displayPreviousMoods() {
+//    let realmObjects = []
+//        
+//        for 0..<realmObjects.count {
+//            setBackgroundColor(object: )
+//        }
+//    }
+    
+//    func setBackgroundColor(object: ) {
+//        guard let myCustomCell = view as? CellView  else {
+//            return
+//        }
+//        let mood = object.mood
+//        switch mood {
+//        case "angry":
+//            myCustomCell.moodColor.backgroundColor = UIColor.red
+//        case "joy":
+//            myCustomCell.moodColor.backgroundColor = UIColor.yellow
+//        case "sorrow":
+//            myCustomCell.moodColor.backgroundColor = UIColor.cyan
+//        case "surprise":
+//            myCustomCell.moodColor.backgroundColor = UIColor.green
+//        default:
+//            break
+//        }
+//        myCustomCell.moodColor.isHidden = false
+//    }
+    
+//    func refreshOverallMood(cell: CellState) {
+//      for realmObject in realmObjects{
+//          if cell.date == realmObject.date{
+//            //reassign all the labels
+//          }
+//      }
+        
+//    }
+    
+}
 
-    //MARK: Selection
+//MARK: Extension to configure Calendar (move later?)
+extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate{
+    
+    //MARK: Cell Selection
     func handleCellSelection(view: JTAppleDayCellView?, cellState: CellState) {
         guard let myCustomCell = view as? CellView  else {
             return
         }
         if cellState.isSelected {
-            myCustomCell.selectedView.layer.cornerRadius =  25
-            myCustomCell.selectedView.isHidden = false
-            print(cellState.date)
-        } else {
-            myCustomCell.selectedView.isHidden = true
-        }
-    }
-    
-    func handleCellTextColor(view: JTAppleDayCellView?, cellState: CellState) {
-        
-        guard let myCustomCell = view as? CellView  else {
-            return
-        }
-        
-        if cellState.isSelected {
             myCustomCell.dayLabel.textColor = selectedTextColor
+//            refreshOverallMood(cell: cellState)
         } else {
             if cellState.dateBelongsTo == .thisMonth {
                 myCustomCell.dayLabel.textColor = notSelectedTextColor
             } else {
                 myCustomCell.dayLabel.textColor = notSelectedTextColor
             }
+            
         }
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         handleCellSelection(view: cell, cellState: cellState)
-        handleCellTextColor(view: cell, cellState: cellState)
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         handleCellSelection(view: cell, cellState: cellState)
-        handleCellTextColor(view: cell, cellState: cellState)
     }
-
     
     
-}
-
-//MARK: Extension (move later?)
-extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate{
-        
+    //MARK: Configure Calendar
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
-        let formatter = DateFormatter()
         formatter.dateFormat = "MM dd yyyy"
         
-        let startDate = formatter.date(from: "12 09 2016")!
+        let startDate = formatter.date(from: "12 09 1900")!
         let endDate = formatter.date(from: "12 09 2100")!
         let parameters = ConfigurationParameters(startDate: startDate,
                                                  endDate: endDate,
@@ -106,22 +135,21 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         } else {
             myCustomCell.isHidden = true
         }
-        
-        handleCellTextColor(view: cell, cellState: cellState)
+
         handleCellSelection(view: cell, cellState: cellState)
     }
     
-    // This sets the height of your header
+    //MARK: Month Header
     func calendar(_ calendar: JTAppleCalendarView, sectionHeaderSizeFor range: (start: Date, end: Date), belongingTo month: Int) -> CGSize {
         return CGSize(width: 200, height: 50)
     }
     
-    // This setups the display of your header
     func calendar(_ calendar: JTAppleCalendarView, willDisplaySectionHeader header: JTAppleHeaderView, range: (start: Date, end: Date), identifier: String) {
         let headerCell = (header as? MonthHeaderView)
         let calendar = Calendar.current
         let month = formatMonth(month: calendar.component(.month, from: range.start))
-        headerCell?.monthLabel.text = "\(month)"
+        let year = calendar.component(.year, from: range.start)
+        headerCell?.monthLabel.text = "\(month) \(year)"
        
     }
     
