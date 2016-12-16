@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F05E0FD1E0366D20061534B /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05E0FC1E0366D20061534B /* CalendarView.swift */; };
 		1F05E0FF1E0380D10061534B /* MonthHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F05E0FE1E0380D10061534B /* MonthHeaderView.xib */; };
+		1F05E1011E0395EF0061534B /* MonthHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F05E1001E0395EF0061534B /* MonthHeaderView.swift */; };
 		1F26A1FD1E02003F00CA7464 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26A1FC1E02003F00CA7464 /* AppDelegate.swift */; };
 		1F26A2011E02003F00CA7464 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F26A2001E02003F00CA7464 /* CalendarViewController.swift */; };
 		1F26A2041E02003F00CA7464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F26A2021E02003F00CA7464 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		1F05E0FC1E0366D20061534B /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		1F05E0FE1E0380D10061534B /* MonthHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthHeaderView.xib; sourceTree = "<group>"; };
+		1F05E1001E0395EF0061534B /* MonthHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthHeaderView.swift; sourceTree = "<group>"; };
 		1F26A1F91E02003F00CA7464 /* FaceForward.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceForward.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F26A1FC1E02003F00CA7464 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F26A2001E02003F00CA7464 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			children = (
 				1FBD715A1E0342EA001E36EE /* Router.swift */,
 				1F05E0FC1E0366D20061534B /* CalendarView.swift */,
+				1F05E1001E0395EF0061534B /* MonthHeaderView.swift */,
 				1FBD71641E035F44001E36EE /* CellView.swift */,
 			);
 			name = View;
@@ -351,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F05E0FD1E0366D20061534B /* CalendarView.swift in Sources */,
+				1F05E1011E0395EF0061534B /* MonthHeaderView.swift in Sources */,
 				1FBD715B1E0342EA001E36EE /* Router.swift in Sources */,
 				1FA89EBF1E022167004EBF08 /* DetailLogViewController.swift in Sources */,
 				1F26A2011E02003F00CA7464 /* CalendarViewController.swift in Sources */,

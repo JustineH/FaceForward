@@ -29,6 +29,7 @@ class CalendarViewController: UIViewController {
         calendarView.cellInset = CGPoint(x: 0, y: 0)
         calendarView.scrollEnabled = true
         calendarView.scrollingMode = .stopAtEachCalendarFrameWidth
+        calendarView.registerHeaderView(xibFileNames: ["MonthHeaderView"])
     }
 
     //MARK: Selection
@@ -109,5 +110,14 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         handleCellSelection(view: cell, cellState: cellState)
     }
     
+    // This sets the height of your header
+    func calendar(_ calendar: JTAppleCalendarView, sectionHeaderSizeFor range: (start: Date, end: Date), belongingTo month: Int) -> CGSize {
+        return CGSize(width: 200, height: 50)
+    }
+    // This setups the display of your header
+    func calendar(_ calendar: JTAppleCalendarView, willDisplaySectionHeader header: JTAppleHeaderView, range: (start: Date, end: Date), identifier: String) {
+        let headerCell = (header as? MonthHeaderView)
+        headerCell?.monthLabel.text = "month here"
+    }
 }
 
