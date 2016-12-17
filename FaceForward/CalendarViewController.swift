@@ -13,6 +13,15 @@ class CalendarViewController: UIViewController {
     
     //MARK: Properties
     @IBOutlet weak var calendarView: JTAppleCalendarView!
+   
+    @IBOutlet weak var LogsTableView: UITableView!
+    
+    @IBOutlet weak var overallFace: UIImageView!
+    @IBOutlet weak var happyPercent: UILabel!
+    @IBOutlet weak var surprisedPercent: UILabel!
+    @IBOutlet weak var sadPercent: UILabel!
+    @IBOutlet weak var angryPercent: UILabel!
+    
     // We cache our colors because we do not want to be creating
     // a new color every time a cell is displayed. We do not want a laggy
     // scrolling calendar.
@@ -72,11 +81,21 @@ class CalendarViewController: UIViewController {
 //      for realmObject in realmObjects{
 //          if cell.date == realmObject.date{
 //            //reassign all the labels
+//            overallFace.image = image
+//            happyPercent.text =
+//            surprisedPercent.text =
+//            sadPercent.text =
+//            angryPercent.text =
 //          }
 //      }
-        
+    
 //    }
     
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showDetail" {
+//            let detailVC:DetailLogViewController = segue.destination as! DetailLogViewController
+//        }
+//    }
 }
 
 
