@@ -53,13 +53,14 @@ class SurveyViewController: UIViewController {
     }
     
     @IBAction func nextButton(_ sender: Any) {
+        let date = Date()
         let newMood = Emotion()
         newMood.moodInput = selectedMood
         newMood.sleepInput = sleepValue
         newMood.exerciseInput = didExercise!
         newMood.peopleInput = peopleTextField.text ?? ""
         newMood.notesInput = notesTextField.text ?? ""
-        
+        newMood.date = date
         print(newMood)
     }
     
