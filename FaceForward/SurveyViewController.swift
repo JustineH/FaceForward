@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SurveyViewController: UIViewController {
+class SurveyViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     //MARK: Properties
     @IBOutlet weak var moodPicker: UIPickerView!
@@ -20,11 +20,50 @@ class SurveyViewController: UIViewController {
     @IBOutlet weak var notesTextField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
     
+    var didExercise: Bool!
+    var selectedMood: String!
+    var sleepValue: Double!
+    var pickerData: [String] = [String]()
     
+    //MARK: Actions
+    
+    @IBAction func nextButton(_ sender: Any) {
+        let newMood = Emotion()
+        newMood.moodInput = selectedMood
+        newMood.sleepInput = sleepValue
+        newMood.exerciseInput = didExercise!
+        newMood.peopleInput = peopleTextField.text ?? ""
+        newMood.notesInput = notesTextField.text ?? ""
+        
+        print(newMood)
+    }
+    
+    @IBAction func sleepSlider(_ sender: Any) {
+        let sleepHours = sleepSlider.value as NSNumber
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .none
+        let svalue = formatter.string(from: sleepHours)
+        sleepValue = formatter.number(from: svalue!) as Double!
+        sleepHoursLabel.text = "\(sleepValue!) h"
+
+    }
+    
+    @IBAction func exerciseControl(_ sender: Any) {
+        if exerciseControl.selectedSegmentIndex == 0 {
+            didExercise = true
+        }else if exerciseControl.selectedSegmentIndex == 1 {
+            didExercise = false
+        }
+    }
+    
+    
+    
+    //MARK: View
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.moodPicker.delegate = self
+        self.moodPicker.dataSource = self
+        pickerData = ["Happy", "Surprised", "Sad", "Angry"]
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,6 +71,23 @@ class SurveyViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //MARK: Picker Stuffs
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedMood = pickerData[row] as String
+    }
 
     /*
     // MARK: - Navigation

@@ -63,6 +63,9 @@
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="12" minValue="0.0" maxValue="24" translatesAutoresizingMaskIntoConstraints="NO" id="N8G-gY-Qs0">
                                 <rect key="frame" x="138" y="223" width="224" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sleepSlider:" destination="Dop-n0-SRA" eventType="valueChanged" id="SbY-oF-E2u"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="24 h" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQB-o4-46Y">
                                 <rect key="frame" x="87" y="228" width="35" height="21"/>
@@ -78,6 +81,9 @@
                                     <segment title="yes"/>
                                     <segment title="no"/>
                                 </segments>
+                                <connections>
+                                    <action selector="exerciseControl:" destination="Dop-n0-SRA" eventType="valueChanged" id="wbc-YI-uwF"/>
+                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="who were you with?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vTy-sY-o1f">
                                 <rect key="frame" x="87" y="359" width="271" height="30"/>
@@ -105,6 +111,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="next"/>
+                                <connections>
+                                    <action selector="nextButton:" destination="Dop-n0-SRA" eventType="touchUpInside" id="n77-mZ-PNV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -114,11 +123,11 @@
                     <connections>
                         <outlet property="exerciseControl" destination="gZT-al-pZL" id="WIc-oa-3yg"/>
                         <outlet property="moodPicker" destination="V2y-zn-sQ7" id="rRB-U0-FnR"/>
-                        <outlet property="nextButton" destination="6NO-Ju-DoH" id="Xwd-GH-zhn"/>
+                        <outlet property="nextButton" destination="6NO-Ju-DoH" id="gk1-YA-b9r"/>
                         <outlet property="notesTextField" destination="gzO-hQ-iO9" id="VTE-vL-24Z"/>
                         <outlet property="peopleTextField" destination="vTy-sY-o1f" id="Wn7-px-A4u"/>
                         <outlet property="sleepHoursLabel" destination="JQB-o4-46Y" id="Mmb-Eg-FeX"/>
-                        <outlet property="sleepSlider" destination="N8G-gY-Qs0" id="2AT-yc-9Mh"/>
+                        <outlet property="sleepSlider" destination="N8G-gY-Qs0" id="reS-so-R6f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTS-zG-YhZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

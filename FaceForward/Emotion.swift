@@ -13,7 +13,7 @@ import RealmSwift
 class Emotion: Object {
     dynamic var moodInput = ""
     dynamic var sleepInput = 0.0
-    let exerciseInput: Bool? = nil
+    var exerciseInput: Bool?
     dynamic var peopleInput = ""
     dynamic var notesInput = ""
     dynamic var date: Date?
