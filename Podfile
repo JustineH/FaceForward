@@ -8,5 +8,5 @@ target 'FaceForward' do
   # Pods for FaceForward
 pod ‘JTAppleCalendar’, ‘~> 6.0’
 pod 'Charts', '~> 3.0'
-
+pod 'RealmSwift'
 end
