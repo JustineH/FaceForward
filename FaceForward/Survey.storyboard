@@ -111,6 +111,15 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="ufb-Qk-tZ9"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="exerciseControl" destination="gZT-al-pZL" id="WIc-oa-3yg"/>
+                        <outlet property="moodPicker" destination="V2y-zn-sQ7" id="rRB-U0-FnR"/>
+                        <outlet property="nextButton" destination="6NO-Ju-DoH" id="Xwd-GH-zhn"/>
+                        <outlet property="notesTextField" destination="gzO-hQ-iO9" id="VTE-vL-24Z"/>
+                        <outlet property="peopleTextField" destination="vTy-sY-o1f" id="Wn7-px-A4u"/>
+                        <outlet property="sleepHoursLabel" destination="JQB-o4-46Y" id="Mmb-Eg-FeX"/>
+                        <outlet property="sleepSlider" destination="N8G-gY-Qs0" id="2AT-yc-9Mh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTS-zG-YhZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,6 +10,17 @@ import UIKit
 
 class SurveyViewController: UIViewController {
 
+    //MARK: Properties
+    @IBOutlet weak var moodPicker: UIPickerView!
+    
+    @IBOutlet weak var sleepHoursLabel: UILabel!
+    @IBOutlet weak var sleepSlider: UISlider!
+    @IBOutlet weak var exerciseControl: UISegmentedControl!
+    @IBOutlet weak var peopleTextField: UITextField!
+    @IBOutlet weak var notesTextField: UITextField!
+    @IBOutlet weak var nextButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
