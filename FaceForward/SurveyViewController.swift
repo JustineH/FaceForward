@@ -8,11 +8,12 @@
 
 import UIKit
 
-class SurveyViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class SurveyViewController: UIViewController {
 
     //MARK: Properties
-    @IBOutlet weak var moodPicker: UIPickerView!
     
+    @IBOutlet weak var moodLabel: UILabel!
+    @IBOutlet weak var moodSlider: UISlider!
     @IBOutlet weak var sleepHoursLabel: UILabel!
     @IBOutlet weak var sleepSlider: UISlider!
     @IBOutlet weak var exerciseControl: UISegmentedControl!
@@ -26,6 +27,30 @@ class SurveyViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     var pickerData: [String] = [String]()
     
     //MARK: Actions
+    
+    
+    @IBAction func moodSlider(_ sender: Any) {
+        let moodValue = moodSlider.value as NSNumber
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .none
+        
+        let moodString = formatter.string(from:moodValue)!
+        switch moodString {
+        case "0":
+            moodLabel.text = "angry"
+        case "1":
+            moodLabel.text = "sad"
+        case "2":
+            moodLabel.text = "content"
+        case "3":
+            moodLabel.text = "happy"
+        case "4":
+            moodLabel.text = "on top of the world!"
+        default:
+            break
+        }
+        selectedMood = moodLabel.text
+    }
     
     @IBAction func nextButton(_ sender: Any) {
         let newMood = Emotion()
@@ -44,7 +69,7 @@ class SurveyViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         formatter.numberStyle = .none
         let svalue = formatter.string(from: sleepHours)
         sleepValue = formatter.number(from: svalue!) as Double!
-        sleepHoursLabel.text = "\(sleepValue!) h"
+        sleepHoursLabel.text = "I got \(sleepValue!) hrs of Sleep"
 
     }
     
@@ -61,9 +86,7 @@ class SurveyViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     //MARK: View
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.moodPicker.delegate = self
-        self.moodPicker.dataSource = self
-        pickerData = ["Happy", "Surprised", "Sad", "Angry"]
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,23 +95,7 @@ class SurveyViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     
-    //MARK: Picker Stuffs
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedMood = pickerData[row] as String
-    }
-
+   
     /*
     // MARK: - Navigation
 
