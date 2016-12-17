@@ -19,7 +19,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
 //    @IBOutlet weak var labelResults: UITextView!
     @IBOutlet weak var faceResults: UITextView!
     
-    var googleAPIKey = "AIzaSyAfKfe9B9SARBG2Li5m0MBpa3m1To_Irro"
+    var googleAPIKey = ""
     var googleURL: URL {
         return URL(string: "https://vision.googleapis.com/v1/images:annotate?key=\(googleAPIKey)")!
     }
