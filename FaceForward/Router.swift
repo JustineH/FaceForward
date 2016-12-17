@@ -53,9 +53,13 @@ class Router: NSObject {
         return survey().instantiateViewController(withIdentifier: "SurveyViewController") as! SurveyViewController
     }
     
-    fileprivate class func confirmPictureVC() -> ConfirmPictureViewController {
-        return photo().instantiateViewController(withIdentifier: "ConfirmPictureViewController") as! ConfirmPictureViewController
+    fileprivate class func confirmPictureVC() -> TakePictureViewController {
+        return photo().instantiateViewController(withIdentifier: "TakePictureViewController") as! TakePictureViewController
     }
+    
+//    fileprivate class func confirmPictureVC() -> ConfirmPictureViewController {
+//        return photo().instantiateViewController(withIdentifier: "ConfirmPictureViewController") as! ConfirmPictureViewController
+//    }
     
     fileprivate class func suggestionsVC() -> SuggestionsViewController {
         return suggestions().instantiateViewController(withIdentifier: "SuggestionsViewController") as! SuggestionsViewController
