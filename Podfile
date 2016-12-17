@@ -5,10 +5,11 @@ target 'FaceForward' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for FaceForward
+# Pods for FaceForward
 pod ‘JTAppleCalendar’, ‘~> 6.0’
 pod 'Charts', '~> 3.0'
 pod 'RealmSwift'
 pod 'SwiftyJSON', '~> 3.1.3'
+pod 'UICircularProgressRing', '~> 1.1'
 
 end

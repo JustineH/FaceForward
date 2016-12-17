@@ -35,7 +35,7 @@
                                     <constraint firstAttribute="width" constant="240" id="os5-C2-mS5"/>
                                     <constraint firstAttribute="height" constant="30" id="uUn-zl-ARU"/>
                                 </constraints>
-                                <state key="normal" title="Continue"/>
+                                <state key="normal" title="Next"/>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Facial Results" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cgf-lB-Z85">
                                 <rect key="frame" x="67" y="335" width="240" height="177"/>

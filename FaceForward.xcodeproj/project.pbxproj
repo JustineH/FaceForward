@@ -31,7 +31,8 @@
 		1FBD71631E034E9A001E36EE /* CalendarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FBD71621E034E9A001E36EE /* CalendarCell.xib */; };
 		1FBD71651E035F44001E36EE /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD71641E035F44001E36EE /* CellView.swift */; };
 		5212E88B1E035862000209BD /* Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212E88A1E035862000209BD /* Styling.swift */; };
-		5286A2071E047171005028D0 /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A2061E047171005028D0 /* TakePictureViewController.swift */; };
+		5286A2091E053633005028D0 /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A2081E053633005028D0 /* TakePictureViewController.swift */; };
+		5286A20B1E0566D4005028D0 /* NetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A20A1E0566D4005028D0 /* NetworkViewController.swift */; };
 		C4E7074E1629F9016C8B5985 /* Pods_FaceForward.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17958DEA5C86271ABFD5DCB /* Pods_FaceForward.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,7 +64,8 @@
 		1FBD71641E035F44001E36EE /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		3C2A011C095BE3AAA8A0D4B8 /* Pods-FaceForward.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceForward.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaceForward/Pods-FaceForward.release.xcconfig"; sourceTree = "<group>"; };
 		5212E88A1E035862000209BD /* Styling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styling.swift; sourceTree = "<group>"; };
-		5286A2061E047171005028D0 /* TakePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePictureViewController.swift; sourceTree = "<group>"; };
+		5286A2081E053633005028D0 /* TakePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePictureViewController.swift; sourceTree = "<group>"; };
+		5286A20A1E0566D4005028D0 /* NetworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkViewController.swift; sourceTree = "<group>"; };
 		B17958DEA5C86271ABFD5DCB /* Pods_FaceForward.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaceForward.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D89B48985DF69A546BC44AB9 /* Pods-FaceForward.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceForward.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FaceForward/Pods-FaceForward.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,7 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				1FA89EC41E0221C2004EBF08 /* ConfirmPictureViewController.swift */,
-				5286A2061E047171005028D0 /* TakePictureViewController.swift */,
+				5286A2081E053633005028D0 /* TakePictureViewController.swift */,
+				5286A20A1E0566D4005028D0 /* NetworkViewController.swift */,
 			);
 			name = Picture;
 			sourceTree = "<group>";
@@ -370,7 +373,6 @@
 				1F05E1011E0395EF0061534B /* MonthHeaderView.swift in Sources */,
 				5212E88B1E035862000209BD /* Styling.swift in Sources */,
 				1FBD715B1E0342EA001E36EE /* Router.swift in Sources */,
-				5286A2071E047171005028D0 /* TakePictureViewController.swift in Sources */,
 				1FA89EBF1E022167004EBF08 /* DetailLogViewController.swift in Sources */,
 				1F26A2011E02003F00CA7464 /* CalendarViewController.swift in Sources */,
 				1FA89EC51E0221C2004EBF08 /* ConfirmPictureViewController.swift in Sources */,
@@ -379,8 +381,10 @@
 				1F26A1FD1E02003F00CA7464 /* AppDelegate.swift in Sources */,
 				1FA89EC11E02217C004EBF08 /* SurveyViewController.swift in Sources */,
 				1F7277D51E0491FB00085D69 /* ConfigureCalendar.swift in Sources */,
+				5286A2091E053633005028D0 /* TakePictureViewController.swift in Sources */,
 				1F7277D71E04962200085D69 /* Emotion.swift in Sources */,
 				1FBD71651E035F44001E36EE /* CellView.swift in Sources */,
+				5286A20B1E0566D4005028D0 /* NetworkViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
