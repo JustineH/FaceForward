@@ -36,6 +36,9 @@
                                     <constraint firstAttribute="height" constant="30" id="uUn-zl-ARU"/>
                                 </constraints>
                                 <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextSaveButton:" destination="KiM-Gk-U1w" eventType="touchUpInside" id="ppU-eb-aFg"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Facial Results" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cgf-lB-Z85">
                                 <rect key="frame" x="67" y="335" width="240" height="177"/>
@@ -79,6 +82,8 @@
                     <connections>
                         <outlet property="faceResults" destination="cgf-lB-Z85" id="TYp-0t-7S5"/>
                         <outlet property="imageView" destination="u1w-iH-Ld7" id="feC-E5-Lay"/>
+                        <outlet property="nextButton" destination="Ay1-XV-I62" id="tbu-QJ-dGV"/>
+                        <outlet property="nextSaveButton" destination="Ay1-XV-I62" id="uSj-xG-QCk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9uh-VP-y2J" userLabel="First Responder" sceneMemberID="firstResponder"/>
