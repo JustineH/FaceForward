@@ -32,7 +32,7 @@
 		1FBD71651E035F44001E36EE /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD71641E035F44001E36EE /* CellView.swift */; };
 		5212E88B1E035862000209BD /* Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212E88A1E035862000209BD /* Styling.swift */; };
 		5286A2091E053633005028D0 /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A2081E053633005028D0 /* TakePictureViewController.swift */; };
-		5286A20B1E0566D4005028D0 /* NetworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A20A1E0566D4005028D0 /* NetworkViewController.swift */; };
+		5286A20B1E0566D4005028D0 /* NetworkManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A20A1E0566D4005028D0 /* NetworkManagerViewController.swift */; };
 		C4E7074E1629F9016C8B5985 /* Pods_FaceForward.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17958DEA5C86271ABFD5DCB /* Pods_FaceForward.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +65,7 @@
 		3C2A011C095BE3AAA8A0D4B8 /* Pods-FaceForward.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceForward.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaceForward/Pods-FaceForward.release.xcconfig"; sourceTree = "<group>"; };
 		5212E88A1E035862000209BD /* Styling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styling.swift; sourceTree = "<group>"; };
 		5286A2081E053633005028D0 /* TakePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePictureViewController.swift; sourceTree = "<group>"; };
-		5286A20A1E0566D4005028D0 /* NetworkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkViewController.swift; sourceTree = "<group>"; };
+		5286A20A1E0566D4005028D0 /* NetworkManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManagerViewController.swift; sourceTree = "<group>"; };
 		B17958DEA5C86271ABFD5DCB /* Pods_FaceForward.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaceForward.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D89B48985DF69A546BC44AB9 /* Pods-FaceForward.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceForward.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FaceForward/Pods-FaceForward.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -218,7 +218,7 @@
 			children = (
 				1FA89EC41E0221C2004EBF08 /* ConfirmPictureViewController.swift */,
 				5286A2081E053633005028D0 /* TakePictureViewController.swift */,
-				5286A20A1E0566D4005028D0 /* NetworkViewController.swift */,
+				5286A20A1E0566D4005028D0 /* NetworkManagerViewController.swift */,
 			);
 			name = Picture;
 			sourceTree = "<group>";
@@ -384,7 +384,7 @@
 				5286A2091E053633005028D0 /* TakePictureViewController.swift in Sources */,
 				1F7277D71E04962200085D69 /* Emotion.swift in Sources */,
 				1FBD71651E035F44001E36EE /* CellView.swift in Sources */,
-				5286A20B1E0566D4005028D0 /* NetworkViewController.swift in Sources */,
+				5286A20B1E0566D4005028D0 /* NetworkManagerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
