@@ -18,6 +18,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var imageView: UIImageView!
     //   @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var faceResults: UITextView!
+    @IBOutlet weak var nextButton: UIButton!
     
     var googleAPIKey = ""
     var googleURL: URL {
@@ -29,6 +30,14 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         imagePicker.sourceType = .photoLibrary
         
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func nextSaveButton(_ sender: Any) {
+//        let realm = try! Realm()
+//        
+//        try! realm.write {
+//            realm.add()
+//        }
     }
     
     override func viewDidLoad() {
@@ -84,29 +93,20 @@ extension TakePictureViewController {
                         let personData:JSON = faceAnnotations[index]
                         
                         for emotion in emotions {
-                            
                             let lookup = emotion + "Likelihood"
                             let result: String = personData[lookup].stringValue
                             measuredAnnotations[emotion]! += emotionLikelihoods[result]!
-//                            for (key, value) in emotionLikelihoods {
-//                                let likelihoodNum:Double = value
-//                                let percent:Int = Int(round(likelihoodNum * 100))
-                               // let numFormatter = NumberFormatter()
-                              //  numFormatter.numberStyle = .percent
-                                
                         }
                         
                     }
-                    
                     for (emotion, total) in measuredAnnotations {
                         let likelihood:Double = total / Double(numPeopleDetected)
                         let percent: Int = Int(round(likelihood * 100))
                         self.faceResults.text! += "\(emotion): \(percent)%\n"
                     }
-                }
-                else{
-                        self.faceResults.text = "No faces found."
-                    }
+                } else {
+                            self.faceResults.text = "No faces found."
+                        }
             }
 
         }
