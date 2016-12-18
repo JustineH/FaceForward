@@ -9,6 +9,14 @@
 import UIKit
 
 class ConfirmPictureViewController: UIViewController {
+    
+    // MARK: Variables
+    
+    
+    // MARK: Properties
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
