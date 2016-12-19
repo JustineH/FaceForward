@@ -20,7 +20,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Djb-ko-YwX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="867"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tyG-uT-hJJ" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
@@ -73,7 +73,7 @@
                                         <rect key="frame" x="0.0" y="28" width="228" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Umq-9w-jB8" id="erU-OJ-CUp">
-                                            <rect key="frame" x="0.0" y="0.0" width="228" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="228" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -92,6 +92,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0AN-cG-A2H" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="16" y="607" width="343" height="195"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -117,10 +122,13 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendar" image="second" id="cPa-gy-q4n"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="867"/>
                     <connections>
                         <outlet property="LogsTableView" destination="mq1-vR-uuy" id="jxt-hR-TvI"/>
                         <outlet property="angryPercent" destination="XlR-Ia-5fz" id="Q0u-M9-Ji4"/>
                         <outlet property="calendarView" destination="tyG-uT-hJJ" id="C64-eG-2Xc"/>
+                        <outlet property="chartView" destination="0AN-cG-A2H" id="eyd-kZ-dXL"/>
                         <outlet property="happyPercent" destination="e93-Z1-ogn" id="b9R-so-C6m"/>
                         <outlet property="overallFace" destination="Eqm-WN-tOe" id="GHk-Ju-1vc"/>
                         <outlet property="sadPercent" destination="G8q-Iq-O2f" id="VKy-nl-t0f"/>
@@ -151,7 +159,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Ccj-kD-vJA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="dHn-aW-wMi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="867"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="people" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyP-kM-XB6">
@@ -232,16 +240,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0AN-cG-A2H" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="16" y="405" width="343" height="195"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="chartView" destination="0AN-cG-A2H" id="CNd-K4-2sl"/>
                         <outlet property="exerciseLabel" destination="dZH-GO-uIH" id="ZeP-xS-MC5"/>
                         <outlet property="moodLabel" destination="Umu-nF-0tf" id="CWn-fk-yJA"/>
                         <outlet property="notesTextView" destination="kyi-xd-erp" id="Ti1-Tq-HS8"/>
