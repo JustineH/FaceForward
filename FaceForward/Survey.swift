@@ -9,5 +9,8 @@
 import UIKit
 
 class Survey: NSObject {
-
+    var mooodInput: Mood!
+    var sleepInput: Sleep!
+    var exerciseInput: Bool!
+    var peopleInput: String?
 }

@@ -7,7 +7,10 @@
 //
 
 import UIKit
+import RealmSwift
 
-class DataEntry: NSObject {
-
+class DataEntry: Object {
+    dynamic var date = Date()
+    dynamic var emotion: Emotion!
+    dynamic var survey: Survey!
 }

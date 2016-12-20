@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Charts
 import RealmSwift
 
 class DetailLogViewController: UIViewController {
@@ -20,21 +19,19 @@ class DetailLogViewController: UIViewController {
     @IBOutlet weak var peopleLabel: UILabel!
     @IBOutlet weak var notesTextView: UITextView!
     
-    var passedSurveyDetails: Survey
-    
 //MARK: View
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateLabels()
+//        updateLabels()
     }
     
 //MARK: Labels
-    func updateLabels(){
-        titleDateLabel.text = "On \(date) you were..."
-        moodLabel.text = passedSurveyDetails.moodInput!
-        exerciseLabel.text = passedSurveyDetails.exerciseInput!
-        sleepLabel.text = passedSurveyDetails.sleepInput!
-        peopleLabel.text = passedSurveyDetails.peopleInput ?? ""
-        notesTextView.text = passedSurveyDetails.notesInput ?? ""
-    }
+//    func updateLabels() {
+//        titleDateLabel.text = "On \(date) you were..."
+//        moodLabel.text =
+//        exerciseLabel.text =
+//        sleepLabel.text =
+//        peopleLabel.text =
+//        notesTextView.text =
+//    }
 }

@@ -8,6 +8,8 @@
 
 import UIKit
 import JTAppleCalendar
+import Charts
+import RealmSwift
 
 class CalendarViewController: UIViewController {
     
@@ -24,7 +26,7 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var angryPercent: UILabel!
     
     //chart
-    @IBOutlet weak var chartView: LineChartView!
+    @IBOutlet weak var chartView: ScatterChartView!
     weak var axisFormatDelegate: IAxisValueFormatter?
     
     // We cache our colors because we do not want to be creating
@@ -52,7 +54,6 @@ class CalendarViewController: UIViewController {
 //        displayPreviousMoods()
         
         axisFormatDelegate = self
-        updateChartWithData()
         chartView.noDataText = "No data :("
         
     }
@@ -65,7 +66,7 @@ class CalendarViewController: UIViewController {
 //            setBackgroundColor(object: )
 //        }
 //    }
-    
+//    
 //    func setBackgroundColor(object: ) {
 //        guard let myCustomCell = view as? CellView  else {
 //            return
@@ -85,7 +86,7 @@ class CalendarViewController: UIViewController {
 //        }
 //        myCustomCell.moodColor.isHidden = false
 //    }
-    
+//    
 //    func refreshOverallMood(cell: CellState) {
 //      for realmObject in realmObjects{
 //          if cell.date == realmObject.date{
@@ -97,58 +98,66 @@ class CalendarViewController: UIViewController {
 //            angryPercent.text =
 //          }
 //      }
-    
+//    
 //    }
-    
+//    
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "showDetail" {
 //            let detailVC:DetailLogViewController = segue.destination as! DetailLogViewController
 //        }
 //    }
-    
+//    
     
     //MARK: Chart (move later)
-    func updateChartWithData() {
-        var emotionEntries: [Survey] = []
-        let savedEmotions = getEmotionsFromRealm()
+    func updateChart() {
+        var dataEntries: [ChartDataEntry] = []
+        let savedEntries = getSavedEntriesFromDatabase()
+        var moodValue = 0
         
-        for i in 0..<savedEmotions.count {
-            let timeIntervalForDate: TimeInterval = Survey.date.timeIntervalSince1970
-            let emotionEntry = LineChartDataEntry(x:Double(i), y:Double(savedEmotions[i].count))
-            emotionEntries.append(dataEntry)
+        for i in 0..<savedEntries.count {
+            switch savedEntries[i].survey.mooodInput.mood.toString() {
+                case "great":
+                    moodValue = 0
+                case "good":
+                    moodValue = 1
+                case "average":
+                    moodValue = 2
+                case "bad":
+                    moodValue = 3
+                case "very bad":
+                    moodValue = 4
+                default:
+                    break
+            }
+            
+            let dataEntry = ChartDataEntry(x: Double(i), y: Double(moodValue))
+            dataEntries.append(dataEntry)
         }
         
-        let chartDataSet = LineChartDataSet(values: emotionEntries, label: "emotions")
-        let chartData = LineChartData(dataSet: chartDataSet)
+        let chartDataSet = ScatterChartDataSet(values: dataEntries, label: "emotions")
+        let chartData = ScatterChartData(dataSet: chartDataSet)
         chartView.data = chartData
-        
-        let xaxis = chartView.xAxis
-        xaxis.valueFormatter = axisFormatDelegate
     }
     
-    
-    func getEmotionsFromRealm() -> Results<Survey>{
-        do{
+    func getSavedEntriesFromDatabase() -> Results<DataEntry>{
+        do {
             let realm = try Realm()
-            return realm.objects(Survey)
+            return realm.objects(DataEntry.self)
         } catch let error as NSError {
             fatalError(error.localizedDescription)
         }
     }
-    
-    
 }
 
 
 //MARK: IAxisValueFormatter
-extension DetailLogViewController: IAxisValueFormatter {
+extension CalendarViewController: IAxisValueFormatter {
+    
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm.ss"
+        dateFormatter.dateFormat = "dd"
         return dateFormatter.string(from: Date(timeIntervalSince1970:value))
     }
-    
-    
 }
 
 
