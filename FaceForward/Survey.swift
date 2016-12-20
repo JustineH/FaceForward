@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import RealmSwift
 
-class Survey: NSObject {
-    var mooodInput: Mood!
+class Survey: Object {
+    var moodInput: Mood!
     var sleepInput: Sleep!
     var exerciseInput: Bool!
     var peopleInput: String?

@@ -8,28 +8,25 @@
 
 import Foundation
 
-struct Mood {
-    enum MoodInput {
-        case great
-        case good
-        case average
-        case bad
-        case veryBad
+enum Mood: String {
+        case great = "great"
+        case good = "good"
+        case average = "average"
+        case bad = "bad"
+        case veryBad = "veryBad"
         
-        func toString() -> String{
+        func toValue() -> Int{
             switch self{
             case.great:
-                return "great"
+                return 0
             case.good:
-                return "good"
+                return 1
             case.average:
-                return "average"
+                return 2
             case.bad:
-                return "bad"
+                return 3
             case.veryBad:
-                return "very bad"
+                return 4
             }
         }
     }
-    let mood: MoodInput
-}

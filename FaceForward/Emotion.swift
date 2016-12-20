@@ -7,11 +7,11 @@
 //
 
 import UIKit
+import RealmSwift
 
-
-class Emotion: NSObject {
-    var longestEmotion: String!
-    var emotions: [String:Double] = [:]
+class Emotion: Object {
+    var longestEmotion: EmotionName!
+    var emotions: [EmotionName:Double] = [:]
 
 }
 

@@ -58,37 +58,25 @@ class CalendarViewController: UIViewController {
         
     }
     
-    //MARK: Mood Display
-//    func displayPreviousMoods() {
-//    let realmObjects = []
-//        
-//        for 0..<realmObjects.count {
-//            setBackgroundColor(object: )
-//        }
-//    }
-//    
-//    func setBackgroundColor(object: ) {
-//        guard let myCustomCell = view as? CellView  else {
-//            return
-//        }
-//        let mood = object.mood
-//        switch mood {
-//        case "angry":
-//            myCustomCell.moodColor.backgroundColor = UIColor.red
-//        case "joy":
-//            myCustomCell.moodColor.backgroundColor = UIColor.yellow
-//        case "sorrow":
-//            myCustomCell.moodColor.backgroundColor = UIColor.cyan
-//        case "surprise":
-//            myCustomCell.moodColor.backgroundColor = UIColor.green
-//        default:
-//            break
-//        }
-//        myCustomCell.moodColor.isHidden = false
-//    }
-//    
+    //MARK: Mood Display (move later)
+    func displayPreviousMoods() {
+        let savedEntries = getSavedEntriesFromDatabase()
+        for i in 0..<savedEntries.count {
+            setBackgroundColor(mood: savedEntries[i].emotion.longestEmotion)
+        }
+    }
+    
+    func setBackgroundColor(mood: EmotionName) {
+        guard let myCustomCell = view as? CellView  else {
+            return
+        }
+        let color = EmotionName.setCalendarCellColor(mood)
+        myCustomCell.moodColor.backgroundColor = color()
+        myCustomCell.moodColor.isHidden = false
+    }
+    
 //    func refreshOverallMood(cell: CellState) {
-//      for realmObject in realmObjects{
+//      for i in savedEntries{
 //          if cell.date == realmObject.date{
 //            //reassign all the labels
 //            overallFace.image = image
@@ -98,40 +86,24 @@ class CalendarViewController: UIViewController {
 //            angryPercent.text =
 //          }
 //      }
-//    
+    
 //    }
-//    
+    
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "showDetail" {
 //            let detailVC:DetailLogViewController = segue.destination as! DetailLogViewController
 //        }
 //    }
-//    
+    
     
     //MARK: Chart (move later)
     func updateChart() {
         var dataEntries: [ChartDataEntry] = []
         let savedEntries = getSavedEntriesFromDatabase()
-        var moodValue = 0
         
         for i in (savedEntries.count - 31)..<savedEntries.count {
             let date = getDate(savedDate: savedEntries[i].date)
-            
-            switch savedEntries[i].survey.mooodInput.mood.toString() {
-                case "great":
-                    moodValue = 0
-                case "good":
-                    moodValue = 1
-                case "average":
-                    moodValue = 2
-                case "bad":
-                    moodValue = 3
-                case "very bad":
-                    moodValue = 4
-                default:
-                    break
-            }
-            
+            let moodValue = savedEntries[i].survey.moodInput.toValue()
             let dataEntry = ChartDataEntry(x: Double(Int(date)), y: Double(moodValue))
             dataEntries.append(dataEntry)
         }
