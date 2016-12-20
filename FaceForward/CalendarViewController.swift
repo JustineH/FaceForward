@@ -114,7 +114,9 @@ class CalendarViewController: UIViewController {
         let savedEntries = getSavedEntriesFromDatabase()
         var moodValue = 0
         
-        for i in 0..<savedEntries.count {
+        for i in (savedEntries.count - 31)..<savedEntries.count {
+            let date = getDate(savedDate: savedEntries[i].date)
+            
             switch savedEntries[i].survey.mooodInput.mood.toString() {
                 case "great":
                     moodValue = 0
@@ -130,13 +132,23 @@ class CalendarViewController: UIViewController {
                     break
             }
             
-            let dataEntry = ChartDataEntry(x: Double(i), y: Double(moodValue))
+            let dataEntry = ChartDataEntry(x: Double(Int(date)), y: Double(moodValue))
             dataEntries.append(dataEntry)
         }
         
         let chartDataSet = ScatterChartDataSet(values: dataEntries, label: "emotions")
         let chartData = ScatterChartData(dataSet: chartDataSet)
         chartView.data = chartData
+        
+        let xaxis = chartView.xAxis
+        xaxis.valueFormatter = axisFormatDelegate
+    }
+    
+    func getDate(savedDate: Date) -> (Int){
+        let date = savedDate
+        let calendar = Calendar.current
+        let components = calendar.component(.day, from: date)
+        return components
     }
     
     func getSavedEntriesFromDatabase() -> Results<DataEntry>{
@@ -154,9 +166,9 @@ class CalendarViewController: UIViewController {
 extension CalendarViewController: IAxisValueFormatter {
     
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd"
-        return dateFormatter.string(from: Date(timeIntervalSince1970:value))
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "MM dd"
+        return "\(value)"
     }
 }
 
