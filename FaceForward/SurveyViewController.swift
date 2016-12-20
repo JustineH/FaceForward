@@ -29,8 +29,6 @@ class SurveyViewController: UIViewController {
     var sleep: Sleep!
     
     //MARK: Actions
-    
-    
     @IBAction func moodSlider(_ sender: Any) {
         let moodValue = moodSlider.value as NSNumber
         let formatter = NumberFormatter()

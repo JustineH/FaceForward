@@ -29,9 +29,10 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var chartView: ScatterChartView!
     weak var axisFormatDelegate: IAxisValueFormatter?
     
+    //scroll
+    @IBOutlet weak var mainScrollView: UIScrollView!
     // We cache our colors because we do not want to be creating
-    // a new color every time a cell is displayed. We do not want a laggy
-    // scrolling calendar.
+    // a new color every time a cell is displayed.
     let notSelectedTextColor = UIColor.black
     let selectedTextColor = UIColor.purple
     
@@ -41,38 +42,31 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        calendarView.registerCellViewXib(file: "CalendarCell") // Registering your cell is manditory
+        self.view.isUserInteractionEnabled = true
+        
+        configureView()
+//        displayPreviousMoods()
+   
+    }
+    
+    func configureView() {
+        
+        calendarView.registerCellViewXib(file: "CalendarCell")
         calendarView.registerHeaderView(xibFileNames: ["MonthHeaderView"])
         
         calendarView.delegate = self
         calendarView.dataSource = self
-        calendarView.cellInset = CGPoint(x: 0, y: 0)
-        
-        calendarView.scrollEnabled = true
-        calendarView.scrollingMode = .stopAtEachCalendarFrameWidth
-        calendarView.scrollToDate(currentDate)
-//        displayPreviousMoods()
         
         axisFormatDelegate = self
         chartView.noDataText = "No data :("
         
-    }
-    
-    //MARK: Mood Display (move later)
-    func displayPreviousMoods() {
-        let savedEntries = getSavedEntriesFromDatabase()
-        for i in 0..<savedEntries.count {
-            setBackgroundColor(mood: savedEntries[i].emotion.longestEmotion)
-        }
-    }
-    
-    func setBackgroundColor(mood: EmotionName) {
-        guard let myCustomCell = view as? CellView  else {
-            return
-        }
-        let color = EmotionName.setCalendarCellColor(mood)
-        myCustomCell.moodColor.backgroundColor = color()
-        myCustomCell.moodColor.isHidden = false
+        calendarView.cellInset = CGPoint(x: 0, y: 0)
+        calendarView.scrollEnabled = true
+        calendarView.scrollingMode = .stopAtEachCalendarFrameWidth
+        calendarView.scrollToDate(currentDate)
+        
+        mainScrollView.contentSize = CGSize(width: view.bounds.size.width, height: 1000)
+        
     }
     
 //    func refreshOverallMood(cell: CellState) {
@@ -94,8 +88,7 @@ class CalendarViewController: UIViewController {
 //            let detailVC:DetailLogViewController = segue.destination as! DetailLogViewController
 //        }
 //    }
-    
-    
+
     //MARK: Chart (move later)
     func updateChart() {
         var dataEntries: [ChartDataEntry] = []
@@ -115,14 +108,14 @@ class CalendarViewController: UIViewController {
         let xaxis = chartView.xAxis
         xaxis.valueFormatter = axisFormatDelegate
     }
-    
+
     func getDate(savedDate: Date) -> (Int){
         let date = savedDate
         let calendar = Calendar.current
         let components = calendar.component(.day, from: date)
         return components
     }
-    
+
     func getSavedEntriesFromDatabase() -> Results<DataEntry>{
         do {
             let realm = try Realm()
@@ -134,14 +127,14 @@ class CalendarViewController: UIViewController {
 }
 
 
-//MARK: IAxisValueFormatter
+    //MARK: IAxisValueFormatter
 extension CalendarViewController: IAxisValueFormatter {
-    
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "MM dd"
+        //        let dateFormatter = DateFormatter()
+        //        dateFormatter.dateFormat = "MM dd"
         return "\(value)"
     }
 }
+    
 
 
