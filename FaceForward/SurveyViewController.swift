@@ -25,10 +25,10 @@ class SurveyViewController: UIViewController {
     var selectedMood: String!
     var sleepValue: Double!
     var pickerData: [String] = [String]()
+    var mood: Mood!
+    var sleep: Sleep!
     
     //MARK: Actions
-    
-    
     @IBAction func moodSlider(_ sender: Any) {
         let moodValue = moodSlider.value as NSNumber
         let formatter = NumberFormatter()
@@ -53,15 +53,12 @@ class SurveyViewController: UIViewController {
     }
     
     @IBAction func nextButton(_ sender: Any) {
-        let date = Date()
-        let newMood = Survey()
-        newMood.moodInput = selectedMood
-        newMood.sleepInput = sleepValue
-        newMood.exerciseInput = didExercise!
-        newMood.peopleInput = peopleTextField.text ?? ""
-        newMood.notesInput = notesTextField.text ?? ""
-        
-        print(newMood)
+        let newSurvey = Survey()
+        newSurvey.moodInput = mood
+        newSurvey.sleepInput = sleep
+        newSurvey.exerciseInput = didExercise
+        newSurvey.peopleInput = peopleTextField.text ?? ""
+        print(newSurvey)
     }
     
     @IBAction func sleepSlider(_ sender: Any) {
