@@ -11,18 +11,6 @@ import SwiftyJSON
 import Alamofire
 
 
-// call from Model file
-enum EmotionName: String {
-    case sadness = "sadness"
-    case anger = "anger"
-    case happiness = "happiness"
-    case fear = "fear"
-    case neutral = "neutral"
-    case contempt = "contempt"
-    case disgust = "disgust"
-    case surprise = "surprise"
-}
-
 let microsoftUrl = "https://api.projectoxford.ai/emotion/v1.0/recognize"
 let microsoftKey = FFConstants.microsoftKey
 
