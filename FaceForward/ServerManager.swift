@@ -43,8 +43,10 @@ class ServerManager: NSObject {
                     print("Validation successful.")
                     let json = JSON(response.result.value!)
                     var result = [EmotionName:Double]()
-                    for (name, value) in json[0]["scores"].dictionary! {
-                        result[EmotionName(rawValue: name)!] = value.double
+                    if let dictionary = json[0]["scores"].dictionary {
+                        for (name, value) in dictionary {
+                            result[EmotionName(rawValue: name)!] = value.double
+                        }
                     }
                         completion(result)
                 case .failure(let error):
