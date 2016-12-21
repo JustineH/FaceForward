@@ -14,6 +14,12 @@ import RealmSwift
 class CalendarViewController: UIViewController {
     
     //MARK: Properties
+    let currentDate = Date()
+    
+    //dataSource & delegate
+    let datasource = DataSource()
+    let delegate = Delegate()
+    
     //calendar
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var LogsTableView: UITableView!
@@ -31,13 +37,6 @@ class CalendarViewController: UIViewController {
     
     //scroll
     @IBOutlet weak var mainScrollView: UIScrollView!
-    // We cache our colors because we do not want to be creating
-    // a new color every time a cell is displayed.
-    let notSelectedTextColor = UIColor.black
-    let selectedTextColor = UIColor.purple
-    
-    let formatter = DateFormatter()
-    let currentDate = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,8 +51,8 @@ class CalendarViewController: UIViewController {
         calendarView.registerCellViewXib(file: "CalendarCell")
         calendarView.registerHeaderView(xibFileNames: ["MonthHeaderView"])
         
-        calendarView.delegate = self
-        calendarView.dataSource = self
+        calendarView.delegate = delegate
+        calendarView.dataSource = datasource
         
         axisFormatDelegate = self
         chartView.noDataText = "No data :("
@@ -65,6 +64,23 @@ class CalendarViewController: UIViewController {
         
         mainScrollView.contentSize = CGSize(width: view.bounds.size.width, height: 1000)
         
+    }
+    
+    //MARK: Moods Display
+    func displayPreviousMoods() {
+        let savedEntries = getSavedEntriesFromDatabase()
+        for i in 0..<savedEntries.count {
+            setBackgroundColor(mood: savedEntries[i].emotion.longestEmotion)
+        }
+    }
+    
+    func setBackgroundColor(mood: EmotionName) {
+        guard let myCustomCell = view as? CellView  else {
+            return
+        }
+        let color = EmotionName.setCalendarCellColor(mood)
+        myCustomCell.moodColor.backgroundColor = color()
+        myCustomCell.moodColor.isHidden = false
     }
     
     func refreshOverallMood(cell: CellState) {
@@ -79,12 +95,12 @@ class CalendarViewController: UIViewController {
         
     }
     
+    //MARK: Navigation
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "showDetail" {
 //            let detailVC:DetailLogViewController = segue.destination as! DetailLogViewController
 //        }
 //    }
-    
 
 
     //MARK: Chart (move later)
