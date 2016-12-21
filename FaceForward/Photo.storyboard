@@ -83,7 +83,6 @@
                         <outlet property="faceResults" destination="cgf-lB-Z85" id="TYp-0t-7S5"/>
                         <outlet property="imageView" destination="u1w-iH-Ld7" id="feC-E5-Lay"/>
                         <outlet property="nextButton" destination="Ay1-XV-I62" id="tbu-QJ-dGV"/>
-                        <outlet property="nextSaveButton" destination="Ay1-XV-I62" id="uSj-xG-QCk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9uh-VP-y2J" userLabel="First Responder" sceneMemberID="firstResponder"/>
