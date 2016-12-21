@@ -38,7 +38,8 @@
 		1FBD71651E035F44001E36EE /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD71641E035F44001E36EE /* CellView.swift */; };
 		5212E88B1E035862000209BD /* Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212E88A1E035862000209BD /* Styling.swift */; };
 		5286A2091E053633005028D0 /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A2081E053633005028D0 /* TakePictureViewController.swift */; };
-		5286A20B1E0566D4005028D0 /* NetworkManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A20A1E0566D4005028D0 /* NetworkManagerViewController.swift */; };
+		5286A20E1E089772005028D0 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A20D1E089772005028D0 /* ServerManager.swift */; };
+		52D56F8F1E0A33A400BF42A0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D56F8E1E0A33A400BF42A0 /* Constants.swift */; };
 		C4E7074E1629F9016C8B5985 /* Pods_FaceForward.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B17958DEA5C86271ABFD5DCB /* Pods_FaceForward.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,7 +78,8 @@
 		3C2A011C095BE3AAA8A0D4B8 /* Pods-FaceForward.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceForward.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaceForward/Pods-FaceForward.release.xcconfig"; sourceTree = "<group>"; };
 		5212E88A1E035862000209BD /* Styling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styling.swift; sourceTree = "<group>"; };
 		5286A2081E053633005028D0 /* TakePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePictureViewController.swift; sourceTree = "<group>"; };
-		5286A20A1E0566D4005028D0 /* NetworkManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManagerViewController.swift; sourceTree = "<group>"; };
+		5286A20D1E089772005028D0 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
+		52D56F8E1E0A33A400BF42A0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B17958DEA5C86271ABFD5DCB /* Pods_FaceForward.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaceForward.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D89B48985DF69A546BC44AB9 /* Pods-FaceForward.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceForward.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FaceForward/Pods-FaceForward.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				1F26A1FC1E02003F00CA7464 /* AppDelegate.swift */,
+				5286A20D1E089772005028D0 /* ServerManager.swift */,
 				5212E88A1E035862000209BD /* Styling.swift */,
 				1F8348461E0887A200FE97CB /* DataEntry.swift */,
 				1F7277D61E04962200085D69 /* Emotion.swift */,
@@ -191,6 +194,7 @@
 		1FA89ECC1E022263004EBF08 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				52D56F8E1E0A33A400BF42A0 /* Constants.swift */,
 				1F26A2051E02003F00CA7464 /* Assets.xcassets */,
 				1F26A20A1E02003F00CA7464 /* Info.plist */,
 			);
@@ -236,7 +240,6 @@
 			children = (
 				1FA89EC41E0221C2004EBF08 /* ConfirmPictureViewController.swift */,
 				5286A2081E053633005028D0 /* TakePictureViewController.swift */,
-				5286A20A1E0566D4005028D0 /* NetworkManagerViewController.swift */,
 			);
 			name = Picture;
 			sourceTree = "<group>";
@@ -291,7 +294,6 @@
 				TargetAttributes = {
 					1F26A1F81E02003F00CA7464 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = C4VD2Y49D5;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -389,6 +391,8 @@
 			files = (
 				1FAB00E31E09C82C005ED26A /* ConfigureCalendarCells.swift in Sources */,
 				1F05E0FD1E0366D20061534B /* CalendarView.swift in Sources */,
+				52D56F8F1E0A33A400BF42A0 /* Constants.swift in Sources */,
+				5286A20E1E089772005028D0 /* ServerManager.swift in Sources */,
 				1F05E1011E0395EF0061534B /* MonthHeaderView.swift in Sources */,
 				5212E88B1E035862000209BD /* Styling.swift in Sources */,
 				1FBD715B1E0342EA001E36EE /* Router.swift in Sources */,
@@ -408,7 +412,6 @@
 				1F83484F1E088C7A00FE97CB /* EmotionName.swift in Sources */,
 				1F83484B1E0889BB00FE97CB /* Mood.swift in Sources */,
 				1FBD71651E035F44001E36EE /* CellView.swift in Sources */,
-				5286A20B1E0566D4005028D0 /* NetworkManagerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

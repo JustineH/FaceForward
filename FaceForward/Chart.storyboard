@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Analysis Chart View Controller-->
+        <!--Assessment-->
         <scene sceneID="DX5-Cm-Fc3">
             <objects>
-                <viewController storyboardIdentifier="AnalysisChartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dLH-dD-ql4" customClass="AnalysisChartViewController" customModule="FaceForward" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AnalysisChartViewController" title="Assessment" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dLH-dD-ql4" customClass="AnalysisChartViewController" customModule="FaceForward" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GhF-kb-Z5Y"/>
                         <viewControllerLayoutGuide type="bottom" id="SK8-Eo-E4C"/>
@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CUt-Ki-UR0">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CUt-Ki-UR0" customClass="PieChartView" customModule="Charts">
                                 <rect key="frame" x="16" y="20" width="343" height="323"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -95,6 +95,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="pieChartView" destination="CUt-Ki-UR0" id="xm1-Lo-QzS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wj5-eS-xAY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
