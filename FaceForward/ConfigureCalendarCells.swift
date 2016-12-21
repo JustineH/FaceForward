@@ -9,7 +9,7 @@
 import UIKit
 import JTAppleCalendar
 
-extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate{
+extension CalendarViewController: JTAppleCalendarViewDelegate {
 
     //MARK: Month Header
     func calendar(_ calendar: JTAppleCalendarView, sectionHeaderSizeFor range: (start: Date, end: Date), belongingTo month: Int) -> CGSize {

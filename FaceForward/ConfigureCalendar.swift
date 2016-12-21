@@ -9,7 +9,7 @@
 import UIKit
 import JTAppleCalendar
 
-extension CalendarViewController {
+extension CalendarViewController: JTAppleCalendarViewDataSource {
     
     
     //MARK: Configure Calendar
