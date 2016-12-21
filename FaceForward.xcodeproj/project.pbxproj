@@ -14,7 +14,6 @@
 		1F26A2041E02003F00CA7464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F26A2021E02003F00CA7464 /* Main.storyboard */; };
 		1F26A2061E02003F00CA7464 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F26A2051E02003F00CA7464 /* Assets.xcassets */; };
 		1F26A2091E02003F00CA7464 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F26A2071E02003F00CA7464 /* LaunchScreen.storyboard */; };
-		1F7277D51E0491FB00085D69 /* ConfigureCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7277D41E0491FB00085D69 /* ConfigureCalendar.swift */; };
 		1F7277D71E04962200085D69 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7277D61E04962200085D69 /* Emotion.swift */; };
 		1F8348471E0887A200FE97CB /* DataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8348461E0887A200FE97CB /* DataEntry.swift */; };
 		1F8348491E08895900FE97CB /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8348481E08895900FE97CB /* Survey.swift */; };
@@ -26,7 +25,6 @@
 		1FA89EC31E022199004EBF08 /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA89EC21E022199004EBF08 /* SuggestionsViewController.swift */; };
 		1FA89EC51E0221C2004EBF08 /* ConfirmPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA89EC41E0221C2004EBF08 /* ConfirmPictureViewController.swift */; };
 		1FA89EC71E022208004EBF08 /* AnalysisChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA89EC61E022208004EBF08 /* AnalysisChartViewController.swift */; };
-		1FAB00E31E09C82C005ED26A /* ConfigureCalendarCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAB00E21E09C82C005ED26A /* ConfigureCalendarCells.swift */; };
 		1FAB00E71E09DD14005ED26A /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAB00E61E09DD14005ED26A /* CalendarViewController.swift */; };
 		1FAB00E91E0A3361005ED26A /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAB00E81E0A3361005ED26A /* DataSource.swift */; };
 		1FAB00EB1E0A33DD005ED26A /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAB00EA1E0A33DD005ED26A /* Delegate.swift */; };
@@ -54,7 +52,6 @@
 		1F26A2051E02003F00CA7464 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F26A2081E02003F00CA7464 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F26A20A1E02003F00CA7464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F7277D41E0491FB00085D69 /* ConfigureCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureCalendar.swift; sourceTree = "<group>"; };
 		1F7277D61E04962200085D69 /* Emotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
 		1F8348461E0887A200FE97CB /* DataEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntry.swift; sourceTree = "<group>"; };
 		1F8348481E08895900FE97CB /* Survey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
@@ -66,7 +63,6 @@
 		1FA89EC21E022199004EBF08 /* SuggestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
 		1FA89EC41E0221C2004EBF08 /* ConfirmPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmPictureViewController.swift; sourceTree = "<group>"; };
 		1FA89EC61E022208004EBF08 /* AnalysisChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisChartViewController.swift; sourceTree = "<group>"; };
-		1FAB00E21E09C82C005ED26A /* ConfigureCalendarCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureCalendarCells.swift; sourceTree = "<group>"; };
 		1FAB00E61E09DD14005ED26A /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		1FAB00E81E0A3361005ED26A /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		1FAB00EA1E0A33DD005ED26A /* Delegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
@@ -207,8 +203,6 @@
 			isa = PBXGroup;
 			children = (
 				1FAB00E61E09DD14005ED26A /* CalendarViewController.swift */,
-				1F7277D41E0491FB00085D69 /* ConfigureCalendar.swift */,
-				1FAB00E21E09C82C005ED26A /* ConfigureCalendarCells.swift */,
 				1FA89EBE1E022167004EBF08 /* DetailLogViewController.swift */,
 			);
 			name = Calendar;
@@ -393,7 +387,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FAB00E31E09C82C005ED26A /* ConfigureCalendarCells.swift in Sources */,
 				1F05E0FD1E0366D20061534B /* CalendarView.swift in Sources */,
 				1F05E1011E0395EF0061534B /* MonthHeaderView.swift in Sources */,
 				5212E88B1E035862000209BD /* Styling.swift in Sources */,
@@ -410,7 +403,6 @@
 				1F26A1FD1E02003F00CA7464 /* AppDelegate.swift in Sources */,
 				1FA89EC11E02217C004EBF08 /* SurveyViewController.swift in Sources */,
 				1FAB00E71E09DD14005ED26A /* CalendarViewController.swift in Sources */,
-				1F7277D51E0491FB00085D69 /* ConfigureCalendar.swift in Sources */,
 				5286A2091E053633005028D0 /* TakePictureViewController.swift in Sources */,
 				1F7277D71E04962200085D69 /* Emotion.swift in Sources */,
 				1F83484F1E088C7A00FE97CB /* EmotionName.swift in Sources */,
