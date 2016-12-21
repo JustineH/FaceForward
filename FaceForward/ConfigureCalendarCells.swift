@@ -58,9 +58,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         return ""
     }
     
-    
-
-    //MARK: Mood Display
+    //MARK: Moods Display
     func displayPreviousMoods() {
         let savedEntries = getSavedEntriesFromDatabase()
         for i in 0..<savedEntries.count {
@@ -76,8 +74,6 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
         myCustomCell.moodColor.backgroundColor = color()
         myCustomCell.moodColor.isHidden = false
     }
-    
-    
     
     //MARK: Cell Selection
     func handleCellSelection(view: JTAppleDayCellView?, cellState: CellState) {

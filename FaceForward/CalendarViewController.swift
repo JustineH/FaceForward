@@ -42,10 +42,8 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.isUserInteractionEnabled = true
-        
         configureView()
-//        displayPreviousMoods()
+        displayPreviousMoods()
    
     }
     
@@ -69,25 +67,25 @@ class CalendarViewController: UIViewController {
         
     }
     
-//    func refreshOverallMood(cell: CellState) {
-//      for i in savedEntries{
-//          if cell.date == realmObject.date{
-//            //reassign all the labels
-//            overallFace.image = image
-//            happyPercent.text =
-//            surprisedPercent.text =
-//            sadPercent.text =
-//            angryPercent.text =
-//          }
-//      }
-    
-//    }
+    func refreshOverallMood(cell: CellState) {
+        let savedEntries = getSavedEntriesFromDatabase()
+        var dictionary: [EmotionName:Double] = [:]
+        for savedEntry in savedEntries {
+            if savedEntry.date == cell.date {
+                dictionary = savedEntry.emotion.emotions
+            }
+        }
+        happyPercent.text = "\(dictionary[EmotionName.happiness])"
+        
+    }
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "showDetail" {
 //            let detailVC:DetailLogViewController = segue.destination as! DetailLogViewController
 //        }
 //    }
+    
+
 
     //MARK: Chart (move later)
     func updateChart() {
