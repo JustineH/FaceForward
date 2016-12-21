@@ -30,19 +30,29 @@ class Router: NSObject {
     }
     
     func showPhoto() {
-        vc?.show(Router.confirmPictureVC(), sender: vc)
+        let photoVC = Router.takePictureVC()
+//        takePictureVC.newEntry = newEntry
+        vc?.show(photoVC, sender: vc)
     }
     
     func showSuggestions() {
-        vc?.show(Router.suggestionsVC(), sender: vc)
+        let suggestionsVC = Router.suggestionsVC()
+//        suggestionsVC.suggestions = suggestions
+        vc?.show(suggestionsVC, sender: vc)
     }
     
     func showChart() {
-        vc?.show(Router.chartVC(), sender: vc)
+        let chartVC = Router.chartVC()
+//        chartVC.emotionAnalysis = emotionAnalysis
+        vc?.show(chartVC, sender: vc)
     }
- 
-
     
+//    func showMusicPlayer() {
+//        let musicPlayerVC = Router.musicPlayerVC()
+//        musicPlayerVC.
+//        vc?.show(musicPlayerVC, sender: vc)
+//    }
+
     
     //MARK: VCs
     fileprivate class func mainVC() -> CalendarViewController {
@@ -53,13 +63,9 @@ class Router: NSObject {
         return survey().instantiateViewController(withIdentifier: "SurveyViewController") as! SurveyViewController
     }
     
-    fileprivate class func confirmPictureVC() -> TakePictureViewController {
+    fileprivate class func takePictureVC() -> TakePictureViewController {
         return photo().instantiateViewController(withIdentifier: "TakePictureViewController") as! TakePictureViewController
     }
-    
-//    fileprivate class func confirmPictureVC() -> ConfirmPictureViewController {
-//        return photo().instantiateViewController(withIdentifier: "ConfirmPictureViewController") as! ConfirmPictureViewController
-//    }
     
     fileprivate class func suggestionsVC() -> SuggestionsViewController {
         return suggestions().instantiateViewController(withIdentifier: "SuggestionsViewController") as! SuggestionsViewController
@@ -68,6 +74,10 @@ class Router: NSObject {
     fileprivate class func chartVC() -> AnalysisChartViewController {
         return chart().instantiateViewController(withIdentifier: "AnalysisChartViewController") as! AnalysisChartViewController
     }
+    
+//    fileprivate class func musicPlayerVC() -> MusicPlayerViewController {
+//        return musicPlayer().instantiateViewController(withIdentifier: "MusicPlayerViewController") as! MusicPlayerViewController
+//    }
     
  
   
