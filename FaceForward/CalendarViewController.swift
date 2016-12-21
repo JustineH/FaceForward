@@ -14,6 +14,12 @@ import RealmSwift
 class CalendarViewController: UIViewController {
     
     //MARK: Properties
+    let currentDate = Date()
+    
+    //dataSource & delegate
+    let datasource = DataSource()
+    let delegate = Delegate()
+    
     //calendar
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var LogsTableView: UITableView!
@@ -31,21 +37,12 @@ class CalendarViewController: UIViewController {
     
     //scroll
     @IBOutlet weak var mainScrollView: UIScrollView!
-    // We cache our colors because we do not want to be creating
-    // a new color every time a cell is displayed.
-    let notSelectedTextColor = UIColor.black
-    let selectedTextColor = UIColor.purple
-    
-    let formatter = DateFormatter()
-    let currentDate = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.isUserInteractionEnabled = true
-        
         configureView()
-//        displayPreviousMoods()
+        displayPreviousMoods()
    
     }
     
@@ -54,8 +51,8 @@ class CalendarViewController: UIViewController {
         calendarView.registerCellViewXib(file: "CalendarCell")
         calendarView.registerHeaderView(xibFileNames: ["MonthHeaderView"])
         
-        calendarView.delegate = self
-        calendarView.dataSource = self
+        calendarView.delegate = delegate
+        calendarView.dataSource = datasource
         
         axisFormatDelegate = self
         chartView.noDataText = "No data :("
@@ -69,25 +66,42 @@ class CalendarViewController: UIViewController {
         
     }
     
-//    func refreshOverallMood(cell: CellState) {
-//      for i in savedEntries{
-//          if cell.date == realmObject.date{
-//            //reassign all the labels
-//            overallFace.image = image
-//            happyPercent.text =
-//            surprisedPercent.text =
-//            sadPercent.text =
-//            angryPercent.text =
-//          }
-//      }
+    //MARK: Moods Display
+    func displayPreviousMoods() {
+        let savedEntries = getSavedEntriesFromDatabase()
+        for i in 0..<savedEntries.count {
+            setBackgroundColor(mood: savedEntries[i].emotion.longestEmotion)
+        }
+    }
     
-//    }
+    func setBackgroundColor(mood: EmotionName) {
+        guard let myCustomCell = view as? CellView  else {
+            return
+        }
+        let color = EmotionName.setCalendarCellColor(mood)
+        myCustomCell.moodColor.backgroundColor = color()
+        myCustomCell.moodColor.isHidden = false
+    }
     
+    func refreshOverallMood(cell: CellState) {
+        let savedEntries = getSavedEntriesFromDatabase()
+        var dictionary: [EmotionName:Double] = [:]
+        for savedEntry in savedEntries {
+            if savedEntry.date == cell.date {
+                dictionary = savedEntry.emotion.emotions
+            }
+        }
+        happyPercent.text = "\(dictionary[EmotionName.happiness])"
+        
+    }
+    
+    //MARK: Navigation
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if segue.identifier == "showDetail" {
 //            let detailVC:DetailLogViewController = segue.destination as! DetailLogViewController
 //        }
 //    }
+
 
     //MARK: Chart (move later)
     func updateChart() {

@@ -1,17 +1,19 @@
 //
-//  ConfigureCalendar.swift
+//  DataSource.swift
 //  FaceForward
 //
-//  Created by carmen cheng on 2016-12-16.
+//  Created by carmen cheng on 2016-12-20.
 //
 //
 
 import UIKit
 import JTAppleCalendar
 
-extension CalendarViewController {
+class DataSource: NSObject, JTAppleCalendarViewDataSource {
     
-    
+    //MARK: Properties
+    let formatter = DateFormatter()
+
     //MARK: Configure Calendar
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
         formatter.dateFormat = "MM dd yyyy"
@@ -28,19 +30,5 @@ extension CalendarViewController {
         return parameters
     }
     
-    func calendar(_ calendar: JTAppleCalendarView, willDisplayCell cell: JTAppleDayCellView, date: Date, cellState: CellState) {
-        
-        let myCustomCell = cell as! CellView
-        myCustomCell.dayLabel.text = cellState.text
-        
-        if cellState.dateBelongsTo == .thisMonth {
-            myCustomCell.isHidden = false
-        } else {
-            myCustomCell.isHidden = true
-        }
-        
-        handleCellSelection(view: cell, cellState: cellState)
-    }
     
-       
 }
