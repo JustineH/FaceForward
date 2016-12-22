@@ -69,8 +69,9 @@ class CalendarViewController: UIViewController {
     //MARK: Moods Display
     func displayPreviousMoods() {
         let savedEntries = getSavedEntriesFromDatabase()
-        for i in 0..<savedEntries.count {
-            setBackgroundColor(mood: savedEntries[i].emotion.largestEmotion)
+        
+        for result in 0..<savedEntries.count {
+            setBackgroundColor(mood: savedEntries[result].emotion.largestEmotion)
         }
     }
     

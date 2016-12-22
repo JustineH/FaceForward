@@ -87,7 +87,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
                 }
                 
                 self.emotionsDictionaryToSave = self.makeItems(dictionary: emotionDictionary)
-                self.mostLikelyMood = self.keyMinValue(dict: emotionDictionary)!
+                self.mostLikelyMood = self.keyMaxValue(dict: emotionDictionary)!
             }
         }
             dismiss(animated: true, completion: nil)
@@ -106,7 +106,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         return new
     }
     
-    func keyMinValue(dict: [String: Double]) -> String? {
+    func keyMaxValue(dict: [String: Double]) -> String? {
         for (key, value) in dict {
             if value == dict.values.max() {
                 return key
