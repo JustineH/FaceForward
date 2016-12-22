@@ -22,7 +22,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var nextButton: UIButton!
 //   @IBOutlet weak var spinner: UIActivityIndicatorView!
     var percentages = [Double]()
-    var mostLikelyMood: EmotionName = EmotionName.anger
+    var mostLikelyMood: String = EmotionName.anger.rawValue
     var survey: Survey!
     var emotionsDictionaryToSave: Emotion!
     
@@ -37,7 +37,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     @IBAction func nextSaveButton(_ sender: Any) {
         var newEmotion = Emotion()
         newEmotion = emotionsDictionaryToSave
-        newEmotion.largestEmotion = mostLikelyMood.rawValue
+        newEmotion.largestEmotion = mostLikelyMood
         
         let newEntry = DataEntry()
         newEntry.survey = survey
@@ -85,25 +85,35 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
                     self.faceResults.text! += "\(name): \(percent)%\n"
                     self.percentages.append(value)
                 }
-                func makeItems(dictionary: [String:Double]) -> Emotion {
-                    let new = Emotion()
-                    new.anger = dictionary["anger"]!
-                    new.contempt = dictionary["contempt"]!
-                    new.disgust = dictionary["disgust"]!
-                    new.fear = dictionary["fear"]!
-                    new.happiness = dictionary["happiness"]!
-                    new.neutral = dictionary["neutral"]!
-                    new.sadness = dictionary["sadness"]!
-                    new.surprise = dictionary["surprise"]!
-                    return new
-                }
-                self.emotionsDictionaryToSave = makeItems(dictionary: emotionDictionary)
                 
+                self.emotionsDictionaryToSave = self.makeItems(dictionary: emotionDictionary)
+                self.mostLikelyMood = self.keyMinValue(dict: emotionDictionary)!
             }
         }
             dismiss(animated: true, completion: nil)
     }
-
+    
+    func makeItems(dictionary: [String:Double]) -> Emotion {
+        let new = Emotion()
+        new.anger = dictionary["anger"]!
+        new.contempt = dictionary["contempt"]!
+        new.disgust = dictionary["disgust"]!
+        new.fear = dictionary["fear"]!
+        new.happiness = dictionary["happiness"]!
+        new.neutral = dictionary["neutral"]!
+        new.sadness = dictionary["sadness"]!
+        new.surprise = dictionary["surprise"]!
+        return new
+    }
+    
+    func keyMinValue(dict: [String: Double]) -> String? {
+        for (key, value) in dict {
+            if value == dict.values.max() {
+                return key
+            }
+        }
+        return nil
+    }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
