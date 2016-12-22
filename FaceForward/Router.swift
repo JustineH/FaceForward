@@ -28,7 +28,11 @@ class Router: NSObject {
     func showSurvey() {
         vc?.show(Router.surveyVC(), sender: vc)
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> a870c74f7be001147ff4d31054fb53ec1e54f43d
     func showPhoto(survey: Survey) {
         let photoVC = Router.takePictureVC()
         photoVC.survey = survey
@@ -40,7 +44,11 @@ class Router: NSObject {
 //        suggestionsVC.suggestions = suggestions
         vc?.show(suggestionsVC, sender: vc)
     }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> a870c74f7be001147ff4d31054fb53ec1e54f43d
     func showChart(dict: Dictionary<EmotionName, Double>) {
 //        let chartVC = Router.chartVC()
 //        chartVC.dict = dict
