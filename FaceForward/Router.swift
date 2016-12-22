@@ -36,7 +36,9 @@ class Router: NSObject {
     }
     
     func showSuggestions() {
-        vc?.show(Router.suggestionsVC(), sender: vc)
+        let suggestionsVC = Router.suggestionsVC()
+//        suggestionsVC.suggestions = suggestions
+        vc?.show(suggestionsVC, sender: vc)
     }
     
     func showChart(dict: Dictionary<EmotionName, Double>) {
@@ -44,9 +46,13 @@ class Router: NSObject {
 //        chartVC.dict = dict
 //        vc?.show(chartVC, sender: vc)
     }
- 
-
     
+//    func showMusicPlayer() {
+//        let musicPlayerVC = Router.musicPlayerVC()
+//        musicPlayerVC.
+//        vc?.show(musicPlayerVC, sender: vc)
+//    }
+
     
     //MARK: VCs
     fileprivate class func mainVC() -> CalendarViewController {
@@ -61,10 +67,6 @@ class Router: NSObject {
         return photo().instantiateViewController(withIdentifier: "TakePictureViewController") as! TakePictureViewController
     }
     
-//    fileprivate class func confirmPictureVC() -> ConfirmPictureViewController {
-//        return photo().instantiateViewController(withIdentifier: "ConfirmPictureViewController") as! ConfirmPictureViewController
-//    }
-    
     fileprivate class func suggestionsVC() -> SuggestionsViewController {
         return suggestions().instantiateViewController(withIdentifier: "SuggestionsViewController") as! SuggestionsViewController
     }
@@ -72,6 +74,10 @@ class Router: NSObject {
     fileprivate class func chartVC() -> AnalysisChartViewController {
         return chart().instantiateViewController(withIdentifier: "AnalysisChartViewController") as! AnalysisChartViewController
     }
+    
+//    fileprivate class func musicPlayerVC() -> MusicPlayerViewController {
+//        return musicPlayer().instantiateViewController(withIdentifier: "MusicPlayerViewController") as! MusicPlayerViewController
+//    }
     
  
   
