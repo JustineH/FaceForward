@@ -10,12 +10,7 @@ import UIKit
 import RealmSwift
 
 class Emotion: Object {
-   // var largestEmotion: EmotionName.RawValue!
-    var emotions = EmotionsDictionaryItems()
-
-}
-
-class EmotionsDictionaryItems: Object {
+    var largestEmotion: EmotionName.RawValue!
     var anger = 0.0
     var contempt = 0.0
     var disgust = 0.0
@@ -24,6 +19,9 @@ class EmotionsDictionaryItems: Object {
     var neutral = 0.0
     var sadness = 0.0
     var surprise = 0.0
+
 }
+
+
 
 

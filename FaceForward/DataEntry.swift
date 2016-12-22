@@ -11,6 +11,6 @@ import RealmSwift
 
 class DataEntry: Object {
     dynamic var date = Date()
-    dynamic var emotion: Emotion?
-    dynamic var survey: Survey?
+    dynamic var emotion: Emotion!
+    dynamic var survey: Survey!
 }

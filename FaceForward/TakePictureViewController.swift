@@ -22,9 +22,9 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var nextButton: UIButton!
 //   @IBOutlet weak var spinner: UIActivityIndicatorView!
     var percentages = [Double]()
-    var mostLikelyMood: EmotionName?
+    var mostLikelyMood: EmotionName = EmotionName.anger
     var survey: Survey!
-    var emotionsDictionaryToSave: EmotionsDictionaryItems!
+    var emotionsDictionaryToSave: Emotion!
     
     // MARK: - Actions -
     @IBAction func loadImageButtonTapped(_ sender: UIButton) {
@@ -35,9 +35,9 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func nextSaveButton(_ sender: Any) {
-        let newEmotion = Emotion()
-     //   newEmotion.emotions = emotionsDictionaryToSave
-      //  newEmotion.largestEmotion = mostLikelyMood?.rawValue
+        var newEmotion = Emotion()
+        newEmotion = emotionsDictionaryToSave
+        newEmotion.largestEmotion = mostLikelyMood.rawValue
         
         let newEntry = DataEntry()
         newEntry.survey = survey
@@ -85,8 +85,8 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
                     self.faceResults.text! += "\(name): \(percent)%\n"
                     self.percentages.append(value)
                 }
-                func makeItems(dictionary: [String:Double]) -> EmotionsDictionaryItems {
-                    let new = EmotionsDictionaryItems()
+                func makeItems(dictionary: [String:Double]) -> Emotion {
+                    let new = Emotion()
                     new.anger = dictionary["anger"]!
                     new.contempt = dictionary["contempt"]!
                     new.disgust = dictionary["disgust"]!
@@ -97,12 +97,8 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
                     new.surprise = dictionary["surprise"]!
                     return new
                 }
-//                self.emotionsDictionaryToSave = makeItems(dictionary: emotionDictionary)
-//                for (key, value) in self.emotionsToSave{
-//                    if value == self.percentages.max(){
-//                    self.mostLikelyMood = EmotionName(rawValue: key)
-//                    }
-//                }
+                self.emotionsDictionaryToSave = makeItems(dictionary: emotionDictionary)
+                
             }
         }
             dismiss(animated: true, completion: nil)
