@@ -21,8 +21,8 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var faceResults: UITextView!
     @IBOutlet weak var nextButton: UIButton!
 //   @IBOutlet weak var spinner: UIActivityIndicatorView!
-    var percentages = [Double]()
-    var mostLikelyMood: String = EmotionName.anger.rawValue
+//    var percentages = [Double]()
+    var mostLikelyMood: String = EmotionName.neutral.rawValue
     var survey: Survey!
     var emotionsDictionaryToSave: Emotion!
     
@@ -83,7 +83,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
                 for (name, value) in emotionDictionary {
                     let percent: Int = Int(round(value * 100))
                     self.faceResults.text! += "\(name): \(percent)%\n"
-                    self.percentages.append(value)
+//                    self.percentages.append(value)
                 }
                 
                 self.emotionsDictionaryToSave = self.makeItems(dictionary: emotionDictionary)
