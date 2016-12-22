@@ -21,67 +21,62 @@ class SurveyViewController: UIViewController {
   
     @IBOutlet weak var nextButton: UIButton!
     
-    var didExercise: Bool!
+    var didExercise: Bool = false
     var selectedMood: String!
     var selectedSleep: String!
     var pickerData: [String] = [String]()
-    var mood: Mood!
-    var sleep: Sleep!
+    var mood: Mood = Mood.average
+    var sleep: Sleep = Sleep.average
     
     //MARK: Actions
     @IBAction func moodSlider(_ sender: Any) {
-        let moodValue = moodSlider.value as NSNumber
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .none
+        let moodValue = Int(moodSlider.value)
         
-        let moodString = formatter.string(from:moodValue)!
-        switch moodString {
-            case "0":
-                moodLabel.text = "Great"
-            case "1":
-                moodLabel.text = "Good"
-            case "2":
-                moodLabel.text = "Average"
-            case "3":
-                moodLabel.text = "Bad"
-            case "4":
-                moodLabel.text = "Very bad"
+        switch moodValue {
+            case 0:
+                mood = Mood.great
+            case 1:
+                mood = Mood.good
+            case 2:
+                mood = Mood.average
+            case 3:
+                mood = Mood.bad
+            case 4:
+                mood = Mood.veryBad
             default:
                 break
         }
-        selectedMood = moodLabel.text
+        moodLabel.text = mood.rawValue
     }
     
     @IBAction func nextButton(_ sender: Any) {
         let newSurvey = Survey()
-        newSurvey.moodInput = mood
-        newSurvey.sleepInput = sleep
+        newSurvey.moodInput = mood.rawValue
+//        newSurvey.sleepInput = Sleep(rawValue: sleep.rawValue)
         newSurvey.exerciseInput = didExercise
         newSurvey.peopleInput = peopleTextField.text ?? ""
         print(newSurvey)
+        Router(self).showPhoto(survey: newSurvey)
     }
     
     @IBAction func sleepSlider(_ sender: Any) {
-        let sleepQuality = sleepSlider.value as NSNumber
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .none
+        let sleepQuality = Int(sleepSlider.value)
         
-        let sleepString = formatter.string(from: sleepQuality)!
-        switch sleepString {
-            case "0":
-                sleepQualityLabel.text = "Great"
-            case "1":
-                sleepQualityLabel.text = "Well"
-            case "2":
-                sleepQualityLabel.text = "Average"
-            case "3":
-                sleepQualityLabel.text = "Poorly"
-            case "4":
-                sleepQualityLabel.text = "Very poorly"
+        switch sleepQuality {
+            case 0:
+                sleep = Sleep.great
+            case 1:
+                sleep = Sleep.well
+            case 2:
+                sleep = Sleep.average
+            case 3:
+                sleep = Sleep.poorly
+            case 4:
+                sleep = Sleep.veryPoorly
             default:
                 break
         }
-        selectedSleep = sleepQualityLabel.text
+        sleepQualityLabel.text = sleep.rawValue
     }
     
     @IBAction func exerciseControl(_ sender: Any) {
@@ -104,17 +99,5 @@ class SurveyViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-   
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

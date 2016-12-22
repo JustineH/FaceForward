@@ -29,16 +29,20 @@ class Router: NSObject {
         vc?.show(Router.surveyVC(), sender: vc)
     }
     
-    func showPhoto() {
-        vc?.show(Router.confirmPictureVC(), sender: vc)
+    func showPhoto(survey: Survey) {
+        let photoVC = Router.takePictureVC()
+        photoVC.survey = survey
+        vc?.show(photoVC, sender: vc)
     }
     
     func showSuggestions() {
         vc?.show(Router.suggestionsVC(), sender: vc)
     }
     
-    func showChart() {
-        vc?.show(Router.chartVC(), sender: vc)
+    func showChart(dict: Dictionary<EmotionName, Double>) {
+//        let chartVC = Router.chartVC()
+//        chartVC.dict = dict
+//        vc?.show(chartVC, sender: vc)
     }
  
 
@@ -53,7 +57,7 @@ class Router: NSObject {
         return survey().instantiateViewController(withIdentifier: "SurveyViewController") as! SurveyViewController
     }
     
-    fileprivate class func confirmPictureVC() -> TakePictureViewController {
+    fileprivate class func takePictureVC() -> TakePictureViewController {
         return photo().instantiateViewController(withIdentifier: "TakePictureViewController") as! TakePictureViewController
     }
     

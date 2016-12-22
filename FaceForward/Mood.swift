@@ -29,4 +29,5 @@ enum Mood: String {
                 return 4
             }
         }
-    }
+    
+}

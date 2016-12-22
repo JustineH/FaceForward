@@ -10,8 +10,8 @@ import UIKit
 import RealmSwift
 
 class Survey: Object {
-    var moodInput: Mood!
-    var sleepInput: Sleep!
-    var exerciseInput: Bool!
+    var moodInput: Mood.RawValue!
+    var sleepInput: Sleep.RawValue!
+    var exerciseInput = false
     var peopleInput: String?
 }
