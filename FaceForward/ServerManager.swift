@@ -40,7 +40,6 @@ class ServerManager: NSObject {
                     }
                     completion(result)
                 
-                
                 case .failure(let error):
                     print(error)
             }
