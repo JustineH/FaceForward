@@ -17,8 +17,10 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     // MARK: - Properties -
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var faceResults: UITextView!
-    @IBOutlet weak var nextButton: UIButton!
-//   @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var takePhotoButtonLabel: UIButton!
+    @IBOutlet weak var retakePhotoButtonLabel: UIButton!
+    @IBOutlet weak var nextButtonLabel: UIButton!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     // MARK: - Actions -
     @IBAction func loadImageButtonTapped(_ sender: UIButton) {
@@ -28,7 +30,14 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         present(imagePicker, animated: true, completion: nil)
     }
     
-    @IBAction func nextSaveButton(_ sender: Any) {
+    @IBAction func retakePhotoButton(_ sender: UIButton) {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func nextSaveButton(_ sender: UIButton) {
 //        let realm = try! Realm()
 //        
 //        try! realm.write {
@@ -38,27 +47,42 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imagePicker.delegate = self
-        faceResults.isHidden = true
-//        spinner.hidesWhenStopped = true
+        self.setup()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    func setup() {
+        self.view.backgroundColor = Styling.Colors.backgroundColor
+        imageView.backgroundColor = UIColor.white
+        self.faceResults.backgroundColor = Styling.Colors.backgroundColor
+        self.faceResults.textColor = Styling.Colors.fontBody
+        spinner.color = Styling.ActivityIndicatorView.yellowSpinner
+        imagePicker.delegate = self
+        faceResults.isHidden = true
+        retakePhotoButtonLabel.isHidden = true
+        nextButtonLabel.isHidden = true
+        spinner.hidesWhenStopped = true
+        
+    }
 
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
+        spinner.startAnimating()
         self.imageView.isHidden = false
-//            spinner.startAnimating()
-//            faceResults.isHidden = true
+        takePhotoButtonLabel.isHidden = true
+        self.faceResults.isHidden = false
+        self.faceResults.text = ""
+        
         
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
-//      self.spinner.stopAnimating()
-            self.faceResults.isHidden = false
-            self.faceResults.text = ""
+            self.spinner.stopAnimating()
+            retakePhotoButtonLabel.isHidden = false
+            nextButtonLabel.isHidden = false
             imageView.image = pickedImage
             imageView.contentMode = .scaleAspectFit
 

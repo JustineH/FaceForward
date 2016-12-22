@@ -36,7 +36,8 @@ class ServerManager: NSObject {
                             result[EmotionName(rawValue: name)!] = value.double
                         }
                     }
-                        completion(result)
+                    completion(result)
+                
                 case .failure(let error):
                     print(error)
             }

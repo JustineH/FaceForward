@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KiM-Gk-U1w">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KiM-Gk-U1w">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,9 +23,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u1w-iH-Ld7">
-                                <rect key="frame" x="67" y="91" width="240" height="241"/>
+                                <rect key="frame" x="16" y="91" width="343" height="241"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="3Q5-Ov-sDr"/>
                                     <constraint firstAttribute="height" constant="241" id="9LJ-ZX-WuB"/>
                                 </constraints>
                             </imageView>
@@ -41,11 +40,12 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Facial Results" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cgf-lB-Z85">
-                                <rect key="frame" x="67" y="335" width="240" height="177"/>
+                                <rect key="frame" x="16" y="347" width="343" height="165"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="177" id="4IC-bN-suf"/>
-                                    <constraint firstAttribute="width" constant="240" id="wS6-EG-VCT"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="165" id="3zn-PD-sQF"/>
+                                    <constraint firstAttribute="height" constant="165" id="4IC-bN-suf"/>
+                                    <constraint firstAttribute="width" constant="343" id="rTW-2t-SUz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -56,33 +56,56 @@
                                     <constraint firstAttribute="height" constant="30" id="WTU-VH-Bhx"/>
                                     <constraint firstAttribute="width" constant="240" id="Weu-gu-9Dh"/>
                                 </constraints>
-                                <state key="normal" title="Take Photo"/>
+                                <state key="normal" title="Retake Photo"/>
                                 <connections>
-                                    <action selector="loadImageButtonTapped:" destination="KiM-Gk-U1w" eventType="touchUpInside" id="8te-hq-DtV"/>
+                                    <action selector="retakePhotoButton:" destination="KiM-Gk-U1w" eventType="touchUpInside" id="oxG-NP-G0n"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ip6-R9-dZI">
+                                <rect key="frame" x="16" y="91" width="343" height="241"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="241" id="Sjj-0l-osx"/>
+                                    <constraint firstAttribute="width" constant="343" id="Xkx-aC-BKk"/>
+                                </constraints>
+                                <state key="normal" title="Take Photo"/>
+                                <connections>
+                                    <action selector="loadImageButtonTapped:" destination="KiM-Gk-U1w" eventType="touchUpInside" id="IBz-iI-Lo7"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Fmm-7B-aIH">
+                                <rect key="frame" x="169" y="365" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Ip6-R9-dZI" firstAttribute="top" secondItem="rcA-qC-EP0" secondAttribute="bottom" constant="71" id="0xQ-4v-dQH"/>
                             <constraint firstItem="Ay1-XV-I62" firstAttribute="top" secondItem="bNN-jJ-1ex" secondAttribute="bottom" constant="8" id="Acu-ad-toa"/>
+                            <constraint firstItem="Ip6-R9-dZI" firstAttribute="leading" secondItem="HW4-1E-paj" secondAttribute="leadingMargin" id="FLO-Nn-yDW"/>
+                            <constraint firstItem="cgf-lB-Z85" firstAttribute="top" secondItem="u1w-iH-Ld7" secondAttribute="bottom" constant="15" id="HeU-NV-PZe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bNN-jJ-1ex" secondAttribute="trailing" constant="52" id="MTp-Vw-0lX"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cgf-lB-Z85" secondAttribute="trailing" constant="52" id="PGb-fm-rxY"/>
+                            <constraint firstItem="cgf-lB-Z85" firstAttribute="trailing" secondItem="u1w-iH-Ld7" secondAttribute="trailing" id="Mn4-iO-0VA"/>
                             <constraint firstItem="bNN-jJ-1ex" firstAttribute="top" secondItem="cgf-lB-Z85" secondAttribute="bottom" constant="8" id="QHx-VP-4ml"/>
                             <constraint firstItem="u1w-iH-Ld7" firstAttribute="centerY" secondItem="HW4-1E-paj" secondAttribute="centerY" constant="-122" id="Unx-zv-NHn"/>
                             <constraint firstItem="bNN-jJ-1ex" firstAttribute="leading" secondItem="HW4-1E-paj" secondAttribute="leadingMargin" constant="51" id="Yp4-Xl-suD"/>
-                            <constraint firstItem="cgf-lB-Z85" firstAttribute="leading" secondItem="HW4-1E-paj" secondAttribute="leadingMargin" constant="51" id="bAZ-st-MJa"/>
+                            <constraint firstItem="u1w-iH-Ld7" firstAttribute="trailing" secondItem="HW4-1E-paj" secondAttribute="trailingMargin" id="ZS1-F6-OV6"/>
                             <constraint firstItem="u1w-iH-Ld7" firstAttribute="top" secondItem="rcA-qC-EP0" secondAttribute="bottom" constant="71" id="c8z-Yb-H3m"/>
+                            <constraint firstItem="bNN-jJ-1ex" firstAttribute="top" secondItem="cgf-lB-Z85" secondAttribute="bottom" constant="8" id="fgm-kd-uAi"/>
+                            <constraint firstItem="u1w-iH-Ld7" firstAttribute="leading" secondItem="HW4-1E-paj" secondAttribute="leadingMargin" id="frz-PC-xhQ"/>
                             <constraint firstItem="Ay1-XV-I62" firstAttribute="leading" secondItem="HW4-1E-paj" secondAttribute="leadingMargin" constant="51" id="gk0-32-o4C"/>
-                            <constraint firstItem="u1w-iH-Ld7" firstAttribute="leading" secondItem="HW4-1E-paj" secondAttribute="leadingMargin" constant="51" id="qpS-lE-UAu"/>
-                            <constraint firstItem="cgf-lB-Z85" firstAttribute="top" secondItem="u1w-iH-Ld7" secondAttribute="bottom" constant="3" id="tFJ-Xc-pd5"/>
+                            <constraint firstItem="cgf-lB-Z85" firstAttribute="leading" secondItem="u1w-iH-Ld7" secondAttribute="leading" id="jzJ-3u-M40"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ay1-XV-I62" secondAttribute="trailing" constant="52" id="uG4-l3-eMo"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="u1w-iH-Ld7" secondAttribute="trailing" constant="52" id="uuY-qm-JOQ"/>
+                            <constraint firstItem="cgf-lB-Z85" firstAttribute="top" secondItem="u1w-iH-Ld7" secondAttribute="bottom" constant="15" id="uxm-mR-vVE"/>
+                            <constraint firstItem="Ip6-R9-dZI" firstAttribute="trailing" secondItem="HW4-1E-paj" secondAttribute="trailingMargin" id="x28-EF-vw1"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="faceResults" destination="cgf-lB-Z85" id="TYp-0t-7S5"/>
                         <outlet property="imageView" destination="u1w-iH-Ld7" id="feC-E5-Lay"/>
-                        <outlet property="nextButton" destination="Ay1-XV-I62" id="tbu-QJ-dGV"/>
+                        <outlet property="nextButtonLabel" destination="Ay1-XV-I62" id="NyJ-Zc-XKp"/>
+                        <outlet property="retakePhotoButtonLabel" destination="bNN-jJ-1ex" id="cT3-sU-vOS"/>
+                        <outlet property="spinner" destination="Fmm-7B-aIH" id="jr3-eC-9MX"/>
+                        <outlet property="takePhotoButtonLabel" destination="Ip6-R9-dZI" id="CLL-oJ-Geq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9uh-VP-y2J" userLabel="First Responder" sceneMemberID="firstResponder"/>
