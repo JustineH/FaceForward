@@ -49,7 +49,8 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         try! realm.write {
             realm.add(newEntry)
         }
-        
+    }
+    
 //        Router(self).showChart(dict: emotionsToSave)
         
     @IBAction func retakePhotoButton(_ sender: UIButton) {
