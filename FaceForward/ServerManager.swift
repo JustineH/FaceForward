@@ -17,7 +17,7 @@ let microsoftKey = FFConstants.microsoftKey
 class ServerManager: NSObject {
     
     
-    class func emotions(from image: UIImage, completion:@escaping ([EmotionName:Double])->()) {
+    class func emotions(from image: UIImage, completion:@escaping ([String:Double])->()) {
         let imageData = UIImagePNGRepresentation(image)!
         let headers = [
             "Ocp-Apim-Subscription-Key": microsoftKey,
@@ -30,19 +30,22 @@ class ServerManager: NSObject {
                 case .success:
                     print("Validation successful.")
                     let json = JSON(response.result.value!)
-                    var result = [EmotionName:Double]()
+                    var result = [String:Double]()
                     if let dictionary = json[0]["scores"].dictionary {
                         for (name, value) in dictionary {
-                            result[EmotionName(rawValue: name)!] = value.double
+                            result[name] = value.double
                         }
+                        
+           
                     }
-                        completion(result)
+                    completion(result)
+                
+                
                 case .failure(let error):
                     print(error)
             }
             
         }
     }
-
 
 }

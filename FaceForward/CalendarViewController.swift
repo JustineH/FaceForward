@@ -69,29 +69,54 @@ class CalendarViewController: UIViewController {
     //MARK: Moods Display
     func displayPreviousMoods() {
         let savedEntries = getSavedEntriesFromDatabase()
-        for i in 0..<savedEntries.count {
-            setBackgroundColor(mood: savedEntries[i].emotion.longestEmotion)
+        
+        for result in 0..<savedEntries.count {
+            setBackgroundColor(mood: savedEntries[result].emotion.largestEmotion)
         }
     }
     
-    func setBackgroundColor(mood: EmotionName) {
+    func setBackgroundColor(mood: String) {
         guard let myCustomCell = view as? CellView  else {
             return
         }
-        let color = EmotionName.setCalendarCellColor(mood)
-        myCustomCell.moodColor.backgroundColor = color()
+        let color = setCalendarCellColor(colorMood: mood)
+        myCustomCell.moodColor.backgroundColor = color
         myCustomCell.moodColor.isHidden = false
     }
     
+    func setCalendarCellColor(colorMood: String) -> UIColor {
+        switch colorMood {
+        case "anger":
+            return UIColor.red
+        case "contempt":
+            return UIColor.yellow
+        case "disgust":
+            return UIColor.cyan
+        case "fear":
+            return UIColor.green
+        case "happiness":
+            return UIColor.cyan
+        case "neutral":
+            return UIColor.purple
+        case "sadness":
+            return UIColor.black
+        case "surprise":
+            return UIColor.brown
+        default:
+            break
+        }
+        return UIColor.white
+    }
+
+    
     func refreshOverallMood(cell: CellState) {
         let savedEntries = getSavedEntriesFromDatabase()
-        var dictionary: [EmotionName:Double] = [:]
         for savedEntry in savedEntries {
             if savedEntry.date == cell.date {
-                dictionary = savedEntry.emotion.emotions
+
             }
         }
-        happyPercent.text = "\(dictionary[EmotionName.happiness])"
+//        happyPercent.text = ""
         
     }
     
@@ -110,8 +135,24 @@ class CalendarViewController: UIViewController {
         
         for i in (savedEntries.count - 31)..<savedEntries.count {
             let date = getDate(savedDate: savedEntries[i].date)
-            let moodValue = savedEntries[i].survey.moodInput.toValue()
-            let dataEntry = ChartDataEntry(x: Double(Int(date)), y: Double(moodValue))
+            let moodValue = savedEntries[i].survey.moodInput!
+            var plotY = 0.0
+            switch moodValue {
+            case "great":
+                plotY = 0
+            case "good":
+                plotY = 1
+            case "average":
+                plotY = 2
+            case "bad":
+                plotY = 3
+            case "veryBad":
+                plotY = 4
+            default:
+                break
+            }
+            
+            let dataEntry = ChartDataEntry(x: Double(Int(date)), y: Double(plotY))
             dataEntries.append(dataEntry)
         }
         
