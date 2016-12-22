@@ -18,26 +18,5 @@ enum EmotionName: String {
     case neutral = "neutral"
     case sadness = "sadness"
     case surprise = "surprise"
-
-    func setCalendarCellColor() -> UIColor {
-        switch self {
-        case .anger:
-            return UIColor.red
-        case .contempt:
-            return UIColor.yellow
-        case .disgust:
-            return UIColor.cyan
-        case .fear:
-            return UIColor.green
-        case .happiness:
-            return UIColor.cyan
-        case .neutral:
-            return UIColor.purple
-        case .sadness:
-            return UIColor.black
-        case .surprise:
-            return UIColor.brown
-        }
-    }
 }
 

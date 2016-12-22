@@ -14,5 +14,5 @@ enum Sleep: String {
         case average = "average"
         case poorly = "poorly"
         case veryPoorly = "very poorly"
-    }
+}
 

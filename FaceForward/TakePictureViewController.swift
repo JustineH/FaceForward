@@ -9,6 +9,8 @@
 import UIKit
 import Foundation
 import SwiftyJSON
+import RealmSwift
+
 
 class TakePictureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -19,6 +21,10 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var faceResults: UITextView!
     @IBOutlet weak var nextButton: UIButton!
 //   @IBOutlet weak var spinner: UIActivityIndicatorView!
+//    var percentages = [Double]()
+    var mostLikelyMood: String = EmotionName.neutral.rawValue
+    var survey: Survey!
+    var emotionsDictionaryToSave: Emotion!
     
     // MARK: - Actions -
     @IBAction func loadImageButtonTapped(_ sender: UIButton) {
@@ -29,11 +35,21 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func nextSaveButton(_ sender: Any) {
-//        let realm = try! Realm()
-//        
-//        try! realm.write {
-//            realm.add(self)
-//        }
+        var newEmotion = Emotion()
+        newEmotion = emotionsDictionaryToSave
+        newEmotion.largestEmotion = mostLikelyMood
+        
+        let newEntry = DataEntry()
+        newEntry.survey = survey
+        newEntry.emotion = newEmotion
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(newEntry)
+        }
+        
+//        Router(self).showChart(dict: emotionsToSave)
+        
     }
     
     override func viewDidLoad() {
@@ -67,12 +83,37 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
                 for (name, value) in emotionDictionary {
                     let percent: Int = Int(round(value * 100))
                     self.faceResults.text! += "\(name): \(percent)%\n"
+//                    self.percentages.append(value)
                 }
+                
+                self.emotionsDictionaryToSave = self.makeItems(dictionary: emotionDictionary)
+                self.mostLikelyMood = self.keyMaxValue(dict: emotionDictionary)!
             }
         }
             dismiss(animated: true, completion: nil)
     }
-
+    
+    func makeItems(dictionary: [String:Double]) -> Emotion {
+        let new = Emotion()
+        new.anger = dictionary["anger"]!
+        new.contempt = dictionary["contempt"]!
+        new.disgust = dictionary["disgust"]!
+        new.fear = dictionary["fear"]!
+        new.happiness = dictionary["happiness"]!
+        new.neutral = dictionary["neutral"]!
+        new.sadness = dictionary["sadness"]!
+        new.surprise = dictionary["surprise"]!
+        return new
+    }
+    
+    func keyMaxValue(dict: [String: Double]) -> String? {
+        for (key, value) in dict {
+            if value == dict.values.max() {
+                return key
+            }
+        }
+        return nil
+    }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
@@ -87,6 +128,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         UIGraphicsEndImageContext()
         return resizedImage!
     }
+
 }
 
 
