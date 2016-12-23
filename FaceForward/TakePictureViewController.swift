@@ -37,17 +37,18 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func nextSaveButton(_ sender: Any) {
-        var newEmotion = Emotion()
-        newEmotion = emotionsDictionaryToSave
-        newEmotion.largestEmotion = mostLikelyMood
         
-        let newEntry = DataEntry()
-        newEntry.survey = survey
-        newEntry.emotion = newEmotion
-        
+        var newEmotion = emotionsDictionaryToSave
+        newEmotion!.largestEmotion = mostLikelyMood
+
         let realm = try! Realm()
         try! realm.write {
+            
+            var newEntry = DataEntry()
+            newEntry.emotion.append(newEmotion!)
+            newEntry.survey.append(survey)
             realm.add(newEntry)
+   
         }
     }
     
@@ -126,6 +127,8 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         new.neutral = dictionary["neutral"]!
         new.sadness = dictionary["sadness"]!
         new.surprise = dictionary["surprise"]!
+        
+        
         return new
     }
     

@@ -10,15 +10,15 @@ import UIKit
 import RealmSwift
 
 class Emotion: Object {
-    var largestEmotion: EmotionName.RawValue!
-    var anger = 0.0
-    var contempt = 0.0
-    var disgust = 0.0
-    var fear = 0.0
-    var happiness = 0.0
-    var neutral = 0.0
-    var sadness = 0.0
-    var surprise = 0.0
+    dynamic var largestEmotion = ""
+    dynamic var anger : Double = 0.0
+    dynamic var contempt : Double  = 0.0
+    dynamic var disgust : Double = 0.0
+    dynamic var fear : Double = 0.0
+    dynamic var happiness : Double = 0.0
+    dynamic var neutral : Double = 0.0
+    dynamic var sadness : Double = 0.0
+    dynamic var surprise : Double = 0.0
 
 }
 

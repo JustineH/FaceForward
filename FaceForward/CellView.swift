@@ -14,6 +14,8 @@ class CellView: JTAppleDayCellView {
  
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var moodColor: UIView!
+    @IBOutlet weak var currentColor: UIView!
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
