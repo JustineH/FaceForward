@@ -26,6 +26,7 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
         super.viewDidLoad()
         
         pieChartView.delegate = self
+        pieChartView.notifyDataSetChanged()
         
         let emotionsArray = ["Anger", "Contempt", "Disgust", "Fear", "Sadness", "Surprise", "Happiness", "Neutral"]
         let emotionsPercentage = [0.0]
@@ -34,6 +35,16 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
     }
     
     func setChart(dataPoints: [String], values: [Double]) {
+        
+        let legend = pieChartView.legend as Legend
+        legend.enabled = true
+        legend.horizontalAlignment = .left
+        legend.drawInside = false
+        pieChartView.chartDescription?.enabled = false
+        pieChartView.drawHoleEnabled = false
+        pieChartView.legend.enabled = true
+        pieChartView.rotationEnabled = false
+        pieChartView.highlightPerTapEnabled = false
         
         var dataEntries: [PieChartDataEntry] = []
         
@@ -48,17 +59,27 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
         emotionsToPassToPieChart["Neutral"] = dict!.neutral
        
         for (emotion, percentage) in emotionsToPassToPieChart {
+ 
             let dataEntry = PieChartDataEntry(value: percentage, label: emotion)
+           // let emotion = formatter.stringFromArray(emotion)
+            
+            
             dataEntries.append(dataEntry)
         }
-    
         let pieChartDataSet = PieChartDataSet(values: dataEntries, label: "Emotions")
+        //let pieChartDataSet = PieChartDataSet(values: dict!.anger, label: "Anger")
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
         pieChartView.data = pieChartData
         pieChartView.animate(xAxisDuration: 1.0)
+       
+     //   let chartFormatter = ChartFormatter()
+     //   pieChart.xAxis.valueFormatter = xAxis.valueFormatter
         
-      //  pieChartView.yAxis.labelPosition = .bothSided
+      //  pieChartView.setNeedsDisplay()
+        
     }
+    
+  
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
