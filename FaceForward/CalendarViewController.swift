@@ -74,13 +74,6 @@ class CalendarViewController: UIViewController {
         let realm = try! Realm()
         let resultsData = realm.objects(DataEntry.self)
         delegate.moodData = resultsData
-//        let obj = resultsData.first
-//        let emotionWorking = obj?.emotion[0]
-    
-//        for dataEntry in resultsData {
-//            delegate.moodColor = (obj?.emotion[0].largestEmotion)!
-//        }
-//        print(resultsData)
     }
     
     func refreshOverallMood(cell: CellState) {
@@ -93,13 +86,6 @@ class CalendarViewController: UIViewController {
 //        happyPercent.text = ""
         
     }
-    
-    //MARK: Navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "showDetail" {
-//            let detailVC:DetailLogViewController = segue.destination as! DetailLogViewController
-//        }
-//    }
 
 
     //MARK: Chart (move later)
