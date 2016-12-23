@@ -16,7 +16,7 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
     @IBOutlet weak var pieChartView: PieChartView!
     
     dynamic var emotionsArray: [String]!
-    var dict: Emotion?
+    var dict: Emotion = [String:Double]()
     
     
     @IBAction func nextToSuggestionsButton(_ sender: Any) {
@@ -49,28 +49,36 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
         var dataEntries: [PieChartDataEntry] = []
         
         var emotionsToPassToPieChart = [String:Double]()
-        emotionsToPassToPieChart["Anger"] = dict!.anger
-        emotionsToPassToPieChart["Contempt"] = dict!.contempt
-        emotionsToPassToPieChart["Disgust"] = dict!.disgust
-        emotionsToPassToPieChart["Fear"] = dict!.fear
-        emotionsToPassToPieChart["Sadness"] = dict!.sadness
-        emotionsToPassToPieChart["Surprise"] = dict!.surprise
-        emotionsToPassToPieChart["Happiness"] = dict!.happiness
-        emotionsToPassToPieChart["Neutral"] = dict!.neutral
+        emotionsToPassToPieChart["Anger"] = dict.anger
+        emotionsToPassToPieChart["Contempt"] = dict.contempt
+        emotionsToPassToPieChart["Disgust"] = dict.disgust
+        emotionsToPassToPieChart["Fear"] = dict.fear
+        emotionsToPassToPieChart["Sadness"] = dict.sadness
+        emotionsToPassToPieChart["Surprise"] = dict.surprise
+        emotionsToPassToPieChart["Happiness"] = dict.happiness
+        emotionsToPassToPieChart["Neutral"] = dict.neutral
        
-        for (emotion, percentage) in emotionsToPassToPieChart {
+        for emotion in emotionsToPassToPieChart.keys {
  
-            let dataEntry = PieChartDataEntry(value: percentage, label: emotion)
+            let dataEntry = PieChartDataEntry(value: emotionsToPassToPieChart[emotion], label: emotion)
+          //  let dataEntry = PieChartDataEntry(value: percentage, label: emotion)
            // let emotion = formatter.stringFromArray(emotion)
             
             
             dataEntries.append(dataEntry)
         }
-        let pieChartDataSet = PieChartDataSet(values: dataEntries, label: "Emotions")
-        //let pieChartDataSet = PieChartDataSet(values: dict!.anger, label: "Anger")
-        let pieChartData = PieChartData(dataSet: pieChartDataSet)
+        let pieChartDataSet = PieChartDataSet(values: dataEntries, label: "")
+        var iPieChartDataSet: [IChartDataSet] = []
+        iPieChartDataSet.append(pieChartDataSet)
+    
+        
+        let pieChartData = PieChartData(dataSets: iPieChartDataSet)
         pieChartView.data = pieChartData
-        pieChartView.animate(xAxisDuration: 1.0)
+        
+     
+      //  let pieChartData = PieChartData(dataSet: pieChartDataSet)
+      //  pieChartView.data = pieChartData
+      //  pieChartView.animate(xAxisDuration: 1.0)
        
      //   let chartFormatter = ChartFormatter()
      //   pieChart.xAxis.valueFormatter = xAxis.valueFormatter
