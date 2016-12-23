@@ -50,9 +50,9 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
             realm.add(newEntry)
    
         }
+        Router(self).showChart(dict: emotionsDictionaryToSave)
     }
     
-//        Router(self).showChart(dict: emotionsToSave)
         
     @IBAction func retakePhotoButton(_ sender: UIButton) {
         imagePicker.allowsEditing = false
@@ -81,7 +81,6 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         retakePhotoButtonLabel.isHidden = true
         nextButtonLabel.isHidden = true
         spinner.hidesWhenStopped = true
-        
     }
 
 
@@ -92,7 +91,6 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         takePhotoButtonLabel.isHidden = true
         self.faceResults.isHidden = false
         self.faceResults.text = ""
-        
         
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
@@ -127,7 +125,6 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         new.neutral = dictionary["neutral"]!
         new.sadness = dictionary["sadness"]!
         new.surprise = dictionary["surprise"]!
-        
         
         return new
     }
@@ -173,19 +170,4 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
 //    }
 //
 //}
-//    
-
-
-
-
-/*
- // MARK: - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- // Get the new view controller using segue.destinationViewController.
- // Pass the selected object to the new view controller.
- }
- */
-
-
+//

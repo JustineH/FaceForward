@@ -45,7 +45,7 @@ class CalendarViewController: UIViewController {
         
         configureView()
         displayPreviousMoods()
-        updateChart()
+     //   updateChart()
    
     }
     

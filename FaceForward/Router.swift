@@ -41,10 +41,10 @@ class Router: NSObject {
         vc?.show(suggestionsVC, sender: vc)
     }
 
-    func showChart(dict: Dictionary<EmotionName, Double>) {
-//        let chartVC = Router.chartVC()
-//        chartVC.dict = dict
-//        vc?.show(chartVC, sender: vc)
+    func showChart(dict: Emotion) {
+        let chartVC = Router.chartVC()
+        chartVC.dict = dict
+        vc?.show(chartVC, sender: vc)
     }
 
 //    func showMusicPlayer() {
