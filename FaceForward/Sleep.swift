@@ -9,10 +9,10 @@
 import Foundation
 
 enum Sleep: String {
-        case great = "great"
-        case well = "well"
-        case average = "average"
-        case poorly = "poorly"
-        case veryPoorly = "very poorly"
+        case great = "Great"
+        case well = "Well"
+        case average = "Average"
+        case poorly = "Poorly"
+        case veryPoorly = "Very poorly"
 }
 

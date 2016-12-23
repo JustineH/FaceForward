@@ -8,17 +8,15 @@
 
 import UIKit
 
-class SurveyViewController: UIViewController {
+class SurveyViewController: UIViewController, UITextFieldDelegate {
 
     //MARK: Properties
-    
     @IBOutlet weak var moodLabel: UILabel!
     @IBOutlet weak var moodSlider: UISlider!
     @IBOutlet weak var sleepQualityLabel: UILabel!
     @IBOutlet weak var sleepSlider: UISlider!
     @IBOutlet weak var exerciseControl: UISegmentedControl!
     @IBOutlet weak var peopleTextField: UITextField!
-  
     @IBOutlet weak var nextButton: UIButton!
     
     var didExercise: Bool = false
@@ -87,12 +85,54 @@ class SurveyViewController: UIViewController {
         }
     }
     
-    
+    @IBAction func viewTapped(_ sender: AnyObject) {
+        keyboardDismiss()
+    }
     
     //MARK: View
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.peopleTextField.delegate = self;
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y == 0 {
+                self.view.frame.origin.y -= keyboardSize.height
+            }
+        }
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.view.frame.origin.y != 0 {
+                self.view.frame.origin.y += keyboardSize.height
+            }
+        }
+    }
+    
+    func keyboardDismiss() {
+        peopleTextField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        keyboardDismiss()
+        
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
