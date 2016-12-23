@@ -11,7 +11,10 @@ import JTAppleCalendar
 import Charts
 import RealmSwift
 
-class CalendarViewController: UIViewController {
+protocol calendarEventHandlingProtocol : class{
+    func dateWasClicked(view: JTAppleDayCellView?, cellState: CellState, selectedDate: Date)
+}
+class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
     
     //MARK: Properties
     let currentDate = Date()
@@ -20,18 +23,12 @@ class CalendarViewController: UIViewController {
     let datasource = DataSource()
     let delegate = Delegate()
     
-    var test2 : Emotion?
-    
     //calendar
     @IBOutlet weak var calendarView: JTAppleCalendarView!
-    @IBOutlet weak var LogsTableView: UITableView!
-    
-    //labels
-    @IBOutlet weak var overallFace: UIImageView!
-    @IBOutlet weak var happyPercent: UILabel!
-    @IBOutlet weak var surprisedPercent: UILabel!
-    @IBOutlet weak var sadPercent: UILabel!
-    @IBOutlet weak var angryPercent: UILabel!
+    // We cache our colors because we do not want to be creating
+    // a new color every time a cell is displayed.
+    let notSelectedTextColor = UIColor.black
+    let selectedTextColor = UIColor.purple
     
     //chart
     @IBOutlet weak var chartView: ScatterChartView!
@@ -40,6 +37,7 @@ class CalendarViewController: UIViewController {
     //scroll
     @IBOutlet weak var mainScrollView: UIScrollView!
     
+    //MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,11 +47,24 @@ class CalendarViewController: UIViewController {
    
     }
     
+    func dateWasClicked(view: JTAppleDayCellView?, cellState: CellState, selectedDate: Date) {
+        guard let myCustomCell = view as? CellView  else {
+            print("Error with cell selection")
+            return
+        }
+        if cellState.isSelected {
+            myCustomCell.dayLabel.textColor = selectedTextColor
+            Router(self).showDetail(mooddata: delegate.moodData, date: selectedDate)
+        } else {
+            myCustomCell.dayLabel.textColor = notSelectedTextColor
+        }
+    }
+    
     func configureView() {
         
         calendarView.registerCellViewXib(file: "CalendarCell")
         calendarView.registerHeaderView(xibFileNames: ["MonthHeaderView"])
-        
+        delegate.delegate = self
         calendarView.delegate = delegate
         calendarView.dataSource = datasource
         
@@ -76,17 +87,6 @@ class CalendarViewController: UIViewController {
         delegate.moodData = resultsData
     }
     
-    func refreshOverallMood(cell: CellState) {
-        let savedEntries = getSavedEntriesFromDatabase()
-        for savedEntry in savedEntries {
-            if savedEntry.date == cell.date {
-
-            }
-        }
-//        happyPercent.text = ""
-        
-    }
-
 
     //MARK: Chart (move later)
     func updateChart() {

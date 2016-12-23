@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class Router: NSObject {
 
@@ -46,6 +47,13 @@ class Router: NSObject {
 //        chartVC.dict = dict
 //        vc?.show(chartVC, sender: vc)
     }
+    
+    func showDetail(mooddata: Results<DataEntry>?, date: Date) {
+        let detailVC = Router.detailVC()
+        detailVC.moods = mooddata
+        detailVC.date = date
+        vc?.show(detailVC, sender: vc)
+    }
 
 //    func showMusicPlayer() {
 //        let musicPlayerVC = Router.musicPlayerVC()
@@ -73,6 +81,10 @@ class Router: NSObject {
 
     fileprivate class func chartVC() -> AnalysisChartViewController {
         return chart().instantiateViewController(withIdentifier: "AnalysisChartViewController") as! AnalysisChartViewController
+    }
+    
+    fileprivate class func detailVC() -> DetailLogViewController {
+        return detail().instantiateViewController(withIdentifier: "DetailLogViewController") as! DetailLogViewController
     }
 
 //    fileprivate class func musicPlayerVC() -> MusicPlayerViewController {
@@ -105,6 +117,10 @@ class Router: NSObject {
 
     fileprivate class func musicPlayer() -> UIStoryboard {
         return UIStoryboard(name: "MusicPlayer", bundle:nil)
+    }
+    
+    fileprivate class func detail() -> UIStoryboard {
+        return UIStoryboard(name: "Main", bundle: nil)
     }
 
 }

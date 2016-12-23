@@ -12,13 +12,9 @@ import RealmSwift
 
 class Delegate: NSObject, JTAppleCalendarViewDelegate {
     //MARK: Properties
-    // We cache our colors because we do not want to be creating
-    // a new color every time a cell is displayed.
-    let notSelectedTextColor = UIColor.black
-    let selectedTextColor = UIColor.purple
+
     var moodData: Results<DataEntry>?
-//    var moodColor = "white"
-//    var moodDates = [String]()
+    weak var delegate:calendarEventHandlingProtocol?
     
     let dateFormatter = DateFormatter()
     
@@ -40,7 +36,6 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
         
         //Mood Colors
         for moodDate in moodData!{
-//            print(moodDate.date, cellState.date)
             let startOfDay = Calendar.current.startOfDay(for: moodDate.date)
             if startOfDay == cellState.date {
                 let emotionToday = moodDate.emotion[0].largestEmotion
@@ -63,7 +58,7 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
         } else {
             myCustomCell.isHidden = true
         }
-        handleCellSelection(view: cell, cellState: cellState)
+        handleCellSelection(view: cell, cellState: cellState, selectedDate: cellState.date)
     }
     
     func markCurrentDate(cell: CellView) {
@@ -98,23 +93,19 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
 
     
     //MARK: Cell Selection
-    func handleCellSelection(view: JTAppleDayCellView?, cellState: CellState) {
-        guard let myCustomCell = view as? CellView  else {
-            return
+    func handleCellSelection(view: JTAppleDayCellView?, cellState: CellState, selectedDate: Date) {
+        if delegate != nil {
+            delegate!.dateWasClicked(view: view, cellState: cellState, selectedDate: selectedDate)
         }
-        if cellState.isSelected {
-            myCustomCell.dayLabel.textColor = selectedTextColor
-        } else {
-            myCustomCell.dayLabel.textColor = notSelectedTextColor
-        }
+        
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
-        handleCellSelection(view: cell, cellState: cellState)
+        handleCellSelection(view: cell, cellState: cellState, selectedDate: date)
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
-        handleCellSelection(view: cell, cellState: cellState)
+        handleCellSelection(view: cell, cellState: cellState, selectedDate: date)
     }
     
     
