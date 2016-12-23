@@ -9,11 +9,11 @@
 import Foundation
 
 enum Mood: String {
-        case great = "great"
-        case good = "good"
-        case average = "average"
-        case bad = "bad"
-        case veryBad = "veryBad"
+        case great = "Great"
+        case good = "Good"
+        case average = "Average"
+        case bad = "Bad"
+        case veryBad = "Very bad"
         
         func toValue() -> Int{
             switch self{
