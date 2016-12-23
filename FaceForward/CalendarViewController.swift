@@ -43,8 +43,7 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
         
         configureView()
         displayPreviousMoods()
-        updateChart()
-   
+        createChart()
     }
     
     func dateWasClicked(view: JTAppleDayCellView?, cellState: CellState, selectedDate: Date) {
@@ -68,9 +67,6 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
         calendarView.delegate = delegate
         calendarView.dataSource = datasource
         
-        axisFormatDelegate = self
-        chartView.noDataText = "No data :("
-        
         calendarView.cellInset = CGPoint(x: 0, y: 0)
         calendarView.scrollEnabled = true
         calendarView.scrollingMode = .stopAtEachCalendarFrameWidth
@@ -87,11 +83,31 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
         delegate.moodData = resultsData
     }
     
-
+    
     //MARK: Chart (move later)
+    func createChart() {
+        axisFormatDelegate = self
+        chartView.noDataText = "No data :("
+        chartView.chartDescription?.text = "for the month"
+        
+        chartView.rightAxis.drawLabelsEnabled = false
+        chartView.leftAxis.gridLineWidth = 0
+        chartView.rightAxis.gridLineWidth = 0
+        chartView.xAxis.gridLineWidth = 0
+        
+        if getSavedEntriesFromDatabase()?.count != 0 {
+            updateChart()
+        } else {
+            
+        }
+        
+    }
+
     func updateChart() {
         var dataEntries: [ChartDataEntry] = []
-        let savedEntries = getSavedEntriesFromDatabase()
+        guard let savedEntries = getSavedEntriesFromDatabase() else {
+            return
+        }
         
         for i in 0..<savedEntries.count {
             let date = getDate(savedDate: savedEntries[i].date)
@@ -117,13 +133,13 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
             }
         }
         
-        let chartDataSet = ScatterChartDataSet(values: dataEntries, label: "emotions")
+        let chartDataSet = ScatterChartDataSet(values: dataEntries, label: "Mood")
+        chartDataSet.setScatterShape(ScatterChartDataSet.Shape.circle)
         let chartData = ScatterChartData(dataSet: chartDataSet)
         chartView.data = chartData
         
         let xaxis = chartView.xAxis
         xaxis.valueFormatter = axisFormatDelegate
-        print(dataEntries)
     }
 
     func getDate(savedDate: Date) -> (Int){
@@ -133,12 +149,11 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
         return components
     }
 
-    func getSavedEntriesFromDatabase() -> Results<DataEntry>{
+    func getSavedEntriesFromDatabase() -> Results<DataEntry>?{
         
         do {
             let realm = try! Realm()
             return realm.objects(DataEntry.self)
-            
         } catch let error as NSError {
             fatalError(error.localizedDescription)
         }
@@ -154,6 +169,6 @@ extension CalendarViewController: IAxisValueFormatter {
         return "\(Int(value))"
     }
 }
-    
+
 
 

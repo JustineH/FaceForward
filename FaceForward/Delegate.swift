@@ -11,11 +11,10 @@ import JTAppleCalendar
 import RealmSwift
 
 class Delegate: NSObject, JTAppleCalendarViewDelegate {
+   
     //MARK: Properties
-
     var moodData: Results<DataEntry>?
     weak var delegate:calendarEventHandlingProtocol?
-    
     let dateFormatter = DateFormatter()
     
     //MARK: All the Cells in a Month

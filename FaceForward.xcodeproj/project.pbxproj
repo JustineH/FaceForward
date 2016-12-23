@@ -541,7 +541,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FaceForward/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.carmen-cheng.FaceForward";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cj.FaceForward;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -556,7 +556,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FaceForward/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.carmen-cheng.FaceForward";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cj.FaceForward;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
