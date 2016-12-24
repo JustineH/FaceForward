@@ -15,51 +15,77 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet weak var pieChartView: PieChartView!
     
-    dynamic var emotionsArray: [String]!
+    dynamic var emotionsToPassToPieChart = [String:Double]()
+    dynamic var emotionsArray = [String]()
+    var dict = Emotion()
+    
+    
+    @IBAction func nextToSuggestionsButton(_ sender: Any) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         pieChartView.delegate = self
+        pieChartView.notifyDataSetChanged()
         
-        let emotionsArray = ["Anger", "Contempt", "Happiness", "Disgust", "Sadness", "Surprise", "Fear", "Neutral"]
-        let emotionsPercentage = [0.0]
+        emotionsToPassToPieChart["Anger"] = dict.anger
+        emotionsToPassToPieChart["Contempt"] = dict.contempt
+        emotionsToPassToPieChart["Disgust"] = dict.disgust
+        emotionsToPassToPieChart["Fear"] = dict.fear
+        emotionsToPassToPieChart["Sadness"] = dict.sadness
+        emotionsToPassToPieChart["Surprise"] = dict.surprise
+        emotionsToPassToPieChart["Happiness"] = dict.happiness
+        emotionsToPassToPieChart["Neutral"] = dict.neutral
+
+    //    emotionsArray = emotionsToPassToPieChart.keys
+        
+        let emotionsPercentage = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
         
         setChart(dataPoints: emotionsArray, values: emotionsPercentage)
     }
     
     func setChart(dataPoints: [String], values: [Double]) {
         
+        let legend = pieChartView.legend as Legend
+        legend.enabled = true
+        legend.horizontalAlignment = .left
+        legend.drawInside = false
+        legend.orientation = .horizontal
+        pieChartView.chartDescription?.enabled = false
+        pieChartView.drawHoleEnabled = false
+        pieChartView.legend.enabled = true
+        pieChartView.rotationEnabled = false
+        pieChartView.highlightPerTapEnabled = false
+        
         var dataEntries: [PieChartDataEntry] = []
         
-        for i in 0..<dataPoints.count {
-            let dataEntry = PieChartDataEntry(value: values[i])
+       
+        for emotion in emotionsToPassToPieChart.keys {
+ 
+            let dataEntry = PieChartDataEntry(value: emotionsToPassToPieChart[emotion]!, label: emotion)
+          //  let dataEntry = PieChartDataEntry(value: percentage, label: emotion)
+           // let emotion = formatter.stringFromArray(emotion)
+            
+            
             dataEntries.append(dataEntry)
         }
         
-        
-        let pieChartDataSet = PieChartDataSet(values: dataEntries, label: "Emotions")
+        let pieChartDataSet = PieChartDataSet(values: dataEntries, label: "")
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
-        pieChartView.data = pieChartData
-        pieChartView.animate(xAxisDuration: 1.0)
         
-        pieChartView.xAxis.labelPosition = .bothSided
+        pieChartView.data = pieChartData
+        pieChartView.notifyDataSetChanged()
+        pieChartView.animate(xAxisDuration: 2.0)
+        
+      //  pieChartView.setNeedsDisplay()
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
