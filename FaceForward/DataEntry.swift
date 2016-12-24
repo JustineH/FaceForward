@@ -21,7 +21,7 @@ class DataEntry: Object {
     
     convenience init(emotion: Emotion, survey: Survey){
         self.init()
-        self.date = NSDate() as Date
+        self.date = Date()
 //        self.emotion = emotion
 //        self.survey = survey
        
