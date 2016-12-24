@@ -11,27 +11,25 @@ import JTAppleCalendar
 import Charts
 import RealmSwift
 
-class CalendarViewController: UIViewController {
+protocol calendarEventHandlingProtocol : class{
+    func dateWasClicked(view: JTAppleDayCellView?, cellState: CellState, selectedDate: Date)
+}
+class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
     
     //MARK: Properties
     let currentDate = Date()
+    let realmManager = RealmManager()
     
     //dataSource & delegate
     let datasource = DataSource()
     let delegate = Delegate()
     
-    var test2 : Emotion?
-    
     //calendar
     @IBOutlet weak var calendarView: JTAppleCalendarView!
-    @IBOutlet weak var LogsTableView: UITableView!
-    
-    //labels
-    @IBOutlet weak var overallFace: UIImageView!
-    @IBOutlet weak var happyPercent: UILabel!
-    @IBOutlet weak var surprisedPercent: UILabel!
-    @IBOutlet weak var sadPercent: UILabel!
-    @IBOutlet weak var angryPercent: UILabel!
+    // We cache our colors because we do not want to be creating
+    // a new color every time a cell is displayed.
+    let notSelectedTextColor = UIColor.black
+    let selectedTextColor = UIColor.purple
     
     //chart
     @IBOutlet weak var chartView: ScatterChartView!
@@ -40,25 +38,35 @@ class CalendarViewController: UIViewController {
     //scroll
     @IBOutlet weak var mainScrollView: UIScrollView!
     
+    //MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureView()
         displayPreviousMoods()
-        updateChart()
-   
+        createChart()
+    }
+    
+    func dateWasClicked(view: JTAppleDayCellView?, cellState: CellState, selectedDate: Date) {
+        guard let myCustomCell = view as? CellView  else {
+            print("Error with cell selection")
+            return
+        }
+        if cellState.isSelected {
+            myCustomCell.dayLabel.textColor = selectedTextColor
+            Router(self).showDetail(date: selectedDate)
+        } else {
+            myCustomCell.dayLabel.textColor = notSelectedTextColor
+        }
     }
     
     func configureView() {
         
         calendarView.registerCellViewXib(file: "CalendarCell")
         calendarView.registerHeaderView(xibFileNames: ["MonthHeaderView"])
-        
+        delegate.delegate = self
         calendarView.delegate = delegate
         calendarView.dataSource = datasource
-        
-        axisFormatDelegate = self
-        chartView.noDataText = "No data :("
         
         calendarView.cellInset = CGPoint(x: 0, y: 0)
         calendarView.scrollEnabled = true
@@ -74,38 +82,33 @@ class CalendarViewController: UIViewController {
         let realm = try! Realm()
         let resultsData = realm.objects(DataEntry.self)
         delegate.moodData = resultsData
-//        let obj = resultsData.first
-//        let emotionWorking = obj?.emotion[0]
-    
-//        for dataEntry in resultsData {
-//            delegate.moodColor = (obj?.emotion[0].largestEmotion)!
-//        }
-//        print(resultsData)
     }
     
-    func refreshOverallMood(cell: CellState) {
-        let savedEntries = getSavedEntriesFromDatabase()
-        for savedEntry in savedEntries {
-            if savedEntry.date == cell.date {
-
-            }
+    
+    //MARK: Chart (move later)
+    func createChart() {
+        axisFormatDelegate = self
+        chartView.noDataText = "No data :("
+        chartView.chartDescription?.text = "for the month"
+        
+        chartView.rightAxis.drawLabelsEnabled = false
+        chartView.leftAxis.gridLineWidth = 0
+        chartView.rightAxis.gridLineWidth = 0
+        chartView.xAxis.gridLineWidth = 0
+        
+        if realmManager.getSavedEntriesFromDatabase()?.count != 0 {
+            updateChart()
+        } else {
+            
         }
-//        happyPercent.text = ""
         
     }
-    
-    //MARK: Navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "showDetail" {
-//            let detailVC:DetailLogViewController = segue.destination as! DetailLogViewController
-//        }
-//    }
 
-
-    //MARK: Chart (move later)
     func updateChart() {
         var dataEntries: [ChartDataEntry] = []
-        let savedEntries = getSavedEntriesFromDatabase()
+        guard let savedEntries = realmManager.getSavedEntriesFromDatabase() else {
+            return
+        }
         
         for i in 0..<savedEntries.count {
             let date = getDate(savedDate: savedEntries[i].date)
@@ -131,13 +134,13 @@ class CalendarViewController: UIViewController {
             }
         }
         
-        let chartDataSet = ScatterChartDataSet(values: dataEntries, label: "emotions")
+        let chartDataSet = ScatterChartDataSet(values: dataEntries, label: "Mood")
+        chartDataSet.setScatterShape(ScatterChartDataSet.Shape.circle)
         let chartData = ScatterChartData(dataSet: chartDataSet)
         chartView.data = chartData
         
         let xaxis = chartView.xAxis
         xaxis.valueFormatter = axisFormatDelegate
-        print(dataEntries)
     }
 
     func getDate(savedDate: Date) -> (Int){
@@ -146,17 +149,7 @@ class CalendarViewController: UIViewController {
         let components = calendar.component(.day, from: date)
         return components
     }
-
-    func getSavedEntriesFromDatabase() -> Results<DataEntry>{
-        
-        do {
-            let realm = try! Realm()
-            return realm.objects(DataEntry.self)
-            
-        } catch let error as NSError {
-            fatalError(error.localizedDescription)
-        }
-    }
+    
 }
 
 
@@ -168,6 +161,6 @@ extension CalendarViewController: IAxisValueFormatter {
         return "\(Int(value))"
     }
 }
-    
+
 
 

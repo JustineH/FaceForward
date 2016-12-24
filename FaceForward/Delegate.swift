@@ -11,16 +11,12 @@ import JTAppleCalendar
 import RealmSwift
 
 class Delegate: NSObject, JTAppleCalendarViewDelegate {
+   
     //MARK: Properties
-    // We cache our colors because we do not want to be creating
-    // a new color every time a cell is displayed.
-    let notSelectedTextColor = UIColor.black
-    let selectedTextColor = UIColor.purple
     var moodData: Results<DataEntry>?
-//    var moodColor = "white"
-//    var moodDates = [String]()
-    
+    weak var delegate:calendarEventHandlingProtocol?
     let dateFormatter = DateFormatter()
+    let myDateFormatter = MyDateFormatter()
     
     //MARK: All the Cells in a Month
     func calendar(_ calendar: JTAppleCalendarView, willDisplayCell cell: JTAppleDayCellView, date: Date, cellState: CellState) {
@@ -40,7 +36,6 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
         
         //Mood Colors
         for moodDate in moodData!{
-//            print(moodDate.date, cellState.date)
             let startOfDay = Calendar.current.startOfDay(for: moodDate.date)
             if startOfDay == cellState.date {
                 let emotionToday = moodDate.emotion[0].largestEmotion
@@ -63,7 +58,7 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
         } else {
             myCustomCell.isHidden = true
         }
-        handleCellSelection(view: cell, cellState: cellState)
+        handleCellSelection(view: cell, cellState: cellState, selectedDate: cellState.date)
     }
     
     func markCurrentDate(cell: CellView) {
@@ -98,23 +93,19 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
 
     
     //MARK: Cell Selection
-    func handleCellSelection(view: JTAppleDayCellView?, cellState: CellState) {
-        guard let myCustomCell = view as? CellView  else {
-            return
+    func handleCellSelection(view: JTAppleDayCellView?, cellState: CellState, selectedDate: Date) {
+        if delegate != nil {
+            delegate!.dateWasClicked(view: view, cellState: cellState, selectedDate: selectedDate)
         }
-        if cellState.isSelected {
-            myCustomCell.dayLabel.textColor = selectedTextColor
-        } else {
-            myCustomCell.dayLabel.textColor = notSelectedTextColor
-        }
+        
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
-        handleCellSelection(view: cell, cellState: cellState)
+        handleCellSelection(view: cell, cellState: cellState, selectedDate: date)
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
-        handleCellSelection(view: cell, cellState: cellState)
+        handleCellSelection(view: cell, cellState: cellState, selectedDate: date)
     }
     
     
@@ -126,44 +117,13 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, willDisplaySectionHeader header: JTAppleHeaderView, range: (start: Date, end: Date), identifier: String) {
         let headerCell = (header as? MonthHeaderView)
         let calendar = Calendar.current
-        let month = formatMonth(month: calendar.component(.month, from: range.start))
+        let month = myDateFormatter.formatMonth(month: calendar.component(.month, from: range.start))
         let year = calendar.component(.year, from: range.start)
         headerCell?.monthLabel.text = "\(month) \(year)"
         
     }
     
-    func formatMonth(month: Int) -> String{
-        switch month {
-        case 1:
-            return "January"
-        case 2:
-            return "Febuary"
-        case 3:
-            return "March"
-        case 4:
-            return "April"
-        case 5:
-            return "May"
-        case 6:
-            return "June"
-        case 7:
-            return "July"
-        case 8:
-            return "August"
-        case 9:
-            return "September"
-        case 10:
-            return "October"
-        case 11:
-            return "November"
-        case 12:
-            return "December"
-            
-        default:
-            break
-        }
-        return ""
-    }
+    
     
    
     

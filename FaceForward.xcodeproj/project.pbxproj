@@ -14,6 +14,8 @@
 		1F26A2041E02003F00CA7464 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F26A2021E02003F00CA7464 /* Main.storyboard */; };
 		1F26A2061E02003F00CA7464 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F26A2051E02003F00CA7464 /* Assets.xcassets */; };
 		1F26A2091E02003F00CA7464 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F26A2071E02003F00CA7464 /* LaunchScreen.storyboard */; };
+		1F5807481E0DE66500DAEDDC /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5807471E0DE66500DAEDDC /* RealmManager.swift */; };
+		1F58074A1E0DF05E00DAEDDC /* MyDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5807491E0DF05E00DAEDDC /* MyDateFormatter.swift */; };
 		1F7277D71E04962200085D69 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7277D61E04962200085D69 /* Emotion.swift */; };
 		1F8348471E0887A200FE97CB /* DataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8348461E0887A200FE97CB /* DataEntry.swift */; };
 		1F8348491E08895900FE97CB /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8348481E08895900FE97CB /* Survey.swift */; };
@@ -36,6 +38,7 @@
 		1FBD715B1E0342EA001E36EE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD715A1E0342EA001E36EE /* Router.swift */; };
 		1FBD71631E034E9A001E36EE /* CalendarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FBD71621E034E9A001E36EE /* CalendarCell.xib */; };
 		1FBD71651E035F44001E36EE /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD71641E035F44001E36EE /* CellView.swift */; };
+		1FD03B661E0CEBCF009995E8 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD03B651E0CEBCF009995E8 /* DetailTableViewCell.swift */; };
 		5212E88B1E035862000209BD /* Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212E88A1E035862000209BD /* Styling.swift */; };
 		5286A2091E053633005028D0 /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A2081E053633005028D0 /* TakePictureViewController.swift */; };
 		5286A20E1E089772005028D0 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A20D1E089772005028D0 /* ServerManager.swift */; };
@@ -53,6 +56,8 @@
 		1F26A2051E02003F00CA7464 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F26A2081E02003F00CA7464 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F26A20A1E02003F00CA7464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F5807471E0DE66500DAEDDC /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		1F5807491E0DF05E00DAEDDC /* MyDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDateFormatter.swift; sourceTree = "<group>"; };
 		1F7277D61E04962200085D69 /* Emotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
 		1F8348461E0887A200FE97CB /* DataEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntry.swift; sourceTree = "<group>"; };
 		1F8348481E08895900FE97CB /* Survey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
@@ -75,6 +80,7 @@
 		1FBD715A1E0342EA001E36EE /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1FBD71621E034E9A001E36EE /* CalendarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarCell.xib; sourceTree = "<group>"; };
 		1FBD71641E035F44001E36EE /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		1FD03B651E0CEBCF009995E8 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		3C2A011C095BE3AAA8A0D4B8 /* Pods-FaceForward.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceForward.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaceForward/Pods-FaceForward.release.xcconfig"; sourceTree = "<group>"; };
 		5212E88A1E035862000209BD /* Styling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styling.swift; sourceTree = "<group>"; };
 		5286A2081E053633005028D0 /* TakePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePictureViewController.swift; sourceTree = "<group>"; };
@@ -159,9 +165,9 @@
 				1F8348481E08895900FE97CB /* Survey.swift */,
 				1F83484A1E0889BB00FE97CB /* Mood.swift */,
 				1F83484C1E088C2500FE97CB /* Sleep.swift */,
+				1F5807471E0DE66500DAEDDC /* RealmManager.swift */,
 				1F83484E1E088C7A00FE97CB /* EmotionName.swift */,
-				1FAB00E81E0A3361005ED26A /* DataSource.swift */,
-				1FAB00EA1E0A33DD005ED26A /* Delegate.swift */,
+				1F5807491E0DF05E00DAEDDC /* MyDateFormatter.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -207,7 +213,10 @@
 			isa = PBXGroup;
 			children = (
 				1FAB00E61E09DD14005ED26A /* CalendarViewController.swift */,
+				1FAB00E81E0A3361005ED26A /* DataSource.swift */,
+				1FAB00EA1E0A33DD005ED26A /* Delegate.swift */,
 				1FA89EBE1E022167004EBF08 /* DetailLogViewController.swift */,
+				1FD03B651E0CEBCF009995E8 /* DetailTableViewCell.swift */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -393,6 +402,7 @@
 				52D56F8F1E0A33A400BF42A0 /* Constants.swift in Sources */,
 				5286A20E1E089772005028D0 /* ServerManager.swift in Sources */,
 				1F05E1011E0395EF0061534B /* MonthHeaderView.swift in Sources */,
+				1F58074A1E0DF05E00DAEDDC /* MyDateFormatter.swift in Sources */,
 				5212E88B1E035862000209BD /* Styling.swift in Sources */,
 				1FBD715B1E0342EA001E36EE /* Router.swift in Sources */,
 				1FA89EBF1E022167004EBF08 /* DetailLogViewController.swift in Sources */,
@@ -407,9 +417,11 @@
 				1F26A1FD1E02003F00CA7464 /* AppDelegate.swift in Sources */,
 				1FA89EC11E02217C004EBF08 /* SurveyViewController.swift in Sources */,
 				1FAB00E71E09DD14005ED26A /* CalendarViewController.swift in Sources */,
+				1FD03B661E0CEBCF009995E8 /* DetailTableViewCell.swift in Sources */,
 				5286A2091E053633005028D0 /* TakePictureViewController.swift in Sources */,
 				1F7277D71E04962200085D69 /* Emotion.swift in Sources */,
 				1F83484F1E088C7A00FE97CB /* EmotionName.swift in Sources */,
+				1F5807481E0DE66500DAEDDC /* RealmManager.swift in Sources */,
 				1F83484B1E0889BB00FE97CB /* Mood.swift in Sources */,
 				1FBD71651E035F44001E36EE /* CellView.swift in Sources */,
 			);
@@ -537,7 +549,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FaceForward/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.carmen-cheng.FaceForward";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cj.FaceForward;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -552,7 +564,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FaceForward/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.carmen-cheng.FaceForward";
+				PRODUCT_BUNDLE_IDENTIFIER = com.cj.FaceForward;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

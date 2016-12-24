@@ -9,29 +9,52 @@
 import UIKit
 import RealmSwift
 
-class DetailLogViewController: UIViewController {
+class DetailLogViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
 //MARK: Properties
-    @IBOutlet weak var titleDateLabel: UILabel!
-    @IBOutlet weak var moodLabel: UILabel!
-    @IBOutlet weak var exerciseLabel: UILabel!
-    @IBOutlet weak var sleepLabel: UILabel!
-    @IBOutlet weak var peopleLabel: UILabel!
-    @IBOutlet weak var notesTextView: UITextView!
+    var date: Date?
+    var logs: [DataEntry] = []
+    let realmManager = RealmManager()
+
+
+    @IBOutlet weak var logTableView: UITableView!
     
-//MARK: View
+    
+//MARK: Other Stuff
     override func viewDidLoad() {
         super.viewDidLoad()
-//        updateLabels()
+        logTableView.rowHeight = UITableViewAutomaticDimension
+        logTableView.estimatedRowHeight = 200
+        
+        findLogs()
+        
     }
     
-//MARK: Labels
-//    func updateLabels() {
-//        titleDateLabel.text = "On \(date) you were..."
-//        moodLabel.text =
-//        exerciseLabel.text =
-//        sleepLabel.text =
-//        peopleLabel.text =
-//        notesTextView.text =
-//    }
+    func findLogs() {
+        for entry in realmManager.getSavedEntriesFromDatabase()! {
+            let startOfDay = Calendar.current.startOfDay(for: entry.date)
+            if startOfDay == date {
+                self.logs.append(entry)
+            } else {
+                
+            }
+        }
+    }
+    
+//MARK: TableView
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let log = logs[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! DetailTableViewCell
+        cell.configureCell(moods: log)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return logs.count
+    }
+    
+    
+    
+
 }
