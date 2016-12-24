@@ -18,6 +18,7 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
     
     //MARK: Properties
     let currentDate = Date()
+    let realmManager = RealmManager()
     
     //dataSource & delegate
     let datasource = DataSource()
@@ -53,7 +54,7 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
         }
         if cellState.isSelected {
             myCustomCell.dayLabel.textColor = selectedTextColor
-            Router(self).showDetail(mooddata: delegate.moodData, date: selectedDate)
+            Router(self).showDetail(date: selectedDate)
         } else {
             myCustomCell.dayLabel.textColor = notSelectedTextColor
         }
@@ -95,7 +96,7 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
         chartView.rightAxis.gridLineWidth = 0
         chartView.xAxis.gridLineWidth = 0
         
-        if getSavedEntriesFromDatabase()?.count != 0 {
+        if realmManager.getSavedEntriesFromDatabase()?.count != 0 {
             updateChart()
         } else {
             
@@ -105,7 +106,7 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
 
     func updateChart() {
         var dataEntries: [ChartDataEntry] = []
-        guard let savedEntries = getSavedEntriesFromDatabase() else {
+        guard let savedEntries = realmManager.getSavedEntriesFromDatabase() else {
             return
         }
         
@@ -148,16 +149,7 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
         let components = calendar.component(.day, from: date)
         return components
     }
-
-    func getSavedEntriesFromDatabase() -> Results<DataEntry>?{
-        
-        do {
-            let realm = try! Realm()
-            return realm.objects(DataEntry.self)
-        } catch let error as NSError {
-            fatalError(error.localizedDescription)
-        }
-    }
+    
 }
 
 

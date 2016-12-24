@@ -48,9 +48,8 @@ class Router: NSObject {
 //        vc?.show(chartVC, sender: vc)
     }
     
-    func showDetail(mooddata: Results<DataEntry>?, date: Date) {
+    func showDetail(date: Date) {
         let detailVC = Router.detailVC()
-        detailVC.moods = mooddata
         detailVC.date = date
         vc?.show(detailVC, sender: vc)
     }
