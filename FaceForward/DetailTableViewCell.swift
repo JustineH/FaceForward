@@ -32,6 +32,7 @@ class DetailTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    //MARK: Configure Cell View
     func configureCell(moods:DataEntry) {
         
         if moods.survey[0].exerciseInput == true {

@@ -20,7 +20,7 @@ class DetailLogViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var logTableView: UITableView!
     
     
-//MARK: View
+//MARK: Other Stuff
     override func viewDidLoad() {
         super.viewDidLoad()
         logTableView.rowHeight = UITableViewAutomaticDimension
