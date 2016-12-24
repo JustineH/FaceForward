@@ -50,7 +50,7 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
     @IBAction func nextButton(_ sender: Any) {
         let newSurvey = Survey()
         newSurvey.moodInput = mood.rawValue
-//        newSurvey.sleepInput = Sleep(rawValue: sleep.rawValue)
+        newSurvey.sleepInput = sleep.rawValue
         newSurvey.exerciseInput = didExercise
         newSurvey.peopleInput = peopleTextField.text ?? ""
         print(newSurvey)
