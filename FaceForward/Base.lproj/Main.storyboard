@@ -40,18 +40,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="tyG-uT-hJJ" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
-                                <rect key="frame" x="16" y="80.5" width="343" height="520"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="EBl-Hf-XiL"/>
-                                    <constraint firstAttribute="height" constant="520" id="YqZ-Yn-fAH"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="tyG-uT-hJJ" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="3Ek-2y-ccX"/>
-                            <constraint firstItem="tyG-uT-hJJ" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" constant="7" id="PGu-BX-006"/>
+                            <constraint firstItem="Djb-ko-YwX" firstAttribute="top" secondItem="tyG-uT-hJJ" secondAttribute="bottom" id="AYl-JL-IAN"/>
+                            <constraint firstItem="tyG-uT-hJJ" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" id="NYP-G7-XEc"/>
+                            <constraint firstAttribute="trailing" secondItem="tyG-uT-hJJ" secondAttribute="trailing" id="ni9-Du-ojZ"/>
+                            <constraint firstItem="tyG-uT-hJJ" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="rip-lt-d4W"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calendar" image="first" id="cPa-gy-q4n"/>
@@ -120,7 +118,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Emd-xI-OMn" id="7dI-Zb-I1C">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="249"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qn4-MR-BK8">
