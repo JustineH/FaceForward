@@ -31,12 +31,9 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
     let notSelectedTextColor = UIColor.black
     let selectedTextColor = UIColor.purple
     
-    //chart
-    @IBOutlet weak var chartView: ScatterChartView!
-    weak var axisFormatDelegate: IAxisValueFormatter?
-    
-    //scroll
-    @IBOutlet weak var mainScrollView: UIScrollView!
+//    //chart
+//    @IBOutlet weak var chartView: ScatterChartView!
+//    weak var axisFormatDelegate: IAxisValueFormatter?
     
     //MARK: View Life Cycle
     override func viewDidLoad() {
@@ -44,7 +41,7 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
         
         configureView()
         displayPreviousMoods()
-        createChart()
+//        createChart()
     }
     
     func dateWasClicked(view: JTAppleDayCellView?, cellState: CellState, selectedDate: Date) {
@@ -69,12 +66,8 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
         calendarView.dataSource = datasource
         
         calendarView.cellInset = CGPoint(x: 0, y: 0)
-        calendarView.scrollEnabled = true
         calendarView.scrollingMode = .stopAtEachCalendarFrameWidth
         calendarView.scrollToDate(currentDate)
-        
-        mainScrollView.contentSize = CGSize(width: view.bounds.size.width, height: 1000)
-        
     }
     
     //MARK: Moods Display
@@ -85,82 +78,82 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
     }
     
     
-    //MARK: Chart (move later)
-    func createChart() {
-        axisFormatDelegate = self
-        chartView.noDataText = "No data :("
-        chartView.chartDescription?.text = "for the month"
-        
-        chartView.rightAxis.drawLabelsEnabled = false
-        chartView.leftAxis.gridLineWidth = 0
-        chartView.rightAxis.gridLineWidth = 0
-        chartView.xAxis.gridLineWidth = 0
-        
-        if realmManager.getSavedEntriesFromDatabase()?.count != 0 {
-            updateChart()
-        } else {
-            
-        }
-        
-    }
+//    //MARK: Chart (move later)
+//    func createChart() {
+//        axisFormatDelegate = self
+//        chartView.noDataText = "No data :("
+//        chartView.chartDescription?.text = "for the month"
+//        
+//        chartView.rightAxis.drawLabelsEnabled = false
+//        chartView.leftAxis.gridLineWidth = 0
+//        chartView.rightAxis.gridLineWidth = 0
+//        chartView.xAxis.gridLineWidth = 0
+//        
+//        if realmManager.getSavedEntriesFromDatabase()?.count != 0 {
+//            updateChart()
+//        } else {
+//            
+//        }
+//        
+//    }
+//
+//    func updateChart() {
+//        var dataEntries: [ChartDataEntry] = []
+//        guard let savedEntries = realmManager.getSavedEntriesFromDatabase() else {
+//            return
+//        }
+//        
+//        for i in 0..<savedEntries.count {
+//            let date = getDate(savedDate: savedEntries[i].date)
+//            let mood = savedEntries[i].survey[0].moodInput
+//            if let moodValue = mood {
+//                var plotY = 0.0
+//                switch moodValue {
+//                case "great":
+//                    plotY = 0
+//                case "good":
+//                    plotY = 1
+//                case "average":
+//                    plotY = 2
+//                case "bad":
+//                    plotY = 3
+//                case "veryBad":
+//                    plotY = 4
+//                default:
+//                    break
+//                }
+//                let dataEntry = ChartDataEntry(x: Double(Int(date)), y: Double(plotY))
+//                dataEntries.append(dataEntry)
+//            }
+//        }
+//        
+//        let chartDataSet = ScatterChartDataSet(values: dataEntries, label: "Mood")
+//        chartDataSet.setScatterShape(ScatterChartDataSet.Shape.circle)
+//        let chartData = ScatterChartData(dataSet: chartDataSet)
+//        chartView.data = chartData
+//        
+//        let xaxis = chartView.xAxis
+//        xaxis.valueFormatter = axisFormatDelegate
+//    }
 
-    func updateChart() {
-        var dataEntries: [ChartDataEntry] = []
-        guard let savedEntries = realmManager.getSavedEntriesFromDatabase() else {
-            return
-        }
-        
-        for i in 0..<savedEntries.count {
-            let date = getDate(savedDate: savedEntries[i].date)
-            let mood = savedEntries[i].survey[0].moodInput
-            if let moodValue = mood {
-                var plotY = 0.0
-                switch moodValue {
-                case "great":
-                    plotY = 0
-                case "good":
-                    plotY = 1
-                case "average":
-                    plotY = 2
-                case "bad":
-                    plotY = 3
-                case "veryBad":
-                    plotY = 4
-                default:
-                    break
-                }
-                let dataEntry = ChartDataEntry(x: Double(Int(date)), y: Double(plotY))
-                dataEntries.append(dataEntry)
-            }
-        }
-        
-        let chartDataSet = ScatterChartDataSet(values: dataEntries, label: "Mood")
-        chartDataSet.setScatterShape(ScatterChartDataSet.Shape.circle)
-        let chartData = ScatterChartData(dataSet: chartDataSet)
-        chartView.data = chartData
-        
-        let xaxis = chartView.xAxis
-        xaxis.valueFormatter = axisFormatDelegate
-    }
-
-    func getDate(savedDate: Date) -> (Int){
-        let date = savedDate
-        let calendar = Calendar.current
-        let components = calendar.component(.day, from: date)
-        return components
-    }
+//    func getDate(savedDate: Date) -> (Int){
+//        let date = savedDate
+//        let calendar = Calendar.current
+//        let components = calendar.component(.day, from: date)
+//        return components
+//    }
     
 }
 
 
-    //MARK: IAxisValueFormatter
-extension CalendarViewController: IAxisValueFormatter {
-    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        //        let dateFormatter = DateFormatter()
-        //        dateFormatter.dateFormat = "MM dd"
-        return "\(Int(value))"
-    }
-}
+//    //MARK: IAxisValueFormatter
+//extension CalendarViewController: IAxisValueFormatter {
+//    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
+//        //        let dateFormatter = DateFormatter()
+//        //        dateFormatter.dateFormat = "MM dd"
+//        return "\(Int(value))"
+//    }
+//}
 
 
 

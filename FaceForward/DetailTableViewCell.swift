@@ -17,6 +17,7 @@ class DetailTableViewCell: UITableViewCell {
     @IBOutlet weak var sleepLabel: UILabel!
     @IBOutlet weak var exerciseLabel: UILabel!
     @IBOutlet weak var peopleLabel: UILabel!
+    @IBOutlet weak var emotionLabel: UILabel!
     
     let myDateFormatter = MyDateFormatter()
     
@@ -46,9 +47,10 @@ class DetailTableViewCell: UITableViewCell {
         let dateHeader = myDateFormatter.configureDate(date: moods.date)
         
         self.dateLabel.text = "\(dateHeader)"
+        self.emotionLabel.text = moods.emotion[0].largestEmotion ?? ""
         self.moodLabel.text = moods.survey[0].moodInput ?? ""
         self.sleepLabel.text = moods.survey[0].sleepInput ?? ""
-        self.peopleLabel.text = moods.survey[0].peopleInput ?? ""
+        self.peopleLabel.text = moods.survey[0].peopleInput ?? "-  "
     }
 
 }

@@ -24,7 +24,7 @@ class DetailLogViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         logTableView.rowHeight = UITableViewAutomaticDimension
-        logTableView.estimatedRowHeight = 200
+        logTableView.estimatedRowHeight = 250
         
         findLogs()
         
