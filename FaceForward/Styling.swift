@@ -11,11 +11,12 @@ import UIKit
 struct Styling {
     
     struct Colors {
-        static var backgroundColor = UIColor(red: 16/255.0, green:8/255.0, blue: 51/255.0, alpha:1.0)
-        static var UIButton = UIColor(red: 76/255.0, green:54/255.0, blue: 176/255.0, alpha:1.0)
-        static var fontBody = UIColor(red: 244/255.0, green:244/255.0, blue: 244/255.0, alpha:1.0)
+        static var backgroundColor = UIColor(red: 244.0/255.0, green: 244.0/255.0, blue: 244.0/255.0, alpha: 1.0)
+        static var UIButton = UIColor(red: 76/255.0, green: 54/255.0, blue: 176/255.0, alpha: 1.0)
+        static var fontBody = UIColor(red: 46.0/255.0, green: 48.0/255.0, blue: 47.0/255.0, alpha: 1.0)
         
     }
+    
     
 /*
     struct Font {
@@ -26,8 +27,7 @@ struct Styling {
 */
     
     struct Buttons {
-       // static var whiteButton = UIColor(red:
-       // static var U
+       // static var whiteButton = UIColor(red: 244.0/255.0, green: 244.0/255.0, blue: 244.0/255.0, alpha: 1.0)
 //        self.layer.borerColor = UIColor.blueColor()
 //        self.layer.borderWidth = .5
 //        static var layer.cornerRadius = 5.0

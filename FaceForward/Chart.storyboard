@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,37 +24,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CUt-Ki-UR0" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="16" y="20" width="343" height="323"/>
+                                <rect key="frame" x="16" y="20" width="338" height="334"/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="323" id="FIu-Qi-Pjx"/>
-                                    <constraint firstAttribute="width" constant="343" id="ldw-EY-8B7"/>
-                                </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJ7-N0-Bfg">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJ7-N0-Bfg">
                                 <rect key="frame" x="69" y="553" width="237" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="next"/>
                                 <connections>
                                     <action selector="nextToSuggestionsButton:" destination="dLH-dD-ql4" eventType="touchUpInside" id="MXt-2l-lBF"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aEI-HM-jsM">
+                                <rect key="frame" x="16" y="370" width="343" height="166"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="aEI-HM-jsM" firstAttribute="height" secondItem="djG-9z-WV7" secondAttribute="height" multiplier="0.25" id="1Pc-gs-1vK"/>
+                            <constraint firstItem="CUt-Ki-UR0" firstAttribute="width" secondItem="djG-9z-WV7" secondAttribute="width" multiplier="0.9" id="1fb-f2-haC"/>
+                            <constraint firstItem="CUt-Ki-UR0" firstAttribute="height" secondItem="djG-9z-WV7" secondAttribute="height" multiplier="0.5" id="Bcz-ti-9q5"/>
                             <constraint firstItem="CUt-Ki-UR0" firstAttribute="top" secondItem="GhF-kb-Z5Y" secondAttribute="bottom" id="BtO-yv-eN6"/>
-                            <constraint firstItem="CUt-Ki-UR0" firstAttribute="leading" secondItem="djG-9z-WV7" secondAttribute="leadingMargin" id="atO-rE-6OQ"/>
-                            <constraint firstItem="CUt-Ki-UR0" firstAttribute="trailing" secondItem="djG-9z-WV7" secondAttribute="trailingMargin" id="tc9-je-y0M"/>
+                            <constraint firstItem="aEI-HM-jsM" firstAttribute="top" secondItem="CUt-Ki-UR0" secondAttribute="bottom" constant="8" id="EiX-Wa-XO6"/>
+                            <constraint firstItem="nJ7-N0-Bfg" firstAttribute="top" secondItem="aEI-HM-jsM" secondAttribute="bottom" constant="17" id="FmH-NU-bz0"/>
+                            <constraint firstItem="aEI-HM-jsM" firstAttribute="width" secondItem="djG-9z-WV7" secondAttribute="width" multiplier="0.9" id="I8B-Ox-y5s"/>
+                            <constraint firstItem="aEI-HM-jsM" firstAttribute="centerX" secondItem="nJ7-N0-Bfg" secondAttribute="centerX" id="iQ6-LT-y9T"/>
+                            <constraint firstItem="aEI-HM-jsM" firstAttribute="leading" secondItem="djG-9z-WV7" secondAttribute="leadingMargin" id="sCX-lX-b25"/>
+                            <constraint firstItem="aEI-HM-jsM" firstAttribute="leading" secondItem="CUt-Ki-UR0" secondAttribute="leading" id="xmd-Kj-sa1"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="facialEmotionResults" destination="aEI-HM-jsM" id="9r3-EK-sLJ"/>
                         <outlet property="pieChartView" destination="CUt-Ki-UR0" id="xm1-Lo-QzS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wj5-eS-xAY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2209" y="-296"/>
+            <point key="canvasLocation" x="2208.8000000000002" y="-296.40179910044981"/>
         </scene>
     </scenes>
 </document>
