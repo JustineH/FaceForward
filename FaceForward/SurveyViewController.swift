@@ -27,6 +27,11 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
     var sleep: Sleep = Sleep.average
     
     //MARK: Actions
+    
+    @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
+        keyboardDismiss()
+    }
+    
     @IBAction func moodSlider(_ sender: Any) {
         let moodValue = Int(moodSlider.value)
         

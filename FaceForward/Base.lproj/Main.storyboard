@@ -10,11 +10,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Calendar-->
         <scene sceneID="7Lz-md-WU5">
             <objects>
                 <navigationController id="hcR-0H-uJM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="IUK-pB-TGu"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" id="IUK-pB-TGu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1eb-jI-eEP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -41,7 +41,7 @@
                         <subviews>
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="tyG-uT-hJJ" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -52,7 +52,7 @@
                             <constraint firstItem="tyG-uT-hJJ" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="rip-lt-d4W"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calendar" image="first" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" id="cPa-gy-q4n"/>
                     <navigationItem key="navigationItem" id="HQs-6m-tqD"/>
                     <connections>
                         <outlet property="calendarView" destination="tyG-uT-hJJ" id="C64-eG-2Xc"/>
@@ -78,7 +78,7 @@
         <scene sceneID="Rbk-LA-Qp8">
             <objects>
                 <navigationController id="1jU-V4-qOU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Analysis" image="second" id="HCu-fe-fOS"/>
+                    <tabBarItem key="tabBarItem" title="Analysis" image="mood" id="HCu-fe-fOS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Ea-Ic-WOF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -118,7 +118,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Emd-xI-OMn" id="7dI-Zb-I1C">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="249"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qn4-MR-BK8">
@@ -270,7 +270,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
+        <image name="calendar" width="50" height="50"/>
+        <image name="mood" width="50" height="50"/>
     </resources>
 </document>

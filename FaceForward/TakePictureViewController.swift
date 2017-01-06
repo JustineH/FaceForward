@@ -96,16 +96,19 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         
         spinner.startAnimating()
         self.imageView.isHidden = false
+        self.spinner.isHidden = false
         takePhotoButtonLabel.isHidden = true
         
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
-            self.spinner.stopAnimating()
+            
             imageView.image = pickedImage
             imageView.contentMode = .scaleAspectFit
 
             ServerManager.emotions(from: pickedImage)
             { emotionDictionary in
+                self.spinner.stopAnimating()
+                
                 if emotionDictionary.count <= 0 {
                     self.noFaceFoundLabel.isHidden = false
                     self.confirmPictureLabel.isHidden = true

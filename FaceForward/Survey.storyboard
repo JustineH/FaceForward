@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Dop-n0-SRA">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Dop-n0-SRA">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -83,7 +83,7 @@
                                                 </connections>
                                             </slider>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="gZT-al-pZL">
-                                                <rect key="frame" x="151" y="452" width="73" height="29"/>
+                                                <rect key="frame" x="16" y="452" width="343" height="29"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="28" id="Tf9-Ua-8Ff"/>
                                                 </constraints>
@@ -145,6 +145,7 @@
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="trailingMargin" secondItem="Z5P-PL-rhk" secondAttribute="trailing" constant="8" id="0eG-pn-w5k"/>
                                             <constraint firstItem="gZT-al-pZL" firstAttribute="centerX" secondItem="23v-x4-D51" secondAttribute="centerX" id="2Hy-xX-pZl"/>
@@ -167,7 +168,9 @@
                                             <constraint firstItem="rCZ-af-HIg" firstAttribute="top" secondItem="9Cf-Ml-Tny" secondAttribute="bottom" constant="40" id="TTr-c8-vvV"/>
                                             <constraint firstItem="JQB-o4-46Y" firstAttribute="leading" secondItem="23v-x4-D51" secondAttribute="leading" constant="16" id="V51-tw-CDK"/>
                                             <constraint firstAttribute="trailing" secondItem="vTy-sY-o1f" secondAttribute="trailing" constant="16" id="YdE-NY-PKx"/>
+                                            <constraint firstAttribute="trailing" secondItem="gZT-al-pZL" secondAttribute="trailing" constant="16" id="axW-6d-9AT"/>
                                             <constraint firstAttribute="trailing" secondItem="N8G-gY-Qs0" secondAttribute="trailing" constant="16" id="bac-hZ-EBU"/>
+                                            <constraint firstItem="gZT-al-pZL" firstAttribute="leading" secondItem="23v-x4-D51" secondAttribute="leading" constant="16" id="dar-eL-q33"/>
                                             <constraint firstItem="N8G-gY-Qs0" firstAttribute="top" secondItem="JQB-o4-46Y" secondAttribute="bottom" constant="8" id="f2d-fD-ylz"/>
                                             <constraint firstItem="9Cf-Ml-Tny" firstAttribute="top" secondItem="CNw-VC-Dn4" secondAttribute="bottom" constant="8" id="f34-3z-cEi"/>
                                             <constraint firstItem="9Cf-Ml-Tny" firstAttribute="leading" secondItem="23v-x4-D51" secondAttribute="leading" constant="16" id="gw0-UU-nGG"/>
@@ -183,6 +186,9 @@
                                             <constraint firstItem="YqK-Py-tHt" firstAttribute="leading" secondItem="23v-x4-D51" secondAttribute="leading" constant="16" id="vJL-Y5-1P7"/>
                                             <constraint firstItem="rCZ-af-HIg" firstAttribute="leading" secondItem="23v-x4-D51" secondAttribute="leading" constant="16" id="w4p-gu-Ftw"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="aUH-zx-ZOF" appends="YES" id="4o0-zL-esd"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -217,8 +223,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xTS-zG-YhZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="aUH-zx-ZOF">
+                    <connections>
+                        <action selector="tapGesture:" destination="Dop-n0-SRA" id="gcS-7Z-Zs6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="-296.85157421289358"/>
+            <point key="canvasLocation" x="749.60000000000002" y="-297.30134932533736"/>
         </scene>
     </scenes>
 </document>

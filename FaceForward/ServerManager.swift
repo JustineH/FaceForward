@@ -28,7 +28,7 @@ class ServerManager: NSObject {
         {response in
             switch response.result {
                 case .success:
-                    print("Validation successful.")
+//                    print("Validation successful.")
                     let json = JSON(response.result.value!)
                     var result = [String:Double]()
                     if let dictionary = json[0]["scores"].dictionary {
