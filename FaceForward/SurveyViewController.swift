@@ -131,7 +131,6 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         keyboardDismiss()
-        
         return true
     }
     
