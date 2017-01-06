@@ -35,7 +35,6 @@ class DetailTableViewCell: UITableViewCell {
     
     //MARK: Configure Cell View
     func configureCell(moods:DataEntry) {
-        print(moods)
         if moods.survey[0].exerciseInput == true {
             self.exerciseLabel.text = "Yes"
         }else if moods.survey[0].exerciseInput == false {
@@ -47,7 +46,7 @@ class DetailTableViewCell: UITableViewCell {
         let dateHeader = myDateFormatter.configureDate(date: moods.date)
         
         self.dateLabel.text = "\(dateHeader)"
-        self.emotionLabel.text = moods.emotion[0].largestEmotion ?? ""
+        self.emotionLabel.text = moods.emotion[0].largestEmotion
         self.moodLabel.text = moods.survey[0].moodInput ?? ""
         self.sleepLabel.text = moods.survey[0].sleepInput ?? ""
         self.peopleLabel.text = moods.survey[0].peopleInput ?? "-  "

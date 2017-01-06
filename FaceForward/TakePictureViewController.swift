@@ -17,8 +17,9 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     let imagePicker = UIImagePickerController()
     
     // MARK: - Properties -
+    @IBOutlet weak var confirmPictureLabel: UILabel!
+    @IBOutlet weak var noFaceFoundLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var faceResults: UITextView!
     @IBOutlet weak var takePhotoButtonLabel: UIButton!
     @IBOutlet weak var retakePhotoButtonLabel: UIButton!
     @IBOutlet weak var nextButtonLabel: UIButton!
@@ -38,13 +39,13 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBAction func nextSaveButton(_ sender: Any) {
         
-        var newEmotion = emotionsDictionaryToSave
+        let newEmotion = emotionsDictionaryToSave
         newEmotion!.largestEmotion = mostLikelyMood
 
         let realm = try! Realm()
         try! realm.write {
             
-            var newEntry = DataEntry()
+            let newEntry = DataEntry()
             newEntry.emotion.append(newEmotion!)
             newEntry.survey.append(survey)
             realm.add(newEntry)
@@ -55,6 +56,11 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     
         
     @IBAction func retakePhotoButton(_ sender: UIButton) {
+        self.confirmPictureLabel.isHidden = true
+        self.noFaceFoundLabel.isHidden = true
+        self.nextButtonLabel.isHidden = true
+        self.retakePhotoButtonLabel.isHidden = true
+        
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
         
@@ -73,11 +79,8 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     func setup() {
         self.view.backgroundColor = Styling.Colors.backgroundColor
         imageView.backgroundColor = UIColor.white
-        self.faceResults.backgroundColor = Styling.Colors.backgroundColor
-        self.faceResults.textColor = Styling.Colors.fontBody
         spinner.color = Styling.ActivityIndicatorView.yellowSpinner
         imagePicker.delegate = self
-        faceResults.isHidden = true
         retakePhotoButtonLabel.isHidden = true
         nextButtonLabel.isHidden = true
         spinner.hidesWhenStopped = true
@@ -89,33 +92,36 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         spinner.startAnimating()
         self.imageView.isHidden = false
         takePhotoButtonLabel.isHidden = true
-        self.faceResults.isHidden = false
-        self.faceResults.text = ""
         
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
             self.spinner.stopAnimating()
-            retakePhotoButtonLabel.isHidden = false
-            nextButtonLabel.isHidden = false
             imageView.image = pickedImage
             imageView.contentMode = .scaleAspectFit
 
             ServerManager.emotions(from: pickedImage)
             { emotionDictionary in
-                for (name, value) in emotionDictionary {
-                    let percent: Int = Int(round(value * 100))
-                    self.faceResults.text! += "\(name): \(percent)%\n"
-//                    self.percentages.append(value)
+                if emotionDictionary.count <= 0 {
+                    self.noFaceFoundLabel.isHidden = false
+                    self.confirmPictureLabel.isHidden = true
+                }else{
+//                for (name, value) in emotionDictionary {
+//                    let percent: Int = Int(round(value * 100))
+//                    self.faceResults.text! += "\(name): \(percent)%\n"
+////                    self.percentages.append(value)
+//                }
+                    self.emotionsDictionaryToSave = self.makeItems(dictionary: emotionDictionary)
+                    self.mostLikelyMood = self.keyMaxValue(dict: emotionDictionary)!
+                    self.confirmPictureLabel.isHidden = false
+                    self.nextButtonLabel.isHidden = false
                 }
-                
-                self.emotionsDictionaryToSave = self.makeItems(dictionary: emotionDictionary)
-                self.mostLikelyMood = self.keyMaxValue(dict: emotionDictionary)!
+                self.retakePhotoButtonLabel.isHidden = false
             }
         }
             dismiss(animated: true, completion: nil)
     }
     
-    func makeItems(dictionary: [String:Double]) -> Emotion {
+    func makeItems(dictionary: [String:Double]) -> Emotion? {
         let new = Emotion()
         new.anger = dictionary["anger"]!
         new.contempt = dictionary["contempt"]!

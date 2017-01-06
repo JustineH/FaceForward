@@ -44,10 +44,6 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
 //        createChart()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        calendarView.reloadData()
-    }
-    
     func dateWasClicked(view: JTAppleDayCellView?, cellState: CellState, selectedDate: Date) {
         guard let myCustomCell = view as? CellView  else {
             print("Error with cell selection")
@@ -158,6 +154,7 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
 //        return "\(Int(value))"
 //    }
 //}
+
 
 
 

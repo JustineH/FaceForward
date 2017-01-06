@@ -53,7 +53,6 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
         newSurvey.sleepInput = sleep.rawValue
         newSurvey.exerciseInput = didExercise
         newSurvey.peopleInput = peopleTextField.text ?? ""
-        print(newSurvey)
         Router(self).showPhoto(survey: newSurvey)
     }
     
