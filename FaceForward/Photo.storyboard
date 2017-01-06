@@ -40,9 +40,14 @@
                                     <action selector="nextSaveButton:" destination="KiM-Gk-U1w" eventType="touchUpInside" id="ppU-eb-aFg"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Fmm-7B-aIH">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
-                            </activityIndicatorView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNN-jJ-1ex">
+                                <rect key="frame" x="19" y="501" width="337.5" height="30"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Retake Photo"/>
+                                <connections>
+                                    <action selector="retakePhotoButton:" destination="KiM-Gk-U1w" eventType="touchUpInside" id="oxG-NP-G0n"/>
+                                </connections>
+                            </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to use this photo?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1k-FW-B3G">
                                 <rect key="frame" x="32" y="460" width="311" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -55,14 +60,9 @@
                                 <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNN-jJ-1ex">
-                                <rect key="frame" x="19" y="501" width="337.5" height="30"/>
-                                <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Retake Photo"/>
-                                <connections>
-                                    <action selector="retakePhotoButton:" destination="KiM-Gk-U1w" eventType="touchUpInside" id="oxG-NP-G0n"/>
-                                </connections>
-                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Fmm-7B-aIH">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

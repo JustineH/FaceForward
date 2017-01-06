@@ -81,9 +81,14 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         imageView.backgroundColor = UIColor.white
         spinner.color = Styling.ActivityIndicatorView.yellowSpinner
         imagePicker.delegate = self
-        retakePhotoButtonLabel.isHidden = true
-        nextButtonLabel.isHidden = true
+
         spinner.hidesWhenStopped = true
+        nextButtonLabel.layer.cornerRadius = 5
+        nextButtonLabel.layer.borderWidth = 2
+        nextButtonLabel.layer.borderColor = UIColor.white.cgColor
+        retakePhotoButtonLabel.layer.cornerRadius = 5
+        retakePhotoButtonLabel.layer.borderWidth = 2
+        retakePhotoButtonLabel.layer.borderColor = UIColor.white.cgColor
     }
 
 
