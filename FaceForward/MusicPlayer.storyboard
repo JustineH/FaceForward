@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,23 +22,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugB-q7-FH9">
-                                <rect key="frame" x="172" y="121" width="30" height="30"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="i4R-t8-xSF">
+                                <rect key="frame" x="64" y="420" width="247" height="31"/>
+                                <connections>
+                                    <action selector="volumeSlider:" destination="Jdl-K2-F4k" eventType="valueChanged" id="Ujv-LK-1Lo"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cp-hO-mba">
+                                <rect key="frame" x="317" y="429" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugB-q7-FH9">
+                                <rect key="frame" x="172" y="205" width="30" height="30"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
                                     <action selector="playButtonPressed:" destination="Jdl-K2-F4k" eventType="touchUpInside" id="8kb-4C-tOx"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="i4R-t8-xSF">
-                                <rect key="frame" x="128" y="83" width="118" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="volumeSlider:" destination="Jdl-K2-F4k" eventType="valueChanged" id="Ujv-LK-1Lo"/>
-                                </connections>
-                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="i4R-t8-xSF" secondAttribute="trailing" constant="50" id="2Zj-iJ-qUt"/>
+                            <constraint firstItem="i4R-t8-xSF" firstAttribute="leading" secondItem="as0-vH-rA6" secondAttribute="leadingMargin" constant="50" id="DBk-qZ-IjI"/>
+                            <constraint firstItem="ugB-q7-FH9" firstAttribute="centerX" secondItem="as0-vH-rA6" secondAttribute="centerX" id="MrR-mW-yCu"/>
+                            <constraint firstItem="i4R-t8-xSF" firstAttribute="top" secondItem="ugB-q7-FH9" secondAttribute="bottom" constant="185" id="l7K-2h-rpS"/>
+                            <constraint firstItem="7c4-LQ-4V2" firstAttribute="top" secondItem="i4R-t8-xSF" secondAttribute="bottom" constant="217" id="oGf-jO-9DF"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="playButton" destination="ugB-q7-FH9" id="D87-77-djw"/>
@@ -45,7 +58,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YJp-Vx-lYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-881" y="-237"/>
+            <point key="canvasLocation" x="-882.39999999999998" y="-237.03148425787109"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="jDJ-ou-5Zs">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="R6d-OZ-UWp" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Rk-wX-hkJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="54" y="-187"/>
         </scene>
     </scenes>
 </document>

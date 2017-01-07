@@ -14,10 +14,10 @@ class RadioPlayer {
     static let sharedInstance = RadioPlayer()
     private var player = AVPlayer()
     private var isPlaying = false
-    let radi = RadioStations()
+    let stations = RadioStations()
     
     func chooseStation(emotion: Emotion) {
-        let chosenStation = radi.changeStation(mood: emotion.largestEmotion)
+        let chosenStation = stations.changeStation(mood: emotion.largestEmotion)
         player.replaceCurrentItem(with: chosenStation)
     }
     

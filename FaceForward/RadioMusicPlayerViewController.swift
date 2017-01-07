@@ -33,12 +33,12 @@ class RadioMusicPlayerViewController: UIViewController {
         }
         
         if NSClassFromString("MPNowPlayingInfoCenter") != nil {
-//            let image:UIImage = UIImage(named: "logo_player_background")! // comment this if you don't use an image
-//            let albumArt = MPMediaItemArtwork(image: image) // comment this if you don't use an image
+            let image:UIImage = UIImage(named: "FaceForward_Logo5")! // comment this if you don't use an image
+            let albumArt = MPMediaItemArtwork(image: image)// comment this if you don't use an image
             let songInfo = [
                 MPMediaItemPropertyTitle: "via FaceForward App",
                 MPMediaItemPropertyArtist: "streaming from SHOUTcast",
-//                MPMediaItemPropertyArtwork: albumArt // comment this if you don't use an image
+                MPMediaItemPropertyArtwork: albumArt // comment this if you don't use an image
             ] as [String : Any]
             MPNowPlayingInfoCenter.default().nowPlayingInfo = songInfo
         }
