@@ -69,3 +69,6 @@ Pods
 Podfile.lock
 *.xcworkspace
 Constants.swift
+RadioStations.swift
+*.pls
+FaceForward/*.pls

@@ -17,6 +17,18 @@
 		1F5807481E0DE66500DAEDDC /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5807471E0DE66500DAEDDC /* RealmManager.swift */; };
 		1F58074A1E0DF05E00DAEDDC /* MyDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5807491E0DF05E00DAEDDC /* MyDateFormatter.swift */; };
 		1F7277D71E04962200085D69 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7277D61E04962200085D69 /* Emotion.swift */; };
+		1F75FA7D1E20525C00836AD2 /* RadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F75FA7C1E20525C00836AD2 /* RadioPlayer.swift */; };
+		1F75FA7F1E2052AD00836AD2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F75FA7E1E2052AD00836AD2 /* AVFoundation.framework */; };
+		1F75FA811E20532900836AD2 /* RadioMusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F75FA801E20532900836AD2 /* RadioMusicPlayerViewController.swift */; };
+		1F75FA851E20552300836AD2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F75FA841E20552300836AD2 /* MediaPlayer.framework */; };
+		1F75FA871E206F8100836AD2 /* RadioStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F75FA861E206F8100836AD2 /* RadioStations.swift */; };
+		1F75FA901E20794C00836AD2 /* anger.pls in Resources */ = {isa = PBXBuildFile; fileRef = 1F75FA8F1E20794C00836AD2 /* anger.pls */; };
+		1F75FA921E20795100836AD2 /* neutral.pls in Resources */ = {isa = PBXBuildFile; fileRef = 1F75FA911E20795100836AD2 /* neutral.pls */; };
+		1F75FA941E20799200836AD2 /* fear.pls in Resources */ = {isa = PBXBuildFile; fileRef = 1F75FA931E20799200836AD2 /* fear.pls */; };
+		1F75FA961E207A3E00836AD2 /* disgust.pls in Resources */ = {isa = PBXBuildFile; fileRef = 1F75FA951E207A3E00836AD2 /* disgust.pls */; };
+		1F75FA981E207AC800836AD2 /* sadness.pls in Resources */ = {isa = PBXBuildFile; fileRef = 1F75FA971E207AC800836AD2 /* sadness.pls */; };
+		1F75FA9A1E207B2000836AD2 /* surprise.pls in Resources */ = {isa = PBXBuildFile; fileRef = 1F75FA991E207B2000836AD2 /* surprise.pls */; };
+		1F75FAA01E207BF300836AD2 /* happiness.pls in Resources */ = {isa = PBXBuildFile; fileRef = 1F75FA9F1E207BF300836AD2 /* happiness.pls */; };
 		1F8348471E0887A200FE97CB /* DataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8348461E0887A200FE97CB /* DataEntry.swift */; };
 		1F8348491E08895900FE97CB /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8348481E08895900FE97CB /* Survey.swift */; };
 		1F83484B1E0889BB00FE97CB /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F83484A1E0889BB00FE97CB /* Mood.swift */; };
@@ -59,6 +71,18 @@
 		1F5807471E0DE66500DAEDDC /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		1F5807491E0DF05E00DAEDDC /* MyDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDateFormatter.swift; sourceTree = "<group>"; };
 		1F7277D61E04962200085D69 /* Emotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
+		1F75FA7C1E20525C00836AD2 /* RadioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioPlayer.swift; sourceTree = "<group>"; };
+		1F75FA7E1E2052AD00836AD2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1F75FA801E20532900836AD2 /* RadioMusicPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioMusicPlayerViewController.swift; sourceTree = "<group>"; };
+		1F75FA841E20552300836AD2 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		1F75FA861E206F8100836AD2 /* RadioStations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioStations.swift; sourceTree = "<group>"; };
+		1F75FA8F1E20794C00836AD2 /* anger.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = anger.pls; sourceTree = "<group>"; };
+		1F75FA911E20795100836AD2 /* neutral.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = neutral.pls; sourceTree = "<group>"; };
+		1F75FA931E20799200836AD2 /* fear.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fear.pls; sourceTree = "<group>"; };
+		1F75FA951E207A3E00836AD2 /* disgust.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = disgust.pls; sourceTree = "<group>"; };
+		1F75FA971E207AC800836AD2 /* sadness.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sadness.pls; sourceTree = "<group>"; };
+		1F75FA991E207B2000836AD2 /* surprise.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = surprise.pls; sourceTree = "<group>"; };
+		1F75FA9F1E207BF300836AD2 /* happiness.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = happiness.pls; sourceTree = "<group>"; };
 		1F8348461E0887A200FE97CB /* DataEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntry.swift; sourceTree = "<group>"; };
 		1F8348481E08895900FE97CB /* Survey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
 		1F83484A1E0889BB00FE97CB /* Mood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
@@ -95,6 +119,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F75FA851E20552300836AD2 /* MediaPlayer.framework in Frameworks */,
+				1F75FA7F1E2052AD00836AD2 /* AVFoundation.framework in Frameworks */,
 				C4E7074E1629F9016C8B5985 /* Pods_FaceForward.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +158,7 @@
 		1F26A1FB1E02003F00CA7464 /* FaceForward */ = {
 			isa = PBXGroup;
 			children = (
+				1F75FA8E1E20794200836AD2 /* Music */,
 				1FA89EC91E02222C004EBF08 /* Model */,
 				1FA89ECA1E02223A004EBF08 /* UI */,
 				1FA89ECB1E02224F004EBF08 /* View */,
@@ -139,6 +166,20 @@
 				1FA89ECC1E022263004EBF08 /* Support */,
 			);
 			path = FaceForward;
+			sourceTree = "<group>";
+		};
+		1F75FA8E1E20794200836AD2 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				1F75FA911E20795100836AD2 /* neutral.pls */,
+				1F75FA8F1E20794C00836AD2 /* anger.pls */,
+				1F75FA931E20799200836AD2 /* fear.pls */,
+				1F75FA951E207A3E00836AD2 /* disgust.pls */,
+				1F75FA971E207AC800836AD2 /* sadness.pls */,
+				1F75FA991E207B2000836AD2 /* surprise.pls */,
+				1F75FA9F1E207BF300836AD2 /* happiness.pls */,
+			);
+			name = Music;
 			sourceTree = "<group>";
 		};
 		1FA89EC81E02221A004EBF08 /* Controller */ = {
@@ -158,6 +199,8 @@
 			isa = PBXGroup;
 			children = (
 				1F26A1FC1E02003F00CA7464 /* AppDelegate.swift */,
+				1F75FA7C1E20525C00836AD2 /* RadioPlayer.swift */,
+				1F75FA861E206F8100836AD2 /* RadioStations.swift */,
 				5286A20D1E089772005028D0 /* ServerManager.swift */,
 				5212E88A1E035862000209BD /* Styling.swift */,
 				1F8348461E0887A200FE97CB /* DataEntry.swift */,
@@ -168,6 +211,7 @@
 				1F5807471E0DE66500DAEDDC /* RealmManager.swift */,
 				1F83484E1E088C7A00FE97CB /* EmotionName.swift */,
 				1F5807491E0DF05E00DAEDDC /* MyDateFormatter.swift */,
+				1FBD715A1E0342EA001E36EE /* Router.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -191,7 +235,6 @@
 		1FA89ECB1E02224F004EBF08 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1FBD715A1E0342EA001E36EE /* Router.swift */,
 				1F05E0FC1E0366D20061534B /* CalendarView.swift */,
 				1F05E1001E0395EF0061534B /* MonthHeaderView.swift */,
 				1FBD71641E035F44001E36EE /* CellView.swift */,
@@ -232,6 +275,7 @@
 		1FBD715E1E034434001E36EE /* MusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				1F75FA801E20532900836AD2 /* RadioMusicPlayerViewController.swift */,
 			);
 			name = MusicPlayer;
 			sourceTree = "<group>";
@@ -264,6 +308,8 @@
 		CD5C27C669BDB1CFEECCDFB8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1F75FA841E20552300836AD2 /* MediaPlayer.framework */,
+				1F75FA7E1E2052AD00836AD2 /* AVFoundation.framework */,
 				B17958DEA5C86271ABFD5DCB /* Pods_FaceForward.framework */,
 			);
 			name = Frameworks;
@@ -333,11 +379,18 @@
 				1F26A2091E02003F00CA7464 /* LaunchScreen.storyboard in Resources */,
 				1F26A2061E02003F00CA7464 /* Assets.xcassets in Resources */,
 				1F05E0FF1E0380D10061534B /* MonthHeaderView.xib in Resources */,
+				1F75FA981E207AC800836AD2 /* sadness.pls in Resources */,
+				1F75FA941E20799200836AD2 /* fear.pls in Resources */,
 				1FBD71631E034E9A001E36EE /* CalendarCell.xib in Resources */,
 				1FBD71551E034172001E36EE /* Suggestions.storyboard in Resources */,
+				1F75FA921E20795100836AD2 /* neutral.pls in Resources */,
 				1FBD71531E034161001E36EE /* Photo.storyboard in Resources */,
 				1FBD71571E034181001E36EE /* Chart.storyboard in Resources */,
 				1FBD71511E0340F8001E36EE /* Survey.storyboard in Resources */,
+				1F75FAA01E207BF300836AD2 /* happiness.pls in Resources */,
+				1F75FA9A1E207B2000836AD2 /* surprise.pls in Resources */,
+				1F75FA901E20794C00836AD2 /* anger.pls in Resources */,
+				1F75FA961E207A3E00836AD2 /* disgust.pls in Resources */,
 				1F26A2041E02003F00CA7464 /* Main.storyboard in Resources */,
 				1FBD71591E03419C001E36EE /* MusicPlayer.storyboard in Resources */,
 			);
@@ -401,12 +454,15 @@
 				1F05E0FD1E0366D20061534B /* CalendarView.swift in Sources */,
 				52D56F8F1E0A33A400BF42A0 /* Constants.swift in Sources */,
 				5286A20E1E089772005028D0 /* ServerManager.swift in Sources */,
+				1F75FA811E20532900836AD2 /* RadioMusicPlayerViewController.swift in Sources */,
 				1F05E1011E0395EF0061534B /* MonthHeaderView.swift in Sources */,
 				1F58074A1E0DF05E00DAEDDC /* MyDateFormatter.swift in Sources */,
 				5212E88B1E035862000209BD /* Styling.swift in Sources */,
+				1F75FA7D1E20525C00836AD2 /* RadioPlayer.swift in Sources */,
 				1FBD715B1E0342EA001E36EE /* Router.swift in Sources */,
 				1FA89EBF1E022167004EBF08 /* DetailLogViewController.swift in Sources */,
 				1FA89EC51E0221C2004EBF08 /* ConfirmPictureViewController.swift in Sources */,
+				1F75FA871E206F8100836AD2 /* RadioStations.swift in Sources */,
 				1FA89EC71E022208004EBF08 /* AnalysisChartViewController.swift in Sources */,
 				1FA89EC31E022199004EBF08 /* SuggestionsViewController.swift in Sources */,
 				1F8348491E08895900FE97CB /* Survey.swift in Sources */,
