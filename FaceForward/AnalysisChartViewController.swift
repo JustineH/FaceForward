@@ -17,6 +17,7 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
     
     @IBOutlet weak var pieChartView: PieChartView!
     @IBOutlet weak var facialEmotionResults: UITextView!
+    @IBOutlet weak var chartNextButton: UIButton!
     
     dynamic var emotionsToPassToPieChart = [String:Double]()
     dynamic var emotionsArray = [String]()
@@ -24,12 +25,16 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
     
     
     @IBAction func nextToSuggestionsButton(_ sender: Any) {
+        
+        Router(self).showSuggestions(emotion: highestEmotion())
     }
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         
-        title = "Assessment Results"
+        super.viewDidLoad()
+
+        Styling.styleButton(button: chartNextButton)
+        
         pieChartView.delegate = self
         pieChartView.notifyDataSetChanged()
         
@@ -46,12 +51,16 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
         
         setChart(dataPoints: emotionsArray, values: emotionsPercentage)
         updateChartData()
-        showResults()
+        
+//        showResults()
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
         super.viewDidAppear(animated)
     }
+    
+    
     
     func setChart(dataPoints: [String], values: [Double]) {
         
@@ -59,7 +68,9 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
         legend.enabled = true
         legend.horizontalAlignment = .left
         legend.drawInside = false
-        legend.orientation = .horizontal
+        legend.orientation = .vertical
+        legend.font.withSize(18.0)
+        
         pieChartView.chartDescription?.enabled = false
         pieChartView.drawHoleEnabled = false
         pieChartView.legend.enabled = true
@@ -67,7 +78,9 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
         pieChartView.rotationEnabled = true
         pieChartView.highlightPerTapEnabled = false
         pieChartView.animate(xAxisDuration: 2.0)
-        pieChartView.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+        pieChartView.backgroundColor = Styling.Colors.backgroundColor
+//        pieChartView.layoutMargins.top = 0.0
+//        pieChartView.minOffset = 0
         
     }
         
@@ -81,24 +94,46 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
         
         for emotion in emotionsToPassToPieChart.keys {
             
-            let dataEntry = PieChartDataEntry(value: emotionsToPassToPieChart[emotion]!, label: emotion)
-            let orangeColor = UIColor(red:(241.0/255), green:(143.0/255), blue:(1.0/255), alpha: 1)
-            let yellowColor = UIColor(red:(255.0/255), green:(186.0/255), blue:(2.0/255), alpha: 1)
-            let blueColor = UIColor(red:(10.0/255), green:(66.0/255), blue:(161.0/255), alpha: 1)
-            let greenColor = UIColor(red:(32.0/255), green:(252.0/255), blue:(143.0/255), alpha: 1)
-            let pinkColor = UIColor(red:(250.0/255), green:(8.0/255), blue:(120.0/255), alpha: 1)
-            let purpleColor = UIColor(red: 68.0/255.0, green: 3.0/255.0, blue: 129.0/255.0, alpha: 1.0)
-            let indigoColor = UIColor(red:(53.0/255), green:(15.0/255), blue:(102.0/255), alpha: 1)
-            let neutralColor = UIColor(red:(232.0/255), green:(72.0/255), blue:(85.0/255), alpha: 1)
+            let emotionPercent = String(format: "%.2f", arguments: [emotionsToPassToPieChart[emotion]! *  100] )
+            
+            let dataEntry = PieChartDataEntry(value: emotionsToPassToPieChart[emotion]!, label: "\(emotion): \(emotionPercent)%")
+            
+            let angerEmotion = Styling.Colors.redColor
+            let happinessEmotion = Styling.Colors.yellowColor
+            let disgustEmotion = Styling.Colors.greenColor
+            let fearEmotion = Styling.Colors.orangeColor
+            let sadnessEmotion = Styling.Colors.blueColor
+            let contemptEmotion = Styling.Colors.darkBlueColor
+            let surpriseEmotion = Styling.Colors.purpleColor
+            let neutralEmotion = Styling.Colors.pinkColor
 
-            colors.append(orangeColor)
-            colors.append(yellowColor)
-            colors.append(blueColor)
-            colors.append(greenColor)
-            colors.append(pinkColor)
-            colors.append(purpleColor)
-            colors.append(indigoColor)
-            colors.append(neutralColor)
+            colors.append(angerEmotion)
+            colors.append(happinessEmotion)
+            colors.append(disgustEmotion)
+            colors.append(fearEmotion)
+            colors.append(sadnessEmotion)
+            colors.append(contemptEmotion)
+            colors.append(surpriseEmotion)
+            colors.append(neutralEmotion)
+            
+            
+//            let orangeColor = UIColor(red:(241.0/255), green:(143.0/255), blue:(1.0/255), alpha: 1)
+//            let yellowColor = UIColor(red:(255.0/255), green:(186.0/255), blue:(2.0/255), alpha: 1)
+//            let blueColor = UIColor(red:(10.0/255), green:(66.0/255), blue:(161.0/255), alpha: 1)
+//            let greenColor = UIColor(red:(32.0/255), green:(252.0/255), blue:(143.0/255), alpha: 1)
+//            let pinkColor = UIColor(red:(250.0/255), green:(8.0/255), blue:(120.0/255), alpha: 1)
+//            let purpleColor = UIColor(red: 68.0/255.0, green: 3.0/255.0, blue: 129.0/255.0, alpha: 1.0)
+//            let indigoColor = UIColor(red:(53.0/255), green:(15.0/255), blue:(102.0/255), alpha: 1)
+//            let neutralColor = UIColor(red:(232.0/255), green:(72.0/255), blue:(85.0/255), alpha: 1)
+//            
+//            colors.append(orangeColor)
+//            colors.append(yellowColor)
+//            colors.append(blueColor)
+//            colors.append(greenColor)
+//            colors.append(pinkColor)
+//            colors.append(purpleColor)
+//            colors.append(indigoColor)
+//            colors.append(neutralColor)
             
           //  valueColors.append(UIColor.clear)
             dataEntries.append(dataEntry)
@@ -125,13 +160,29 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
         
     }
     
-    func showResults() {
-
-        for (name, value) in emotionsToPassToPieChart {
-            let percent: Int = Int(round(value * 100))
-            self.facialEmotionResults.text! += "\(name): \(percent)%\n"
+    func highestEmotion() -> String {
+        
+        var highestKey = ""
+        var highestValue = 0.0
+        
+        for emotion in emotionsToPassToPieChart.keys {
+            if (emotionsToPassToPieChart[emotion]! > highestValue) {
+                highestValue = emotionsToPassToPieChart[emotion]!
+                highestKey = emotion
+            }
         }
+        
+        return highestKey
+        
     }
+    
+//    func showResults() {
+//
+//        for (name, value) in emotionsToPassToPieChart {
+//            let percent: Int = Int(round(value * 100))
+//            self.facialEmotionResults.text! += "\(name): \(percent)%\n"
+//        }
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -140,3 +191,4 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
     
 
 }
+

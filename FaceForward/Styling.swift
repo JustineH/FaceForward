@@ -11,12 +11,34 @@ import UIKit
 struct Styling {
     
     struct Colors {
-        static var backgroundColor = UIColor(red: 244.0/255.0, green: 244.0/255.0, blue: 244.0/255.0, alpha: 1.0)
-        static var UIButton = UIColor(red: 76/255.0, green: 54/255.0, blue: 176/255.0, alpha: 1.0)
+        static var backgroundColor = UIColor.white
+        static var buttons = UIColor(red:(122.0/255), green:(205.0/255), blue:(169.0/255), alpha: 1)
+        static var buttonBorderColor = UIColor(red:(122.0/255), green:(205.0/255), blue:(169.0/255), alpha: 1)
+//        static var buttons = UIColor(red:(120.0/255), green:(241.0/255), blue:(195.0/255), alpha: 1)
+//        static var buttonBorderColor = UIColor(red:(120.0/255), green:(241.0/255), blue:(195.0/255), alpha: 1)
+        static var buttonTextColor = UIColor.white
         static var fontBody = UIColor(red: 46.0/255.0, green: 48.0/255.0, blue: 47.0/255.0, alpha: 1.0)
+        static var textFieldColor = UIColor(red: 244.0/255.0, green: 244.0/255.0, blue: 244.0/255.0, alpha: 1.0)
+        static var calendarMonthColor = UIColor(red:(122.0/255), green:(205.0/255), blue:(169.0/255), alpha: 1)
+        static var redColor = UIColor(red:(240.0/255), green:(149.0/255), blue:(150.0/255), alpha: 1)
+        static var yellowColor = UIColor(red:(250.0/255), green:(218.0/255), blue:(169.0/255), alpha: 1)
+        static var greenColor = UIColor(red:(122.0/255), green:(205.0/255), blue:(169.0/255), alpha: 1)
+        static var orangeColor = UIColor(red:(241.0/255), green:(143.0/255), blue:(1.0/255), alpha: 1)
+        static var blueColor = UIColor(red:(145.0/255), green:(199.0/255), blue:(204.0/255), alpha: 1)
+        static var darkBlueColor = UIColor(red:(107.0/255), green:(112.0/255), blue:(159.0/255), alpha: 1)
+        static var purpleColor = UIColor(red: 157.0/255.0, green: 166.0/255.0, blue: 214.0/255.0, alpha: 1.0)
+        static var pinkColor = UIColor(red:(236.0/255), green:(207.0/255), blue:(223.0/255), alpha: 1)
         
     }
     
+    static func styleButton(button: UIButton) {
+        button.backgroundColor = self.Colors.buttons
+        button.tintColor = self.Colors.buttonTextColor
+        button.layer.borderColor = self.Colors.buttonBorderColor.cgColor
+        button.layer.borderWidth = 1.0
+        button.layer.cornerRadius = 5.0
+        
+    }
     
 /*
     struct Font {
@@ -25,25 +47,10 @@ struct Styling {
         
     }
 */
-    
-    struct Buttons {
-       // static var whiteButton = UIColor(red: 244.0/255.0, green: 244.0/255.0, blue: 244.0/255.0, alpha: 1.0)
-//        self.layer.borerColor = UIColor.blueColor()
-//        self.layer.borderWidth = .5
-//        static var layer.cornerRadius = 5.0
-    
-    }
-    
-//    struct Colors: PieChartAnalysis {
-//        static var yellowHappy = UIColor(red: 255.0/255.0, green: 186.0/255.0, blue: 2.0/255.0, alpha: 1.0)
-//        static var purpleSurprise = UIColor(red: 68.0/255.0, green: 3.0/255.0, blue: 129.0/255.0, alpha: 1.0)
-//        static var blueSorrow = UIColor(red: 10.0/255.0, green: 66.0/255.0, blue: 161.0/255.0, alpha: 1.0)
-//        static var pinkAnger = UIColor(red: 250.0/255.0, green: 8.0/255.0, blue: 120.0/255.0, alpha: 1.0)
-//
-//    }
+
     
     struct ActivityIndicatorView {
-        static var yellowSpinner = UIColor(red: 255.0/255.0, green: 186.0/255.0, blue: 2.0/255.0, alpha: 1.0)
+        static var purpleSpinner = UIColor(red: 157.0/255.0, green: 166.0/255.0, blue: 214.0/255.0, alpha: 1.0)
     }
     
 }

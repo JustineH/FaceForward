@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +14,7 @@
         <scene sceneID="7Lz-md-WU5">
             <objects>
                 <navigationController id="hcR-0H-uJM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" id="IUK-pB-TGu"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="CalendarIcon" id="IUK-pB-TGu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1eb-jI-eEP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -52,7 +52,7 @@
                             <constraint firstItem="tyG-uT-hJJ" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="rip-lt-d4W"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="CalendarIcon" id="cPa-gy-q4n"/>
                     <navigationItem key="navigationItem" id="HQs-6m-tqD"/>
                     <connections>
                         <outlet property="calendarView" destination="tyG-uT-hJJ" id="C64-eG-2Xc"/>
@@ -78,7 +78,7 @@
         <scene sceneID="Rbk-LA-Qp8">
             <objects>
                 <navigationController id="1jU-V4-qOU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Analysis" image="mood" id="HCu-fe-fOS"/>
+                    <tabBarItem key="tabBarItem" title="Analysis" image="EmotionIcon" id="HCu-fe-fOS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Ea-Ic-WOF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -91,10 +91,10 @@
             </objects>
             <point key="canvasLocation" x="847" y="-366"/>
         </scene>
-        <!--Detail Log View Controller-->
+        <!--Daily Assessment-->
         <scene sceneID="zZS-fL-Fow">
             <objects>
-                <viewController storyboardIdentifier="DetailLogViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3O7-8D-rl1" customClass="DetailLogViewController" customModule="FaceForward" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailLogViewController" title="Daily Assessment" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3O7-8D-rl1" customClass="DetailLogViewController" customModule="FaceForward" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8qQ-sO-cMi"/>
                         <viewControllerLayoutGuide type="bottom" id="Ccj-kD-vJA"/>
@@ -122,13 +122,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qn4-MR-BK8">
-                                                    <rect key="frame" x="169.5" y="16" width="36" height="21"/>
+                                                    <rect key="frame" x="170" y="16" width="36" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mood:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgh-4J-XoJ">
-                                                    <rect key="frame" x="16" y="77" width="49" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emotion:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgh-4J-XoJ">
+                                                    <rect key="frame" x="16" y="77" width="68" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -152,7 +152,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="id8-Vo-tdj">
-                                                    <rect key="frame" x="296.5" y="77" width="62.5" height="21"/>
+                                                    <rect key="frame" x="296" y="77" width="63" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -270,7 +270,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar" width="50" height="50"/>
-        <image name="mood" width="50" height="50"/>
+        <image name="CalendarIcon" width="29" height="29"/>
+        <image name="EmotionIcon" width="29" height="29"/>
     </resources>
 </document>

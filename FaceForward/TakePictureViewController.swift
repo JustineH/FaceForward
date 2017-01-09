@@ -79,16 +79,15 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     func setup() {
         self.view.backgroundColor = Styling.Colors.backgroundColor
         imageView.backgroundColor = UIColor.white
-        spinner.color = Styling.ActivityIndicatorView.yellowSpinner
+        spinner.color = Styling.ActivityIndicatorView.purpleSpinner
         imagePicker.delegate = self
 
         spinner.hidesWhenStopped = true
-        nextButtonLabel.layer.cornerRadius = 5
-        nextButtonLabel.layer.borderWidth = 2
-        nextButtonLabel.layer.borderColor = UIColor.white.cgColor
-        retakePhotoButtonLabel.layer.cornerRadius = 5
-        retakePhotoButtonLabel.layer.borderWidth = 2
-        retakePhotoButtonLabel.layer.borderColor = UIColor.white.cgColor
+        confirmPictureLabel.textColor = Styling.Colors.fontBody
+        noFaceFoundLabel.textColor = Styling.Colors.fontBody
+        Styling.styleButton(button: nextButtonLabel)
+        Styling.styleButton(button: retakePhotoButtonLabel)
+
     }
 
 
@@ -131,14 +130,14 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     
     func makeItems(dictionary: [String:Double]) -> Emotion? {
         let new = Emotion()
-        new.anger = dictionary["anger"]!
-        new.contempt = dictionary["contempt"]!
-        new.disgust = dictionary["disgust"]!
-        new.fear = dictionary["fear"]!
-        new.happiness = dictionary["happiness"]!
-        new.neutral = dictionary["neutral"]!
-        new.sadness = dictionary["sadness"]!
-        new.surprise = dictionary["surprise"]!
+        new.anger = dictionary["anger"] ?? 0
+        new.contempt = dictionary["contempt"] ?? 0
+        new.disgust = dictionary["disgust"] ?? 0
+        new.fear = dictionary["fear"] ?? 0
+        new.happiness = dictionary["happiness"] ?? 0
+        new.neutral = dictionary["neutral"] ?? 0
+        new.sadness = dictionary["sadness"] ?? 0
+        new.surprise = dictionary["surprise"] ?? 0
         
         return new
     }
@@ -169,19 +168,19 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
 }
 
 
-//extension TakePictureViewController {
-//    func base64EncodeImage(_ image: UIImage) -> String {
-//        var imagedata = UIImagePNGRepresentation(image)
-//        
-//        // Resize the image if it exceeds the 4MB API limit
-//        if ((imagedata!.count) > 4096) {
-//            let oldSize: CGSize = image.size
-//            let newSize: CGSize = CGSize(width: 800, height: oldSize.height / oldSize.width * 800)
-//            imagedata = resizeImage(newSize, image: image)
-//        }
-//        
-//        return imagedata!.base64EncodedString(options: .endLineWithCarriageReturn)
-//    }
-//
-//}
-//
+extension TakePictureViewController {
+    func base64EncodeImage(_ image: UIImage) -> String {
+        var imagedata = UIImagePNGRepresentation(image)
+        
+        // Resize the image if it exceeds the 4MB API limit
+        if ((imagedata!.count) > 4096) {
+            let oldSize: CGSize = image.size
+            let newSize: CGSize = CGSize(width: 800, height: oldSize.height / oldSize.width * 800)
+            imagedata = resizeImage(newSize, image: image)
+        }
+        
+        return imagedata!.base64EncodedString(options: .endLineWithCarriageReturn)
+    }
+
+}
+

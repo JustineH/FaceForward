@@ -36,9 +36,9 @@ class Router: NSObject {
         vc?.show(photoVC, sender: vc)
     }
 
-    func showSuggestions() {
+    func showSuggestions(emotion: String) {
         let suggestionsVC = Router.suggestionsVC()
-//        suggestionsVC.suggestions = suggestions
+        suggestionsVC.emotionForSuggestion = emotion
         vc?.show(suggestionsVC, sender: vc)
     }
 

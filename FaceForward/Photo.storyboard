@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KiM-Gk-U1w">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KiM-Gk-U1w">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,39 +23,47 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u1w-iH-Ld7">
-                                <rect key="frame" x="19.5" y="40" width="337.5" height="400"/>
+                                <rect key="frame" x="19" y="40" width="337" height="334"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ip6-R9-dZI">
-                                <rect key="frame" x="19" y="40" width="337.5" height="400"/>
+                                <rect key="frame" x="19" y="40" width="337" height="334"/>
                                 <state key="normal" title="Take Photo"/>
                                 <connections>
                                     <action selector="loadImageButtonTapped:" destination="KiM-Gk-U1w" eventType="touchUpInside" id="IBz-iI-Lo7"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ay1-XV-I62">
-                                <rect key="frame" x="19" y="539" width="337.5" height="30"/>
+                                <rect key="frame" x="113" y="496" width="150" height="40"/>
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Next"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="iBG-YD-NnJ"/>
+                                    <constraint firstAttribute="height" constant="40" id="uI9-ra-4mF"/>
+                                </constraints>
+                                <state key="normal" title="NEXT"/>
                                 <connections>
                                     <action selector="nextSaveButton:" destination="KiM-Gk-U1w" eventType="touchUpInside" id="ppU-eb-aFg"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNN-jJ-1ex">
-                                <rect key="frame" x="19" y="501" width="337.5" height="30"/>
+                                <rect key="frame" x="113" y="440" width="150" height="40"/>
                                 <color key="backgroundColor" red="0.50196081400000003" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Retake Photo"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Z9V-Cx-9QA"/>
+                                    <constraint firstAttribute="height" constant="40" id="yAa-lb-fUr"/>
+                                </constraints>
+                                <state key="normal" title="RETAKE PHOTO"/>
                                 <connections>
                                     <action selector="retakePhotoButton:" destination="KiM-Gk-U1w" eventType="touchUpInside" id="oxG-NP-G0n"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to use this photo?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1k-FW-B3G">
-                                <rect key="frame" x="32" y="460" width="311" height="21"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use this photo?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1k-FW-B3G">
+                                <rect key="frame" x="128" y="394" width="120" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No human faces found 😟 " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1CY-se-rzh">
-                                <rect key="frame" x="85" y="460" width="205" height="21"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No human faces found. Please try again." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1CY-se-rzh">
+                                <rect key="frame" x="34" y="394" width="308" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -69,13 +77,11 @@
                             <constraint firstItem="Fmm-7B-aIH" firstAttribute="centerX" secondItem="HW4-1E-paj" secondAttribute="centerX" id="0bu-Li-kg5"/>
                             <constraint firstItem="Ip6-R9-dZI" firstAttribute="centerY" secondItem="u1w-iH-Ld7" secondAttribute="centerY" id="Dl6-gI-MiG"/>
                             <constraint firstItem="u1w-iH-Ld7" firstAttribute="centerX" secondItem="HW4-1E-paj" secondAttribute="centerX" id="EFL-aq-G0h"/>
-                            <constraint firstItem="u1w-iH-Ld7" firstAttribute="height" secondItem="HW4-1E-paj" secondAttribute="height" multiplier="0.6" id="H8h-KP-EpB"/>
-                            <constraint firstItem="Ay1-XV-I62" firstAttribute="top" secondItem="bNN-jJ-1ex" secondAttribute="bottom" constant="8" id="Hw4-ad-YiI"/>
-                            <constraint firstItem="Ay1-XV-I62" firstAttribute="width" secondItem="HW4-1E-paj" secondAttribute="width" multiplier="0.9" id="K2O-fj-Br3"/>
+                            <constraint firstItem="u1w-iH-Ld7" firstAttribute="height" secondItem="HW4-1E-paj" secondAttribute="height" multiplier="0.5" id="H8h-KP-EpB"/>
+                            <constraint firstItem="Ay1-XV-I62" firstAttribute="top" secondItem="bNN-jJ-1ex" secondAttribute="bottom" constant="16" id="Hw4-ad-YiI"/>
                             <constraint firstItem="Ip6-R9-dZI" firstAttribute="height" secondItem="u1w-iH-Ld7" secondAttribute="height" id="KCO-oD-oGw"/>
-                            <constraint firstItem="bNN-jJ-1ex" firstAttribute="width" secondItem="HW4-1E-paj" secondAttribute="width" multiplier="0.9" id="SMC-fY-vsx"/>
                             <constraint firstItem="u1w-iH-Ld7" firstAttribute="top" secondItem="rcA-qC-EP0" secondAttribute="bottom" constant="20" id="Sv8-WY-RY2"/>
-                            <constraint firstItem="bNN-jJ-1ex" firstAttribute="top" secondItem="1CY-se-rzh" secondAttribute="bottom" constant="20" id="XhF-lg-TIR"/>
+                            <constraint firstItem="bNN-jJ-1ex" firstAttribute="top" secondItem="1CY-se-rzh" secondAttribute="bottom" constant="25" id="XhF-lg-TIR"/>
                             <constraint firstItem="Fmm-7B-aIH" firstAttribute="centerY" secondItem="HW4-1E-paj" secondAttribute="centerY" id="bH9-Mp-iW3"/>
                             <constraint firstItem="1CY-se-rzh" firstAttribute="centerX" secondItem="HW4-1E-paj" secondAttribute="centerX" id="cX9-nB-SoE"/>
                             <constraint firstItem="M1k-FW-B3G" firstAttribute="top" secondItem="Ip6-R9-dZI" secondAttribute="bottom" constant="20" id="eNZ-GH-HFI"/>
