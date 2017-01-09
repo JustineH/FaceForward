@@ -70,12 +70,9 @@
                                     <constraint firstAttribute="width" constant="100" id="Uo6-VP-hHH"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here's a beat for your inner drummer..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWg-Sx-EhJ">
-                                <rect key="frame" x="35" y="285" width="305" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="4Fa-qt-lrC"/>
-                                    <constraint firstAttribute="width" constant="305" id="rHo-97-5pb"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here's a beat for your inner drummer..." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWg-Sx-EhJ">
+                                <rect key="frame" x="40" y="285" width="295" height="21"/>
+                                <accessibility key="accessibilityConfiguration" label="Here's a beat for your inner drummer"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
