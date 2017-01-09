@@ -70,6 +70,8 @@ Podfile.lock
 *.xcworkspace
 Constants.swift
 Suggestions.swift
+FaceForward/Suggestions.swift
 RadioStations.swift
+FaceForward/RadioStations.swift
 *.pls
 FaceForward/*.pls
