@@ -70,21 +70,21 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
     func setCalendarCellColor(colorMood: String) -> UIColor {
         switch colorMood {
         case "anger":
-            return UIColor.red
+            return Styling.Colors.redColor
         case "contempt":
-            return UIColor.yellow
+            return Styling.Colors.darkBlueColor
         case "disgust":
-            return UIColor.cyan
+            return Styling.Colors.greenColor
         case "fear":
-            return UIColor.green
+            return Styling.Colors.orangeColor
         case "happiness":
-            return UIColor.cyan
+            return Styling.Colors.yellowColor
         case "neutral":
-            return UIColor.purple
+            return Styling.Colors.pinkColor
         case "sadness":
-            return UIColor.black
+            return Styling.Colors.blueColor
         case "surprise":
-            return UIColor.brown
+            return Styling.Colors.purpleColor
         default:
             break
         }
@@ -120,6 +120,7 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
         let month = myDateFormatter.formatMonth(month: calendar.component(.month, from: range.start))
         let year = calendar.component(.year, from: range.start)
         headerCell?.monthLabel.text = "\(month) \(year)"
+        headerCell?.backgroundColor = Styling.Colors.greenColor
         
     }
     

@@ -18,7 +18,7 @@ class DataSource: NSObject, JTAppleCalendarViewDataSource {
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
         formatter.dateFormat = "MM dd yyyy"
         
-        let startDate = formatter.date(from: "12 31 2015")!
+        let startDate = formatter.date(from: "12 31 2016")!
         let endDate = formatter.date(from: "12 31 2100")!
         let parameters = ConfigurationParameters(startDate: startDate,
                                                  endDate: endDate,

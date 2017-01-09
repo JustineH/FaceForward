@@ -40,6 +40,9 @@
 		1FBD71651E035F44001E36EE /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD71641E035F44001E36EE /* CellView.swift */; };
 		1FD03B661E0CEBCF009995E8 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD03B651E0CEBCF009995E8 /* DetailTableViewCell.swift */; };
 		5212E88B1E035862000209BD /* Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212E88A1E035862000209BD /* Styling.swift */; };
+		5232E7221E237EC100AC1377 /* RadioStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5232E7211E237EC100AC1377 /* RadioStations.swift */; };
+		524B3EB51E21F7AA00203AB2 /* EmotionAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B3EB41E21F7A900203AB2 /* EmotionAnalysis.swift */; };
+		524B3EB71E21F92900203AB2 /* Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B3EB61E21F92800203AB2 /* Suggestions.swift */; };
 		5286A2091E053633005028D0 /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A2081E053633005028D0 /* TakePictureViewController.swift */; };
 		5286A20E1E089772005028D0 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A20D1E089772005028D0 /* ServerManager.swift */; };
 		52D56F8F1E0A33A400BF42A0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D56F8E1E0A33A400BF42A0 /* Constants.swift */; };
@@ -83,6 +86,9 @@
 		1FD03B651E0CEBCF009995E8 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		3C2A011C095BE3AAA8A0D4B8 /* Pods-FaceForward.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceForward.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaceForward/Pods-FaceForward.release.xcconfig"; sourceTree = "<group>"; };
 		5212E88A1E035862000209BD /* Styling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styling.swift; sourceTree = "<group>"; };
+		5232E7211E237EC100AC1377 /* RadioStations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioStations.swift; sourceTree = "<group>"; };
+		524B3EB41E21F7A900203AB2 /* EmotionAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionAnalysis.swift; sourceTree = "<group>"; };
+		524B3EB61E21F92800203AB2 /* Suggestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Suggestions.swift; sourceTree = "<group>"; };
 		5286A2081E053633005028D0 /* TakePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePictureViewController.swift; sourceTree = "<group>"; };
 		5286A20D1E089772005028D0 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		52D56F8E1E0A33A400BF42A0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -168,6 +174,7 @@
 				1F5807471E0DE66500DAEDDC /* RealmManager.swift */,
 				1F83484E1E088C7A00FE97CB /* EmotionName.swift */,
 				1F5807491E0DF05E00DAEDDC /* MyDateFormatter.swift */,
+				524B3EB41E21F7A900203AB2 /* EmotionAnalysis.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -203,8 +210,10 @@
 			isa = PBXGroup;
 			children = (
 				52D56F8E1E0A33A400BF42A0 /* Constants.swift */,
+				524B3EB61E21F92800203AB2 /* Suggestions.swift */,
 				1F26A2051E02003F00CA7464 /* Assets.xcassets */,
 				1F26A20A1E02003F00CA7464 /* Info.plist */,
+				5232E7211E237EC100AC1377 /* RadioStations.swift */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -408,10 +417,13 @@
 				1FA89EBF1E022167004EBF08 /* DetailLogViewController.swift in Sources */,
 				1FA89EC51E0221C2004EBF08 /* ConfirmPictureViewController.swift in Sources */,
 				1FA89EC71E022208004EBF08 /* AnalysisChartViewController.swift in Sources */,
+				524B3EB51E21F7AA00203AB2 /* EmotionAnalysis.swift in Sources */,
+				5232E7221E237EC100AC1377 /* RadioStations.swift in Sources */,
 				1FA89EC31E022199004EBF08 /* SuggestionsViewController.swift in Sources */,
 				1F8348491E08895900FE97CB /* Survey.swift in Sources */,
 				1F8348471E0887A200FE97CB /* DataEntry.swift in Sources */,
 				1F83484D1E088C2500FE97CB /* Sleep.swift in Sources */,
+				524B3EB71E21F92900203AB2 /* Suggestions.swift in Sources */,
 				1FAB00EB1E0A33DD005ED26A /* Delegate.swift in Sources */,
 				1FAB00E91E0A3361005ED26A /* DataSource.swift in Sources */,
 				1F26A1FD1E02003F00CA7464 /* AppDelegate.swift in Sources */,
@@ -544,7 +556,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D89B48985DF69A546BC44AB9 /* Pods-FaceForward.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FaceForward/Info.plist;
@@ -559,7 +571,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3C2A011C095BE3AAA8A0D4B8 /* Pods-FaceForward.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = C4VD2Y49D5;
 				INFOPLIST_FILE = FaceForward/Info.plist;
