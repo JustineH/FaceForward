@@ -23,9 +23,10 @@ class DetailLogViewController: UIViewController, UITableViewDelegate, UITableVie
 //MARK: Other Stuff
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         logTableView.rowHeight = UITableViewAutomaticDimension
         logTableView.estimatedRowHeight = 250
-        
+        logTableView.backgroundView = UIImageView(image: UIImage(named: "LowPolyForLogo"))
         findLogs()
         
     }

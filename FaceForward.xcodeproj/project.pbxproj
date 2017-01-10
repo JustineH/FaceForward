@@ -37,7 +37,6 @@
 		1FA89EBF1E022167004EBF08 /* DetailLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA89EBE1E022167004EBF08 /* DetailLogViewController.swift */; };
 		1FA89EC11E02217C004EBF08 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA89EC01E02217C004EBF08 /* SurveyViewController.swift */; };
 		1FA89EC31E022199004EBF08 /* SuggestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA89EC21E022199004EBF08 /* SuggestionsViewController.swift */; };
-		1FA89EC51E0221C2004EBF08 /* ConfirmPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA89EC41E0221C2004EBF08 /* ConfirmPictureViewController.swift */; };
 		1FA89EC71E022208004EBF08 /* AnalysisChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA89EC61E022208004EBF08 /* AnalysisChartViewController.swift */; };
 		1FAB00E71E09DD14005ED26A /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAB00E61E09DD14005ED26A /* CalendarViewController.swift */; };
 		1FAB00E91E0A3361005ED26A /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAB00E81E0A3361005ED26A /* DataSource.swift */; };
@@ -93,7 +92,6 @@
 		1FA89EBE1E022167004EBF08 /* DetailLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailLogViewController.swift; sourceTree = "<group>"; };
 		1FA89EC01E02217C004EBF08 /* SurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		1FA89EC21E022199004EBF08 /* SuggestionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionsViewController.swift; sourceTree = "<group>"; };
-		1FA89EC41E0221C2004EBF08 /* ConfirmPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmPictureViewController.swift; sourceTree = "<group>"; };
 		1FA89EC61E022208004EBF08 /* AnalysisChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalysisChartViewController.swift; sourceTree = "<group>"; };
 		1FAB00E61E09DD14005ED26A /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		1FAB00E81E0A3361005ED26A /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
@@ -297,7 +295,6 @@
 		1FBD71601E034462001E36EE /* Picture */ = {
 			isa = PBXGroup;
 			children = (
-				1FA89EC41E0221C2004EBF08 /* ConfirmPictureViewController.swift */,
 				5286A2081E053633005028D0 /* TakePictureViewController.swift */,
 			);
 			name = Picture;
@@ -467,7 +464,6 @@
 				1F75FA7D1E20525C00836AD2 /* RadioPlayer.swift in Sources */,
 				1FBD715B1E0342EA001E36EE /* Router.swift in Sources */,
 				1FA89EBF1E022167004EBF08 /* DetailLogViewController.swift in Sources */,
-				1FA89EC51E0221C2004EBF08 /* ConfirmPictureViewController.swift in Sources */,
 				1F75FA871E206F8100836AD2 /* RadioStations.swift in Sources */,
 				1FA89EC71E022208004EBF08 /* AnalysisChartViewController.swift in Sources */,
 				524B3EB51E21F7AA00203AB2 /* EmotionAnalysis.swift in Sources */,

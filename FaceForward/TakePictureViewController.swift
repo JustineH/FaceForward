@@ -21,9 +21,12 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var noFaceFoundLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var takePhotoButtonLabel: UIButton!
+    @IBOutlet weak var timeOutLabel: UILabel!
     @IBOutlet weak var retakePhotoButtonLabel: UIButton!
     @IBOutlet weak var nextButtonLabel: UIButton!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var spinnerBackground: UIView!
+    
 //    var percentages = [Double]()
     var mostLikelyMood: String = EmotionName.neutral.rawValue
     var survey: Survey!
@@ -59,7 +62,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         self.confirmPictureLabel.isHidden = true
         self.noFaceFoundLabel.isHidden = true
         self.nextButtonLabel.isHidden = true
-        self.retakePhotoButtonLabel.isHidden = true
+        self.timeOutLabel.isHidden = true
         
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
@@ -67,6 +70,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         present(imagePicker, animated: true, completion: nil)
     }
     
+    //MARK: - View -
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
@@ -76,12 +80,13 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         super.didReceiveMemoryWarning()
     }
     
+
     func setup() {
         self.view.backgroundColor = Styling.Colors.backgroundColor
         imageView.backgroundColor = UIColor.white
         spinner.color = Styling.ActivityIndicatorView.purpleSpinner
         imagePicker.delegate = self
-
+        
         spinner.hidesWhenStopped = true
         confirmPictureLabel.textColor = Styling.Colors.fontBody
         noFaceFoundLabel.textColor = Styling.Colors.fontBody
@@ -90,14 +95,15 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
 
     }
 
-
+    //MARK: - Take the Picture -
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         spinner.startAnimating()
-        self.imageView.isHidden = false
-        self.spinner.isHidden = false
+        imageView.isHidden = false
+        spinner.isHidden = false
+        spinnerBackground.isHidden = false
         takePhotoButtonLabel.isHidden = true
-        
+    
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
             
@@ -107,8 +113,12 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
             ServerManager.emotions(from: pickedImage)
             { emotionDictionary in
                 self.spinner.stopAnimating()
+                self.spinnerBackground.isHidden = true
                 
-                if emotionDictionary.count <= 0 {
+                if emotionDictionary.count == 1 {
+                    self.timeOutLabel.isHidden = false
+                }
+                else if emotionDictionary.count <= 0 {
                     self.noFaceFoundLabel.isHidden = false
                     self.confirmPictureLabel.isHidden = true
                 }else{

@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 enum EmotionName: String {
-    case anger = "anger"
-    case contempt = "contempt"
-    case disgust = "disgust"
-    case fear = "fear"
-    case happiness = "happiness"
-    case neutral = "neutral"
-    case sadness = "sadness"
-    case surprise = "surprise"
+    case anger = "Anger"
+    case contempt = "Contempt"
+    case disgust = "Disgust"
+    case fear = "Fear"
+    case happiness = "Happiness"
+    case neutral = "Neutral"
+    case sadness = "Sadness"
+    case surprise = "Surprise"
 }
 

@@ -42,6 +42,7 @@ class ServerManager: NSObject {
                 
                 case .failure(let error):
                     print(error)
+                    completion(["\(error.localizedDescription)":0])
             }
             
         }

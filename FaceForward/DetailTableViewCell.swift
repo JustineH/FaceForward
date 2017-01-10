@@ -35,6 +35,7 @@ class DetailTableViewCell: UITableViewCell {
     
     //MARK: Configure Cell View
     func configureCell(moods:DataEntry) {
+        
         if moods.survey[0].exerciseInput == true {
             self.exerciseLabel.text = "Yes"
         }else if moods.survey[0].exerciseInput == false {
