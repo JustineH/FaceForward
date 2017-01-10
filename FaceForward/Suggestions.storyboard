@@ -94,7 +94,7 @@
                                 </constraints>
                                 <state key="normal" title="Shuffle"/>
                                 <connections>
-                                    <action selector="chooseOwnStationButton:" destination="yGQ-is-ELM" eventType="touchUpInside" id="TXv-X0-cVF"/>
+                                    <action selector="shuffleStation:" destination="yGQ-is-ELM" eventType="touchUpInside" id="Djw-id-lc0"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSl-Rt-Jtc">

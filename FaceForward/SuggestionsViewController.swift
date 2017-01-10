@@ -21,7 +21,7 @@ class SuggestionsViewController: UIViewController {
     @IBOutlet weak var shuffleButton: UIButton!
     
     var emotionForSuggestion: String!
-    let passedEmotion = Emotion()
+//    let passedEmotion = Emotion()
     let radio = RadioPlayer()
     
     
@@ -33,7 +33,8 @@ class SuggestionsViewController: UIViewController {
 //        chooseOwnStationLabel.backgroundColor = Styling.Colors.yellowColor
 //        chooseOwnStationLabel.tintColor = Styling.Colors.darkBlueColor
 
-        RadioPlayer.sharedInstance.chooseStation(emotion: passedEmotion)
+        RadioPlayer.sharedInstance.chooseStation(emotion: emotionForSuggestion)
+        
         
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
@@ -67,8 +68,11 @@ class SuggestionsViewController: UIViewController {
     @IBAction func playButtonPressed(_ sender: Any) {
         toggle()
     }
-   
     
+    @IBAction func shuffleStation(_ sender: Any) {
+        RadioPlayer.sharedInstance.shuffleStation()
+    }
+   
     @IBAction func volumeSlider(_ sender: UISlider) {
         RadioPlayer.sharedInstance.adjustVolume(value: sender.value)
     }
