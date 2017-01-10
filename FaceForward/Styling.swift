@@ -40,6 +40,12 @@ struct Styling {
         
     }
     
+    static func styleShuffleButton(button: UIButton) {
+        button.backgroundColor = self.Colors.purpleColor
+        button.tintColor = self.Colors.buttonTextColor
+        button.layer.cornerRadius = 5.0
+    }
+    
 /*
     struct Font {
         static var fontTitle = UIFont(name: "", size: 20)
