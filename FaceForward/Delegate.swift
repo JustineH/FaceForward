@@ -41,7 +41,6 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
                 let emotionToday = moodDate.emotion[0].largestEmotion
                 let color = setCalendarCellColor(colorMood: emotionToday)
                 myCustomCell.moodColor.backgroundColor = color
-                myCustomCell.moodColor.layer.cornerRadius = myCustomCell.moodColor.layer.frame.width/2
                 myCustomCell.moodColor.isHidden = false
                 break
             }
@@ -63,7 +62,6 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
     
     func markCurrentDate(cell: CellView) {
         cell.currentColor.backgroundColor = UIColor.gray
-        cell.currentColor.layer.cornerRadius = cell.currentColor.layer.frame.size.width/2
         cell.currentColor.isHidden = false
     }
     
