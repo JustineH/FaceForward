@@ -62,7 +62,6 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         self.confirmPictureLabel.isHidden = true
         self.noFaceFoundLabel.isHidden = true
         self.nextButtonLabel.isHidden = true
-        self.retakePhotoButtonLabel.isHidden = true
         self.timeOutLabel.isHidden = true
         
         imagePicker.allowsEditing = false

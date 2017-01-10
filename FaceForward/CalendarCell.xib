@@ -31,7 +31,7 @@
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="hLQ-xz-wgW" firstAttribute="width" secondItem="4PC-J5-SIM" secondAttribute="width" multiplier="0.7" id="8uw-dn-MS5"/>
                 <constraint firstItem="hLQ-xz-wgW" firstAttribute="height" secondItem="4PC-J5-SIM" secondAttribute="height" multiplier="0.7" id="Ihi-Lx-e75"/>

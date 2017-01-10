@@ -40,6 +40,15 @@ struct Styling {
         
     }
     
+    static func styleBackground(view: UIView) {
+    UIGraphicsBeginImageContext(view.frame.size)
+    UIImage(named: "LowPolyForLogo")?.draw(in: view.bounds, blendMode: .screen, alpha: 1)
+    let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+    UIGraphicsEndImageContext()
+        
+    view.backgroundColor = UIColor(patternImage: image)
+    }
+    
 /*
     struct Font {
         static var fontTitle = UIFont(name: "", size: 20)
@@ -47,7 +56,7 @@ struct Styling {
         
     }
 */
-
+    
     
     struct ActivityIndicatorView {
         static var purpleSpinner = UIColor(red: 157.0/255.0, green: 166.0/255.0, blue: 214.0/255.0, alpha: 1.0)

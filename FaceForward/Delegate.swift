@@ -22,6 +22,7 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
     func calendar(_ calendar: JTAppleCalendarView, willDisplayCell cell: JTAppleDayCellView, date: Date, cellState: CellState) {
         
         let myCustomCell = cell as! CellView
+        myCustomCell.backgroundColor = UIColor.clear
         
         //Current Date Color
         dateFormatter.dateFormat = "yyy MM dd"
@@ -61,7 +62,7 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
     }
     
     func markCurrentDate(cell: CellView) {
-        cell.currentColor.backgroundColor = UIColor.gray
+        cell.currentColor.backgroundColor = UIColor.white
         cell.currentColor.isHidden = false
     }
     
