@@ -16,7 +16,7 @@ enum EmotionName: String {
     case fear = "Fear"
     case happiness = "Happiness"
     case neutral = "Neutral"
-    case sadness = "sadness"
-    case surprise = "surprise"
+    case sadness = "Sadness"
+    case surprise = "Surprise"
 }
 

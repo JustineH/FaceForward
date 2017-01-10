@@ -15,7 +15,6 @@ class SuggestionsViewController: UIViewController {
     // MARK: Properties
     
     @IBOutlet weak var suggestionsLabel: UITextView!
-    @IBOutlet weak var chooseOwnStationLabel: UIButton!
     @IBOutlet weak var musicNote: UIImageView!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var volumeSlider: UISlider!
@@ -30,11 +29,11 @@ class SuggestionsViewController: UIViewController {
         super.viewDidLoad()
         
         updateSuggestionsText()
-        Styling.styleShuffleButton(button: shuffleButton)
+//        Styling.styleShuffleButton(button: shuffleButton)
 //        chooseOwnStationLabel.backgroundColor = Styling.Colors.yellowColor
 //        chooseOwnStationLabel.tintColor = Styling.Colors.darkBlueColor
 
-        radio.chooseStation(emotion: passedEmotion)
+        RadioPlayer.sharedInstance.chooseStation(emotion: passedEmotion)
         
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
@@ -63,14 +62,7 @@ class SuggestionsViewController: UIViewController {
     }
     
     
-    @IBAction func randomRadioStationButton(_ sender: Any) {
-    }
-    
-
-    @IBAction func chooseOwnStationButton(_ sender: Any) {
-    }
-    
-    //MARK: Buttons
+    // MARK: Buttons
     
     @IBAction func playButtonPressed(_ sender: Any) {
         toggle()
@@ -82,7 +74,8 @@ class SuggestionsViewController: UIViewController {
     }
 
     
-    //MARK: Radio Player
+    // MARK: Radio Player
+    
     func toggle() {
         if RadioPlayer.sharedInstance.currentlyPlaying() {
             pauseRadio()
