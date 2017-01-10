@@ -48,6 +48,12 @@ struct Styling {
         
     view.backgroundColor = UIColor(patternImage: image)
     }
+
+    static func styleShuffleButton(button: UIButton) {
+        button.backgroundColor = self.Colors.purpleColor
+        button.tintColor = self.Colors.buttonTextColor
+        button.layer.cornerRadius = 5.0
+    }
     
 /*
     struct Font {

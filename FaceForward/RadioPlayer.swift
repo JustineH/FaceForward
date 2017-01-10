@@ -15,10 +15,17 @@ class RadioPlayer {
     private var player = AVPlayer()
     private var isPlaying = false
     let stations = RadioStations()
+    let moodArray = ["Anger", "Contempt", "Happiness", "Sadness", "Disgust", "Fear", "Neutral", "Surprise"]
     
-    func chooseStation(emotion: Emotion) {
-        let chosenStation = stations.changeStation(mood: emotion.largestEmotion)
+    func chooseStation(emotion: String) {
+        let chosenStation = stations.changeStation(mood: emotion)
         player.replaceCurrentItem(with: chosenStation)
+    }
+    
+    func shuffleStation() {
+        let randomMood = Int(arc4random_uniform(UInt32(moodArray.count)))
+        let currentStation = stations.changeStation(mood: moodArray[randomMood])
+            player.replaceCurrentItem(with: currentStation)
     }
     
     func play() {
