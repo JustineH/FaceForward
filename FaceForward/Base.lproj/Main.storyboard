@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +14,7 @@
         <scene sceneID="7Lz-md-WU5">
             <objects>
                 <navigationController id="hcR-0H-uJM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Calendar" image="CalendarIcon" id="IUK-pB-TGu"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="Calendar-1" id="IUK-pB-TGu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1eb-jI-eEP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -89,7 +89,7 @@
         <scene sceneID="Rbk-LA-Qp8">
             <objects>
                 <navigationController id="1jU-V4-qOU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Analysis" image="EmotionIcon" id="HCu-fe-fOS"/>
+                    <tabBarItem key="tabBarItem" title="Analysis" image="Emotion" id="HCu-fe-fOS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Ea-Ic-WOF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -281,8 +281,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CalendarIcon" width="29" height="29"/>
-        <image name="EmotionIcon" width="29" height="29"/>
+        <image name="Calendar-1" width="50" height="50"/>
+        <image name="CalendarIcon" width="74" height="75"/>
+        <image name="Emotion" width="50" height="50"/>
         <image name="LowPolyForLogo" width="3333" height="3333"/>
     </resources>
 </document>

@@ -36,7 +36,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugB-q7-FH9">
-                                <rect key="frame" x="172" y="205" width="30" height="30"/>
+                                <rect key="frame" x="173" y="205" width="30" height="30"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
                                     <action selector="playButtonPressed:" destination="Jdl-K2-F4k" eventType="touchUpInside" id="8kb-4C-tOx"/>

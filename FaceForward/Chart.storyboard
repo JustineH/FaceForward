@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,24 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CUt-Ki-UR0" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="84.666666666666657" width="373" height="437"/>
-                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aEI-HM-jsM">
-                                <rect key="frame" x="17" y="522.66666666666663" width="378" height="31"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Scan Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8z7-5V-Dc2">
-                                <rect key="frame" x="124" y="50" width="167" height="25"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJ7-N0-Bfg">
-                                <rect key="frame" x="132" y="561.66666666666663" width="150" height="40"/>
+                                <rect key="frame" x="132" y="499" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="3wf-GB-d4D">
                                         <variation key="widthClass=compact" constant="150"/>
@@ -52,47 +35,40 @@
                                     <action selector="nextToSuggestionsButton:" destination="dLH-dD-ql4" eventType="touchUpInside" id="MXt-2l-lBF"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CUt-Ki-UR0" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="40" width="373" height="437"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8z7-5V-Dc2">
+                                <rect key="frame" x="129.33333333333331" y="40" width="156.33333333333331" height="33.666666666666671"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aEI-HM-jsM" firstAttribute="height" secondItem="djG-9z-WV7" secondAttribute="height" multiplier="0.25" constant="-20.75" id="1Pc-gs-1vK">
-                                <variation key="widthClass=compact" constant="-153"/>
-                            </constraint>
                             <constraint firstItem="CUt-Ki-UR0" firstAttribute="width" secondItem="djG-9z-WV7" secondAttribute="width" multiplier="0.9" id="1fb-f2-haC"/>
                             <constraint firstItem="nJ7-N0-Bfg" firstAttribute="centerX" secondItem="djG-9z-WV7" secondAttribute="centerX" id="AGA-pz-8bO"/>
                             <constraint firstItem="CUt-Ki-UR0" firstAttribute="height" secondItem="djG-9z-WV7" secondAttribute="height" multiplier="0.5" id="Bcz-ti-9q5">
                                 <variation key="widthClass=compact" constant="69"/>
                             </constraint>
-                            <constraint firstItem="aEI-HM-jsM" firstAttribute="top" secondItem="CUt-Ki-UR0" secondAttribute="bottom" constant="16" id="EiX-Wa-XO6">
-                                <variation key="widthClass=compact" constant="1"/>
-                            </constraint>
-                            <constraint firstItem="nJ7-N0-Bfg" firstAttribute="top" secondItem="aEI-HM-jsM" secondAttribute="bottom" constant="17" id="FmH-NU-bz0">
-                                <variation key="widthClass=compact" constant="8"/>
-                            </constraint>
-                            <constraint firstItem="aEI-HM-jsM" firstAttribute="width" secondItem="djG-9z-WV7" secondAttribute="width" multiplier="0.9" constant="5.5" id="I8B-Ox-y5s"/>
+                            <constraint firstItem="nJ7-N0-Bfg" firstAttribute="top" secondItem="CUt-Ki-UR0" secondAttribute="bottom" constant="22" id="PXf-s6-WJH"/>
                             <constraint firstItem="8z7-5V-Dc2" firstAttribute="centerX" secondItem="djG-9z-WV7" secondAttribute="centerX" id="cbP-dP-Coe"/>
-                            <constraint firstItem="aEI-HM-jsM" firstAttribute="centerX" secondItem="nJ7-N0-Bfg" secondAttribute="centerX" id="iQ6-LT-y9T">
-                                <variation key="widthClass=compact" constant="-1"/>
-                            </constraint>
-                            <constraint firstItem="aEI-HM-jsM" firstAttribute="centerX" secondItem="djG-9z-WV7" secondAttribute="centerX" id="m4D-Iz-IAJ"/>
+                            <constraint firstItem="8z7-5V-Dc2" firstAttribute="centerX" secondItem="djG-9z-WV7" secondAttribute="centerX" id="ejd-la-nRP"/>
                             <constraint firstItem="CUt-Ki-UR0" firstAttribute="centerX" secondItem="djG-9z-WV7" secondAttribute="centerX" id="mVQ-2c-KtX"/>
-                            <constraint firstItem="CUt-Ki-UR0" firstAttribute="top" secondItem="8z7-5V-Dc2" secondAttribute="bottom" constant="1" id="rtw-d5-8cz"/>
-                            <constraint firstItem="aEI-HM-jsM" firstAttribute="leading" secondItem="djG-9z-WV7" secondAttribute="leadingMargin" id="sCX-lX-b25"/>
-                            <constraint firstItem="8z7-5V-Dc2" firstAttribute="top" secondItem="GhF-kb-Z5Y" secondAttribute="bottom" constant="30" id="wlf-MY-jbW"/>
-                            <constraint firstItem="aEI-HM-jsM" firstAttribute="leading" secondItem="CUt-Ki-UR0" secondAttribute="leading" id="xmd-Kj-sa1"/>
+                            <constraint firstItem="CUt-Ki-UR0" firstAttribute="top" secondItem="GhF-kb-Z5Y" secondAttribute="bottom" constant="20" id="o1h-mH-NDT"/>
+                            <constraint firstItem="8z7-5V-Dc2" firstAttribute="top" secondItem="GhF-kb-Z5Y" secondAttribute="bottom" constant="20" id="wlf-MY-jbW"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="mVQ-2c-KtX"/>
-                                <exclude reference="m4D-Iz-IAJ"/>
                                 <exclude reference="AGA-pz-8bO"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="constraints">
                                 <include reference="mVQ-2c-KtX"/>
-                                <exclude reference="sCX-lX-b25"/>
-                                <exclude reference="xmd-Kj-sa1"/>
                                 <include reference="AGA-pz-8bO"/>
                             </mask>
                         </variation>
@@ -104,7 +80,6 @@
                     </view>
                     <connections>
                         <outlet property="chartNextButton" destination="nJ7-N0-Bfg" id="YUV-vd-1Xw"/>
-                        <outlet property="facialEmotionResults" destination="aEI-HM-jsM" id="9r3-EK-sLJ"/>
                         <outlet property="pieChartView" destination="CUt-Ki-UR0" id="xm1-Lo-QzS"/>
                     </connections>
                 </viewController>

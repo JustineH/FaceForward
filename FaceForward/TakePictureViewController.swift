@@ -26,6 +26,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var nextButtonLabel: UIButton!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var spinnerBackground: UIView!
+    @IBOutlet weak var cameraImage: UIImageView!
     
 //    var percentages = [Double]()
     var mostLikelyMood: String = EmotionName.neutral.rawValue
@@ -74,6 +75,12 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
+        
+//        var camera: UIImage = UIImage(named: "#imageLiteral(resourceName: "Camera3")")
+//        var cameraImage = UIImageView(image: image)
+//        self.view.addSubview(cameraImage)
+       // cameraImage.image = UIImage(named: "#imageLiteral(resourceName: "Camera3")")
+       
     }
     
     override func didReceiveMemoryWarning() {
@@ -103,6 +110,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         spinner.isHidden = false
         spinnerBackground.isHidden = false
         takePhotoButtonLabel.isHidden = true
+        cameraImage.isHidden = true
     
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
