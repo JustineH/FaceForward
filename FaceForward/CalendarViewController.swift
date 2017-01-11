@@ -28,7 +28,7 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     // We cache our colors because we do not want to be creating
     // a new color every time a cell is displayed.
-    let notSelectedTextColor = UIColor.black
+    let notSelectedTextColor = UIColor.darkGray
     let selectedTextColor = UIColor.purple
     
 //    //chart
