@@ -60,6 +60,7 @@ class SuggestionsViewController: UIViewController {
     
     func updateSuggestionsText() {
         suggestionsLabel.text = Suggestions.randomizeSuggestion(emotion: emotionForSuggestion)
+        print(suggestionsLabel.text)
     }
     
     
@@ -90,12 +91,14 @@ class SuggestionsViewController: UIViewController {
     
     func playRadio() {
         RadioPlayer.sharedInstance.play()
-        playButton.setTitle("Pause", for: UIControlState.normal)
+//        playButton.setTitle("Pause", for: UIControlState.normal)
+        playButton.setImage(#imageLiteral(resourceName: "PauseButton"), for: UIControlState.normal)
     }
     
     func pauseRadio() {
         RadioPlayer.sharedInstance.pause()
-        playButton.setTitle("Play", for: UIControlState.normal)
+//        playButton.setTitle("Play", for: UIControlState.normal)
+        playButton.setImage(#imageLiteral(resourceName: "PlayButton"), for: UIControlState.normal)
     }
     
     override func didReceiveMemoryWarning() {

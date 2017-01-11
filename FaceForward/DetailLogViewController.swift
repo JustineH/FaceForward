@@ -26,7 +26,6 @@ class DetailLogViewController: UIViewController, UITableViewDelegate, UITableVie
         
         logTableView.rowHeight = UITableViewAutomaticDimension
         logTableView.estimatedRowHeight = 250
-        logTableView.backgroundView = UIImageView(image: UIImage(named: "LowPolyForLogo"))
         findLogs()
         
     }
