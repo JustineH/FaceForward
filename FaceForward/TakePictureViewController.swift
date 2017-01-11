@@ -75,11 +75,6 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
-        
-//        var camera: UIImage = UIImage(named: "#imageLiteral(resourceName: "Camera3")")
-//        var cameraImage = UIImageView(image: image)
-//        self.view.addSubview(cameraImage)
-       // cameraImage.image = UIImage(named: "#imageLiteral(resourceName: "Camera3")")
        
     }
     
@@ -90,7 +85,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
 
     func setup() {
         self.view.backgroundColor = Styling.Colors.backgroundColor
-        imageView.backgroundColor = UIColor.white
+        imageView.backgroundColor = UIColor.clear
         spinner.color = Styling.ActivityIndicatorView.purpleSpinner
         imagePicker.delegate = self
         

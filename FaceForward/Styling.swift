@@ -13,9 +13,9 @@ struct Styling {
     struct Colors {
         static var backgroundColor = UIColor.white
         
-        static var buttons = UIColor(red:(200.0/255), green:(38.0/255), blue:(158.0/255), alpha: 1)
+        static var buttons = UIColor(red:(145.0/255), green:(45.0/255), blue:(165.0/255), alpha: 1)
 //        static var buttons = UIColor(red:(122.0/255), green:(205.0/255), blue:(169.0/255), alpha: 1)
-        static var buttonBorderColor = UIColor(red:(200.0/255), green:(38.0/255), blue:(158.0/255), alpha: 1)
+        static var buttonBorderColor = UIColor(red:(145.0/255), green:(45.0/255), blue:(165.0/255), alpha: 1)
 //        static var buttons = UIColor(red:(120.0/255), green:(241.0/255), blue:(195.0/255), alpha: 1)
 //        static var buttonBorderColor = UIColor(red:(120.0/255), green:(241.0/255), blue:(195.0/255), alpha: 1)
         static var buttonTextColor = UIColor.white
@@ -23,13 +23,13 @@ struct Styling {
         static var textFieldColor = UIColor(red: 244.0/255.0, green: 244.0/255.0, blue: 244.0/255.0, alpha: 1.0)
         static var calendarMonthColor = UIColor(red:(122.0/255), green:(205.0/255), blue:(169.0/255), alpha: 1)
         static var redColor = UIColor(red:(244.0/255), green:(17.0/255), blue:(92.0/255), alpha: 1)
-        static var yellowColor = UIColor(red:(255.0/255), green:(255.0/255), blue:(0.0/255), alpha: 1)
-        static var greenColor = UIColor(red:(82.0/255), green:(7.0/255), blue:(124.0/255), alpha: 1)
-        static var orangeColor = UIColor(red:(145.0/255), green:(0.0/255), blue:(92.0/255), alpha: 1)
+        static var yellowColor = UIColor(red:(255.0/255), green:(173.0/255), blue:(64.0/255), alpha: 1)
+        static var greenColor = UIColor(red:(194.0/255), green:(0.0/255), blue:(62.0/255), alpha: 1)
+        static var orangeColor = UIColor(red:(66.0/255), green:(0.0/255), blue:(109.0/255), alpha: 1)
         static var blueColor = UIColor(red:(88.0/255), green:(7.0/255), blue:(169.0/255), alpha: 1)
         static var darkBlueColor = UIColor(red:(254.0/255), green:(110.0/255), blue:(75.0/255), alpha: 1)
         static var purpleColor = UIColor(red: 141.0/255.0, green: 0.0/255.0, blue: 129.0/255.0, alpha: 1.0)
-        static var pinkColor = UIColor(red:(50.0/255), green:(205.0/255), blue:(50.0/255), alpha: 1)
+        static var pinkColor = UIColor(red:(250.0/255), green:(81.0/255), blue:(152.0/255), alpha: 1)
         
         
 //        static var redColor = UIColor(red:(240.0/255), green:(149.0/255), blue:(150.0/255), alpha: 1)
