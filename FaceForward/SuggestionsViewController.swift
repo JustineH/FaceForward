@@ -15,7 +15,7 @@ class SuggestionsViewController: UIViewController {
     // MARK: Properties
     
     @IBOutlet weak var suggestionsLabel: UITextView!
-//    @IBOutlet weak var musicNote: UIImageView!
+    @IBOutlet weak var musicNote: UIImageView!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var volumeSlider: UISlider!
     @IBOutlet weak var shuffleButton: UIButton!
@@ -28,8 +28,7 @@ class SuggestionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateText()
-
+        updateSuggestionsText()
 //        Styling.styleShuffleButton(button: shuffleButton)
 //        chooseOwnStationLabel.backgroundColor = Styling.Colors.yellowColor
 //        chooseOwnStationLabel.tintColor = Styling.Colors.darkBlueColor
@@ -59,10 +58,9 @@ class SuggestionsViewController: UIViewController {
 
     }
     
-    func updateText() {
+    func updateSuggestionsText() {
         suggestionsLabel.text = Suggestions.randomizeSuggestion(emotion: emotionForSuggestion)
     }
-    
     
     
     // MARK: Buttons
@@ -92,14 +90,12 @@ class SuggestionsViewController: UIViewController {
     
     func playRadio() {
         RadioPlayer.sharedInstance.play()
-//        playButton.setTitle("Pause", for: UIControlState.normal)
-        playButton.setImage(#imageLiteral(resourceName: "PauseButton"), for: UIControlState.normal)
+        playButton.setTitle("Pause", for: UIControlState.normal)
     }
     
     func pauseRadio() {
         RadioPlayer.sharedInstance.pause()
-//        playButton.setTitle("Play", for: UIControlState.normal)
-        playButton.setImage(#imageLiteral(resourceName: "PlayButton"), for: UIControlState.normal)
+        playButton.setTitle("Play", for: UIControlState.normal)
     }
     
     override func didReceiveMemoryWarning() {

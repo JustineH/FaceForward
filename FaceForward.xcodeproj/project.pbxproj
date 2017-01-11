@@ -19,6 +19,7 @@
 		1F7277D71E04962200085D69 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7277D61E04962200085D69 /* Emotion.swift */; };
 		1F75FA7D1E20525C00836AD2 /* RadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F75FA7C1E20525C00836AD2 /* RadioPlayer.swift */; };
 		1F75FA7F1E2052AD00836AD2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F75FA7E1E2052AD00836AD2 /* AVFoundation.framework */; };
+		1F75FA811E20532900836AD2 /* RadioMusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F75FA801E20532900836AD2 /* RadioMusicPlayerViewController.swift */; };
 		1F75FA851E20552300836AD2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F75FA841E20552300836AD2 /* MediaPlayer.framework */; };
 		1F75FA871E206F8100836AD2 /* RadioStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F75FA861E206F8100836AD2 /* RadioStations.swift */; };
 		1F75FA901E20794C00836AD2 /* anger.pls in Resources */ = {isa = PBXBuildFile; fileRef = 1F75FA8F1E20794C00836AD2 /* anger.pls */; };
@@ -44,6 +45,7 @@
 		1FBD71531E034161001E36EE /* Photo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBD71521E034161001E36EE /* Photo.storyboard */; };
 		1FBD71551E034172001E36EE /* Suggestions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBD71541E034172001E36EE /* Suggestions.storyboard */; };
 		1FBD71571E034181001E36EE /* Chart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBD71561E034181001E36EE /* Chart.storyboard */; };
+		1FBD71591E03419C001E36EE /* MusicPlayer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBD71581E03419C001E36EE /* MusicPlayer.storyboard */; };
 		1FBD715B1E0342EA001E36EE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD715A1E0342EA001E36EE /* Router.swift */; };
 		1FBD71631E034E9A001E36EE /* CalendarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1FBD71621E034E9A001E36EE /* CalendarCell.xib */; };
 		1FBD71651E035F44001E36EE /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD71641E035F44001E36EE /* CellView.swift */; };
@@ -72,6 +74,7 @@
 		1F7277D61E04962200085D69 /* Emotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
 		1F75FA7C1E20525C00836AD2 /* RadioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioPlayer.swift; sourceTree = "<group>"; };
 		1F75FA7E1E2052AD00836AD2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1F75FA801E20532900836AD2 /* RadioMusicPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioMusicPlayerViewController.swift; sourceTree = "<group>"; };
 		1F75FA841E20552300836AD2 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		1F75FA861E206F8100836AD2 /* RadioStations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioStations.swift; sourceTree = "<group>"; };
 		1F75FA8F1E20794C00836AD2 /* anger.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = anger.pls; sourceTree = "<group>"; };
@@ -97,6 +100,7 @@
 		1FBD71521E034161001E36EE /* Photo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Photo.storyboard; sourceTree = "<group>"; };
 		1FBD71541E034172001E36EE /* Suggestions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Suggestions.storyboard; sourceTree = "<group>"; };
 		1FBD71561E034181001E36EE /* Chart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chart.storyboard; sourceTree = "<group>"; };
+		1FBD71581E03419C001E36EE /* MusicPlayer.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MusicPlayer.storyboard; sourceTree = "<group>"; };
 		1FBD715A1E0342EA001E36EE /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1FBD71621E034E9A001E36EE /* CalendarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarCell.xib; sourceTree = "<group>"; };
 		1FBD71641E035F44001E36EE /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 				1FBD71611E034477001E36EE /* Chart */,
 				1FBD71601E034462001E36EE /* Picture */,
 				1FBD715F1E034450001E36EE /* Suggestions */,
+				1FBD715E1E034434001E36EE /* MusicPlayer */,
 				1FBD715D1E03440E001E36EE /* Survey */,
 				1FBD715C1E0343F0001E36EE /* Calendar */,
 			);
@@ -224,6 +229,7 @@
 				1FBD71521E034161001E36EE /* Photo.storyboard */,
 				1FBD71541E034172001E36EE /* Suggestions.storyboard */,
 				1FBD71561E034181001E36EE /* Chart.storyboard */,
+				1FBD71581E03419C001E36EE /* MusicPlayer.storyboard */,
 				1F05E0FE1E0380D10061534B /* MonthHeaderView.xib */,
 				1FBD71621E034E9A001E36EE /* CalendarCell.xib */,
 			);
@@ -268,6 +274,14 @@
 				1FA89EC01E02217C004EBF08 /* SurveyViewController.swift */,
 			);
 			name = Survey;
+			sourceTree = "<group>";
+		};
+		1FBD715E1E034434001E36EE /* MusicPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				1F75FA801E20532900836AD2 /* RadioMusicPlayerViewController.swift */,
+			);
+			name = MusicPlayer;
 			sourceTree = "<group>";
 		};
 		1FBD715F1E034450001E36EE /* Suggestions */ = {
@@ -381,6 +395,7 @@
 				1F75FA901E20794C00836AD2 /* anger.pls in Resources */,
 				1F75FA961E207A3E00836AD2 /* disgust.pls in Resources */,
 				1F26A2041E02003F00CA7464 /* Main.storyboard in Resources */,
+				1FBD71591E03419C001E36EE /* MusicPlayer.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +457,7 @@
 				1F05E0FD1E0366D20061534B /* CalendarView.swift in Sources */,
 				52D56F8F1E0A33A400BF42A0 /* Constants.swift in Sources */,
 				5286A20E1E089772005028D0 /* ServerManager.swift in Sources */,
+				1F75FA811E20532900836AD2 /* RadioMusicPlayerViewController.swift in Sources */,
 				1F05E1011E0395EF0061534B /* MonthHeaderView.swift in Sources */,
 				1F58074A1E0DF05E00DAEDDC /* MyDateFormatter.swift in Sources */,
 				5212E88B1E035862000209BD /* Styling.swift in Sources */,

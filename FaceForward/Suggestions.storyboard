@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -89,7 +90,7 @@
                                 <rect key="frame" x="39" y="392" width="290" height="31"/>
                                 <color key="tintColor" red="0.56862745098039214" green="0.1764705882352941" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="227" id="Q8I-bj-V1Y"/>
+                                    <constraint firstAttribute="height" constant="30" id="7Zi-GZ-4N3"/>
                                 </constraints>
                                 <connections>
                                     <action selector="volumeSlider:" destination="yGQ-is-ELM" eventType="valueChanged" id="lU7-u5-h3F"/>
@@ -119,15 +120,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VolumeHigh" translatesAutoresizingMaskIntoConstraints="NO" id="SsC-yo-Ytz">
                                 <rect key="frame" x="335" y="375" width="24" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="3JC-tS-poh"/>
-                                    <constraint firstAttribute="height" constant="64" id="Iz6-aA-dbB"/>
+                                    <constraint firstAttribute="height" constant="64" id="QzR-ni-bTY"/>
+                                    <constraint firstAttribute="width" constant="24" id="zNY-vL-9tx"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VolumeLow" translatesAutoresizingMaskIntoConstraints="NO" id="JQt-9Z-WJR">
                                 <rect key="frame" x="16" y="375" width="24" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="UGN-8u-gEg"/>
-                                    <constraint firstAttribute="width" constant="24" id="kH4-xe-ztN"/>
+                                    <constraint firstAttribute="width" constant="24" id="OO8-0S-BbU"/>
+                                    <constraint firstAttribute="height" constant="64" id="f7p-Mi-fD7"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoutcast" translatesAutoresizingMaskIntoConstraints="NO" id="ecL-dd-2xJ">
@@ -137,28 +138,6 @@
                                     <constraint firstAttribute="width" constant="110" id="Uo6-VP-hHH"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Pm-X7-hbf">
-                                <rect key="frame" x="117.5" y="311" width="60" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="PMI-FS-Uxi"/>
-                                    <constraint firstAttribute="width" constant="60" id="lvW-DK-Zbi"/>
-                                </constraints>
-                                <state key="normal" title="Play" image="PlayButton"/>
-                                <connections>
-                                    <action selector="playButtonPressed:" destination="yGQ-is-ELM" eventType="touchUpInside" id="Qun-0a-bIU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVn-Wt-K1r">
-                                <rect key="frame" x="207.5" y="314" width="60" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="oV2-nv-bS1"/>
-                                    <constraint firstAttribute="height" constant="50" id="qgx-A1-Gxz"/>
-                                </constraints>
-                                <state key="normal" title="Shuffle" image="ShuffleButton"/>
-                                <connections>
-                                    <action selector="shuffleStation:" destination="yGQ-is-ELM" eventType="touchUpInside" id="Djw-id-lc0"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

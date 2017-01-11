@@ -114,9 +114,9 @@ class Router: NSObject {
         return UIStoryboard(name: "Chart", bundle:nil)
     }
 
-//    fileprivate class func musicPlayer() -> UIStoryboard {
-//        return UIStoryboard(name: "MusicPlayer", bundle:nil)
-//    }
+    fileprivate class func musicPlayer() -> UIStoryboard {
+        return UIStoryboard(name: "MusicPlayer", bundle:nil)
+    }
     
     fileprivate class func detail() -> UIStoryboard {
         return UIStoryboard(name: "Main", bundle: nil)
