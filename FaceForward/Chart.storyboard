@@ -22,8 +22,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ky-t1-zcc">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LowPolyForLogo" translatesAutoresizingMaskIntoConstraints="NO" id="M1B-pI-xJ1">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="M1B-pI-xJ1" firstAttribute="centerY" secondItem="5Ky-t1-zcc" secondAttribute="centerY" id="1Ne-d6-I8i"/>
+                                    <constraint firstItem="M1B-pI-xJ1" firstAttribute="centerX" secondItem="5Ky-t1-zcc" secondAttribute="centerX" id="7XS-s1-MBy"/>
+                                    <constraint firstItem="M1B-pI-xJ1" firstAttribute="leading" secondItem="5Ky-t1-zcc" secondAttribute="leading" id="Sa7-ak-yNK"/>
+                                    <constraint firstItem="M1B-pI-xJ1" firstAttribute="width" secondItem="5Ky-t1-zcc" secondAttribute="width" id="bdC-4O-iof"/>
+                                    <constraint firstItem="M1B-pI-xJ1" firstAttribute="height" secondItem="5Ky-t1-zcc" secondAttribute="height" id="ldR-Zb-a5C"/>
+                                    <constraint firstAttribute="trailing" secondItem="M1B-pI-xJ1" secondAttribute="trailing" id="qbb-3z-Rsc"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJ7-N0-Bfg">
-                                <rect key="frame" x="132" y="499" width="150" height="40"/>
+                                <rect key="frame" x="132" y="507" width="150" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="3wf-GB-d4D">
                                         <variation key="widthClass=compact" constant="150"/>
@@ -36,11 +53,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CUt-Ki-UR0" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="20" y="40" width="373" height="437"/>
-                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="40" width="373" height="451"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8z7-5V-Dc2">
-                                <rect key="frame" x="129.33333333333331" y="40" width="156.33333333333331" height="33.666666666666671"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Scan Results" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8z7-5V-Dc2">
+                                <rect key="frame" x="129" y="40" width="162" height="34"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,13 +65,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="CUt-Ki-UR0" firstAttribute="width" secondItem="djG-9z-WV7" secondAttribute="width" multiplier="0.9" id="1fb-f2-haC"/>
+                            <constraint firstItem="5Ky-t1-zcc" firstAttribute="centerX" secondItem="CUt-Ki-UR0" secondAttribute="centerX" id="6Wl-sr-b8i"/>
+                            <constraint firstItem="5Ky-t1-zcc" firstAttribute="leading" secondItem="djG-9z-WV7" secondAttribute="leading" id="6mI-IO-S7r"/>
                             <constraint firstItem="nJ7-N0-Bfg" firstAttribute="centerX" secondItem="djG-9z-WV7" secondAttribute="centerX" id="AGA-pz-8bO"/>
                             <constraint firstItem="CUt-Ki-UR0" firstAttribute="height" secondItem="djG-9z-WV7" secondAttribute="height" multiplier="0.5" id="Bcz-ti-9q5">
-                                <variation key="widthClass=compact" constant="69"/>
+                                <variation key="widthClass=compact" constant="83"/>
                             </constraint>
-                            <constraint firstItem="nJ7-N0-Bfg" firstAttribute="top" secondItem="CUt-Ki-UR0" secondAttribute="bottom" constant="22" id="PXf-s6-WJH"/>
-                            <constraint firstItem="8z7-5V-Dc2" firstAttribute="centerX" secondItem="djG-9z-WV7" secondAttribute="centerX" id="cbP-dP-Coe"/>
-                            <constraint firstItem="8z7-5V-Dc2" firstAttribute="centerX" secondItem="djG-9z-WV7" secondAttribute="centerX" id="ejd-la-nRP"/>
+                            <constraint firstItem="5Ky-t1-zcc" firstAttribute="bottom" secondItem="SK8-Eo-E4C" secondAttribute="top" id="NI6-2B-ctU"/>
+                            <constraint firstItem="nJ7-N0-Bfg" firstAttribute="top" secondItem="CUt-Ki-UR0" secondAttribute="bottom" constant="16" id="PXf-s6-WJH"/>
+                            <constraint firstItem="8z7-5V-Dc2" firstAttribute="centerX" secondItem="djG-9z-WV7" secondAttribute="centerX" constant="3" id="cbP-dP-Coe"/>
+                            <constraint firstItem="8z7-5V-Dc2" firstAttribute="centerX" secondItem="djG-9z-WV7" secondAttribute="centerX" constant="3" id="ejd-la-nRP"/>
+                            <constraint firstItem="5Ky-t1-zcc" firstAttribute="top" secondItem="djG-9z-WV7" secondAttribute="top" id="hfC-8h-lJp"/>
                             <constraint firstItem="CUt-Ki-UR0" firstAttribute="centerX" secondItem="djG-9z-WV7" secondAttribute="centerX" id="mVQ-2c-KtX"/>
                             <constraint firstItem="CUt-Ki-UR0" firstAttribute="top" secondItem="GhF-kb-Z5Y" secondAttribute="bottom" constant="20" id="o1h-mH-NDT"/>
                             <constraint firstItem="8z7-5V-Dc2" firstAttribute="top" secondItem="GhF-kb-Z5Y" secondAttribute="bottom" constant="20" id="wlf-MY-jbW"/>
@@ -88,4 +108,7 @@
             <point key="canvasLocation" x="2207.2463768115945" y="-296.73913043478262"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="LowPolyForLogo" width="3333" height="3333"/>
+    </resources>
 </document>

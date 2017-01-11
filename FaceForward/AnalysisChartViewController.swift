@@ -78,7 +78,7 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
         pieChartView.rotationEnabled = true
         pieChartView.highlightPerTapEnabled = false
         pieChartView.animate(xAxisDuration: 2.0)
-        pieChartView.backgroundColor = Styling.Colors.backgroundColor
+        pieChartView.backgroundColor = UIColor.clear
 //        pieChartView.layoutMargins.top = 0.0
 //        pieChartView.minOffset = 0
         
