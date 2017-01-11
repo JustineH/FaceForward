@@ -66,10 +66,11 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
         
         let legend = pieChartView.legend
         legend.enabled = true
-        legend.horizontalAlignment = .left
+        legend.horizontalAlignment = .center
         legend.drawInside = false
         legend.orientation = .vertical
-        legend.font.withSize(18.0)
+        legend.font = NSUIFont.systemFont(ofSize: 12.0)
+
         
         pieChartView.chartDescription?.enabled = false
         pieChartView.drawHoleEnabled = false
