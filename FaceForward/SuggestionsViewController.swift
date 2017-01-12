@@ -41,15 +41,16 @@ class SuggestionsViewController: UIViewController {
             UIApplication.shared.beginReceivingRemoteControlEvents()
             print("Receiving remote control events\n")
         } catch {
-            print("Audio Session error.\n")
+            print("Audio Session error.\n \(error.localizedDescription)")
             return
         }
         
         if NSClassFromString("MPNowPlayingInfoCenter") != nil {
+            
             let image:UIImage = UIImage(named: "FaceForward_Logo5")! // comment this if you don't use an image
             let albumArt = MPMediaItemArtwork(image: image)// comment this if you don't use an image
             let songInfo = [
-                MPMediaItemPropertyTitle: "via FaceForward App",
+                MPMediaItemPropertyTitle: "via FaceForward App" ,
                 MPMediaItemPropertyArtist: "streaming from SHOUTcast",
                 MPMediaItemPropertyArtwork: albumArt // comment this if you don't use an image
                 ] as [String : Any]
@@ -90,12 +91,12 @@ class SuggestionsViewController: UIViewController {
     
     func playRadio() {
         RadioPlayer.sharedInstance.play()
-        playButton.setTitle("Pause", for: UIControlState.normal)
+        playButton.setImage(#imageLiteral(resourceName: "PauseButton"), for: UIControlState.normal)
     }
     
     func pauseRadio() {
         RadioPlayer.sharedInstance.pause()
-        playButton.setTitle("Play", for: UIControlState.normal)
+        playButton.setImage(#imageLiteral(resourceName: "PlayButton"), for: UIControlState.normal)
     }
     
     override func didReceiveMemoryWarning() {
