@@ -55,6 +55,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
             realm.add(newEntry)
    
         }
+        self.nextButtonLabel.isHidden = true
         Router(self).showChart(dict: emotionsDictionaryToSave)
     }
     
