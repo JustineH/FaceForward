@@ -31,8 +31,8 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
         
         self.navigationItem.hidesBackButton = true
 
-//        let assessmentButton = UIBarButtonItem(title: "Assessment", target: self, style: UIBarButtonItemStyle.plain, action: Selector("goToSurveyVC"))
-//        self.navigationItem.rightBarButtonItem = assessmentButton
+        let assessmentButton = UIBarButtonItem(title: "Assessment", style: UIBarButtonItemStyle.plain, target: self, action: #selector(goToSurveyVC))
+        self.navigationItem.rightBarButtonItem = assessmentButton
        
     }
     
@@ -191,7 +191,7 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
 //        let router = Router()
 //        router.showSurvey()
         presentingViewController?.dismiss(animated: true, completion: nil)
-        self.navigationController?.popViewController(animated: true)
+        _ = self.navigationController?.popToRootViewController(animated: true)
         
     }
     
