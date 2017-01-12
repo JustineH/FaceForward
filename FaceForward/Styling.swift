@@ -52,14 +52,14 @@ struct Styling {
         
     }
     
-    static func styleBackground(view: UIView) {
-    UIGraphicsBeginImageContext(view.frame.size)
-    UIImage(named: "LowPolyForLogo")?.draw(in: view.bounds, blendMode: .screen, alpha: 1)
-    let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-    UIGraphicsEndImageContext()
-        
-    view.backgroundColor = UIColor(patternImage: image)
-    }
+//    static func styleBackground(view: UIView) {
+//    UIGraphicsBeginImageContext(view.frame.size)
+//    UIImage(named: "LowPolyForLogo")?.draw(in: view.bounds, blendMode: .normal, alpha: 0.2)
+//    let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+//    UIGraphicsEndImageContext()
+//        
+//    view.backgroundColor = UIColor(patternImage: image)
+//    }
 
     static func styleShuffleButton(button: UIButton) {
         button.backgroundColor = self.Colors.purpleColor
