@@ -119,7 +119,7 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
         let month = myDateFormatter.formatMonth(month: calendar.component(.month, from: range.start))
         let year = calendar.component(.year, from: range.start)
         headerCell?.monthLabel.text = "\(month) \(year)"
-        headerCell?.backgroundColor = Styling.Colors.blueColor
+        headerCell?.backgroundColor = UIColor(red:(145.0/255), green:(45.0/255), blue:(165.0/255), alpha: 1)
         
     }
     

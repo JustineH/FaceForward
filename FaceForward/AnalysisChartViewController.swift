@@ -32,7 +32,9 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
+        
+//        Styling.styleBackground(view: self.view)
+        
         Styling.styleButton(button: chartNextButton)
         
         pieChartView.delegate = self
@@ -54,6 +56,7 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
         
 //        showResults()
     }
+
     
     override func viewDidAppear(_ animated: Bool) {
         

@@ -14,7 +14,7 @@
         <scene sceneID="7Lz-md-WU5">
             <objects>
                 <navigationController id="hcR-0H-uJM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Calendar" image="Calendar-1" id="IUK-pB-TGu"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="CalendarIcon" id="IUK-pB-TGu"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1eb-jI-eEP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -89,7 +89,7 @@
         <scene sceneID="Rbk-LA-Qp8">
             <objects>
                 <navigationController id="1jU-V4-qOU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Analysis" image="Emotion" id="HCu-fe-fOS"/>
+                    <tabBarItem key="tabBarItem" title="Analysis" image="EmotionIcon" id="HCu-fe-fOS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Ea-Ic-WOF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -129,7 +129,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Emd-xI-OMn" id="7dI-Zb-I1C">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="249"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qn4-MR-BK8">
@@ -281,9 +281,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Calendar-1" width="50" height="50"/>
-        <image name="CalendarIcon" width="74" height="75"/>
-        <image name="Emotion" width="50" height="50"/>
+        <image name="CalendarIcon" width="29" height="30"/>
+        <image name="EmotionIcon" width="30" height="30"/>
         <image name="LowPolyForLogo" width="3333" height="3333"/>
     </resources>
 </document>
