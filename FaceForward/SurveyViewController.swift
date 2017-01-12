@@ -19,6 +19,9 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var peopleTextField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
     
+    @IBOutlet weak var scrolly: UIScrollView!
+    
+    
     var didExercise: Bool = false
     var selectedMood: String!
     var selectedSleep: String!
@@ -102,7 +105,6 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
 //        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
 //        imageView.contentMode = .scaleAspectFit
 //        imageView.clipsToBounds = true
-        setBackground()
         Styling.styleButton(button: nextButton)
         self.peopleTextField.delegate = self;
         peopleTextField.textColor = Styling.Colors.fontBody
@@ -119,16 +121,6 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.removeObserver(self)
     }
     
-    func setBackground() {
-        UIGraphicsBeginImageContext(view.frame.size)
-            UIImage(named: "LowPolyForLogo")?.draw(in: view.bounds, blendMode: .normal, alpha: 1)
-            let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-            UIGraphicsEndImageContext()
-        
-            self.view.backgroundColor = UIColor(patternImage: image)
-
-    }
-
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
