@@ -22,11 +22,18 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
     dynamic var emotionsToPassToPieChart = [String:Double]()
     dynamic var emotionsArray = [String]()
     var dict = Emotion()
+   
     
     
     @IBAction func nextToSuggestionsButton(_ sender: Any) {
         
         Router(self).showSuggestions(emotion: highestEmotion())
+        
+        self.navigationItem.hidesBackButton = true
+
+//        let assessmentButton = UIBarButtonItem(title: "Assessment", target: self, style: UIBarButtonItemStyle.plain, action: Selector("goToSurveyVC"))
+//        self.navigationItem.rightBarButtonItem = assessmentButton
+       
     }
     
     override func viewDidLoad() {
@@ -177,6 +184,14 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
         }
         
         return highestKey
+        
+    }
+    
+    func goToSurveyVC() {
+//        let router = Router()
+//        router.showSurvey()
+        presentingViewController?.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
         
     }
     
