@@ -87,12 +87,16 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     func setup() {
         self.view.backgroundColor = Styling.Colors.backgroundColor
         imageView.backgroundColor = UIColor.clear
+        imageView.contentMode = .scaleAspectFit
+        
         spinner.color = Styling.ActivityIndicatorView.purpleSpinner
+        spinner.hidesWhenStopped = true
+        
         imagePicker.delegate = self
         
-        spinner.hidesWhenStopped = true
         confirmPictureLabel.textColor = Styling.Colors.fontBody
         noFaceFoundLabel.textColor = Styling.Colors.fontBody
+        
         Styling.styleButton(button: nextButtonLabel)
         Styling.styleButton(button: retakePhotoButtonLabel)
 

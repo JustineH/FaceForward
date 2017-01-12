@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Dop-n0-SRA">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Dop-n0-SRA">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -150,7 +150,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="trailingMargin" secondItem="Z5P-PL-rhk" secondAttribute="trailing" constant="8" id="0eG-pn-w5k"/>
@@ -230,6 +230,7 @@
                         <outlet property="moodSlider" destination="9Cf-Ml-Tny" id="eJe-3n-cgE"/>
                         <outlet property="nextButton" destination="6NO-Ju-DoH" id="gk1-YA-b9r"/>
                         <outlet property="peopleTextField" destination="vTy-sY-o1f" id="Wn7-px-A4u"/>
+                        <outlet property="scrolly" destination="86y-Li-frz" id="7at-4K-BzN"/>
                         <outlet property="sleepQualityLabel" destination="JQB-o4-46Y" id="J4t-V6-57z"/>
                         <outlet property="sleepSlider" destination="N8G-gY-Qs0" id="reS-so-R6f"/>
                     </connections>
