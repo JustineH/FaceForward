@@ -51,6 +51,14 @@
 		1FBD71651E035F44001E36EE /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD71641E035F44001E36EE /* CellView.swift */; };
 		1FD03B661E0CEBCF009995E8 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD03B651E0CEBCF009995E8 /* DetailTableViewCell.swift */; };
 		5212E88B1E035862000209BD /* Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212E88A1E035862000209BD /* Styling.swift */; };
+		522EF4141E2774240043A4F9 /* HitsOnGuitar.pls in Resources */ = {isa = PBXBuildFile; fileRef = 522EF4101E2774240043A4F9 /* HitsOnGuitar.pls */; };
+		522EF4151E2774240043A4F9 /* HookedOnRadio-AdultAlternative.pls in Resources */ = {isa = PBXBuildFile; fileRef = 522EF4111E2774240043A4F9 /* HookedOnRadio-AdultAlternative.pls */; };
+		522EF4161E2774240043A4F9 /* HookedOnRadio-Top_40.pls in Resources */ = {isa = PBXBuildFile; fileRef = 522EF4121E2774240043A4F9 /* HookedOnRadio-Top_40.pls */; };
+		522EF4171E2774240043A4F9 /* RadioCorasonHitNetStation.pls in Resources */ = {isa = PBXBuildFile; fileRef = 522EF4131E2774240043A4F9 /* RadioCorasonHitNetStation.pls */; };
+		522EF41C1E2778240043A4F9 /* HookedOnRadio-ActiveRock.pls in Resources */ = {isa = PBXBuildFile; fileRef = 522EF4181E2778240043A4F9 /* HookedOnRadio-ActiveRock.pls */; };
+		522EF41D1E2778240043A4F9 /* HookedOnRadio-HotCountry.pls in Resources */ = {isa = PBXBuildFile; fileRef = 522EF4191E2778240043A4F9 /* HookedOnRadio-HotCountry.pls */; };
+		522EF41E1E2778240043A4F9 /* HookedOnRadio-HotHits.pls in Resources */ = {isa = PBXBuildFile; fileRef = 522EF41A1E2778240043A4F9 /* HookedOnRadio-HotHits.pls */; };
+		522EF41F1E2778240043A4F9 /* HookedOnRadio-RapAttack.pls in Resources */ = {isa = PBXBuildFile; fileRef = 522EF41B1E2778240043A4F9 /* HookedOnRadio-RapAttack.pls */; };
 		524B3EB51E21F7AA00203AB2 /* EmotionAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B3EB41E21F7A900203AB2 /* EmotionAnalysis.swift */; };
 		524B3EB71E21F92900203AB2 /* Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B3EB61E21F92800203AB2 /* Suggestions.swift */; };
 		5286A2091E053633005028D0 /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A2081E053633005028D0 /* TakePictureViewController.swift */; };
@@ -107,6 +115,14 @@
 		1FD03B651E0CEBCF009995E8 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		3C2A011C095BE3AAA8A0D4B8 /* Pods-FaceForward.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceForward.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaceForward/Pods-FaceForward.release.xcconfig"; sourceTree = "<group>"; };
 		5212E88A1E035862000209BD /* Styling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styling.swift; sourceTree = "<group>"; };
+		522EF4101E2774240043A4F9 /* HitsOnGuitar.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HitsOnGuitar.pls; sourceTree = "<group>"; };
+		522EF4111E2774240043A4F9 /* HookedOnRadio-AdultAlternative.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "HookedOnRadio-AdultAlternative.pls"; sourceTree = "<group>"; };
+		522EF4121E2774240043A4F9 /* HookedOnRadio-Top_40.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "HookedOnRadio-Top_40.pls"; sourceTree = "<group>"; };
+		522EF4131E2774240043A4F9 /* RadioCorasonHitNetStation.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RadioCorasonHitNetStation.pls; sourceTree = "<group>"; };
+		522EF4181E2778240043A4F9 /* HookedOnRadio-ActiveRock.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "HookedOnRadio-ActiveRock.pls"; sourceTree = "<group>"; };
+		522EF4191E2778240043A4F9 /* HookedOnRadio-HotCountry.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "HookedOnRadio-HotCountry.pls"; sourceTree = "<group>"; };
+		522EF41A1E2778240043A4F9 /* HookedOnRadio-HotHits.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "HookedOnRadio-HotHits.pls"; sourceTree = "<group>"; };
+		522EF41B1E2778240043A4F9 /* HookedOnRadio-RapAttack.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "HookedOnRadio-RapAttack.pls"; sourceTree = "<group>"; };
 		524B3EB41E21F7A900203AB2 /* EmotionAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionAnalysis.swift; sourceTree = "<group>"; };
 		524B3EB61E21F92800203AB2 /* Suggestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Suggestions.swift; sourceTree = "<group>"; };
 		5286A2081E053633005028D0 /* TakePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePictureViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +189,14 @@
 		1F75FA8E1E20794200836AD2 /* Music */ = {
 			isa = PBXGroup;
 			children = (
+				522EF4101E2774240043A4F9 /* HitsOnGuitar.pls */,
+				522EF4111E2774240043A4F9 /* HookedOnRadio-AdultAlternative.pls */,
+				522EF4121E2774240043A4F9 /* HookedOnRadio-Top_40.pls */,
+				522EF4131E2774240043A4F9 /* RadioCorasonHitNetStation.pls */,
+				522EF4181E2778240043A4F9 /* HookedOnRadio-ActiveRock.pls */,
+				522EF4191E2778240043A4F9 /* HookedOnRadio-HotCountry.pls */,
+				522EF41A1E2778240043A4F9 /* HookedOnRadio-HotHits.pls */,
+				522EF41B1E2778240043A4F9 /* HookedOnRadio-RapAttack.pls */,
 				1F75FA911E20795100836AD2 /* neutral.pls */,
 				1F75FA8F1E20794C00836AD2 /* anger.pls */,
 				1F75FA931E20799200836AD2 /* fear.pls */,
@@ -384,14 +408,22 @@
 				1F26A2061E02003F00CA7464 /* Assets.xcassets in Resources */,
 				1F05E0FF1E0380D10061534B /* MonthHeaderView.xib in Resources */,
 				1F75FA981E207AC800836AD2 /* sadness.pls in Resources */,
+				522EF4141E2774240043A4F9 /* HitsOnGuitar.pls in Resources */,
 				1F75FA941E20799200836AD2 /* fear.pls in Resources */,
 				1FBD71631E034E9A001E36EE /* CalendarCell.xib in Resources */,
 				1FBD71551E034172001E36EE /* Suggestions.storyboard in Resources */,
 				1F75FA921E20795100836AD2 /* neutral.pls in Resources */,
+				522EF41C1E2778240043A4F9 /* HookedOnRadio-ActiveRock.pls in Resources */,
 				1FBD71531E034161001E36EE /* Photo.storyboard in Resources */,
 				1FBD71571E034181001E36EE /* Chart.storyboard in Resources */,
+				522EF41E1E2778240043A4F9 /* HookedOnRadio-HotHits.pls in Resources */,
+				522EF4151E2774240043A4F9 /* HookedOnRadio-AdultAlternative.pls in Resources */,
+				522EF4171E2774240043A4F9 /* RadioCorasonHitNetStation.pls in Resources */,
+				522EF41D1E2778240043A4F9 /* HookedOnRadio-HotCountry.pls in Resources */,
 				1FBD71511E0340F8001E36EE /* Survey.storyboard in Resources */,
 				1F75FAA01E207BF300836AD2 /* happiness.pls in Resources */,
+				522EF4161E2774240043A4F9 /* HookedOnRadio-Top_40.pls in Resources */,
+				522EF41F1E2778240043A4F9 /* HookedOnRadio-RapAttack.pls in Resources */,
 				1F75FA9A1E207B2000836AD2 /* surprise.pls in Resources */,
 				1F75FA901E20794C00836AD2 /* anger.pls in Resources */,
 				1F75FA961E207A3E00836AD2 /* disgust.pls in Resources */,
@@ -608,7 +640,7 @@
 			baseConfigurationReference = D89B48985DF69A546BC44AB9 /* Pods-FaceForward.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = C4VD2Y49D5;
 				INFOPLIST_FILE = FaceForward/Info.plist;
@@ -626,7 +658,7 @@
 			baseConfigurationReference = 3C2A011C095BE3AAA8A0D4B8 /* Pods-FaceForward.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = C4VD2Y49D5;
 				INFOPLIST_FILE = FaceForward/Info.plist;
