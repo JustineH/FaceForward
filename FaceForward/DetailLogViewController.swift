@@ -15,7 +15,7 @@ class DetailLogViewController: UIViewController, UITableViewDelegate, UITableVie
     var date: Date?
     var logs: [DataEntry] = []
     let realmManager = RealmManager()
-
+    let backgroundImage = UIImage(named:"LowPolyForLogo")
 
     @IBOutlet weak var logTableView: UITableView!
     
@@ -26,7 +26,9 @@ class DetailLogViewController: UIViewController, UITableViewDelegate, UITableVie
         
         logTableView.rowHeight = UITableViewAutomaticDimension
         logTableView.estimatedRowHeight = 250
-        logTableView.backgroundView = UIImageView(image: UIImage(named: "LowPolyForLogo"))
+        logTableView.backgroundView = UIImageView(image: backgroundImage)
+        logTableView.backgroundView?.alpha = 0.2
+        logTableView.backgroundView?.
         findLogs()
         
     }
@@ -47,6 +49,7 @@ class DetailLogViewController: UIViewController, UITableViewDelegate, UITableVie
         let log = logs[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! DetailTableViewCell
         cell.configureCell(moods: log)
+        cell.backgroundColor = UIColor(white: 1, alpha: 0.5)
         return cell
     }
     
