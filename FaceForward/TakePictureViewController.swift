@@ -36,7 +36,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     // MARK: - Actions -
     @IBAction func loadImageButtonTapped(_ sender: UIButton) {
         imagePicker.allowsEditing = false
-        imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = .camera
         
         present(imagePicker, animated: true, completion: nil)
     }
@@ -67,7 +67,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         self.timeOutLabel.isHidden = true
         
         imagePicker.allowsEditing = false
-        imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = .camera
         
         present(imagePicker, animated: true, completion: nil)
     }
