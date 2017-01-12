@@ -63,7 +63,7 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYx-aq-zR2">
-                                <rect key="frame" x="36" y="91" width="303" height="100"/>
+                                <rect key="frame" x="16" y="91" width="343" height="100"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
@@ -150,8 +150,8 @@
                             <constraint firstItem="3eD-0N-MmW" firstAttribute="centerX" secondItem="raE-TF-dA3" secondAttribute="centerX" id="L6s-BT-UpS"/>
                             <constraint firstItem="kHm-YK-fGc" firstAttribute="top" secondItem="nYx-aq-zR2" secondAttribute="bottom" constant="26" id="Lcy-Vg-NYj"/>
                             <constraint firstItem="raE-TF-dA3" firstAttribute="top" secondItem="ePk-GT-DkV" secondAttribute="bottom" constant="20" id="MNY-nG-vrR"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nYx-aq-zR2" secondAttribute="trailing" constant="20" id="MPN-xc-dGa"/>
-                            <constraint firstItem="nYx-aq-zR2" firstAttribute="leading" secondItem="Gqd-z6-feD" secondAttribute="leadingMargin" constant="20" id="PBk-zw-J4D"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nYx-aq-zR2" secondAttribute="trailing" id="MPN-xc-dGa"/>
+                            <constraint firstItem="nYx-aq-zR2" firstAttribute="leading" secondItem="Gqd-z6-feD" secondAttribute="leadingMargin" id="PBk-zw-J4D"/>
                             <constraint firstItem="nYx-aq-zR2" firstAttribute="centerX" secondItem="Gqd-z6-feD" secondAttribute="centerX" id="Qwp-2B-gFN"/>
                             <constraint firstItem="raE-TF-dA3" firstAttribute="centerX" secondItem="Gqd-z6-feD" secondAttribute="centerX" id="VDS-Nz-6qd"/>
                             <constraint firstItem="zBS-oU-SD6" firstAttribute="top" secondItem="FVn-Wt-K1r" secondAttribute="bottom" constant="9" id="Vyp-ef-qlC"/>

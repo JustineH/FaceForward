@@ -18,7 +18,8 @@ class ServerManager: NSObject {
     
     
     class func emotions(from image: UIImage, completion:@escaping ([String:Double])->()) {
-        let imageData = UIImagePNGRepresentation(image)!
+
+        let imageData = UIImageJPEGRepresentation(image, 1.0)!
         let headers = [
             "Ocp-Apim-Subscription-Key": microsoftKey,
             "Content-Type": "application/octet-stream"
