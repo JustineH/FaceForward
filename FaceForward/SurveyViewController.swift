@@ -40,15 +40,15 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
         
         switch moodValue {
             case 0:
-                mood = Mood.great
+                mood = Mood.veryBad
             case 1:
-                mood = Mood.good
+                mood = Mood.bad
             case 2:
                 mood = Mood.average
             case 3:
-                mood = Mood.bad
+                mood = Mood.good
             case 4:
-                mood = Mood.veryBad
+                mood = Mood.great
             default:
                 break
         }
@@ -69,15 +69,15 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
         
         switch sleepQuality {
             case 0:
-                sleep = Sleep.great
+                sleep = Sleep.veryPoorly
             case 1:
-                sleep = Sleep.well
+                sleep = Sleep.poorly
             case 2:
                 sleep = Sleep.average
             case 3:
-                sleep = Sleep.poorly
+                sleep = Sleep.well
             case 4:
-                sleep = Sleep.veryPoorly
+                sleep = Sleep.great
             default:
                 break
         }

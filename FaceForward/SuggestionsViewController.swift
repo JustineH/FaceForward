@@ -99,6 +99,7 @@ class SuggestionsViewController: UIViewController {
         playButton.setImage(#imageLiteral(resourceName: "PlayButton"), for: UIControlState.normal)
     }
     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
