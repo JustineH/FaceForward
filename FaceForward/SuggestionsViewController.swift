@@ -29,13 +29,15 @@ class SuggestionsViewController: UIViewController {
         super.viewDidLoad()
         
         updateSuggestionsText()
-//        Styling.styleShuffleButton(button: shuffleButton)
-//        chooseOwnStationLabel.backgroundColor = Styling.Colors.yellowColor
-//        chooseOwnStationLabel.tintColor = Styling.Colors.darkBlueColor
-
+        
+        // navigation button to go to survey again
+        let assessmentButton = UIBarButtonItem(title: "Assessment", style: UIBarButtonItemStyle.plain, target: self, action: #selector(goToSurveyVC))
+        self.navigationItem.rightBarButtonItem = assessmentButton
+        
+        // chooses the radio station based on the largest emotion
         RadioPlayer.sharedInstance.chooseStation(emotion: emotionForSuggestion)
         
-        
+        // the info displayed on the control center music player
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             UIApplication.shared.beginReceivingRemoteControlEvents()
@@ -59,6 +61,7 @@ class SuggestionsViewController: UIViewController {
 
     }
     
+    /// updates the suggestions text, content changes according to the largest emotion
     func updateSuggestionsText() {
         suggestionsLabel.text = Suggestions.randomizeSuggestion(emotion: emotionForSuggestion)
     }
@@ -66,14 +69,17 @@ class SuggestionsViewController: UIViewController {
     
     // MARK: Buttons
     
+    /// toggles play/pause
     @IBAction func playButtonPressed(_ sender: Any) {
         toggle()
     }
     
+    /// shuffles the radio station
     @IBAction func shuffleStation(_ sender: Any) {
         RadioPlayer.sharedInstance.shuffleStation()
     }
    
+    /// adjusts the volume
     @IBAction func volumeSlider(_ sender: UISlider) {
         RadioPlayer.sharedInstance.adjustVolume(value: sender.value)
     }
@@ -81,6 +87,7 @@ class SuggestionsViewController: UIViewController {
     
     // MARK: Radio Player
     
+    /// toggles play/pause
     func toggle() {
         if RadioPlayer.sharedInstance.currentlyPlaying() {
             pauseRadio()
@@ -89,22 +96,23 @@ class SuggestionsViewController: UIViewController {
         }
     }
     
+    /// play the radio
     func playRadio() {
         RadioPlayer.sharedInstance.play()
         playButton.setImage(#imageLiteral(resourceName: "PauseButton"), for: UIControlState.normal)
     }
     
+    /// pause the radio
     func pauseRadio() {
         RadioPlayer.sharedInstance.pause()
         playButton.setImage(#imageLiteral(resourceName: "PlayButton"), for: UIControlState.normal)
     }
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    /// goes to the surveyVC
+    func goToSurveyVC() {
+        presentingViewController?.dismiss(animated: true, completion: nil)
+        _ = self.navigationController?.popToRootViewController(animated: true)
+//        Router(self).showSurvey()
     }
-    
-
 
 }

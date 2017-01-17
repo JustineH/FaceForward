@@ -31,10 +31,12 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: Actions
     
+    /// (tap guesture recongnizer) tap to dismiss keyboard
     @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
         keyboardDismiss()
     }
     
+    /// slider for mood
     @IBAction func moodSlider(_ sender: Any) {
         let moodValue = Int(moodSlider.value)
         
@@ -55,6 +57,7 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
         moodLabel.text = mood.rawValue
     }
     
+    /// creates a survey item for realm (not saved yet) and goes to photoVC
     @IBAction func nextButton(_ sender: Any) {
         let newSurvey = Survey()
         newSurvey.moodInput = mood.rawValue
@@ -64,6 +67,7 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
         Router(self).showPhoto(survey: newSurvey)
     }
     
+    /// slider for sleep
     @IBAction func sleepSlider(_ sender: Any) {
         let sleepQuality = Int(sleepSlider.value)
         
@@ -84,6 +88,7 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
         sleepQualityLabel.text = sleep.rawValue
     }
     
+    /// exercise y/n
     @IBAction func exerciseControl(_ sender: Any) {
         if exerciseControl.selectedSegmentIndex == 0 {
             didExercise = true
@@ -92,11 +97,17 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    /// (people textfield) tap to dismiss??
     @IBAction func viewTapped(_ sender: AnyObject) {
         keyboardDismiss()
     }
     
     //MARK: View
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        self.reset()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -122,6 +133,7 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.removeObserver(self)
     }
     
+    /// resize view for keyboard space on screen
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y == 0 {
@@ -130,6 +142,7 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    /// resize view for no keyboard
     func keyboardWillHide(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
             if self.view.frame.origin.y != 0 {
@@ -138,17 +151,31 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    /// dismiss the keyboard
     func keyboardDismiss() {
         peopleTextField.resignFirstResponder()
     }
     
+    /// press enter to dismiss keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         keyboardDismiss()
         return true
     }
     
+    /// tap to end text editing
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    /// set everything to default value
+    func reset() {
+        self.moodSlider.setValue(2.0, animated: false)
+        self.moodLabel.text = "Average"
+        self.sleepSlider.setValue(2.0, animated: false)
+        self.sleepQualityLabel.text = "Average"
+        self.exerciseControl.selectedSegmentIndex = 1
+        self.peopleTextField.text = ""
+        scrolly.scrollToTop()
     }
 
     override func didReceiveMemoryWarning() {
@@ -156,4 +183,13 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+}
+
+extension UIScrollView {
+    
+    /// scrolls to top of scroll view
+    func scrollToTop() {
+        let desiredOffset = CGPoint(x: 0, y: -contentInset.top)
+        setContentOffset(desiredOffset, animated: true)
+    }
 }

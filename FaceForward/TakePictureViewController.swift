@@ -34,13 +34,16 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     var emotionsDictionaryToSave: Emotion!
     
     // MARK: - Actions -
+    
+    /// Brings up camera to take a photo
     @IBAction func loadImageButtonTapped(_ sender: UIButton) {
         imagePicker.allowsEditing = false
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = .photoLibrary
         
         present(imagePicker, animated: true, completion: nil)
     }
     
+    /// Creates a entry in realm and goes to the chartVC
     @IBAction func nextSaveButton(_ sender: Any) {
         
         let newEmotion = emotionsDictionaryToSave
@@ -59,7 +62,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         Router(self).showChart(dict: emotionsDictionaryToSave)
     }
     
-        
+    /// Brings up camera to retake the photo and hides all the labels until photo is loaded
     @IBAction func retakePhotoButton(_ sender: UIButton) {
         self.confirmPictureLabel.isHidden = true
         self.noFaceFoundLabel.isHidden = true
@@ -145,7 +148,8 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         }
             dismiss(animated: true, completion: nil)
     }
-    
+
+    /// Makes a new Emotion for a Realm entry, not saved yet
     func makeItems(dictionary: [String:Double]) -> Emotion? {
         let new = Emotion()
         new.anger = dictionary["anger"] ?? 0
@@ -160,6 +164,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         return new
     }
     
+    /// Finds the largest emotion
     func keyMaxValue(dict: [String: Double]) -> String? {
         for (key, value) in dict {
             if value == dict.values.max() {
@@ -169,11 +174,12 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         return nil
     }
     
+    /// Dismiss the camera
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
 
-    
+    /// Resizes the image if it's too big?? 
     func resizeImage(_ imageSize: CGSize, image: UIImage) -> Data {
         UIGraphicsBeginImageContext(imageSize)
         image.draw(in: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
@@ -187,10 +193,11 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
 
 
 extension TakePictureViewController {
+    
+    /// Resize the image if it exceeds the 4MB API limit
     func base64EncodeImage(_ image: UIImage) -> String {
         var imagedata = UIImagePNGRepresentation(image)
         
-        // Resize the image if it exceeds the 4MB API limit
         if ((imagedata!.count) > 4096) {
             let oldSize: CGSize = image.size
             let newSize: CGSize = CGSize(width: 800, height: oldSize.height / oldSize.width * 800)
