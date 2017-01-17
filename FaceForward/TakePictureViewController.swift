@@ -38,7 +38,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     /// Brings up camera to take a photo
     @IBAction func loadImageButtonTapped(_ sender: UIButton) {
         imagePicker.allowsEditing = false
-        imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = .camera
         
         present(imagePicker, animated: true, completion: nil)
     }
