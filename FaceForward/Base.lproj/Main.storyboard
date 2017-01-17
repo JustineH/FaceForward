@@ -139,7 +139,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mood:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgh-4J-XoJ">
-                                                    <rect key="frame" x="16" y="77" width="48.5" height="21"/>
+                                                    <rect key="frame" x="16" y="77" width="49" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.1803921568627451" green="0.18823529411764706" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
