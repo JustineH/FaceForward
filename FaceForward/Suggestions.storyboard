@@ -29,20 +29,20 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="for some awesome tunes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cva-DT-q6S">
-                                        <rect key="frame" x="91.5" y="240" width="191.5" height="21"/>
+                                        <rect key="frame" x="91" y="240" width="192" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shoutcast" translatesAutoresizingMaskIntoConstraints="NO" id="ecL-dd-2xJ">
-                                        <rect key="frame" x="215.5" y="211" width="110" height="27"/>
+                                        <rect key="frame" x="216" y="211" width="110" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="27" id="MID-jz-zAj"/>
                                             <constraint firstAttribute="width" constant="110" id="Uo6-VP-hHH"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tune into the radio by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHm-YK-fGc">
-                                        <rect key="frame" x="44.5" y="217" width="166" height="21"/>
+                                        <rect key="frame" x="45" y="217" width="166" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -74,7 +74,7 @@
                                     <fragment content="Text text text text text text text">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                            <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -92,7 +92,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Pm-X7-hbf">
-                                <rect key="frame" x="112.5" y="333" width="60" height="50"/>
+                                <rect key="frame" x="113" y="333" width="60" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="2go-5k-YFF"/>
                                     <constraint firstAttribute="width" constant="60" id="mna-ZL-Mda"/>
@@ -113,7 +113,7 @@
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVn-Wt-K1r">
-                                <rect key="frame" x="202.5" y="333" width="60" height="50"/>
+                                <rect key="frame" x="203" y="333" width="60" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="eeG-4B-Hdg"/>
                                     <constraint firstAttribute="height" constant="50" id="jIe-u4-YpU"/>
@@ -167,8 +167,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="musicNote" destination="ecL-dd-2xJ" id="43u-tZ-AVM"/>
                         <outlet property="playButton" destination="6Pm-X7-hbf" id="yyb-Fn-WqC"/>
+                        <outlet property="shoutCastLogo" destination="ecL-dd-2xJ" id="1bL-A0-nqD"/>
                         <outlet property="shuffleButton" destination="FVn-Wt-K1r" id="PRD-w0-DL2"/>
                         <outlet property="suggestionsLabel" destination="nYx-aq-zR2" id="3Lu-aT-th3"/>
                         <outlet property="volumeSlider" destination="zBS-oU-SD6" id="oRX-QO-Xqg"/>

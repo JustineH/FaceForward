@@ -24,7 +24,13 @@ class DetailTableViewCell: UITableViewCell {
     //MARK: Everything else
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        dateLabel.textColor = Styling.Colors.fontBody
+        emotionLabel.textColor = Styling.Colors.fontBody
+        moodLabel.textColor = Styling.Colors.fontBody
+        sleepLabel.textColor = Styling.Colors.fontBody
+        exerciseLabel.textColor = Styling.Colors.fontBody
+        peopleLabel.textColor = Styling.Colors.fontBody
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
