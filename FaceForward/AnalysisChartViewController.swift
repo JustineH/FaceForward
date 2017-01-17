@@ -23,16 +23,15 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
     dynamic var emotionsArray = [String]()
     var dict = Emotion()
    
-    
-    
+    /// goes to suggestionsVC
     @IBAction func nextToSuggestionsButton(_ sender: Any) {
         
         Router(self).showSuggestions(emotion: highestEmotion())
         
         self.navigationItem.hidesBackButton = true
 
-        let assessmentButton = UIBarButtonItem(title: "Assessment", style: UIBarButtonItemStyle.plain, target: self, action: #selector(goToSurveyVC))
-        self.navigationItem.rightBarButtonItem = assessmentButton
+//        let assessmentButton = UIBarButtonItem(title: "Assessment", style: UIBarButtonItemStyle.plain, target: self, action: #selector(goToSurveyVC))
+//        self.navigationItem.rightBarButtonItem = assessmentButton
        
     }
     
@@ -65,13 +64,13 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
     }
 
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-        super.viewDidAppear(animated)
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        
+//        super.viewDidAppear(animated)
+//    }
     
     
-    
+    /// creates a empty pie chart with a legend
     func setChart(dataPoints: [String], values: [Double]) {
         
         let legend = pieChartView.legend
@@ -94,7 +93,8 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
 //        pieChartView.minOffset = 0
         
     }
-        
+    
+    /// add data entries to the pie chart
     func updateChartData() {
         
         var colors: [UIColor] = []
@@ -171,6 +171,7 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
         
     }
     
+    /// finds the largest emotion to pass to suggestionsVC
     func highestEmotion() -> String {
         
         var highestKey = ""
@@ -187,13 +188,7 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
         
     }
     
-    func goToSurveyVC() {
-//        let router = Router()
-//        router.showSurvey()
-        presentingViewController?.dismiss(animated: true, completion: nil)
-        _ = self.navigationController?.popToRootViewController(animated: true)
-        
-    }
+
     
 //    func showResults() {
 //
@@ -203,10 +198,10 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
 //        }
 //    }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//        // Dispose of any resources that can be recreated.
+//    }
     
 
 }

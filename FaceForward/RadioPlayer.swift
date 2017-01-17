@@ -17,11 +17,13 @@ class RadioPlayer {
     let stations = RadioStations()
     let moodArray = ["Anger", "Contempt", "Happiness", "Sadness", "Disgust", "Fear", "Neutral", "Surprise"]
     
+    /// chooses the radio station based on largest emotion
     func chooseStation(emotion: String) {
         let chosenStation = stations.changeStation(mood: emotion)
         player.replaceCurrentItem(with: chosenStation)
     }
     
+    /// shuffles the radio station
     func shuffleStation() {
         let randomMood = Int(arc4random_uniform(UInt32(moodArray.count)))
         let currentStation = stations.changeStation(mood: moodArray[randomMood])

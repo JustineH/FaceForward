@@ -45,6 +45,7 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
 //        createChart()
     }
     
+    /// passes the date clicked, goes to detailedVC
     func dateWasClicked(view: JTAppleDayCellView?, cellState: CellState, selectedDate: Date) {
         guard let myCustomCell = view as? CellView  else {
             print("Error with cell selection")
@@ -58,6 +59,7 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
         }
     }
     
+    /// creates a calendar
     func configureView() {
         
         calendarView.registerCellViewXib(file: "CalendarCell")
@@ -72,6 +74,8 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
     }
     
     //MARK: Moods Display
+    
+    /// displays the mood colors in the past
     func displayPreviousMoods() {
         let realm = try! Realm()
         let resultsData = realm.objects(DataEntry.self)
