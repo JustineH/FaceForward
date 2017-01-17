@@ -59,7 +59,6 @@
 		522EF41D1E2778240043A4F9 /* HookedOnRadio-HotCountry.pls in Resources */ = {isa = PBXBuildFile; fileRef = 522EF4191E2778240043A4F9 /* HookedOnRadio-HotCountry.pls */; };
 		522EF41E1E2778240043A4F9 /* HookedOnRadio-HotHits.pls in Resources */ = {isa = PBXBuildFile; fileRef = 522EF41A1E2778240043A4F9 /* HookedOnRadio-HotHits.pls */; };
 		522EF41F1E2778240043A4F9 /* HookedOnRadio-RapAttack.pls in Resources */ = {isa = PBXBuildFile; fileRef = 522EF41B1E2778240043A4F9 /* HookedOnRadio-RapAttack.pls */; };
-		524B3EB51E21F7AA00203AB2 /* EmotionAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B3EB41E21F7A900203AB2 /* EmotionAnalysis.swift */; };
 		524B3EB71E21F92900203AB2 /* Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B3EB61E21F92800203AB2 /* Suggestions.swift */; };
 		5286A2091E053633005028D0 /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A2081E053633005028D0 /* TakePictureViewController.swift */; };
 		5286A20E1E089772005028D0 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A20D1E089772005028D0 /* ServerManager.swift */; };
@@ -123,7 +122,6 @@
 		522EF4191E2778240043A4F9 /* HookedOnRadio-HotCountry.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "HookedOnRadio-HotCountry.pls"; sourceTree = "<group>"; };
 		522EF41A1E2778240043A4F9 /* HookedOnRadio-HotHits.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "HookedOnRadio-HotHits.pls"; sourceTree = "<group>"; };
 		522EF41B1E2778240043A4F9 /* HookedOnRadio-RapAttack.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "HookedOnRadio-RapAttack.pls"; sourceTree = "<group>"; };
-		524B3EB41E21F7A900203AB2 /* EmotionAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionAnalysis.swift; sourceTree = "<group>"; };
 		524B3EB61E21F92800203AB2 /* Suggestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Suggestions.swift; sourceTree = "<group>"; };
 		5286A2081E053633005028D0 /* TakePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePictureViewController.swift; sourceTree = "<group>"; };
 		5286A20D1E089772005028D0 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
@@ -238,7 +236,6 @@
 				1F83484E1E088C7A00FE97CB /* EmotionName.swift */,
 				1F5807491E0DF05E00DAEDDC /* MyDateFormatter.swift */,
 				1FBD715A1E0342EA001E36EE /* Router.swift */,
-				524B3EB41E21F7A900203AB2 /* EmotionAnalysis.swift */,
 				524B3EB61E21F92800203AB2 /* Suggestions.swift */,
 			);
 			name = Model;
@@ -499,7 +496,6 @@
 				1FA89EBF1E022167004EBF08 /* DetailLogViewController.swift in Sources */,
 				1F75FA871E206F8100836AD2 /* RadioStations.swift in Sources */,
 				1FA89EC71E022208004EBF08 /* AnalysisChartViewController.swift in Sources */,
-				524B3EB51E21F7AA00203AB2 /* EmotionAnalysis.swift in Sources */,
 				1FA89EC31E022199004EBF08 /* SuggestionsViewController.swift in Sources */,
 				1F8348491E08895900FE97CB /* Survey.swift in Sources */,
 				1F8348471E0887A200FE97CB /* DataEntry.swift in Sources */,

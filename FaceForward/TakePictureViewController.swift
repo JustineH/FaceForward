@@ -99,6 +99,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         
         confirmPictureLabel.textColor = Styling.Colors.fontBody
         noFaceFoundLabel.textColor = Styling.Colors.fontBody
+        timeOutLabel.textColor = Styling.Colors.fontBody
         
         Styling.styleButton(button: nextButtonLabel)
         Styling.styleButton(button: retakePhotoButtonLabel)
@@ -192,20 +193,19 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
 }
 
 
-extension TakePictureViewController {
-    
-    /// Resize the image if it exceeds the 4MB API limit
-    func base64EncodeImage(_ image: UIImage) -> String {
-        var imagedata = UIImagePNGRepresentation(image)
-        
-        if ((imagedata!.count) > 4096) {
-            let oldSize: CGSize = image.size
-            let newSize: CGSize = CGSize(width: 800, height: oldSize.height / oldSize.width * 800)
-            imagedata = resizeImage(newSize, image: image)
-        }
-        
-        return imagedata!.base64EncodedString(options: .endLineWithCarriageReturn)
-    }
-
-}
+//extension TakePictureViewController {
+//    func base64EncodeImage(_ image: UIImage) -> String {
+//        var imagedata = UIImagePNGRepresentation(image)
+//        
+//        // Resize the image if it exceeds the 4MB API limit
+//        if ((imagedata!.count) > 4096) {
+//            let oldSize: CGSize = image.size
+//            let newSize: CGSize = CGSize(width: 800, height: oldSize.height / oldSize.width * 800)
+//            imagedata = resizeImage(newSize, image: image)
+//        }
+//        
+//        return imagedata!.base64EncodedString(options: .endLineWithCarriageReturn)
+//    }
+//
+//}
 

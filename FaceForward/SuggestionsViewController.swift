@@ -15,7 +15,7 @@ class SuggestionsViewController: UIViewController {
     // MARK: Properties
     
     @IBOutlet weak var suggestionsLabel: UITextView!
-    @IBOutlet weak var musicNote: UIImageView!
+    @IBOutlet weak var shoutCastLogo: UIImageView!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var volumeSlider: UISlider!
     @IBOutlet weak var shuffleButton: UIButton!
@@ -27,6 +27,9 @@ class SuggestionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        suggestionsLabel.textColor = Styling.Colors.fontBody
+        
         
         updateSuggestionsText()
         
@@ -50,11 +53,9 @@ class SuggestionsViewController: UIViewController {
         if NSClassFromString("MPNowPlayingInfoCenter") != nil {
             
             let image:UIImage = UIImage(named: "FaceForward_Logo5")! // comment this if you don't use an image
-            let albumArt = MPMediaItemArtwork(image: image)// comment this if you don't use an image
             let songInfo = [
-                MPMediaItemPropertyTitle: "via FaceForward App" ,
-                MPMediaItemPropertyArtist: "streaming from SHOUTcast",
-                MPMediaItemPropertyArtwork: albumArt // comment this if you don't use an image
+                MPMediaItemPropertyTitle: "via FaceForward App",
+                MPMediaItemPropertyArtist: "streaming from SHOUTcast"
                 ] as [String : Any]
             MPNowPlayingInfoCenter.default().nowPlayingInfo = songInfo
         }

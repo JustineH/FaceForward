@@ -36,13 +36,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-//        UINavigationBar.appearance().barTintColor = UIColor(red:(255.0/255), green:(173.0/255), blue:(64.0/255), alpha: 0.2)
-        UINavigationBar.appearance().tintColor = UIColor(red:(145.0/255), green:(45.0/255), blue:(165.0/255), alpha: 1)
-        UITabBar.appearance().tintColor = UIColor(red:(145.0/255), green:(45.0/255), blue:(165.0/255), alpha: 1)
+//        let attr = NSDictionary(object: UIFont(name: "", size: 16.0)!, forKey: NSFontAttributeName as NSCopying)
+//        UISegmentedControl.appearance().setTitleTextAttributes(attr as [NSObject : AnyObject] , for: .normal)
+        
+        UINavigationBar.appearance().tintColor = Styling.Colors.buttons
+        UITabBar.appearance().tintColor = Styling.Colors.buttons
       
         return true
-        
-
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -51,6 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
+                
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }

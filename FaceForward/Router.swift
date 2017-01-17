@@ -54,12 +54,6 @@ class Router: NSObject {
         vc?.show(detailVC, sender: vc)
     }
 
-//    func showMusicPlayer() {
-//        let musicPlayerVC = Router.musicPlayerVC()
-//        musicPlayerVC.
-//        vc?.show(musicPlayerVC, sender: vc)
-//    }
-
 
     //MARK: VCs
     fileprivate class func mainVC() -> CalendarViewController {
@@ -85,12 +79,6 @@ class Router: NSObject {
     fileprivate class func detailVC() -> DetailLogViewController {
         return detail().instantiateViewController(withIdentifier: "DetailLogViewController") as! DetailLogViewController
     }
-
-//    fileprivate class func musicPlayerVC() -> MusicPlayerViewController {
-//        return musicPlayer().instantiateViewController(withIdentifier: "MusicPlayerViewController") as! MusicPlayerViewController
-//    }
-
-
 
 
     //MARK: Storyboards
