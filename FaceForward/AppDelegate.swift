@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-//        let attr = NSDictionary(object: UIFont(name: "", size: 16.0)!, forKey: NSFontAttributeName as NSCopying)
+//        let attr = NSDictionary(object: UIFont(name: "", size: 15.0)!, forKey: NSFontAttributeName as NSCopying)
 //        UISegmentedControl.appearance().setTitleTextAttributes(attr as [NSObject : AnyObject] , for: .normal)
         
         UINavigationBar.appearance().tintColor = Styling.Colors.buttons
@@ -51,6 +51,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "userLeftApp"), object: nil)
         
 //        var storyboard = UIStoryboard(name: "FirstStoryboard", bundle: Bundle.main)
 

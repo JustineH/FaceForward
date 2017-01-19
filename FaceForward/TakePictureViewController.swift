@@ -185,7 +185,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         UIGraphicsBeginImageContext(imageSize)
         image.draw(in: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        let resizedImage = UIImagePNGRepresentation(newImage!)
+        let resizedImage = UIImageJPEGRepresentation(newImage!, 0.75)
         UIGraphicsEndImageContext()
         return resizedImage!
     }
