@@ -49,6 +49,7 @@
 		1FBD71651E035F44001E36EE /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD71641E035F44001E36EE /* CellView.swift */; };
 		1FD03B661E0CEBCF009995E8 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD03B651E0CEBCF009995E8 /* DetailTableViewCell.swift */; };
 		5212E88B1E035862000209BD /* Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212E88A1E035862000209BD /* Styling.swift */; };
+		521E329C1E3181900093A6B1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E329B1E3181900093A6B1 /* TabBarViewController.swift */; };
 		522EF4141E2774240043A4F9 /* HitsOnGuitar.pls in Resources */ = {isa = PBXBuildFile; fileRef = 522EF4101E2774240043A4F9 /* HitsOnGuitar.pls */; };
 		522EF4151E2774240043A4F9 /* HookedOnRadio-AdultAlternative.pls in Resources */ = {isa = PBXBuildFile; fileRef = 522EF4111E2774240043A4F9 /* HookedOnRadio-AdultAlternative.pls */; };
 		522EF4161E2774240043A4F9 /* HookedOnRadio-Top_40.pls in Resources */ = {isa = PBXBuildFile; fileRef = 522EF4121E2774240043A4F9 /* HookedOnRadio-Top_40.pls */; };
@@ -110,6 +111,7 @@
 		1FD03B651E0CEBCF009995E8 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		3C2A011C095BE3AAA8A0D4B8 /* Pods-FaceForward.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceForward.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaceForward/Pods-FaceForward.release.xcconfig"; sourceTree = "<group>"; };
 		5212E88A1E035862000209BD /* Styling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styling.swift; sourceTree = "<group>"; };
+		521E329B1E3181900093A6B1 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		522EF4101E2774240043A4F9 /* HitsOnGuitar.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HitsOnGuitar.pls; sourceTree = "<group>"; };
 		522EF4111E2774240043A4F9 /* HookedOnRadio-AdultAlternative.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "HookedOnRadio-AdultAlternative.pls"; sourceTree = "<group>"; };
 		522EF4121E2774240043A4F9 /* HookedOnRadio-Top_40.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "HookedOnRadio-Top_40.pls"; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				1FAB00EA1E0A33DD005ED26A /* Delegate.swift */,
 				1FA89EBE1E022167004EBF08 /* DetailLogViewController.swift */,
 				1FD03B651E0CEBCF009995E8 /* DetailTableViewCell.swift */,
+				521E329B1E3181900093A6B1 /* TabBarViewController.swift */,
 			);
 			name = Calendar;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				524B3EB71E21F92900203AB2 /* Suggestions.swift in Sources */,
 				1FAB00EB1E0A33DD005ED26A /* Delegate.swift in Sources */,
 				1FAB00E91E0A3361005ED26A /* DataSource.swift in Sources */,
+				521E329C1E3181900093A6B1 /* TabBarViewController.swift in Sources */,
 				1F26A1FD1E02003F00CA7464 /* AppDelegate.swift in Sources */,
 				1FA89EC11E02217C004EBF08 /* SurveyViewController.swift in Sources */,
 				1FAB00E71E09DD14005ED26A /* CalendarViewController.swift in Sources */,

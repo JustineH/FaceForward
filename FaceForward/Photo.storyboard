@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,7 +29,7 @@
                                 <rect key="frame" x="11" y="40" width="299" height="264"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera3" translatesAutoresizingMaskIntoConstraints="NO" id="yh4-li-Y4Q">
-                                <rect key="frame" x="72" y="133" width="173" height="164"/>
+                                <rect key="frame" x="73.5" y="133" width="173" height="164"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="173" id="F6i-ht-so7"/>
                                     <constraint firstAttribute="height" constant="164" id="M0B-ce-DDt"/>
@@ -84,7 +83,7 @@
                                     <constraint firstAttribute="height" constant="272" id="SvA-K6-d1f"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Take Photo">
+                                <state key="normal" title="Take Selfie">
                                     <color key="titleColor" red="0.56862745100000001" green="0.1764705882" blue="0.64705882349999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -99,7 +98,7 @@
                                         <color key="color" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </activityIndicatorView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.18039215689999999" green="0.18823529410000001" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Fmm-7B-aIH" firstAttribute="centerX" secondItem="fBf-sa-JgR" secondAttribute="centerX" id="6we-C8-9cs"/>
                                     <constraint firstItem="Fmm-7B-aIH" firstAttribute="centerY" secondItem="fBf-sa-JgR" secondAttribute="centerY" id="nmL-PD-VXi"/>
@@ -108,19 +107,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yh4-li-Y4Q" firstAttribute="centerX" secondItem="HW4-1E-paj" secondAttribute="centerX" constant="-1.5" id="8AF-Vf-J5n"/>
+                            <constraint firstItem="yh4-li-Y4Q" firstAttribute="centerX" secondItem="HW4-1E-paj" secondAttribute="centerX" id="8AF-Vf-J5n"/>
                             <constraint firstItem="l7g-vE-Fm7" firstAttribute="width" secondItem="HW4-1E-paj" secondAttribute="width" id="A3i-5c-6XY"/>
                             <constraint firstItem="LNC-dS-izo" firstAttribute="top" secondItem="fBf-sa-JgR" secondAttribute="bottom" id="CBv-mU-QFF"/>
                             <constraint firstItem="fBf-sa-JgR" firstAttribute="top" secondItem="rcA-qC-EP0" secondAttribute="bottom" id="D17-nN-VyZ"/>
                             <constraint firstItem="u1w-iH-Ld7" firstAttribute="centerX" secondItem="HW4-1E-paj" secondAttribute="centerX" id="EFL-aq-G0h"/>
-                            <constraint firstItem="l7g-vE-Fm7" firstAttribute="leading" secondItem="HW4-1E-paj" secondAttribute="leadingMargin" constant="-16" id="GdR-yI-xTv"/>
                             <constraint firstItem="u1w-iH-Ld7" firstAttribute="height" secondItem="HW4-1E-paj" secondAttribute="height" multiplier="0.5" constant="-20" id="H8h-KP-EpB"/>
                             <constraint firstItem="NvJ-4a-ukI" firstAttribute="top" secondItem="u1w-iH-Ld7" secondAttribute="bottom" constant="22" id="HpY-RD-i9q"/>
                             <constraint firstItem="Ay1-XV-I62" firstAttribute="top" secondItem="bNN-jJ-1ex" secondAttribute="bottom" constant="16" id="Hw4-ad-YiI"/>
                             <constraint firstItem="l7g-vE-Fm7" firstAttribute="centerX" secondItem="HW4-1E-paj" secondAttribute="centerX" id="IO5-EN-PU6"/>
                             <constraint firstAttribute="trailing" secondItem="Ip6-R9-dZI" secondAttribute="trailing" constant="11" id="JMW-ZY-cBW"/>
                             <constraint firstAttribute="trailing" secondItem="fBf-sa-JgR" secondAttribute="trailing" id="MfO-8Y-kO0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="l7g-vE-Fm7" secondAttribute="trailing" constant="-16" id="NQh-kM-5qA"/>
                             <constraint firstItem="fBf-sa-JgR" firstAttribute="leading" secondItem="HW4-1E-paj" secondAttribute="leading" id="OYP-t6-k8F"/>
                             <constraint firstItem="yh4-li-Y4Q" firstAttribute="top" secondItem="rcA-qC-EP0" secondAttribute="bottom" constant="113" id="RwN-Vf-HgM"/>
                             <constraint firstItem="u1w-iH-Ld7" firstAttribute="top" secondItem="rcA-qC-EP0" secondAttribute="bottom" constant="20" id="Sv8-WY-RY2"/>
