@@ -14,7 +14,7 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // So we can switch tabs when the user leaves the app
+        // Switch tabs when user leaves app
         NotificationCenter.default.addObserver(self, selector: #selector(returnToCalendarVC), name: NSNotification.Name(rawValue: "userLeftApp"), object: nil)
     }
     
@@ -27,7 +27,7 @@ class TabBarViewController: UITabBarController {
     func returnToCalendarVC() {
         
         if (self.selectedIndex == 1) {
-            // pop to root view controller
+            // Pop to root view controller and switch to first (CalendarVC) tab bar item
             if let currentViewController: UINavigationController = self.viewControllers?[1] as? UINavigationController {
                 currentViewController.popToRootViewController(animated: false)
             }

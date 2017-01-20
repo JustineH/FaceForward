@@ -30,7 +30,6 @@ class SuggestionsViewController: UIViewController {
         
         suggestionsLabel.textColor = Styling.Colors.fontBody
         
-        
         updateSuggestionsText()
         
         // navigation button to go to survey again
@@ -52,7 +51,7 @@ class SuggestionsViewController: UIViewController {
         
         if NSClassFromString("MPNowPlayingInfoCenter") != nil {
             
-            let image:UIImage = UIImage(named: "FaceForward_Logo5")! // comment this if you don't use an image
+            let image:UIImage = UIImage(named: "FaceForward_Logo5")!
             let songInfo = [
                 MPMediaItemPropertyTitle: "via FaceForward App",
                 MPMediaItemPropertyArtist: "streaming from SHOUTcast"
@@ -60,6 +59,13 @@ class SuggestionsViewController: UIViewController {
             MPNowPlayingInfoCenter.default().nowPlayingInfo = songInfo
         }
 
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if self.navigationController?.topViewController != self {
+            RadioPlayer.sharedInstance.pause()
+        }
     }
     
     /// updates the suggestions text, content changes according to the largest emotion
@@ -113,7 +119,8 @@ class SuggestionsViewController: UIViewController {
     func goToSurveyVC() {
         presentingViewController?.dismiss(animated: true, completion: nil)
         _ = self.navigationController?.popToRootViewController(animated: true)
-//        Router(self).showSurvey()
+        
+        RadioPlayer.sharedInstance.pause()
     }
 
 }
