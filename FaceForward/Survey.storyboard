@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Survey View Controller-->
         <scene sceneID="fcA-0f-BwA">
             <objects>
                 <viewController storyboardIdentifier="SurveyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Dop-n0-SRA" customClass="SurveyViewController" customModule="FaceForward" customModuleProvider="target" sceneMemberID="viewController">
@@ -218,7 +218,6 @@
                             <constraint firstItem="86y-Li-frz" firstAttribute="top" secondItem="Mrv-ug-z0p" secondAttribute="top" id="MtB-tx-Wdi"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="ufb-Qk-tZ9"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>

@@ -8,11 +8,13 @@
 
 import Foundation
 import AVFoundation
+import UIKit
+import MediaPlayer
 
-class RadioPlayer {
+class RadioPlayer: NSObject {
     
     static let sharedInstance = RadioPlayer()
-    private var player = AVPlayer()
+    var player = AVPlayer()
     private var isPlaying = false
     let stations = RadioStations()
     let moodArray = ["Anger", "Contempt", "Happiness", "Sadness", "Disgust", "Fear", "Neutral", "Surprise"]
@@ -20,14 +22,60 @@ class RadioPlayer {
     /// chooses the radio station based on largest emotion
     func chooseStation(emotion: String) {
         let chosenStation = stations.changeStation(mood: emotion)
+        
+        player.currentItem?.asset.removeObserver(self, forKeyPath: "commonMetadata")
+        
         player.replaceCurrentItem(with: chosenStation)
+        
+        player.currentItem?.asset.addObserver(self, forKeyPath: "commonMetadata", options: .new, context: nil)
+        
+        let title = "via FaceForward App"
+        let artist = "streaming from SHOUTcast"
+        
+        if NSClassFromString("MPNowPlayingInfoCenter") != nil {
+            
+            let image:UIImage = UIImage(named: "FaceForward_Logo5")!
+            let songInfo = [
+                MPMediaItemPropertyTitle: title,
+                MPMediaItemPropertyArtist: artist
+                ] as [String : Any]
+            MPNowPlayingInfoCenter.default().nowPlayingInfo = songInfo
+        }
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        
+        if keyPath != "commonMetadata" { return }
+        
+        var title = "via FaceForward App"
+        var artist = "streaming from SHOUTcast"
+        
+        if let metadataList = object as? [AVMetadataItem] {
+            for item in metadataList {
+                print(item.commonKey ?? "nothing")
+            }
+        }
+        if NSClassFromString("MPNowPlayingInfoCenter") != nil {
+            
+            let image:UIImage = UIImage(named: "FaceForward_Logo5")!
+            let songInfo = [
+                MPMediaItemPropertyTitle: title,
+                MPMediaItemPropertyArtist: artist
+                ] as [String : Any]
+            MPNowPlayingInfoCenter.default().nowPlayingInfo = songInfo
+        }
     }
     
     /// shuffles the radio station
     func shuffleStation() {
         let randomMood = Int(arc4random_uniform(UInt32(moodArray.count)))
         let currentStation = stations.changeStation(mood: moodArray[randomMood])
-            player.replaceCurrentItem(with: currentStation)
+        
+        player.currentItem?.asset.removeObserver(self, forKeyPath: "commonMetadata")
+        
+        player.replaceCurrentItem(with: currentStation)
+        
+        player.currentItem?.asset.addObserver(self, forKeyPath: "commonMetadata", options: .new, context: nil)
     }
     
     func play() {
@@ -54,5 +102,9 @@ class RadioPlayer {
     
     func currentlyPlaying() -> Bool {
         return isPlaying
+    }
+    
+    deinit {
+        player.currentItem?.asset.removeObserver(self, forKeyPath: "commonMetadata")
     }
 }

@@ -48,17 +48,6 @@ class SuggestionsViewController: UIViewController {
             print("Audio Session error.\n \(error.localizedDescription)")
             return
         }
-        
-        if NSClassFromString("MPNowPlayingInfoCenter") != nil {
-            
-            let image:UIImage = UIImage(named: "FaceForward_Logo5")!
-            let songInfo = [
-                MPMediaItemPropertyTitle: "via FaceForward App",
-                MPMediaItemPropertyArtist: "streaming from SHOUTcast"
-                ] as [String : Any]
-            MPNowPlayingInfoCenter.default().nowPlayingInfo = songInfo
-        }
-
     }
     
     override func viewWillDisappear(_ animated: Bool) {

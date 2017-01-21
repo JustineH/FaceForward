@@ -136,18 +136,18 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
     /// resize view for keyboard space on screen
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y == 0 {
-                self.view.frame.origin.y -= keyboardSize.height
-            }
+//            if self.view.frame.origin.y == 0 {
+                self.view.frame.size.height -= (keyboardSize.height - 49)
+//            }
         }
     }
     
     /// resize view for no keyboard
     func keyboardWillHide(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.view.frame.origin.y != 0 {
-                self.view.frame.origin.y += keyboardSize.height
-            }
+//            if self.view.frame.origin.y != 0 {
+                self.view.frame.size.height += (keyboardSize.height - 49)
+//            }
         }
     }
     
