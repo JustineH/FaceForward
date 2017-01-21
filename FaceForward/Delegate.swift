@@ -18,15 +18,14 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
     let dateFormatter = DateFormatter()
     let myDateFormatter = MyDateFormatter()
     
-    //MARK: All the Cells in a Month
-    
+    //MARK: All cells in a month
     
     func calendar(_ calendar: JTAppleCalendarView, willDisplayCell cell: JTAppleDayCellView, date: Date, cellState: CellState) {
         
         let myCustomCell = cell as! CellView
         myCustomCell.backgroundColor = UIColor.clear
         
-        //Current Date Color
+        // Current date color
         dateFormatter.dateFormat = "yyy MM dd"
         let currentDateString = dateFormatter.string(from: Date())
         let cellStateDateString = dateFormatter.string(from: cellState.date)
@@ -39,7 +38,7 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
         
         var circleColor : UIColor?
         
-        //Mood Colors
+        // Mood colors
         for moodDate in moodData!{
             let startOfDay = Calendar.current.startOfDay(for: moodDate.date)
             if startOfDay == cellState.date {
@@ -56,7 +55,7 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
             }
         }
         
-        //Days To Display
+        //Days to display
         myCustomCell.dayLabel.text = cellState.text
         
         if cellState.dateBelongsTo == .thisMonth {
@@ -71,30 +70,17 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
         myCustomCell.subviews.first?.layer.cornerRadius = (myCustomCell.subviews.first?.frame.size.width)! / 2
         
         myCustomCell.subviews[1].layer.cornerRadius = myCustomCell.subviews[1].frame.size.width / 2
-        
-        
-        
-//        let circleLayer = CAShapeLayer.init()
-//    
-//        circleLayer.path = UIBezierPath.init(ovalIn: CGRect.init(x: 0, y: 0, width: min(myCustomCell.frame.size.width,myCustomCell.frame.size.height), height: min(myCustomCell.frame.size.width,myCustomCell.frame.size.height))).cgPath
-//        
-//        guard let cColor = circleColor else {
-//            return
-//        }
-//        
-//        circleLayer.fillColor = cColor.cgColor
-////        
-//        circle.layer.addSublayer(circleLayer)
-////        circle.layer.cornerRadius = myCustomCell.frame.size.width / 2
     
     }
     
     func markCurrentDate(cell: CellView) {
+        
         cell.currentColor.backgroundColor = UIColor.white
         cell.currentColor.isHidden = false
     }
     
     func setCalendarCellColor(colorMood: String) -> UIColor {
+        
         switch colorMood {
         case "anger":
             return Styling.Colors.brightPinkColor
@@ -149,9 +135,5 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
         headerCell?.backgroundColor = Styling.Colors.buttons
         
     }
-    
-    
-    
-   
-    
+
 }

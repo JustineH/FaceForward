@@ -30,5 +30,4 @@ class DataSource: NSObject, JTAppleCalendarViewDataSource {
         return parameters
     }
     
-    
 }

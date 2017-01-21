@@ -21,7 +21,6 @@ class SuggestionsViewController: UIViewController {
     @IBOutlet weak var shuffleButton: UIButton!
     
     var emotionForSuggestion: String!
-//    let passedEmotion = Emotion()
     let radio = RadioPlayer()
     
     
@@ -32,14 +31,14 @@ class SuggestionsViewController: UIViewController {
         
         updateSuggestionsText()
         
-        // navigation button to go to survey again
+        // Navigation button to go to survey again
         let assessmentButton = UIBarButtonItem(title: "Assessment", style: UIBarButtonItemStyle.plain, target: self, action: #selector(goToSurveyVC))
         self.navigationItem.rightBarButtonItem = assessmentButton
         
-        // chooses the radio station based on the largest emotion
+        // Choose radio station based on largest emotion
         RadioPlayer.sharedInstance.chooseStation(emotion: emotionForSuggestion)
         
-        // the info displayed on the control center music player
+        // The info displayed on the control center music player
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             UIApplication.shared.beginReceivingRemoteControlEvents()
@@ -57,7 +56,7 @@ class SuggestionsViewController: UIViewController {
         }
     }
     
-    /// updates the suggestions text, content changes according to the largest emotion
+    /// Update the suggestions text, content changes according to the largest emotion
     func updateSuggestionsText() {
         suggestionsLabel.text = Suggestions.randomizeSuggestion(emotion: emotionForSuggestion)
     }
@@ -65,17 +64,17 @@ class SuggestionsViewController: UIViewController {
     
     // MARK: Buttons
     
-    /// toggles play/pause
+    /// Toggle between play & pause
     @IBAction func playButtonPressed(_ sender: Any) {
         toggle()
     }
     
-    /// shuffles the radio station
+    /// Shuffle radio stations
     @IBAction func shuffleStation(_ sender: Any) {
         RadioPlayer.sharedInstance.shuffleStation()
     }
    
-    /// adjusts the volume
+    /// Adjust volume
     @IBAction func volumeSlider(_ sender: UISlider) {
         RadioPlayer.sharedInstance.adjustVolume(value: sender.value)
     }
@@ -83,7 +82,7 @@ class SuggestionsViewController: UIViewController {
     
     // MARK: Radio Player
     
-    /// toggles play/pause
+    /// Toggle between play & pause
     func toggle() {
         if RadioPlayer.sharedInstance.currentlyPlaying() {
             pauseRadio()
@@ -92,19 +91,19 @@ class SuggestionsViewController: UIViewController {
         }
     }
     
-    /// play the radio
+    /// Play radio
     func playRadio() {
         RadioPlayer.sharedInstance.play()
         playButton.setImage(#imageLiteral(resourceName: "PauseButton"), for: UIControlState.normal)
     }
     
-    /// pause the radio
+    /// Pause radio
     func pauseRadio() {
         RadioPlayer.sharedInstance.pause()
         playButton.setImage(#imageLiteral(resourceName: "PlayButton"), for: UIControlState.normal)
     }
     
-    /// goes to the surveyVC
+    /// Go to SurveyVC
     func goToSurveyVC() {
         presentingViewController?.dismiss(animated: true, completion: nil)
         _ = self.navigationController?.popToRootViewController(animated: true)

@@ -31,12 +31,12 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: Actions
     
-    /// (tap guesture recongnizer) tap to dismiss keyboard
+    /// Tap gesture recognizer to dismiss keyboard
     @IBAction func tapGesture(_ sender: UITapGestureRecognizer) {
         keyboardDismiss()
     }
     
-    /// slider for mood
+    /// Slider for mood
     @IBAction func moodSlider(_ sender: Any) {
         let moodValue = Int(moodSlider.value)
         
@@ -57,7 +57,7 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
         moodLabel.text = mood.rawValue
     }
     
-    /// creates a survey item for realm (not saved yet) and goes to photoVC
+    /// Create a survey item for Realm (not saved yet) and go to PhotoVC
     @IBAction func nextButton(_ sender: Any) {
         let newSurvey = Survey()
         newSurvey.moodInput = mood.rawValue
@@ -67,7 +67,7 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
         Router(self).showPhoto(survey: newSurvey)
     }
     
-    /// slider for sleep
+    /// Slider for sleep
     @IBAction func sleepSlider(_ sender: Any) {
         let sleepQuality = Int(sleepSlider.value)
         
@@ -88,7 +88,7 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
         sleepQualityLabel.text = sleep.rawValue
     }
     
-    /// exercise y/n
+    /// Exercise Yes/No
     @IBAction func exerciseControl(_ sender: Any) {
         if exerciseControl.selectedSegmentIndex == 0 {
             didExercise = true
@@ -97,7 +97,6 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    /// (people textfield) tap to dismiss??
     @IBAction func viewTapped(_ sender: AnyObject) {
         keyboardDismiss()
     }
@@ -119,10 +118,8 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
         RadioPlayer.sharedInstance.pause()
         Styling.styleButton(button: nextButton)
         self.peopleTextField.delegate = self;
-        peopleTextField.textColor = Styling.Colors.fontBody
-        peopleTextField.backgroundColor = Styling.Colors.textFieldColor
-//        peopleTextField.textColor = UIColor(red: 46.0/255.0, green: 48.0/255.0, blue: 47.0/255.0, alpha: 1.0)
-//        peopleTextField.backgroundColor = UIColor(red: 244.0/255.0, green: 244.0/255.0, blue: 244.0/255.0, alpha: 1.0)
+        self.peopleTextField.textColor = Styling.Colors.fontBody
+        self.peopleTextField.backgroundColor = Styling.Colors.textFieldColor
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -133,7 +130,7 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.removeObserver(self)
     }
     
-    /// resize view for keyboard space on screen
+    /// Resize view for keyboard space on screen
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
 //            if self.view.frame.origin.y == 0 {
@@ -142,7 +139,7 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    /// resize view for no keyboard
+    /// Resize view for no keyboard used
     func keyboardWillHide(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
 //            if self.view.frame.origin.y != 0 {
@@ -151,23 +148,23 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    /// dismiss the keyboard
+    /// Dismiss keyboard
     func keyboardDismiss() {
         peopleTextField.resignFirstResponder()
     }
     
-    /// press enter to dismiss keyboard
+    /// Press Return/Enter to dismiss keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         keyboardDismiss()
         return true
     }
     
-    /// tap to end text editing
+    /// Tap to end text editing
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
-    /// set everything to default value
+    /// Set everything to default value
     func reset() {
         self.moodSlider.setValue(2.0, animated: false)
         self.moodLabel.text = "Average"
@@ -187,7 +184,7 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
 
 extension UIScrollView {
     
-    /// scrolls to top of scroll view
+    /// Scroll to top of scroll view
     func scrollToTop() {
         let desiredOffset = CGPoint(x: 0, y: -contentInset.top)
         setContentOffset(desiredOffset, animated: true)

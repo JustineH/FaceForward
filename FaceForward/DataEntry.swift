@@ -18,7 +18,6 @@ class DataEntry: Object {
     let emotion = List<Emotion>()
     let survey = List<Survey>()
     
-    
     convenience init(emotion: Emotion, survey: Survey){
         self.init()
         self.date = Date()

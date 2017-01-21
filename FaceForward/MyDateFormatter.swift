@@ -7,12 +7,13 @@
 //
 
 import UIKit
-///Formats Date
+
+///Format Date
 class MyDateFormatter: NSObject {
     
     var calendar = Calendar(identifier: .gregorian)
     
-    ///formats date to Month day, year at hh:mm (ex. December 23, 2016 at 12:43)
+    /// Format date to month day, year at hh:mm (ex. December 23, 2016 at 12:43)
     func configureDate(date: Date) -> String{
         let dateComponents = calendar.dateComponents([.day, .month, .year, .hour, .minute], from: date)
         
@@ -20,7 +21,7 @@ class MyDateFormatter: NSObject {
         return "\(month) \(dateComponents.day!), \(dateComponents.year!) at \(dateComponents.hour!):\(dateComponents.minute!)"
     }
     
-    ///converts a month number to text
+    /// Convert month number to text
     func formatMonth(month: Int) -> String{
         switch month {
         case 1:

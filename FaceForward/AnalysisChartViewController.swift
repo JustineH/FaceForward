@@ -16,30 +16,24 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
     // MARK: Properties
     
     @IBOutlet weak var pieChartView: PieChartView!
-//    @IBOutlet weak var facialEmotionResults: UITextView!
     @IBOutlet weak var chartNextButton: UIButton!
     
     dynamic var emotionsToPassToPieChart = [String:Double]()
     dynamic var emotionsArray = [String]()
     var dict = Emotion()
    
-    /// goes to suggestionsVC
+    /// Go to SuggestionsVC
     @IBAction func nextToSuggestionsButton(_ sender: Any) {
         
         Router(self).showSuggestions(emotion: highestEmotion())
         
         self.navigationItem.hidesBackButton = true
-
-//        let assessmentButton = UIBarButtonItem(title: "Assessment", style: UIBarButtonItemStyle.plain, target: self, action: #selector(goToSurveyVC))
-//        self.navigationItem.rightBarButtonItem = assessmentButton
        
     }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-//        Styling.styleBackground(view: self.view)
         
         Styling.styleButton(button: chartNextButton)
         
@@ -61,15 +55,8 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
         updateChartData()
         
     }
-
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        
-//        super.viewDidAppear(animated)
-//    }
-    
-    
-    /// creates a empty pie chart with a legend
+    /// Create an empty pie chart with a legend
     func setChart(dataPoints: [String], values: [Double]) {
         
         let legend = pieChartView.legend
@@ -90,7 +77,7 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
         
     }
     
-    /// add data entries to the pie chart
+    /// Add data entries to pie chart
     func updateChartData() {
         
         var colors: [UIColor] = []
@@ -133,7 +120,7 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
         
     }
     
-    /// finds the largest emotion to pass to suggestionsVC
+    /// Find emotion with highest value to pass to SuggestionsVC
     func highestEmotion() -> String {
         
         var highestKey = ""
@@ -149,13 +136,6 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
         return highestKey
         
     }
-    
-    
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//        // Dispose of any resources that can be recreated.
-//    }
-    
 
 }
 

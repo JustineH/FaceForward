@@ -11,28 +11,27 @@ import JTAppleCalendar
 import Charts
 import RealmSwift
 
-protocol calendarEventHandlingProtocol : class{
+protocol calendarEventHandlingProtocol : class {
+    
     func dateWasClicked(view: JTAppleDayCellView?, cellState: CellState, selectedDate: Date)
 }
+
 class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
     
     //MARK: Properties
+    
     let currentDate = Date()
     let realmManager = RealmManager()
     
-    //dataSource & delegate
+    // DataSource & delegate
     let datasource = DataSource()
     let delegate = Delegate()
     
-    //calendar
+    // Calendar
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     // Cache the colours so a new colour isn't created every time a cell is displayed
     let notSelectedTextColor = UIColor.darkGray
     let selectedTextColor = UIColor.purple
-    
-//    //chart
-//    @IBOutlet weak var chartView: ScatterChartView!
-//    weak var axisFormatDelegate: IAxisValueFormatter?
     
     //MARK: View Life Cycle
     
@@ -41,7 +40,7 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
         
         configureView()
         displayPreviousMoods()
-//        createChart()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,7 +49,7 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
         reloadData()
     }
     
-    /// passes the date clicked, goes to detailedVC
+    /// Pass the date clicked, goes to DetailedLogVC
     func dateWasClicked(view: JTAppleDayCellView?, cellState: CellState, selectedDate: Date) {
         
         guard let myCustomCell = view as? CellView  else {
@@ -65,7 +64,7 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
         }
     }
     
-    /// creates a calendar
+    /// Create calendar
     func configureView() {
         
         calendarView.registerCellViewXib(file: "CalendarCell")
@@ -81,7 +80,7 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
     
     //MARK: Moods Display
     
-    /// displays the mood colors in the past
+    /// Display previous mood colours
     func displayPreviousMoods() {
         let realm = try! Realm()
         let resultsData = realm.objects(DataEntry.self)
@@ -92,84 +91,4 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
         calendarView.reloadData()
     }
     
-    
-//    //MARK: Chart (move later)
-//    func createChart() {
-//        axisFormatDelegate = self
-//        chartView.noDataText = "No data :("
-//        chartView.chartDescription?.text = "for the month"
-//        
-//        chartView.rightAxis.drawLabelsEnabled = false
-//        chartView.leftAxis.gridLineWidth = 0
-//        chartView.rightAxis.gridLineWidth = 0
-//        chartView.xAxis.gridLineWidth = 0
-//        
-//        if realmManager.getSavedEntriesFromDatabase()?.count != 0 {
-//            updateChart()
-//        } else {
-//            
-//        }
-//        
-//    }
-//
-//    func updateChart() {
-//        var dataEntries: [ChartDataEntry] = []
-//        guard let savedEntries = realmManager.getSavedEntriesFromDatabase() else {
-//            return
-//        }
-//        
-//        for i in 0..<savedEntries.count {
-//            let date = getDate(savedDate: savedEntries[i].date)
-//            let mood = savedEntries[i].survey[0].moodInput
-//            if let moodValue = mood {
-//                var plotY = 0.0
-//                switch moodValue {
-//                case "great":
-//                    plotY = 0
-//                case "good":
-//                    plotY = 1
-//                case "average":
-//                    plotY = 2
-//                case "bad":
-//                    plotY = 3
-//                case "veryBad":
-//                    plotY = 4
-//                default:
-//                    break
-//                }
-//                let dataEntry = ChartDataEntry(x: Double(Int(date)), y: Double(plotY))
-//                dataEntries.append(dataEntry)
-//            }
-//        }
-//        
-//        let chartDataSet = ScatterChartDataSet(values: dataEntries, label: "Mood")
-//        chartDataSet.setScatterShape(ScatterChartDataSet.Shape.circle)
-//        let chartData = ScatterChartData(dataSet: chartDataSet)
-//        chartView.data = chartData
-//        
-//        let xaxis = chartView.xAxis
-//        xaxis.valueFormatter = axisFormatDelegate
-//    }
-
-//    func getDate(savedDate: Date) -> (Int){
-//        let date = savedDate
-//        let calendar = Calendar.current
-//        let components = calendar.component(.day, from: date)
-//        return components
-//    }
-    
 }
-
-
-//    //MARK: IAxisValueFormatter
-//extension CalendarViewController: IAxisValueFormatter {
-//    func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-//        //        let dateFormatter = DateFormatter()
-//        //        dateFormatter.dateFormat = "MM dd"
-//        return "\(Int(value))"
-//    }
-//}
-
-
-
-

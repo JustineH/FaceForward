@@ -9,6 +9,7 @@
 import Foundation
 
 enum Sleep: String {
+    
         case great = "Great"
         case well = "Well"
         case average = "Average"

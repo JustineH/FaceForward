@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 
 class Emotion: Object {
+    
     dynamic var largestEmotion = ""
     dynamic var anger : Double = 0.0
     dynamic var contempt : Double  = 0.0

@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 enum EmotionName: String {
+    
     case anger = "Anger"
     case contempt = "Contempt"
     case disgust = "Disgust"

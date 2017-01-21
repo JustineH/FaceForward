@@ -16,7 +16,6 @@ let microsoftKey = FFConstants.microsoftKey
 
 class ServerManager: NSObject {
     
-    
     class func emotions(from image: UIImage, completion:@escaping ([String:Double])->()) {
 
         let imageData = UIImageJPEGRepresentation(image, 1.0)!
@@ -36,8 +35,6 @@ class ServerManager: NSObject {
                         for (name, value) in dictionary {
                             result[name] = value.double
                         }
-                        
-           
                     }
                     completion(result)
                 
@@ -45,7 +42,6 @@ class ServerManager: NSObject {
                     print(error)
                     completion(["\(error.localizedDescription)":0])
             }
-            
         }
     }
 

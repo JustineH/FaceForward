@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 
 class Survey: Object {
+    
     dynamic var moodInput: Mood.RawValue!
     dynamic var sleepInput: Sleep.RawValue!
     dynamic var exerciseInput = false

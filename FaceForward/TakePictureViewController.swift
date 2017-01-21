@@ -28,14 +28,13 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var spinnerBackground: UIView!
     @IBOutlet weak var cameraImage: UIImageView!
     
-//    var percentages = [Double]()
     var mostLikelyMood: String = EmotionName.neutral.rawValue
     var survey: Survey!
     var emotionsDictionaryToSave: Emotion!
     
     // MARK: - Actions -
     
-    /// Brings up camera to take a photo
+    /// Bring up camera to take photo
     @IBAction func loadImageButtonTapped(_ sender: UIButton) {
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
@@ -43,7 +42,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         present(imagePicker, animated: true, completion: nil)
     }
     
-    /// Creates a entry in realm and goes to the chartVC
+    /// Create an entry in Realm and go to ChartVC
     @IBAction func nextSaveButton(_ sender: Any) {
         
         let newEmotion = emotionsDictionaryToSave
@@ -62,7 +61,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         Router(self).showChart(dict: emotionsDictionaryToSave)
     }
     
-    /// Brings up camera to retake the photo and hides all the labels until photo is loaded
+    /// Bring up camera to retake photo and hide all labels until photo is loaded
     @IBAction func retakePhotoButton(_ sender: UIButton) {
         self.confirmPictureLabel.isHidden = true
         self.noFaceFoundLabel.isHidden = true
@@ -118,7 +117,6 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
-            
             imageView.image = pickedImage
             imageView.contentMode = .scaleAspectFit
 
@@ -133,12 +131,8 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
                 else if emotionDictionary.count <= 0 {
                     self.noFaceFoundLabel.isHidden = false
                     self.confirmPictureLabel.isHidden = true
-                }else{
-//                for (name, value) in emotionDictionary {
-//                    let percent: Int = Int(round(value * 100))
-//                    self.faceResults.text! += "\(name): \(percent)%\n"
-////                    self.percentages.append(value)
-//                }
+                }
+                else {
                     self.emotionsDictionaryToSave = self.makeItems(dictionary: emotionDictionary)
                     self.mostLikelyMood = self.keyMaxValue(dict: emotionDictionary)!
                     self.confirmPictureLabel.isHidden = false
@@ -150,7 +144,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
             dismiss(animated: true, completion: nil)
     }
 
-    /// Makes a new Emotion for a Realm entry, not saved yet
+    /// Make a new Emotion for a Realm entry, not saved yet
     func makeItems(dictionary: [String:Double]) -> Emotion? {
         let new = Emotion()
         new.anger = dictionary["anger"] ?? 0
@@ -165,7 +159,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         return new
     }
     
-    /// Finds the largest emotion
+    /// Find the largest emotion
     func keyMaxValue(dict: [String: Double]) -> String? {
         for (key, value) in dict {
             if value == dict.values.max() {
@@ -180,32 +174,15 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         dismiss(animated: true, completion: nil)
     }
 
-    /// Resizes the image if it's too big
-    func resizeImage(_ imageSize: CGSize, image: UIImage) -> Data {
-        UIGraphicsBeginImageContext(imageSize)
-        image.draw(in: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        let resizedImage = UIImageJPEGRepresentation(newImage!, 0.75)
-        UIGraphicsEndImageContext()
-        return resizedImage!
-    }
+    /// Resize the image if it's too big
+//    func resizeImage(_ imageSize: CGSize, image: UIImage) -> Data {
+//        UIGraphicsBeginImageContext(imageSize)
+//        image.draw(in: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
+//        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+//        let resizedImage = UIImageJPEGRepresentation(newImage!, 0.75)
+//        UIGraphicsEndImageContext()
+//        return resizedImage!
+//    }
 
 }
-
-
-//extension TakePictureViewController {
-//    func base64EncodeImage(_ image: UIImage) -> String {
-//        var imagedata = UIImagePNGRepresentation(image)
-//        
-//        // Resize the image if it exceeds the 4MB API limit
-//        if ((imagedata!.count) > 4096) {
-//            let oldSize: CGSize = image.size
-//            let newSize: CGSize = CGSize(width: 800, height: oldSize.height / oldSize.width * 800)
-//            imagedata = resizeImage(newSize, image: image)
-//        }
-//        
-//        return imagedata!.base64EncodedString(options: .endLineWithCarriageReturn)
-//    }
-//
-//}
 

@@ -32,7 +32,7 @@ class DetailLogViewController: UIViewController, UITableViewDelegate, UITableVie
         
     }
     
-    /// finds all the entries in realm that matches the date passed in
+    /// Find all entries in Realm that match the date passed in
     func findLogs() {
         for entry in realmManager.getSavedEntriesFromDatabase()! {
             let startOfDay = Calendar.current.startOfDay(for: entry.date)
@@ -56,8 +56,5 @@ class DetailLogViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return logs.count
     }
-    
-    
-    
 
 }
