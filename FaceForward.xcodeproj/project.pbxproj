@@ -21,13 +21,6 @@
 		1F75FA7F1E2052AD00836AD2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F75FA7E1E2052AD00836AD2 /* AVFoundation.framework */; };
 		1F75FA851E20552300836AD2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F75FA841E20552300836AD2 /* MediaPlayer.framework */; };
 		1F75FA871E206F8100836AD2 /* RadioStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F75FA861E206F8100836AD2 /* RadioStations.swift */; };
-		1F75FA901E20794C00836AD2 /* anger.pls in Resources */ = {isa = PBXBuildFile; fileRef = 1F75FA8F1E20794C00836AD2 /* anger.pls */; };
-		1F75FA921E20795100836AD2 /* neutral.pls in Resources */ = {isa = PBXBuildFile; fileRef = 1F75FA911E20795100836AD2 /* neutral.pls */; };
-		1F75FA941E20799200836AD2 /* fear.pls in Resources */ = {isa = PBXBuildFile; fileRef = 1F75FA931E20799200836AD2 /* fear.pls */; };
-		1F75FA961E207A3E00836AD2 /* disgust.pls in Resources */ = {isa = PBXBuildFile; fileRef = 1F75FA951E207A3E00836AD2 /* disgust.pls */; };
-		1F75FA981E207AC800836AD2 /* sadness.pls in Resources */ = {isa = PBXBuildFile; fileRef = 1F75FA971E207AC800836AD2 /* sadness.pls */; };
-		1F75FA9A1E207B2000836AD2 /* surprise.pls in Resources */ = {isa = PBXBuildFile; fileRef = 1F75FA991E207B2000836AD2 /* surprise.pls */; };
-		1F75FAA01E207BF300836AD2 /* happiness.pls in Resources */ = {isa = PBXBuildFile; fileRef = 1F75FA9F1E207BF300836AD2 /* happiness.pls */; };
 		1F8348471E0887A200FE97CB /* DataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8348461E0887A200FE97CB /* DataEntry.swift */; };
 		1F8348491E08895900FE97CB /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8348481E08895900FE97CB /* Survey.swift */; };
 		1F83484B1E0889BB00FE97CB /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F83484A1E0889BB00FE97CB /* Mood.swift */; };
@@ -50,14 +43,6 @@
 		1FD03B661E0CEBCF009995E8 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD03B651E0CEBCF009995E8 /* DetailTableViewCell.swift */; };
 		5212E88B1E035862000209BD /* Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5212E88A1E035862000209BD /* Styling.swift */; };
 		521E329C1E3181900093A6B1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521E329B1E3181900093A6B1 /* TabBarViewController.swift */; };
-		522EF4141E2774240043A4F9 /* HitsOnGuitar.pls in Resources */ = {isa = PBXBuildFile; fileRef = 522EF4101E2774240043A4F9 /* HitsOnGuitar.pls */; };
-		522EF4151E2774240043A4F9 /* HookedOnRadio-AdultAlternative.pls in Resources */ = {isa = PBXBuildFile; fileRef = 522EF4111E2774240043A4F9 /* HookedOnRadio-AdultAlternative.pls */; };
-		522EF4161E2774240043A4F9 /* HookedOnRadio-Top_40.pls in Resources */ = {isa = PBXBuildFile; fileRef = 522EF4121E2774240043A4F9 /* HookedOnRadio-Top_40.pls */; };
-		522EF4171E2774240043A4F9 /* RadioCorasonHitNetStation.pls in Resources */ = {isa = PBXBuildFile; fileRef = 522EF4131E2774240043A4F9 /* RadioCorasonHitNetStation.pls */; };
-		522EF41C1E2778240043A4F9 /* HookedOnRadio-ActiveRock.pls in Resources */ = {isa = PBXBuildFile; fileRef = 522EF4181E2778240043A4F9 /* HookedOnRadio-ActiveRock.pls */; };
-		522EF41D1E2778240043A4F9 /* HookedOnRadio-HotCountry.pls in Resources */ = {isa = PBXBuildFile; fileRef = 522EF4191E2778240043A4F9 /* HookedOnRadio-HotCountry.pls */; };
-		522EF41E1E2778240043A4F9 /* HookedOnRadio-HotHits.pls in Resources */ = {isa = PBXBuildFile; fileRef = 522EF41A1E2778240043A4F9 /* HookedOnRadio-HotHits.pls */; };
-		522EF41F1E2778240043A4F9 /* HookedOnRadio-RapAttack.pls in Resources */ = {isa = PBXBuildFile; fileRef = 522EF41B1E2778240043A4F9 /* HookedOnRadio-RapAttack.pls */; };
 		524B3EB71E21F92900203AB2 /* Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B3EB61E21F92800203AB2 /* Suggestions.swift */; };
 		5286A2091E053633005028D0 /* TakePictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A2081E053633005028D0 /* TakePictureViewController.swift */; };
 		5286A20E1E089772005028D0 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5286A20D1E089772005028D0 /* ServerManager.swift */; };
@@ -82,13 +67,6 @@
 		1F75FA7E1E2052AD00836AD2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1F75FA841E20552300836AD2 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		1F75FA861E206F8100836AD2 /* RadioStations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioStations.swift; sourceTree = "<group>"; };
-		1F75FA8F1E20794C00836AD2 /* anger.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = anger.pls; sourceTree = "<group>"; };
-		1F75FA911E20795100836AD2 /* neutral.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = neutral.pls; sourceTree = "<group>"; };
-		1F75FA931E20799200836AD2 /* fear.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fear.pls; sourceTree = "<group>"; };
-		1F75FA951E207A3E00836AD2 /* disgust.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = disgust.pls; sourceTree = "<group>"; };
-		1F75FA971E207AC800836AD2 /* sadness.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sadness.pls; sourceTree = "<group>"; };
-		1F75FA991E207B2000836AD2 /* surprise.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = surprise.pls; sourceTree = "<group>"; };
-		1F75FA9F1E207BF300836AD2 /* happiness.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = happiness.pls; sourceTree = "<group>"; };
 		1F8348461E0887A200FE97CB /* DataEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntry.swift; sourceTree = "<group>"; };
 		1F8348481E08895900FE97CB /* Survey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
 		1F83484A1E0889BB00FE97CB /* Mood.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
@@ -112,14 +90,6 @@
 		3C2A011C095BE3AAA8A0D4B8 /* Pods-FaceForward.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceForward.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaceForward/Pods-FaceForward.release.xcconfig"; sourceTree = "<group>"; };
 		5212E88A1E035862000209BD /* Styling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styling.swift; sourceTree = "<group>"; };
 		521E329B1E3181900093A6B1 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
-		522EF4101E2774240043A4F9 /* HitsOnGuitar.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = HitsOnGuitar.pls; sourceTree = "<group>"; };
-		522EF4111E2774240043A4F9 /* HookedOnRadio-AdultAlternative.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "HookedOnRadio-AdultAlternative.pls"; sourceTree = "<group>"; };
-		522EF4121E2774240043A4F9 /* HookedOnRadio-Top_40.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "HookedOnRadio-Top_40.pls"; sourceTree = "<group>"; };
-		522EF4131E2774240043A4F9 /* RadioCorasonHitNetStation.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = RadioCorasonHitNetStation.pls; sourceTree = "<group>"; };
-		522EF4181E2778240043A4F9 /* HookedOnRadio-ActiveRock.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "HookedOnRadio-ActiveRock.pls"; sourceTree = "<group>"; };
-		522EF4191E2778240043A4F9 /* HookedOnRadio-HotCountry.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "HookedOnRadio-HotCountry.pls"; sourceTree = "<group>"; };
-		522EF41A1E2778240043A4F9 /* HookedOnRadio-HotHits.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "HookedOnRadio-HotHits.pls"; sourceTree = "<group>"; };
-		522EF41B1E2778240043A4F9 /* HookedOnRadio-RapAttack.pls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "HookedOnRadio-RapAttack.pls"; sourceTree = "<group>"; };
 		524B3EB61E21F92800203AB2 /* Suggestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Suggestions.swift; sourceTree = "<group>"; };
 		5286A2081E053633005028D0 /* TakePictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TakePictureViewController.swift; sourceTree = "<group>"; };
 		5286A20D1E089772005028D0 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
@@ -172,7 +142,6 @@
 		1F26A1FB1E02003F00CA7464 /* FaceForward */ = {
 			isa = PBXGroup;
 			children = (
-				1F75FA8E1E20794200836AD2 /* Music */,
 				1FA89EC91E02222C004EBF08 /* Model */,
 				1FA89ECA1E02223A004EBF08 /* UI */,
 				1FA89ECB1E02224F004EBF08 /* View */,
@@ -180,28 +149,6 @@
 				1FA89ECC1E022263004EBF08 /* Support */,
 			);
 			path = FaceForward;
-			sourceTree = "<group>";
-		};
-		1F75FA8E1E20794200836AD2 /* Music */ = {
-			isa = PBXGroup;
-			children = (
-				522EF4101E2774240043A4F9 /* HitsOnGuitar.pls */,
-				522EF4111E2774240043A4F9 /* HookedOnRadio-AdultAlternative.pls */,
-				522EF4121E2774240043A4F9 /* HookedOnRadio-Top_40.pls */,
-				522EF4131E2774240043A4F9 /* RadioCorasonHitNetStation.pls */,
-				522EF4181E2778240043A4F9 /* HookedOnRadio-ActiveRock.pls */,
-				522EF4191E2778240043A4F9 /* HookedOnRadio-HotCountry.pls */,
-				522EF41A1E2778240043A4F9 /* HookedOnRadio-HotHits.pls */,
-				522EF41B1E2778240043A4F9 /* HookedOnRadio-RapAttack.pls */,
-				1F75FA911E20795100836AD2 /* neutral.pls */,
-				1F75FA8F1E20794C00836AD2 /* anger.pls */,
-				1F75FA931E20799200836AD2 /* fear.pls */,
-				1F75FA951E207A3E00836AD2 /* disgust.pls */,
-				1F75FA971E207AC800836AD2 /* sadness.pls */,
-				1F75FA991E207B2000836AD2 /* surprise.pls */,
-				1F75FA9F1E207BF300836AD2 /* happiness.pls */,
-			);
-			name = Music;
 			sourceTree = "<group>";
 		};
 		1FA89EC81E02221A004EBF08 /* Controller */ = {
@@ -393,26 +340,11 @@
 				1F26A2091E02003F00CA7464 /* LaunchScreen.storyboard in Resources */,
 				1F26A2061E02003F00CA7464 /* Assets.xcassets in Resources */,
 				1F05E0FF1E0380D10061534B /* MonthHeaderView.xib in Resources */,
-				1F75FA981E207AC800836AD2 /* sadness.pls in Resources */,
-				522EF4141E2774240043A4F9 /* HitsOnGuitar.pls in Resources */,
-				1F75FA941E20799200836AD2 /* fear.pls in Resources */,
 				1FBD71631E034E9A001E36EE /* CalendarCell.xib in Resources */,
 				1FBD71551E034172001E36EE /* Suggestions.storyboard in Resources */,
-				1F75FA921E20795100836AD2 /* neutral.pls in Resources */,
-				522EF41C1E2778240043A4F9 /* HookedOnRadio-ActiveRock.pls in Resources */,
 				1FBD71531E034161001E36EE /* Photo.storyboard in Resources */,
 				1FBD71571E034181001E36EE /* Chart.storyboard in Resources */,
-				522EF41E1E2778240043A4F9 /* HookedOnRadio-HotHits.pls in Resources */,
-				522EF4151E2774240043A4F9 /* HookedOnRadio-AdultAlternative.pls in Resources */,
-				522EF4171E2774240043A4F9 /* RadioCorasonHitNetStation.pls in Resources */,
-				522EF41D1E2778240043A4F9 /* HookedOnRadio-HotCountry.pls in Resources */,
 				1FBD71511E0340F8001E36EE /* Survey.storyboard in Resources */,
-				1F75FAA01E207BF300836AD2 /* happiness.pls in Resources */,
-				522EF4161E2774240043A4F9 /* HookedOnRadio-Top_40.pls in Resources */,
-				522EF41F1E2778240043A4F9 /* HookedOnRadio-RapAttack.pls in Resources */,
-				1F75FA9A1E207B2000836AD2 /* surprise.pls in Resources */,
-				1F75FA901E20794C00836AD2 /* anger.pls in Resources */,
-				1F75FA961E207A3E00836AD2 /* disgust.pls in Resources */,
 				1F26A2041E02003F00CA7464 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

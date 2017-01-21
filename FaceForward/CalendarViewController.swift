@@ -44,6 +44,12 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
 //        createChart()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        reloadData()
+    }
+    
     /// passes the date clicked, goes to detailedVC
     func dateWasClicked(view: JTAppleDayCellView?, cellState: CellState, selectedDate: Date) {
         guard let myCustomCell = view as? CellView  else {
@@ -79,6 +85,10 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
         let realm = try! Realm()
         let resultsData = realm.objects(DataEntry.self)
         delegate.moodData = resultsData
+    }
+    
+    fileprivate func reloadData() {
+        calendarView.reloadData()
     }
     
     
