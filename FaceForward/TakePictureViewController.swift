@@ -37,7 +37,8 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     /// Bring up camera to take photo
     @IBAction func loadImageButtonTapped(_ sender: UIButton) {
         imagePicker.allowsEditing = false
-        imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = .camera
+        imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashMode.off
         
         present(imagePicker, animated: true, completion: nil)
     }
@@ -69,7 +70,8 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         self.timeOutLabel.isHidden = true
         
         imagePicker.allowsEditing = false
-        imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = .camera
+        imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashMode.off
         
         present(imagePicker, animated: true, completion: nil)
     }

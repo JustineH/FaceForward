@@ -110,11 +110,6 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let image = UIImage(named: "FaceForward_Logo5")
-//        navigationItem.titleView = UIImageView(image: image)
-//        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-//        imageView.contentMode = .scaleAspectFit
-//        imageView.clipsToBounds = true
         RadioPlayer.sharedInstance.pause()
         Styling.styleButton(button: nextButton)
         self.peopleTextField.delegate = self;
