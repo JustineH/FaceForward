@@ -52,6 +52,7 @@ class CalendarViewController: UIViewController, calendarEventHandlingProtocol {
     
     /// passes the date clicked, goes to detailedVC
     func dateWasClicked(view: JTAppleDayCellView?, cellState: CellState, selectedDate: Date) {
+        
         guard let myCustomCell = view as? CellView  else {
             print("Error with cell selection")
             return

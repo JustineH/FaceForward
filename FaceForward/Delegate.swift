@@ -64,7 +64,7 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
         } else {
             myCustomCell.isHidden = true
         }
-        handleCellSelection(view: cell, cellState: cellState, selectedDate: cellState.date)
+//        handleCellSelection(view: cell, cellState: cellState, selectedDate: cellState.date)
 
         myCustomCell.layoutIfNeeded()
         
@@ -124,7 +124,6 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
         if delegate != nil {
             delegate!.dateWasClicked(view: view, cellState: cellState, selectedDate: selectedDate)
         }
-        
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
