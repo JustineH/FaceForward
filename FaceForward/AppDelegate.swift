@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = Styling.Colors.buttons
         UITabBar.appearance().tintColor = Styling.Colors.buttons
         
-        UISegmentedControl.appearance().setTitleTextAttributes(NSDictionary(objects: [UIFont.systemFont(ofSize: 16.0)], forKeys: [NSFontAttributeName as NSCopying]) as! [AnyHashable : Any], for: UIControlState.normal)
+        UISegmentedControl.appearance().setTitleTextAttributes(NSDictionary(objects: [UIFont.systemFont(ofSize: 16.0)], forKeys: [NSFontAttributeName as NSCopying]) as? [AnyHashable : Any], for: UIControlState.normal)
       
         return true
     }
