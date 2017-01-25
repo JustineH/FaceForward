@@ -17,15 +17,11 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     let imagePicker = UIImagePickerController()
     
     // MARK: - Properties -
-    @IBOutlet weak var confirmPictureLabel: UILabel!       // Remove
     @IBOutlet weak var noFaceFoundLabel: UILabel!
-    @IBOutlet weak var imageView: UIImageView!             // Remove
     @IBOutlet weak var takePhotoButtonLabel: UIButton!
     @IBOutlet weak var timeOutLabel: UILabel!
-    @IBOutlet weak var retakePhotoButtonLabel: UIButton!
-    @IBOutlet weak var nextButtonLabel: UIButton!          // Remove
-    @IBOutlet weak var spinner: UIActivityIndicatorView!   // Remove?
-    @IBOutlet weak var spinnerBackground: UIView!          // Remove?
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var spinnerBackground: UIView!
     @IBOutlet weak var cameraImage: UIImageView!
     
     var mostLikelyMood: String = EmotionName.neutral.rawValue
@@ -47,7 +43,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     func saveEmotion() {
         
         guard let newEmotion = emotionsDictionaryToSave else {
-            print ("Shit")
+            print ("Primary emotion did not save")
             return
         }
         
@@ -65,29 +61,15 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
         catch let error {
             print(error)
         }
-        
-//        let newEmotion = emotionsDictionaryToSave
-//        newEmotion!.largestEmotion = mostLikelyMood
-//
-//        let realm = try! Realm()
-//        try! realm.write {
-//            
-//            let newEntry = DataEntry()
-//            newEntry.emotion.append(newEmotion!)
-//            newEntry.survey.append(survey)
-//            realm.add(newEntry)
-//   
-//        }
-        self.nextButtonLabel.isHidden = true      // Change
         Router(self).showChart(dict: emotionsDictionaryToSave)
     }
     
     /// Bring up camera to retake photo and hide all labels until photo is loaded
-    @IBAction func retakePhotoButton(_ sender: UIButton) {
-        self.confirmPictureLabel.isHidden = true
+    @IBAction func takePhotoButtonLabel(_ sender: UIButton) {
+        
         self.noFaceFoundLabel.isHidden = true
-        self.nextButtonLabel.isHidden = true
         self.timeOutLabel.isHidden = true
+        self.cameraImage.isHidden = true
         
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .camera
@@ -109,22 +91,16 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     
 
     func setup() {
+        
         self.view.backgroundColor = Styling.Colors.backgroundColor
-        imageView.backgroundColor = UIColor.clear
-        imageView.contentMode = .scaleAspectFit
         
         spinner.color = Styling.ActivityIndicatorView.purpleSpinner
         spinner.hidesWhenStopped = true
         
         imagePicker.delegate = self
         
-        confirmPictureLabel.textColor = Styling.Colors.fontBody
         noFaceFoundLabel.textColor = Styling.Colors.fontBody
         timeOutLabel.textColor = Styling.Colors.fontBody
-        
-        Styling.styleButton(button: nextButtonLabel)
-        Styling.styleButton(button: retakePhotoButtonLabel)
-
     }
     
     /// Make a new Emotion for a Realm entry, not saved yet
@@ -156,20 +132,14 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         spinner.startAnimating()
-        imageView.isHidden = true   // false
         spinner.isHidden = false
         spinnerBackground.isHidden = false
         takePhotoButtonLabel.isHidden = true
         cameraImage.isHidden = true
+        self.timeOutLabel.isHidden = true
+        self.noFaceFoundLabel.isHidden = true
     
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            
-            self.nextButtonLabel.isHidden = true      // Remove
-            
-          //
-            
-//            imageView.image = pickedImage
-//            imageView.contentMode = .scaleAspectFit
 
             ServerManager.emotions(from: pickedImage)
             { emotionDictionary in
@@ -178,34 +148,31 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
                 
                 if emotionDictionary.count == 1 {
                     self.timeOutLabel.isHidden = false
+                    self.noFaceFoundLabel.isHidden = true
                 }
                 else if emotionDictionary.count <= 0 {
                     self.noFaceFoundLabel.isHidden = false
-                    self.confirmPictureLabel.isHidden = true
+                    self.timeOutLabel.isHidden = true
                 }
                 else {
                     self.emotionsDictionaryToSave = self.makeItems(dictionary: emotionDictionary)
                     self.mostLikelyMood = self.keyMaxValue(dict: emotionDictionary)!
-                    self.confirmPictureLabel.isHidden = true     // false
-                    self.nextButtonLabel.isHidden = true         // change this to segue
                     
                     self.saveEmotion()
                 }
-                self.retakePhotoButtonLabel.isHidden = false
+                self.takePhotoButtonLabel.isHidden = false
+                self.cameraImage.isHidden = false
             }
         }
-
             dismiss(animated: true, completion: nil)
-            
     }
-
-
     
     /// Dismiss the camera
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
 
+    
     /// Resize the image if it's too big
 //    func resizeImage(_ imageSize: CGSize, image: UIImage) -> Data {
 //        UIGraphicsBeginImageContext(imageSize)
