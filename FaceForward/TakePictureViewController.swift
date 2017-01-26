@@ -32,11 +32,20 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     
     /// Bring up camera to take photo
     @IBAction func loadImageButtonTapped(_ sender: UIButton) {
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .photoLibrary
-//        imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashMode.off
         
-        present(imagePicker, animated: true, completion: nil)
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+            
+            imagePicker.allowsEditing = false
+            imagePicker.sourceType = .camera
+            imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashMode.off
+            
+            present(imagePicker, animated: true, completion: nil)
+            
+            } else {
+                let alert = UIAlertController(title: "Alert", message: "No camera found.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+        }
     }
     
     /// Create an entry in Realm and go to ChartVC
@@ -67,15 +76,23 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     /// Bring up camera to retake photo and hide all labels until photo is loaded
     @IBAction func takePhotoButtonLabel(_ sender: UIButton) {
         
-        self.noFaceFoundLabel.isHidden = true
-        self.timeOutLabel.isHidden = true
-        self.cameraImage.isHidden = true
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
         
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .photoLibrary
-//        imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashMode.off
-        
-        present(imagePicker, animated: true, completion: nil)
+            self.noFaceFoundLabel.isHidden = true
+            self.timeOutLabel.isHidden = true
+            self.cameraImage.isHidden = true
+            
+            imagePicker.allowsEditing = false
+            imagePicker.sourceType = .camera
+            imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashMode.off
+            
+            present(imagePicker, animated: true, completion: nil)
+            
+        } else {
+            let alert = UIAlertController(title: "Alert", message: "No camera found.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     //MARK: - View -
