@@ -11,6 +11,5 @@ pod 'Charts', '~> 3.0.0'
 pod 'RealmSwift'
 pod 'SwiftyJSON', '~> 3.1.3'
 pod 'Alamofire'
-pod 'UICircularProgressRing', '~> 1.1'
 
 end

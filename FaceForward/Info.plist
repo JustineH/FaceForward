@@ -28,7 +28,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>This app requires access to your camera.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This app requires access to your Photo Library in order to use.</string>
+	<string>This app requires access to your Photo Library.</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>App streams audio using AirPlay</string>

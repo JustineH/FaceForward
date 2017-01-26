@@ -42,7 +42,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
             present(imagePicker, animated: true, completion: nil)
             
             } else {
-                let alert = UIAlertController(title: "Alert", message: "No camera found.", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Alert", message: "No camera was found.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
         }
@@ -89,7 +89,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
             present(imagePicker, animated: true, completion: nil)
             
         } else {
-            let alert = UIAlertController(title: "Alert", message: "No camera found.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Alert", message: "No camera was found.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
