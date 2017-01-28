@@ -33,7 +33,7 @@ class RadioPlayer: NSObject {
         
         if NSClassFromString("MPNowPlayingInfoCenter") != nil {
             
-            let image:UIImage = UIImage(named: "FaceForward_Logo5")!
+            let image:UIImage = UIImage(named: "Logo")!
             let artwork = MPMediaItemArtwork.init(boundsSize: image.size, requestHandler: { (size) -> UIImage in
                 return image })
             let songInfo = [
@@ -62,7 +62,7 @@ class RadioPlayer: NSObject {
         }
         if NSClassFromString("MPNowPlayingInfoCenter") != nil {
             
-            let image:UIImage = UIImage(named: "FaceForward_Logo5")!
+            let image:UIImage = UIImage(named: "Logo")!
             let artwork = MPMediaItemArtwork.init(boundsSize: image.size, requestHandler: { (size) -> UIImage in
                 return image })
             let songInfo = [
