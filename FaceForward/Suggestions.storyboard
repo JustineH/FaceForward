@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -57,14 +56,14 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VolumeHigh" translatesAutoresizingMaskIntoConstraints="NO" id="SsC-yo-Ytz">
-                                        <rect key="frame" x="245" y="380" width="31" height="74"/>
+                                        <rect key="frame" x="272" y="380" width="31" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="74" id="QzR-ni-bTY"/>
                                             <constraint firstAttribute="width" constant="31" id="zNY-vL-9tx"/>
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VolumeLow" translatesAutoresizingMaskIntoConstraints="NO" id="JQt-9Z-WJR">
-                                        <rect key="frame" x="48.5" y="380" width="31" height="74"/>
+                                        <rect key="frame" x="16" y="380" width="31" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="31" id="OO8-0S-BbU"/>
                                             <constraint firstAttribute="height" constant="74" id="f7p-Mi-fD7"/>
@@ -76,7 +75,9 @@
                                     <constraint firstItem="yAe-Iu-zwV" firstAttribute="centerX" secondItem="3eD-0N-MmW" secondAttribute="centerX" id="09n-xg-ECY"/>
                                     <constraint firstAttribute="trailing" secondItem="yAe-Iu-zwV" secondAttribute="trailing" id="3IP-dd-vdX"/>
                                     <constraint firstItem="cva-DT-q6S" firstAttribute="centerX" secondItem="3eD-0N-MmW" secondAttribute="centerX" id="3iY-mf-NWR"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="SsC-yo-Ytz" secondAttribute="trailing" constant="8" id="95d-7d-Xip"/>
                                     <constraint firstItem="yAe-Iu-zwV" firstAttribute="leading" secondItem="3eD-0N-MmW" secondAttribute="leading" id="98D-Iz-rwY"/>
+                                    <constraint firstItem="JQt-9Z-WJR" firstAttribute="leading" secondItem="3eD-0N-MmW" secondAttribute="leadingMargin" constant="8" id="Mrn-RJ-Zm1"/>
                                     <constraint firstItem="yAe-Iu-zwV" firstAttribute="width" secondItem="3eD-0N-MmW" secondAttribute="width" id="RE7-KY-iHR"/>
                                     <constraint firstItem="yAe-Iu-zwV" firstAttribute="centerY" secondItem="3eD-0N-MmW" secondAttribute="centerY" id="Uic-eO-lT8"/>
                                     <constraint firstItem="yAe-Iu-zwV" firstAttribute="height" secondItem="3eD-0N-MmW" secondAttribute="height" id="XQ1-Hm-z3S"/>
@@ -126,7 +127,7 @@
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="zBS-oU-SD6">
-                                <rect key="frame" x="78.5" y="401" width="163.5" height="31"/>
+                                <rect key="frame" x="46" y="401" width="223" height="31"/>
                                 <color key="tintColor" red="0.56862745098039214" green="0.1764705882352941" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="7Zi-GZ-4N3"/>
@@ -163,12 +164,10 @@
                             <constraint firstItem="nYx-aq-zR2" firstAttribute="centerX" secondItem="Gqd-z6-feD" secondAttribute="centerX" id="Qwp-2B-gFN"/>
                             <constraint firstItem="raE-TF-dA3" firstAttribute="centerX" secondItem="Gqd-z6-feD" secondAttribute="centerX" id="VDS-Nz-6qd"/>
                             <constraint firstItem="zBS-oU-SD6" firstAttribute="top" secondItem="FVn-Wt-K1r" secondAttribute="bottom" constant="20" id="Vyp-ef-qlC"/>
-                            <constraint firstItem="zBS-oU-SD6" firstAttribute="centerX" secondItem="Gqd-z6-feD" secondAttribute="centerX" id="WtP-2w-2hH"/>
                             <constraint firstItem="zBS-oU-SD6" firstAttribute="leading" secondItem="JQt-9Z-WJR" secondAttribute="trailing" constant="1" id="Xke-Fv-Gn3"/>
                             <constraint firstItem="lEv-Qw-57k" firstAttribute="top" secondItem="nYx-aq-zR2" secondAttribute="bottom" constant="20" id="a57-m0-ea4"/>
                             <constraint firstItem="3eD-0N-MmW" firstAttribute="bottom" secondItem="NBY-5K-eJh" secondAttribute="top" id="bhA-m4-gzj"/>
                             <constraint firstItem="FVn-Wt-K1r" firstAttribute="leading" secondItem="6Pm-X7-hbf" secondAttribute="trailing" constant="42" id="fdh-aC-Gfw"/>
-                            <constraint firstItem="zBS-oU-SD6" firstAttribute="width" secondItem="yAe-Iu-zwV" secondAttribute="width" multiplier="0.5" id="kDG-YD-wHV"/>
                             <constraint firstItem="nYx-aq-zR2" firstAttribute="top" secondItem="raE-TF-dA3" secondAttribute="bottom" constant="30" id="mQ0-2n-54j"/>
                             <constraint firstItem="3eD-0N-MmW" firstAttribute="leading" secondItem="Gqd-z6-feD" secondAttribute="leading" id="vPC-cX-9k1"/>
                         </constraints>
