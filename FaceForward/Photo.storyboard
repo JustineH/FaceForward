@@ -26,7 +26,7 @@
                             <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LowPolyForLogo" translatesAutoresizingMaskIntoConstraints="NO" id="l7g-vE-Fm7">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera3" translatesAutoresizingMaskIntoConstraints="NO" id="yh4-li-Y4Q">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Camera" translatesAutoresizingMaskIntoConstraints="NO" id="yh4-li-Y4Q">
                                 <rect key="frame" x="120.66666666666669" y="212.33333333333331" width="173" height="163.99999999999994"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="173" id="F6i-ht-so7"/>
@@ -109,7 +109,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Camera3" width="110" height="209"/>
+        <image name="Camera" width="73" height="138"/>
         <image name="LowPolyForLogo" width="3333" height="3333"/>
     </resources>
 </document>
