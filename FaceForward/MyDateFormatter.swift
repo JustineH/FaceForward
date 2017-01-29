@@ -13,14 +13,23 @@ class MyDateFormatter: NSObject {
     
     var calendar = Calendar(identifier: .gregorian)
     
-    /// Format date to month day, year at hh:mm (ex. December 23, 2016 at 12:43)
     func configureDate(date: Date) -> String{
-        let dateComponents = calendar.dateComponents([.day, .month, .year, .hour, .minute], from: date)
         
-        let month = formatMonth(month: dateComponents.month!)
-        return "\(month) \(dateComponents.day!), \(dateComponents.year!) at \(dateComponents.hour!):\(dateComponents.minute!)"
+        let formatter = DateFormatter()
+        formatter.locale = Locale.autoupdatingCurrent
+        formatter.timeStyle = .short
+        formatter.dateFormat = "MMMM dd, yyyy 'at' h:mm a"
+
+        let dateComponents = formatter.string(from: date)
+        return "\(dateComponents)"
+        
+//        let dateComponents = calendar.dateComponents([.day, .month, .year, .hour, .minute], from: date)
+
+//        let month = formatMonth(month: dateComponents.month!)
+//        return "\(month) \(dateComponents.day!), \(dateComponents.year!) at \(dateComponents.hour!):\(dateComponents.minute!)"
+        
     }
-    
+
     /// Convert month number to text
     func formatMonth(month: Int) -> String{
         switch month {
@@ -54,4 +63,5 @@ class MyDateFormatter: NSObject {
         }
         return ""
     }
+
 }
