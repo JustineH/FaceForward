@@ -17,7 +17,7 @@ class RadioPlayer: NSObject {
     var player = AVPlayer()
     private var isPlaying = false
     let stations = RadioStations()
-    let moodArray = ["Anger", "Contempt", "Happiness", "Sadness", "Disgust", "Fear", "Neutral", "Surprise"]
+    let moodArray = EmotionName.allNamesInOrder()
     
     /// Choose radio station based on largest emotion
     func chooseStation(emotion: String) {

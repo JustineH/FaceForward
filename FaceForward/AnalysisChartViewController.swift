@@ -40,14 +40,14 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
         pieChartView.delegate = self
         pieChartView.notifyDataSetChanged()
         
-        emotionsToPassToPieChart["Anger"] = dict.anger
-        emotionsToPassToPieChart["Contempt"] = dict.contempt
-        emotionsToPassToPieChart["Disgust"] = dict.disgust
-        emotionsToPassToPieChart["Fear"] = dict.fear
-        emotionsToPassToPieChart["Sadness"] = dict.sadness
-        emotionsToPassToPieChart["Surprise"] = dict.surprise
-        emotionsToPassToPieChart["Happiness"] = dict.happiness
-        emotionsToPassToPieChart["Neutral"] = dict.neutral
+        emotionsToPassToPieChart[EmotionName.happiness.rawValue] = dict.happiness
+        emotionsToPassToPieChart[EmotionName.neutral.rawValue] = dict.neutral
+        emotionsToPassToPieChart[EmotionName.surprise.rawValue] = dict.surprise
+        emotionsToPassToPieChart[EmotionName.sadness.rawValue] = dict.sadness
+        emotionsToPassToPieChart[EmotionName.fear.rawValue] = dict.fear
+        emotionsToPassToPieChart[EmotionName.anger.rawValue] = dict.anger
+        emotionsToPassToPieChart[EmotionName.contempt.rawValue] = dict.contempt
+        emotionsToPassToPieChart[EmotionName.disgust.rawValue] = dict.disgust
         
         let emotionsPercentage = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
         
@@ -80,35 +80,15 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
     /// Add data entries to pie chart
     func updateChartData() {
         
-        var colors: [UIColor] = []
         var dataEntries: [PieChartDataEntry] = []
         
-        
-        for emotion in emotionsToPassToPieChart.keys {
+        for emotion in EmotionName.allNamesInOrder() {
             
             let emotionPercent = String(format: "%.2f", arguments: [emotionsToPassToPieChart[emotion]! *  100] )
-            
             let dataEntry = PieChartDataEntry(value: emotionsToPassToPieChart[emotion]!, label: "\(emotion): \(emotionPercent)%")
             
-            let angerEmotion = Styling.Colors.brightPinkColor
-            let happinessEmotion = Styling.Colors.yellowColor
-            let disgustEmotion = Styling.Colors.redColor
-            let fearEmotion = Styling.Colors.darkBlueColor
-            let sadnessEmotion = Styling.Colors.darkPurpleColor
-            let contemptEmotion = Styling.Colors.orangeColor
-            let surpriseEmotion = Styling.Colors.purpleColor
-            let neutralEmotion = Styling.Colors.pinkColor
-
-            colors.append(angerEmotion)
-            colors.append(happinessEmotion)
-            colors.append(disgustEmotion)
-            colors.append(fearEmotion)
-            colors.append(sadnessEmotion)
-            colors.append(contemptEmotion)
-            colors.append(surpriseEmotion)
-            colors.append(neutralEmotion)
-            
             dataEntries.append(dataEntry)
+    
         }
         
         let pieChartDataSet = PieChartDataSet(values: dataEntries, label: "")
@@ -116,8 +96,34 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
         pieChartDataSet.drawValuesEnabled = false
         pieChartView.data = data
  
-        pieChartDataSet.colors = colors
+        pieChartDataSet.colors = chartColors()
         
+    }
+    
+    func chartColors() -> [UIColor] {
+        
+        var colors: [UIColor] = []
+        
+        let happinessEmotion = Styling.Colors.yellowColor
+        let neutralEmotion = Styling.Colors.pinkColor
+        let surpriseEmotion = Styling.Colors.purpleColor
+        let sadnessEmotion = Styling.Colors.darkPurpleColor
+        let fearEmotion = Styling.Colors.darkBlueColor
+        let angerEmotion = Styling.Colors.brightPinkColor
+        let contemptEmotion = Styling.Colors.orangeColor
+        let disgustEmotion = Styling.Colors.redColor
+      
+        // If updating emotions in EmotionName file, these have to be added to the array in the same order
+        colors.append(happinessEmotion)
+        colors.append(neutralEmotion)
+        colors.append(surpriseEmotion)
+        colors.append(sadnessEmotion)
+        colors.append(fearEmotion)
+        colors.append(angerEmotion)
+        colors.append(contemptEmotion)
+        colors.append(disgustEmotion)
+        
+        return colors
     }
     
     /// Find emotion with highest value to pass to SuggestionsVC
@@ -134,7 +140,6 @@ class AnalysisChartViewController: UIViewController, ChartViewDelegate {
         }
         
         return highestKey
-        
     }
 
 }
