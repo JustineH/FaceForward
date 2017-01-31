@@ -15,4 +15,5 @@ class Survey: Object {
     dynamic var sleepInput: Sleep.RawValue!
     dynamic var exerciseInput = false
     dynamic var peopleInput: String?
+    
 }

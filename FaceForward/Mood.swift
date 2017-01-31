@@ -16,7 +16,6 @@ enum Mood: String {
         case good = "Good"
         case great = "Great"
     
-        
         func toValue() -> Int{
             switch self{
             case.veryBad:

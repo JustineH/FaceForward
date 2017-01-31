@@ -23,11 +23,6 @@ class MyDateFormatter: NSObject {
         let dateComponents = formatter.string(from: date)
         return "\(dateComponents)"
         
-//        let dateComponents = calendar.dateComponents([.day, .month, .year, .hour, .minute], from: date)
-
-//        let month = formatMonth(month: dateComponents.month!)
-//        return "\(month) \(dateComponents.day!), \(dateComponents.year!) at \(dateComponents.hour!):\(dateComponents.minute!)"
-        
     }
 
     /// Convert month number to text

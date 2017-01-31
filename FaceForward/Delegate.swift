@@ -51,7 +51,6 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
             }
             else {
                 myCustomCell.moodColor.isHidden = true
-               
             }
         }
         
@@ -63,7 +62,6 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
         } else {
             myCustomCell.isHidden = true
         }
-//        handleCellSelection(view: cell, cellState: cellState, selectedDate: cellState.date)
 
         myCustomCell.layoutIfNeeded()
         
