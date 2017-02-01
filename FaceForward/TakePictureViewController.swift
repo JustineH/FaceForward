@@ -33,19 +33,19 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     /// Bring up camera to take photo
     @IBAction func loadImageButtonTapped(_ sender: UIButton) {
         
-//        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
         
             imagePicker.allowsEditing = false
-            imagePicker.sourceType = .photoLibrary
-//            imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashMode.off
+            imagePicker.sourceType = .camera
+            imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashMode.off
         
             present(imagePicker, animated: true, completion: nil)
             
-//            } else {
-//                let alert = UIAlertController(title: "Alert", message: "No camera was found.", preferredStyle: .alert)
-//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//                self.present(alert, animated: true, completion: nil)
-//        }
+            } else {
+                let alert = UIAlertController(title: "Alert", message: "No camera was found.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+        }
     }
     
     /// Create an entry in Realm and go to ChartVC
