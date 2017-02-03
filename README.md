@@ -6,10 +6,9 @@ Users can choose to later check in and do another analysis to see how they are f
 ## Get it on the App Store
 Coming soon to the App Store. Stay tuned!
 <br>
-<hr>
+<br>
 ## Contributing to the Project
-
-#### If you'd like to contribute to the project, here's what you'll need...
+If you'd like to contribute to the project, here's what you'll need...
 
 #### Frameworks:
 + AVFoundation
