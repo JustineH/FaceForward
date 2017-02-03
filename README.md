@@ -3,8 +3,13 @@ FaceForward is an iOS app that helps users set out each day on their own terms. 
 
 Users can choose to later check in and do another analysis to see how they are feeling, and if there have been any changes in their mood. All of their assessment readings are tracked in a calendar that they can then look back on to reflect on their previous states. While we do not claim that this is scientifically proven, FaceForward gives a non-biased analysis of a user’s current emotional state, allowing them to evaluate how they interact with others, and allow them the opportunity to improve their mood and put their best face forward. 
 
-## If you'd like to contribute to the project, here's what you'll need...
+## Get it on the App Store
+Coming soon to the App Store. Stay tuned!
+
+### If you'd like to contribute to the project, here's what you'll need...
+
 ### Installation
+
 #### Frameworks:
 + AVFoundation
 + MediaPlayer
@@ -25,9 +30,6 @@ Users can choose to later check in and do another analysis to see how they are f
 
 * [Suggestions.randomizeSuggestions](../master/FaceForward/SuggestionsViewController.swift) = guidance or pick-me-ups based on largest emotion read from facial scan
 * [RadioStations.changeStation](../master/FaceForward/RadioPlayer.swift) = streaming radio stations from SHOUTcast
-
-## Get it on the App Store
-Coming soon to the App Store. Stay tuned!
 
 ## Contact
 If you have any questions, comments, or feedback, please send us an email: <faceforwardapp@gmail.com>.
