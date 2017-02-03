@@ -3,7 +3,7 @@ FaceForward is an iOS app that helps users set out each day on their own terms. 
 
 It was developed in Swift using Realm, AVFoundation and MediaPlayer frameworks, the SHOUTcast API, and Microsoft’s Emotion API. 
 
-# Installation
+## Installation
 The following pods are required:
 * [JTAppleCalendar](https://cocoapods.org/pods/JTAppleCalendar)
 * [Charts](https://cocoapods.org/pods/charts)
@@ -11,14 +11,14 @@ The following pods are required:
 * [SwiftyJSON](https://cocoapods.org/pods/SwiftyJSON)
 * [Alamofire](https://cocoapods.org/pods/Alamofire)
 
-# Necessary Environment Variables
+## Necessary Environment Variables
 * `microsoftKey`
 
-* [Suggestions.randomizeSuggestions](../blob/master/FaceForward/SuggestionsViewController.swift) = guidance or pick-me-ups based on largest emotion read from facial scan
-* [RadioStations.changeStation](../blob/master/FaceForward/RadioPlayer.swift) = streaming radio stations from SHOUTcast
+* [Suggestions.randomizeSuggestions](../master/FaceForward/SuggestionsViewController.swift) = guidance or pick-me-ups based on largest emotion read from facial scan
+* [RadioStations.changeStation](../master/FaceForward/RadioPlayer.swift) = streaming radio stations from SHOUTcast
 
-# Get it on the App Store
+## Get it on the App Store
 Coming soon to the App Store. Stay tuned!
 
-# Contact
+## Contact
 If you have any questions, comments, or feedback, please send us an email: <faceforwardapp@gmail.com>
