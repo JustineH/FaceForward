@@ -5,10 +5,11 @@ Users can choose to later check in and do another analysis to see how they are f
 
 ## Get it on the App Store
 Coming soon to the App Store. Stay tuned!
+<br>
+<hr>
+## Contributing to the Project
 
-
-
-### If you'd like to contribute to the project, here's what you'll need...
+#### If you'd like to contribute to the project, here's what you'll need...
 
 #### Frameworks:
 + AVFoundation
@@ -26,10 +27,10 @@ Coming soon to the App Store. Stay tuned!
 + [SHOUTcast](https://www.shoutcast.com/)
 
 #### Necessary Environment Variables:
-* `microsoftKey`
++ `microsoftKey`
 
-* [Suggestions.randomizeSuggestions](../master/FaceForward/SuggestionsViewController.swift) = guidance or pick-me-ups based on largest emotion read from facial scan
-* [RadioStations.changeStation](../master/FaceForward/RadioPlayer.swift) = streaming radio stations from SHOUTcast
++ [Suggestions.randomizeSuggestions](../master/FaceForward/SuggestionsViewController.swift) = guidance or pick-me-ups based on largest emotion read from facial scan
++ [RadioStations.changeStation](../master/FaceForward/RadioPlayer.swift) = streaming radio stations from SHOUTcast
 
 ## Contact
 If you have any questions, comments, or feedback, please send us an email: <faceforwardapp@gmail.com>.
