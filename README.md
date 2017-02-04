@@ -1,4 +1,3 @@
-![FaceForward](https://github.com/JustineH/FaceForward/blob/master/FaceForward/Assets.xcassets/Logo.imageset/FaceForward_Logo(150px%402x).png)
 # About FaceForward
 FaceForward is an iOS app that helps users set out each day on their own terms. It uses Microsoft Cognitive Services' Emotion API to give users an analysis of their current emotional state. Then, based on the user’s primary emotion that was determined from their selfie, the app provides some guidance on how best to greet the day, and gives the user the option to play a suggested streaming radio station from SHOUTcast to lift their current mood (or maintain it), or choose another radio station by shuffling through more stations. After doing a facial analysis, and before starting their day, the user can make a conscious decision to tackle work, a project, a relationship etc. head on, or understand that they may not be in the best state to deal with confrontation and decide to mitigate stressful situations.
 
@@ -9,7 +8,7 @@ Coming soon to the App Store. Stay tuned!
 <br>
 <br>
 
-## The Project was Built Using:
+## Project Build and Installation
 
 #### Frameworks:
 + AVFoundation
