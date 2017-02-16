@@ -31,7 +31,7 @@ class MyDateFormatter: NSObject {
         case 1:
             return "January"
         case 2:
-            return "Febuary"
+            return "February"
         case 3:
             return "March"
         case 4:
