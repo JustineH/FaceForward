@@ -134,7 +134,7 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    /// Resize view for no keyboard used
+    /// Resize view when no keyboard used
     func keyboardWillHide(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
 //            if self.view.frame.origin.y != 0 {

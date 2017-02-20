@@ -64,10 +64,11 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
         }
 
         myCustomCell.layoutIfNeeded()
+        let radius1 = min((myCustomCell.subviews.first?.frame.size.width)!, (myCustomCell.subviews.first?.frame.size.height)!) / 2.0
+        myCustomCell.subviews.first?.layer.cornerRadius = radius1
         
-        myCustomCell.subviews.first?.layer.cornerRadius = (myCustomCell.subviews.first?.frame.size.width)! / 2
-        
-        myCustomCell.subviews[1].layer.cornerRadius = myCustomCell.subviews[1].frame.size.width / 2
+        let radius2 = min(myCustomCell.subviews[1].frame.size.width, myCustomCell.subviews[1].frame.size.height) / 2.0
+        myCustomCell.subviews[1].layer.cornerRadius =  radius2
     
     }
     
