@@ -127,19 +127,34 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
     
     /// Resize view for keyboard space on screen
     func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-//            if self.view.frame.origin.y == 0 {
-                self.view.frame.size.height -= (keyboardSize.height - 49)
-//            }
+        guard let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue else {
+            // Can't get keyboard size
+            return
         }
+        let tabBarHeight:CGFloat = 49
+        let scrollViewHeight: CGFloat = 830 // This should not be hard coded
+        let padding: CGFloat = 20
+        let animationDuration: TimeInterval = 0.25
+        let textFieldOffset = scrollViewHeight - self.peopleTextField.frame.maxY
+        
+        // You have to wait until the view's frame has changed before you change the offset of the scrollview. If you change the offset while the view is changing, the final offset will be wrong.
+        CATransaction.begin()
+        CATransaction.setCompletionBlock({
+            // Gets called after the the view's frame has been changed
+            UIView.animate(withDuration: animationDuration, animations: {
+              self.scrolly.contentOffset = CGPoint(x: 0, y: scrollViewHeight - keyboardSize.height - textFieldOffset + padding)
+            })
+        })
+        
+        self.view.frame.size.height -= (keyboardSize.height - tabBarHeight)
+        
+        CATransaction.commit()
     }
     
     /// Resize view when no keyboard used
     func keyboardWillHide(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-//            if self.view.frame.origin.y != 0 {
                 self.view.frame.size.height += (keyboardSize.height - 49)
-//            }
         }
     }
     

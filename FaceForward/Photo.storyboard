@@ -63,10 +63,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view hidden="YES" alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fBf-sa-JgR">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
                                     <activityIndicatorView hidden="YES" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Fmm-7B-aIH">
-                                        <rect key="frame" x="142" y="256" width="37" height="37"/>
+                                        <rect key="frame" x="142" y="234" width="37" height="37"/>
                                         <color key="color" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </activityIndicatorView>
                                 </subviews>
@@ -97,6 +97,7 @@
                             <constraint firstItem="yh4-li-Y4Q" firstAttribute="centerY" secondItem="Ip6-R9-dZI" secondAttribute="centerY" id="uiS-wO-ix6"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="mHe-GG-8rt"/>
                     <connections>
                         <outlet property="cameraImage" destination="yh4-li-Y4Q" id="UVS-T2-0Y2"/>
                         <outlet property="noFaceFoundLabel" destination="1CY-se-rzh" id="4kr-cr-BPY"/>
@@ -107,6 +108,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9uh-VP-y2J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2506.875" y="-297.88732394366195"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QO7-N9-ude">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uHe-d6-LA5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="coP-Sy-qod">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KiM-Gk-U1w" kind="relationship" relationship="rootViewController" id="1I6-kT-Ypj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TrA-3I-SGd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1509.375" y="-297.88732394366195"/>
         </scene>
