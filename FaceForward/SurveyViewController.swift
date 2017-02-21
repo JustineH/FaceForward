@@ -131,22 +131,33 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
             // Can't get keyboard size
             return
         }
-        let tabBarHeight:CGFloat = 49
+        
+        guard let navBarHeight: CGFloat = self.navigationController?.navigationBar.frame.size.height else {
+            // Can't get the nav bar height
+            return
+        }
+        
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        
+//        let tabBarHeight: CGFloat = (UIScreen.main.bounds.height - self.view.frame.size.height)/2.0
         let scrollViewHeight: CGFloat = 830 // This should not be hard coded
         let padding: CGFloat = 20
         let animationDuration: TimeInterval = 0.25
         let textFieldOffset = scrollViewHeight - self.peopleTextField.frame.maxY
         
-        // You have to wait until the view's frame has changed before you change the offset of the scrollview. If you change the offset while the view is changing, the final offset will be wrong.
+        // Wait until the view's frame has changed before changing the offset of the scrollview. If you change the offset while the view is changing, the final offset will be wrong
         CATransaction.begin()
         CATransaction.setCompletionBlock({
             // Gets called after the the view's frame has been changed
-            UIView.animate(withDuration: animationDuration, animations: {
-              self.scrolly.contentOffset = CGPoint(x: 0, y: scrollViewHeight - keyboardSize.height - textFieldOffset + padding)
-            })
+            let yOffset = scrollViewHeight - self.view.frame.size.height + navBarHeight + statusBarHeight - textFieldOffset + padding
+            if yOffset > 0 {
+                UIView.animate(withDuration: animationDuration, animations: {
+                    self.scrolly.contentOffset = CGPoint(x: 0, y: yOffset)
+                })
+            }
         })
         
-        self.view.frame.size.height -= (keyboardSize.height - tabBarHeight)
+        self.view.frame.size.height -= (keyboardSize.height)
         
         CATransaction.commit()
     }
@@ -154,7 +165,7 @@ class SurveyViewController: UIViewController, UITextFieldDelegate {
     /// Resize view when no keyboard used
     func keyboardWillHide(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-                self.view.frame.size.height += (keyboardSize.height - 49)
+                self.view.frame.size.height += (keyboardSize.height)
         }
     }
     

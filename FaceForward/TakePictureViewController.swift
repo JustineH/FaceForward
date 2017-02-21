@@ -33,20 +33,20 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     /// Bring up camera to take photo
     @IBAction func loadImageButtonTapped(_ sender: UIButton) {
         
-//        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
         
             imagePicker.allowsEditing = false
-            imagePicker.sourceType = .photoLibrary
-//            imagePicker.cameraDevice = .front
-//            imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashMode.off
+            imagePicker.sourceType = .camera
+            imagePicker.cameraDevice = .front
+            imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashMode.off
         
             present(imagePicker, animated: true, completion: nil)
             
-//            } else {
-//                let alert = UIAlertController(title: "Alert", message: "No camera was found.", preferredStyle: .alert)
-//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//                self.present(alert, animated: true, completion: nil)
-//        }
+            } else {
+                let alert = UIAlertController(title: "Alert", message: "No camera was found.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+        }
     }
     
     /// Create an entry in Realm and go to ChartVC
@@ -77,24 +77,24 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     /// Bring up camera to retake photo and hide all labels until photo is loaded
     @IBAction func takePhotoButtonLabel(_ sender: UIButton) {
         
-//        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
         
             self.noFaceFoundLabel.isHidden = true
             self.timeOutLabel.isHidden = true
             self.cameraImage.isHidden = true
             
             imagePicker.allowsEditing = false
-            imagePicker.sourceType = .photoLibrary
-//            imagePicker.cameraDevice = .front
-//            imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashMode.off
+            imagePicker.sourceType = .camera
+            imagePicker.cameraDevice = .front
+            imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashMode.off
         
             present(imagePicker, animated: true, completion: nil)
             
-//        } else {
-//            let alert = UIAlertController(title: "Alert", message: "No camera was found.", preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//            self.present(alert, animated: true, completion: nil)
-//        }
+        } else {
+            let alert = UIAlertController(title: "Alert", message: "No camera was found.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     //MARK: - View -
@@ -124,6 +124,7 @@ class TakePictureViewController: UIViewController, UIImagePickerControllerDelega
     
     /// Make a new Emotion for a Realm entry, not saved yet
     func makeItems(dictionary: [String:Double]) -> Emotion? {
+        
         let new = Emotion()
         new.anger = dictionary["anger"] ?? 0
         new.contempt = dictionary["contempt"] ?? 0
