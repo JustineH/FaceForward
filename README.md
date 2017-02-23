@@ -33,8 +33,62 @@ Coming soon to the App Store. Stay tuned!
 
 #### Necessary Environment Variables:
 + `microsoftKey`
-+ [Suggestions.randomizeSuggestions](../master/FaceForward/SuggestionsViewController.swift) = guidance or pick-me-ups based on largest emotion read from facial scan
-+ [RadioStations.changeStation](../master/FaceForward/RadioPlayer.swift) = streaming radio stations from SHOUTcast
++ [Suggestions.randomizeSuggestions](../master/FaceForward/SuggestionsViewController.swift) = guidance or pick-me-ups based on largest emotion read from facial scan as per code below
+
+```swift
+import Foundation
+
+class Suggestions {
+    
+    class func randomizeSuggestion(emotion: String) -> String {
+        
+        var suggestions: [String: [String]] = [
+            
+            "Anger" : [**ADD GUIDANCE HERE**],
+            "Contempt" : [**ADD GUIDANCE HERE**],
+            "Disgust" : [**ADD GUIDANCE HERE**],
+            "Fear" : [**ADD GUIDANCE HERE**],
+            "Sadness" : [**ADD GUIDANCE HERE**],
+            "Surprise" : [**ADD GUIDANCE HERE**],
+            "Happiness" : [**ADD GUIDANCE HERE**],
+            "Neutral" : [**ADD GUIDANCE HERE**]
+        ]
+        
+        let randomIdx = Int(arc4random_uniform(UInt32(suggestions[emotion]!.count)))
+        return suggestions[emotion]![randomIdx]
+    }
+}
+```
++ [RadioStations.changeStation](../master/FaceForward/RadioPlayer.swift) = streaming radio stations from SHOUTcast as per code below
+
+```swift
+import Foundation
+import AVFoundation
+
+class RadioStations {
+    
+    func changeStation(mood: String) -> AVPlayerItem {
+        
+        var urlString: [String: [String]] = [
+        
+        "Anger": [**ADD RADIO STATIONS HERE**],
+        "Contempt": [**ADD RADIO STATIONS HERE**],
+        "Disgust": [**ADD RADIO STATIONS HERE**],
+        "Fear": [**ADD RADIO STATIONS HERE**],
+        "Happiness": [**ADD RADIO STATIONS HERE**],
+        "Neutral": [**ADD RADIO STATIONS HERE**],
+        "Sadness": [**ADD RADIO STATIONS HERE**],
+        "Surprise": [**ADD RADIO STATIONS HERE**]
+        
+        ]
+        
+        let randomStation = Int(arc4random_uniform(UInt32(urlString[mood]!.count)))
+        let item: AVPlayerItem = AVPlayerItem(url: NSURL(string: urlString[mood]![randomStation]) as! URL)
+        return item
+    }
+    
+}
+```
 
 ## Authors
 + Justine Herman
