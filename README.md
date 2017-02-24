@@ -9,7 +9,7 @@ Users can choose to later check in and do another analysis to see how they are f
 
 <img src="http://i.imgur.com/1HSsHJO.png" alt="FaceForward Overview" style="height: 600px;"/>
 
-## Get it free on the App Store
+## Get it Free on the App Store
 [https://itunes.apple.com/us/app/faceforward-app/id1189691355?mt=8](https://itunes.apple.com/us/app/faceforward-app/id1189691355?mt=8)
 <br>
 <br>
