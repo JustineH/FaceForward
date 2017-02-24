@@ -31,7 +31,7 @@ Coming soon!
 + [Microsoft Cognitive Services' Emotion API](https://www.microsoft.com/cognitive-services/en-us/emotion-api)
 + [SHOUTcast](https://www.shoutcast.com/)
 
-#### Necessary Environment Variables:
+#### Necessary Environment Variable & Dependencies:
 + `microsoftKey`
 + [Suggestions.randomizeSuggestions](../master/FaceForward/SuggestionsViewController.swift) = guidance or pick-me-ups based on largest emotion read from facial scan as per code below
 
