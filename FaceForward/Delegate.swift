@@ -70,6 +70,13 @@ class Delegate: NSObject, JTAppleCalendarViewDelegate {
         let radius2 = min(myCustomCell.subviews[1].frame.size.width, myCustomCell.subviews[1].frame.size.height) / 2.0
         myCustomCell.subviews[1].layer.cornerRadius =  radius2
     
+        let newWidth1 = min((myCustomCell.subviews.first?.frame.size.width)!, (myCustomCell.subviews.first?.frame.size.height)!)
+        myCustomCell.subviews.first?.frame.size.width = newWidth1
+        myCustomCell.subviews.first?.center = myCustomCell.center
+        
+        let newWidth2 = min(myCustomCell.subviews[1].frame.size.width, myCustomCell.subviews[1].frame.size.height)
+        myCustomCell.subviews[1].frame.size.width = newWidth2
+        myCustomCell.subviews[1].center = myCustomCell.center
     }
     
     func markCurrentDate(cell: CellView) {
